@@ -164,7 +164,8 @@ public class ReloadHandler extends BaseOperationCommand {
             throw new CommandLineException("Interrupted while pausing before reconnecting.", e);
         }
         try {
-            cliClient.ensureConnected(ctx.getConfig().getConnectionTimeout() + 1000);
+            //cliClient.ensureConnected(ctx.getConfig().getConnectionTimeout() + 1000);
+            cliClient.ensureConnected(20000);
         } catch(CommandLineException e) {
             ctx.disconnectController();
             throw e;

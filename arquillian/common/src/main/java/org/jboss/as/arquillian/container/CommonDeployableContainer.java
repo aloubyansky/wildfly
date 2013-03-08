@@ -18,7 +18,6 @@ package org.jboss.as.arquillian.container;
 
 import static org.jboss.as.arquillian.container.Authentication.getCallbackHandler;
 
-import java.net.UnknownHostException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -89,7 +88,10 @@ public abstract class CommonDeployableContainer<T extends CommonContainerConfigu
                     containerConfig.getManagementAddress(),
                     containerConfig.getManagementPort(),
                     getCallbackHandler());
-        } catch (UnknownHostException e) {
+
+/*            modelControllerClient = new ReconnectingModelControllerClient(getCallbackHandler(), containerConfig.getManagementAddress(),
+                    5000, containerConfig.getManagementPort(), null);*/
+        } catch (java.io.IOException e) {
             throw new RuntimeException(e);
         }
 
@@ -164,6 +166,7 @@ public abstract class CommonDeployableContainer<T extends CommonContainerConfigu
     private void safeCloseClient() {
         try {
             IoUtils.safeClose(getManagementClient());
+            //((ReconnectingModelControllerClient)getManagementClient().getControllerClient()).shutdown();
         } catch (final Exception e) {
             Logger.getLogger(this.getClass().getName()).log(Level.WARNING,
                 "Caught exception closing ModelControllerClient", e);

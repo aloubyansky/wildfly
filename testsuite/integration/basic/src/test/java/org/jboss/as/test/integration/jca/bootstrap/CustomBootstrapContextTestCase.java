@@ -38,7 +38,6 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.shrinkwrap.api.spec.ResourceAdapterArchive;
 import org.jboss.staxmapper.XMLElementReader;
 import org.jboss.staxmapper.XMLElementWriter;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -50,7 +49,7 @@ import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.*;
  */
 @RunWith(Arquillian.class)
 @ServerSetup(CustomBootstrapContextTestCase.CustomBootstrapDeploymentTestCaseSetup.class)
-@Ignore("AS7-4185")
+//@Ignore("AS7-4185")
 public class CustomBootstrapContextTestCase extends JcaMgmtBase {
 
     public static String ctx = "customContext";
@@ -100,14 +99,13 @@ public class CustomBootstrapContextTestCase extends JcaMgmtBase {
             remove(wmAddress);
             remove(bsAddress);
             reload();
-
         }
 
     }
 
     /**
      * Define the deployment
-     * 
+     *
      * @return The deployment archive
      */
     @Deployment
@@ -138,7 +136,7 @@ public class CustomBootstrapContextTestCase extends JcaMgmtBase {
 
     /**
      * Test configuration
-     * 
+     *
      * @throws Throwable Thrown if case of an error
      */
     @Test
