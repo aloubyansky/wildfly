@@ -29,13 +29,17 @@ import java.io.File;
  * @author Alexey Loubyansky
  *
  */
-public class PatchHistoryDir extends AbstractArtifact<PatchArtifact.State,PatchHistoryDir.State> {
+public class PatchHistoryDir extends AbstractArtifact<PatchArtifact.CollectionState,PatchHistoryDir.State> {
 
-    public static final PatchHistoryDir INSTANCE = new PatchHistoryDir();
+    private static final PatchHistoryDir INSTANCE = new PatchHistoryDir();
+
+    public static PatchHistoryDir getInstance() {
+        return INSTANCE;
+    }
 
     private PatchHistoryDir() {
-        addArtifact(PatchXml.INSTANCE);
-        addArtifact(RollbackXml.INSTANCE);
+        addArtifact(PatchXml.getInstance());
+        addArtifact(RollbackXml.getInstance());
     }
 
     public static class State implements Artifact.State {
@@ -88,7 +92,11 @@ public class PatchHistoryDir extends AbstractArtifact<PatchArtifact.State,PatchH
     }
 
     @Override
-    protected State getInitialState(PatchArtifact.State patch, Context ctx) {
+    protected State getInitialState(PatchArtifact.CollectionState patchCollection, Context ctx) {
+        PatchArtifact.State patch = patchCollection.getState();
+        if(patch == null) {
+            return null;
+        }
         State historyDir = patch.getHistoryDir();
         if(historyDir != null) {
             return historyDir;

@@ -30,7 +30,11 @@ import java.io.File;
  */
 public class RollbackXml extends AbstractArtifact<PatchHistoryDir.State, RollbackXml.State> {
 
-    public static final RollbackXml INSTANCE = new RollbackXml();
+    private static final RollbackXml INSTANCE = new RollbackXml();
+
+    public static RollbackXml getInstance() {
+        return INSTANCE;
+    }
 
     public static class State extends XmlFileState {
 

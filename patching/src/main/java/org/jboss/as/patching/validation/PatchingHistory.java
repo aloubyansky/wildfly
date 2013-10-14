@@ -36,31 +36,28 @@ public class PatchingHistory extends AbstractArtifact<PatchingHistory.State,Patc
     }
 
     private PatchingHistory() {
-        addArtifact(PatchArtifact.INSTANCE);
+        addArtifact(PatchArtifact.getInstance());
     }
 
     public static class State implements Artifact.State {
 
-        private PatchArtifact.State lastAppliedPatch;
+        private PatchArtifact.CollectionState patches;
 
-        public void setLastAppliedPatch(PatchArtifact.State patch) {
-            lastAppliedPatch = patch;
+        public void setPatches(PatchArtifact.CollectionState patches) {
+            this.patches = patches;
+        }
+
+        public PatchArtifact.CollectionState getPatches() {
+            return patches;
         }
 
         public PatchArtifact.State getLastAppliedPatch() {
-            return lastAppliedPatch;
+            patches.resetIndex();
+            return patches.getState();
         }
 
         @Override
         public void validate(Context ctx) {
-        }
-
-        public void handlePatches(Context ctx, PatchStateHandler handler) {
-            PatchArtifact.State patch = lastAppliedPatch;
-            while(patch != null) {
-                handler.handle(patch);
-                patch = patch.getPrevious(ctx);
-            }
         }
     }
 
@@ -70,6 +67,6 @@ public class PatchingHistory extends AbstractArtifact<PatchingHistory.State,Patc
     }
 
     public PatchArtifact.State getLastAppliedPatch(Context ctx) {
-        return PatchArtifact.INSTANCE.getState(ctx);
+        return PatchArtifact.getInstance().getState(ctx).getState();
     }
 }

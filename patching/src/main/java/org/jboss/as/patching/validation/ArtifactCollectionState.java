@@ -24,6 +24,7 @@ package org.jboss.as.patching.validation;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 
 /**
@@ -43,7 +44,7 @@ public abstract class ArtifactCollectionState<S extends Artifact.State> implemen
 
     protected abstract S createItem();
 
-    private void add(S item) {
+    protected void add(S item) {
         switch(list.size()) {
             case 0:
                 list = Collections.singletonList(item);
@@ -70,6 +71,9 @@ public abstract class ArtifactCollectionState<S extends Artifact.State> implemen
     }
 
     void next() {
+        if(!hasNext()) {
+            throw new NoSuchElementException();
+        }
         ++i;
     }
 

@@ -30,7 +30,11 @@ import java.io.File;
  */
 public class PatchXml extends AbstractArtifact<PatchHistoryDir.State, PatchXml.State> {
 
-    public static final PatchXml INSTANCE = new PatchXml();
+    private static final PatchXml INSTANCE = new PatchXml();
+
+    public static final PatchXml getInstance() {
+        return INSTANCE;
+    }
 
     private PatchXml() {
         addArtifact(PatchElementArtifact.getInstance());

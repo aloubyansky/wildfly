@@ -36,12 +36,51 @@ import org.jboss.as.patching.metadata.RollbackPatch;
  * @author Alexey Loubyansky
  *
  */
-public class PatchArtifact extends AbstractArtifact<PatchingHistory.State, PatchArtifact.State> {
+public class PatchArtifact extends ArtifactWithCollectionState<PatchingHistory.State, PatchArtifact.State, PatchArtifact.CollectionState> {
 
-    public static final PatchArtifact INSTANCE = new PatchArtifact();
+    private static final PatchArtifact INSTANCE = new PatchArtifact();
+
+    public static PatchArtifact getInstance() {
+        return INSTANCE;
+    }
 
     private PatchArtifact() {
-        addArtifact(PatchHistoryDir.INSTANCE);
+        addArtifact(PatchHistoryDir.getInstance());
+    }
+
+    public class CollectionState extends ArtifactCollectionState<State> {
+
+        CollectionState(Context ctx, PatchingHistory.State parent, TargetInfo identity) {
+            parent.setPatches(this);
+
+            String patchId = identity.getCumulativePatchID();
+            Patch.PatchType type = Patch.PatchType.CUMULATIVE;
+            if(!identity.getPatchIDs().isEmpty()) {
+                type = Patch.PatchType.ONE_OFF;
+                patchId = identity.getPatchIDs().get(0);
+            } else if(patchId.equals(Constants.BASE)){
+                return;
+            }
+
+            State patch = new State(patchId, type);
+            add(ctx, patch);
+            while(patch.hasPrevious(ctx)) {
+                patch = patch.getPrevious(ctx);
+                next();
+                add(ctx, patch);
+            }
+            resetIndex();
+        }
+
+        protected void add(Context ctx, State patch) {
+            add(patch);
+            validateForState(ctx, this);
+        }
+
+        @Override
+        protected State createItem() {
+            throw new UnsupportedOperationException();
+        }
     }
 
     public class State implements Artifact.State {
@@ -116,17 +155,17 @@ public class PatchArtifact extends AbstractArtifact<PatchingHistory.State, Patch
                     ctx.getErrorHandler().error("Failed to load previous patch", e);
                     return null;
                 }
-                validateForState(ctx, previous);
+                //validateForState(ctx, previous);
             }
             return previous;
         }
     }
 
     @Override
-    protected State getInitialState(PatchingHistory.State parent, Context ctx) {
-        State lastApplied = parent.getLastAppliedPatch();
-        if(lastApplied != null) {
-            return lastApplied;
+    protected CollectionState getInitialState(PatchingHistory.State parent, Context ctx) {
+        CollectionState patches = parent.getPatches();
+        if(patches != null) {
+            return patches;
         }
         final Identity identity = ctx.getInstallationManager().getIdentity();
         TargetInfo identityInfo;
@@ -137,17 +176,8 @@ public class PatchArtifact extends AbstractArtifact<PatchingHistory.State, Patch
             e.printStackTrace();
             return null;
         }
-        String patchId = identityInfo.getCumulativePatchID();
-        Patch.PatchType type = Patch.PatchType.CUMULATIVE;
-        if(!identityInfo.getPatchIDs().isEmpty()) {
-            type = Patch.PatchType.ONE_OFF;
-            patchId = identityInfo.getPatchIDs().get(0);
-        } else if(patchId.equals(Constants.BASE)){
-            return null;
-        }
-        lastApplied = new State(patchId, type);
-        parent.setLastAppliedPatch(lastApplied);
-        return lastApplied;
+        patches = new CollectionState(ctx, parent, identityInfo);
+        return patches;
     }
 
 }

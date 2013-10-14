@@ -33,6 +33,16 @@ import java.util.List;
  */
 public abstract class AbstractArtifact<P extends Artifact.State, S extends Artifact.State> implements Artifact<P,S> {
 
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj == this;
+    }
+
     protected Artifact<? extends Artifact.State, P> parent;
 
     protected List<Artifact<S, ? extends Artifact.State>> artifacts = Collections.emptyList();
@@ -51,7 +61,7 @@ public abstract class AbstractArtifact<P extends Artifact.State, S extends Artif
         return (A)artifact.getState((B)state, ctx);
     }
 
-    void addArtifact(Artifact<S, ? extends Artifact.State> a) {
+    void addArtifact(AbstractArtifact<S, ? extends Artifact.State> a) {
         if(a == null) {
             throw new IllegalArgumentException("Artifact is null");
         }
@@ -66,7 +76,14 @@ public abstract class AbstractArtifact<P extends Artifact.State, S extends Artif
             default:
                 artifacts.add(a);
         }
+        a.parent = this;
     }
+
+    @Override
+    public Artifact<? extends Artifact.State, P> getParent() {
+        return parent;
+    }
+
     /* (non-Javadoc)
      * @see org.jboss.as.patching.validation.Artifact#getArtifacts()
      */
