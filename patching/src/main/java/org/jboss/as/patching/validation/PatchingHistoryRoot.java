@@ -27,33 +27,33 @@ package org.jboss.as.patching.validation;
  * @author Alexey Loubyansky
  *
  */
-public class PatchingHistory extends AbstractArtifact<PatchingHistory.State,PatchingHistory.State> {
+public class PatchingHistoryRoot extends AbstractArtifact<PatchingHistoryRoot.State,PatchingHistoryRoot.State> {
 
-    private static final PatchingHistory INSTANCE = new PatchingHistory();
+    private static final PatchingHistoryRoot INSTANCE = new PatchingHistoryRoot();
 
-    public static PatchingHistory getInstance() {
+    public static PatchingHistoryRoot getInstance() {
         return INSTANCE;
     }
 
-    private PatchingHistory() {
-        addArtifact(PatchArtifact.getInstance());
+    private final Artifact<State, PatchArtifact.CollectionState> patchesArtifact;
+
+    private PatchingHistoryRoot() {
+
+        patchesArtifact = addArtifact(PatchArtifact.getInstance());
     }
 
-    public static class State implements Artifact.State {
+    public class State implements Artifact.State {
 
-        private PatchArtifact.CollectionState patches;
+        PatchArtifact.CollectionState patches;
 
-        public void setPatches(PatchArtifact.CollectionState patches) {
-            this.patches = patches;
+        public PatchArtifact.CollectionState getPatches(Context ctx) {
+            return patches == null ? patchesArtifact.getState(this, ctx) : patches;
         }
 
-        public PatchArtifact.CollectionState getPatches() {
-            return patches;
-        }
-
-        public PatchArtifact.State getLastAppliedPatch() {
+        public PatchArtifact.State getLastAppliedPatch(Context ctx) {
+            getPatches(ctx);
             patches.resetIndex();
-            return patches.getState();
+            return patches.hasNext(ctx) ? patches.next(ctx) : null;
         }
 
         @Override

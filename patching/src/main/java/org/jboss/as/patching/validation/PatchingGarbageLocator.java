@@ -34,7 +34,7 @@ import java.util.Set;
 
 import org.jboss.as.patching.installation.InstallationManager;
 import org.jboss.as.patching.installation.Layer;
-import org.jboss.as.patching.validation.ArtifactTreeHandler.Builder;
+import org.jboss.as.patching.validation.PatchingHistoryTree.Builder;
 import org.jboss.logging.Logger;
 
 
@@ -53,7 +53,7 @@ public class PatchingGarbageLocator {
     private Set<String> activeHistory;
     private Set<File> activeOverlays;
 
-    final ArtifactTreeHandler<PatchingHistory.State> activeDirsHandler = Builder.<PatchingHistory.State>getInstance()
+    final PatchingHistoryTree activeDirsHandler = Builder.getInstance()
             .addHandler(PatchHistoryDir.getInstance(), new ArtifactStateHandler<PatchHistoryDir.State>(){
                 @Override
                 public void handle(Context ctx, PatchHistoryDir.State state) {
@@ -62,8 +62,12 @@ public class PatchingGarbageLocator {
             .addHandler(PatchElementProviderArtifact.getInstance(), new ArtifactStateHandler<PatchElementProviderArtifact.State>() {
                 @Override
                 public void handle(Context ctx, PatchElementProviderArtifact.State state) {
-                    activeOverlays.add(state.getModulesDir());
-                    activeOverlays.add(state.getBundlesDir());
+                    if(state.getModulesDir() != null) {
+                        activeOverlays.add(state.getModulesDir());
+                    }
+                    if(state.getBundlesDir() != null) {
+                        activeOverlays.add(state.getBundlesDir());
+                    }
                 }})
             .build();
 
@@ -77,7 +81,7 @@ public class PatchingGarbageLocator {
     private void walk() {
         activeHistory = new HashSet<String>();
         activeOverlays = new HashSet<File>();
-        activeDirsHandler.handle(getContext(manager, false));
+        activeDirsHandler.handleAll(getContext(manager, false));
     }
 
     public void reset() {

@@ -45,11 +45,9 @@ public class RollbackXml extends AbstractArtifact<PatchHistoryDir.State, Rollbac
 
     @Override
     protected State getInitialState(PatchHistoryDir.State historyDir, Context ctx) {
-        State state = historyDir.getRollbackXml();
-        if(state == null) {
-            state = new State(new File(historyDir.getDirectory(), "rollback.xml"));
-            historyDir.setRollbackXml(state);
+        if (historyDir.rollbackXml == null) {
+            historyDir.rollbackXml = new State(new File(historyDir.getDirectory(), "rollback.xml"));
         }
-        return state;
+        return historyDir.rollbackXml;
     }
 }

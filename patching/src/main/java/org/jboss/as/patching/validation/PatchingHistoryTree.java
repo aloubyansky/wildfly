@@ -27,6 +27,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import org.jboss.as.patching.validation.Artifact.State;
 
@@ -35,19 +36,52 @@ import org.jboss.as.patching.validation.Artifact.State;
  * @author Alexey Loubyansky
  *
  */
-public class ArtifactTreeHandler<T extends Artifact.State> {
+public class PatchingHistoryTree {
 
-    public static class Builder<R extends Artifact.State> {
+    public static <P extends Artifact.State, S extends Artifact.State> java.util.Iterator<S> stateIterator(final Artifact<P,S> a, final Context ctx) {
+        return new java.util.Iterator<S>(){
 
-        public static <R extends Artifact.State> Builder<R> getInstance() {
-            return new Builder<R>();
+            private S current;
+            final PatchingHistoryTree tree = Builder.getInstance().addHandler(a, new ArtifactStateHandler<S>(){
+                @Override
+                public void handle(Context ctx, S state) {
+                    current = state;
+                }}).build();
+            final TreeIterator i = tree.treeIterator(ctx);
+
+            @Override
+            public boolean hasNext() {
+                return i.hasNext();
+            }
+
+            @Override
+            public S next() {
+                i.handleNext();
+                return current;
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }};
+    }
+
+    public static class Builder {
+
+        static {
+            // to initialize the artifact tree
+            PatchingHistoryRoot.getInstance();
+        }
+
+        public static Builder getInstance() {
+            return new Builder();
         }
 
         private Builder() {}
 
-        private ArtifactTreeNodeBuilder<R, R> root;
+        private ArtifactTreeNodeBuilder<PatchingHistoryRoot.State, PatchingHistoryRoot.State> root;
 
-        public <P extends Artifact.State, S extends Artifact.State> Builder<R> addHandler(Artifact<P, S> artifact,
+        public <P extends Artifact.State, S extends Artifact.State> Builder addHandler(Artifact<P, S> artifact,
                 ArtifactStateHandler<S> handler) {
             final ArtifactTreeNodeBuilder<P, S> nodeBuilder = getNodeBuilder(artifact);
             if(nodeBuilder.handler != null) {
@@ -62,20 +96,19 @@ public class ArtifactTreeHandler<T extends Artifact.State> {
             final Artifact<? extends State, P> parent = artifact.getParent();
             if(parent == null) {
                 if(root == null) {
-                    root = (ArtifactTreeNodeBuilder<R, R>) new ArtifactTreeNodeBuilder<P, S>(artifact);
+                    root = (ArtifactTreeNodeBuilder<PatchingHistoryRoot.State, PatchingHistoryRoot.State>) new ArtifactTreeNodeBuilder<P, S>(artifact);
                 }
                 return (ArtifactTreeNodeBuilder<P, S>) root;
             }
             final ArtifactTreeNodeBuilder<? extends Artifact.State, P> parentBuilder = getNodeBuilder(parent);
-            ArtifactTreeNodeBuilder<P, S> nodeBuilder = parentBuilder.getChildNodeBuilder(artifact);
-            return nodeBuilder;
+            return parentBuilder.getChildNodeBuilder(artifact);
         }
 
-        public ArtifactTreeHandler<R> build() {
+        public PatchingHistoryTree build() {
             if(root == null) {
                 throw new IllegalStateException("No instructions to build off.");
             }
-            return new ArtifactTreeHandler<R>(root.build());
+            return new PatchingHistoryTree(root.build());
         }
 
         class ArtifactTreeNodeBuilder<P extends Artifact.State, S extends Artifact.State> {
@@ -91,6 +124,7 @@ public class ArtifactTreeHandler<T extends Artifact.State> {
                 this.artifact = artifact;
             }
 
+            @SuppressWarnings("unchecked")
             <C extends Artifact.State> ArtifactTreeNodeBuilder<S, C> getChildNodeBuilder(Artifact<S, C> artifact) {
                 ArtifactTreeNodeBuilder<S, C> childBuilder = (ArtifactTreeNodeBuilder<S, C>) children.get(artifact);
                 if(childBuilder != null) {
@@ -159,16 +193,16 @@ public class ArtifactTreeHandler<T extends Artifact.State> {
         }
     }
 
-    private ArtifactTreeNode<T, T> root;
+    private ArtifactTreeNode<PatchingHistoryRoot.State, PatchingHistoryRoot.State> root;
 
-    ArtifactTreeHandler(ArtifactTreeNode<T, T> root) {
+    PatchingHistoryTree(ArtifactTreeNode<PatchingHistoryRoot.State, PatchingHistoryRoot.State> root) {
         if(root == null) {
             throw new IllegalArgumentException("root is null");
         }
         this.root = root;
     }
 
-    public void handle(Context ctx) {
+    public void handleAll(Context ctx) {
         if(root == null) {
             throw new IllegalStateException("Tree root has not been initialized.");
         }
@@ -187,17 +221,137 @@ public class ArtifactTreeHandler<T extends Artifact.State> {
         if(state instanceof ArtifactCollectionState) {
             final ArtifactCollectionState<?> col = (ArtifactCollectionState<?>) state;
             col.resetIndex();
-            while(col.hasNext()) {
+            while(col.hasNext(ctx)) {
+                col.next(ctx);
                 for(ArtifactTreeNode<S, ? extends Artifact.State> child : node.children) {
                     handleNode(ctx, child, state);
                 }
-                col.next();
             }
         } else {
             for (ArtifactTreeNode<S, ? extends Artifact.State> child : node.children) {
                 handleNode(ctx, child, state);
             }
         }
+    }
+
+    private class StateNode<P extends Artifact.State, S extends Artifact.State> {
+        ArtifactTreeNode<P, S> node;
+        S state;
+        int childIndex;
+
+        StateNode<?, P> previous;
+
+        boolean collection;
+
+        StateNode(ArtifactTreeNode<P, S> node, S state, P parentState, Context ctx) {
+            if(node == null) {
+                throw new IllegalArgumentException("node is null");
+            }
+            if(state == null) {
+                throw new IllegalArgumentException("state is null");
+            }
+            this.node = node;
+            this.state = state;
+            childIndex = 0;
+
+            collection = state instanceof ArtifactCollectionState;
+            if(collection) {
+                ArtifactCollectionState<?> col = (ArtifactCollectionState<?>)state;
+                col.resetIndex();
+                if(col.hasNext(ctx)) {
+                    col.next(ctx);
+                }
+            }
+        }
+
+        void handle(Context ctx) {
+            if(node.handler == null) {
+                throw new IllegalStateException("the handler is null");
+            }
+            node.handler.handle(ctx, state);
+        }
+
+        StateNode<? extends Artifact.State, ? extends Artifact.State> next(Context ctx) {
+            while (childIndex < node.children.size()) {
+                final ArtifactTreeNode<S, ? extends Artifact.State> child = node.children.get(childIndex++);
+                final Artifact.State childState = child.artifact.getState(state, ctx);
+                if (childState != null) {
+                    if (child.handler == null) {
+                        // process its children
+                        final StateNode<S, ? extends Artifact.State> next = new StateNode(child, childState, state, ctx);
+                        next.previous = this;
+                        return next.next(ctx);
+                    }
+                    final StateNode<S, ? extends Artifact.State> next = new StateNode(child, childState, state, ctx);
+                    next.previous = this;
+                    return next;
+                }
+            }
+
+            if (collection) {
+                final ArtifactCollectionState<?> col = (ArtifactCollectionState<?>) state;
+                if (col.hasNext(ctx)) {
+                    col.next(ctx);
+                    childIndex = 0;
+                    return next(ctx);
+                }
+            }
+
+            if (previous == null) {
+                return null;
+            }
+            return previous.next(ctx);
+        }
+    }
+
+    public interface TreeIterator {
+        boolean hasNext();
+        void handleNext();
+    }
+
+    public TreeIterator treeIterator(final Context context) {
+        return new TreeIterator() {
+
+            private final Context ctx = context;
+            private PatchingHistoryRoot.State rootState = root.artifact.getState(null, ctx);
+            private StateNode<?,?> currentState;
+
+            @Override
+            public boolean hasNext() {
+                if(currentState == null) {
+                    if(rootState == null) {
+                        return false;
+                    }
+                    currentState = new StateNode<PatchingHistoryRoot.State, PatchingHistoryRoot.State>(root, rootState, null, ctx);
+                    rootState = null;
+                    if(currentState.node.handler == null) {
+                        currentState = currentState.next(ctx);
+                        if(currentState == null) {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+
+            @Override
+            public void handleNext() {
+                if(currentState == null) {
+                    if(rootState == null) {
+                        throw new NoSuchElementException();
+                    }
+                    currentState = new StateNode<PatchingHistoryRoot.State, PatchingHistoryRoot.State>(root, rootState, null, ctx);
+                    rootState = null;
+                    if(currentState.node.handler == null) {
+                        currentState = currentState.next(ctx);
+                        if(currentState == null) {
+                            throw new NoSuchElementException();
+                        }
+                    }
+                }
+                currentState.handle(ctx);
+                currentState = currentState.next(ctx);
+            }};
     }
 
     @Override

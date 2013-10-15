@@ -23,6 +23,7 @@
 package org.jboss.as.patching.validation;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 
 import org.jboss.as.patching.Constants;
 import org.jboss.as.patching.installation.Identity;
@@ -36,7 +37,7 @@ import org.jboss.as.patching.metadata.RollbackPatch;
  * @author Alexey Loubyansky
  *
  */
-public class PatchArtifact extends ArtifactWithCollectionState<PatchingHistory.State, PatchArtifact.State, PatchArtifact.CollectionState> {
+public class PatchArtifact extends ArtifactWithCollectionState<PatchingHistoryRoot.State, PatchArtifact.State, PatchArtifact.CollectionState> {
 
     private static final PatchArtifact INSTANCE = new PatchArtifact();
 
@@ -44,14 +45,18 @@ public class PatchArtifact extends ArtifactWithCollectionState<PatchingHistory.S
         return INSTANCE;
     }
 
+    private final Artifact<CollectionState, PatchHistoryDir.State> historyDirArtifact;
+
     private PatchArtifact() {
-        addArtifact(PatchHistoryDir.getInstance());
+        historyDirArtifact = addArtifact(PatchHistoryDir.getInstance());
     }
 
     public class CollectionState extends ArtifactCollectionState<State> {
 
-        CollectionState(Context ctx, PatchingHistory.State parent, TargetInfo identity) {
-            parent.setPatches(this);
+        private final State head;
+        private State current;
+
+        CollectionState(Context ctx, PatchingHistoryRoot.State parent, TargetInfo identity) {
 
             String patchId = identity.getCumulativePatchID();
             Patch.PatchType type = Patch.PatchType.CUMULATIVE;
@@ -59,45 +64,70 @@ public class PatchArtifact extends ArtifactWithCollectionState<PatchingHistory.S
                 type = Patch.PatchType.ONE_OFF;
                 patchId = identity.getPatchIDs().get(0);
             } else if(patchId.equals(Constants.BASE)){
+                head = null;
                 return;
             }
 
-            State patch = new State(patchId, type);
-            add(ctx, patch);
-            while(patch.hasPrevious(ctx)) {
-                patch = patch.getPrevious(ctx);
-                next();
-                add(ctx, patch);
-            }
+            head = new State(this, patchId, type);
             resetIndex();
         }
 
-        protected void add(Context ctx, State patch) {
-            add(patch);
-            validateForState(ctx, this);
+        @Override
+        public State getState() {
+            if(current == null) {
+                if(head == null) {
+                    throw new NoSuchElementException();
+                }
+                return head;
+            }
+            return current;
         }
 
         @Override
-        protected State createItem() {
-            throw new UnsupportedOperationException();
+        public void resetIndex() {
+            current = null;
+        }
+
+        @Override
+        public boolean hasNext(Context ctx) {
+            if(current == null) {
+                return head != null;
+            }
+            return current.hasPrevious(ctx);
+        }
+
+        @Override
+        public State next(Context ctx) {
+            if(!hasNext(ctx)) {
+                throw new NoSuchElementException();
+            }
+            if(current == null) {
+                current = head;
+            } else {
+                current = current.toPrevious(ctx);
+            }
+            return current;
         }
     }
 
     public class State implements Artifact.State {
 
+        private final CollectionState col;
         private final String patchId;
-        private PatchType type;
+        private final PatchType type;
 
-        private PatchHistoryDir.State historyDir;
+        PatchHistoryDir.State historyDir;
 
         protected State previous;
 
-        State(String patchId, PatchType type) {
+        State(CollectionState col, String patchId, PatchType type) {
+            this.col = col;
             this.patchId = patchId;
             this.type = type;
         }
 
-        State(RollbackPatch patch, Context ctx) throws IOException {
+        State(CollectionState col, RollbackPatch patch, Context ctx) throws IOException {
+            this.col = col;
             final TargetInfo info = patch.getIdentityState().getIdentity().loadTargetInfo();
             if(info.getPatchIDs().isEmpty()) {
                 patchId = info.getCumulativePatchID();
@@ -121,19 +151,16 @@ public class PatchArtifact extends ArtifactWithCollectionState<PatchingHistory.S
             // TODO Auto-generated method stub
         }
 
-        public PatchHistoryDir.State getHistoryDir() {
-            return historyDir;
-        }
-
-        public void setHistoryDir(PatchHistoryDir.State historyDir) {
-            this.historyDir = historyDir;
+        public PatchHistoryDir.State getHistoryDir(Context ctx) {
+            return historyDir == null ? historyDirArtifact.getState(col, ctx) : historyDir;
         }
 
         public boolean hasPrevious(Context ctx) {
-            if(!historyDir.getRollbackXml().getFile().exists()) {
+            getHistoryDir(ctx);
+            if(!historyDir.getRollbackXml(ctx).getFile().exists()) {
                 return false;
             }
-            final RollbackPatch patch = (RollbackPatch) historyDir.getRollbackXml().getPatch();
+            final RollbackPatch patch = (RollbackPatch) historyDir.getRollbackXml(ctx).getPatch(ctx);
             TargetInfo targetInfo;
             try {
                 targetInfo = patch.getIdentityState().getIdentity().loadTargetInfo();
@@ -145,12 +172,16 @@ public class PatchArtifact extends ArtifactWithCollectionState<PatchingHistory.S
         }
 
         public State getPrevious(Context ctx) {
+            return col.hasNext(ctx) ? col.next(ctx) : null;
+        }
+
+        private State toPrevious(Context ctx) {
             if(previous == null) {
                 if(!hasPrevious(ctx)) {
                     return null;
                 }
                 try {
-                    previous = new State((RollbackPatch)historyDir.getRollbackXml().getPatch(), ctx);
+                    previous = new State(col, (RollbackPatch)historyDir.getRollbackXml(ctx).getPatch(ctx), ctx);
                 } catch (IOException e) {
                     ctx.getErrorHandler().error("Failed to load previous patch", e);
                     return null;
@@ -162,22 +193,20 @@ public class PatchArtifact extends ArtifactWithCollectionState<PatchingHistory.S
     }
 
     @Override
-    protected CollectionState getInitialState(PatchingHistory.State parent, Context ctx) {
-        CollectionState patches = parent.getPatches();
-        if(patches != null) {
-            return patches;
+    protected CollectionState getInitialState(PatchingHistoryRoot.State parent, Context ctx) {
+        if (parent.patches == null) {
+            final Identity identity = ctx.getInstallationManager().getIdentity();
+            TargetInfo identityInfo;
+            try {
+                identityInfo = identity.loadTargetInfo();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                return null;
+            }
+            parent.patches = new CollectionState(ctx, parent, identityInfo);
         }
-        final Identity identity = ctx.getInstallationManager().getIdentity();
-        TargetInfo identityInfo;
-        try {
-            identityInfo = identity.loadTargetInfo();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            return null;
-        }
-        patches = new CollectionState(ctx, parent, identityInfo);
-        return patches;
+        return parent.patches;
     }
 
 }

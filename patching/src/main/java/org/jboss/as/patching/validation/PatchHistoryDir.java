@@ -37,12 +37,15 @@ public class PatchHistoryDir extends AbstractArtifact<PatchArtifact.CollectionSt
         return INSTANCE;
     }
 
+    private final Artifact<State, PatchXml.State> patchXmlArtifact;
+    private final Artifact<State, RollbackXml.State> rollbackXmlArtifact;
+
     private PatchHistoryDir() {
-        addArtifact(PatchXml.getInstance());
-        addArtifact(RollbackXml.getInstance());
+        patchXmlArtifact = addArtifact(PatchXml.getInstance());
+        rollbackXmlArtifact = addArtifact(RollbackXml.getInstance());
     }
 
-    public static class State implements Artifact.State {
+    public class State implements Artifact.State {
 
         private final File dir;
 
@@ -50,29 +53,21 @@ public class PatchHistoryDir extends AbstractArtifact<PatchArtifact.CollectionSt
             this.dir = dir;
         }
 
-        private PatchXml.State patchXml;
-        private RollbackXml.State rollbackXml;
-        private AppliedAt.State appliedAt;
+        PatchXml.State patchXml;
+        RollbackXml.State rollbackXml;
+        AppliedAt.State appliedAt;
         // TODO configuration dir
 
         public File getDirectory() {
             return dir;
         }
 
-        public RollbackXml.State getRollbackXml() {
-            return rollbackXml;
+        public RollbackXml.State getRollbackXml(Context ctx) {
+            return rollbackXml == null ? rollbackXmlArtifact.getState(this, ctx) : rollbackXml;
         }
 
-        public void setRollbackXml(RollbackXml.State rollbackXml) {
-            this.rollbackXml = rollbackXml;
-        }
-
-        public PatchXml.State getPatchXml() {
-            return patchXml;
-        }
-
-        public void setPatchXml(PatchXml.State patchXml) {
-            this.patchXml = patchXml;
+        public PatchXml.State getPatchXml(Context ctx) {
+            return patchXml == null ? patchXmlArtifact.getState(this, ctx) : patchXml;
         }
 
         public AppliedAt.State getAppliedAt() {
@@ -97,13 +92,10 @@ public class PatchHistoryDir extends AbstractArtifact<PatchArtifact.CollectionSt
         if(patch == null) {
             return null;
         }
-        State historyDir = patch.getHistoryDir();
-        if(historyDir != null) {
-            return historyDir;
+        if(patch.historyDir == null) {
+            final File dir = ctx.getInstallationManager().getInstalledImage().getPatchHistoryDir(patch.getPatchId());
+            patch.historyDir = new State(dir);
         }
-        final File dir = ctx.getInstallationManager().getInstalledImage().getPatchHistoryDir(patch.getPatchId());
-        historyDir = new State(dir);
-        patch.setHistoryDir(historyDir);
-        return historyDir;
+        return patch.historyDir;
     }
 }

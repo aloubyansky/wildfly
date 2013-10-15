@@ -53,15 +53,14 @@ public abstract class AbstractArtifact<P extends Artifact.State, S extends Artif
 
     @SuppressWarnings("unchecked")
     protected <A extends Artifact.State, B extends Artifact.State, C extends Artifact.State> A getState2(AbstractArtifact<B,C> artifact, Context ctx) {
-        Artifact.State state = null;
         if(artifact.parent != null) {
             B parentState = getState2((AbstractArtifact<B,C>)artifact.parent, ctx);
             return (A)artifact.getState((B)parentState, ctx);
         }
-        return (A)artifact.getState((B)state, ctx);
+        return (A)artifact.getState(null, ctx);
     }
 
-    void addArtifact(AbstractArtifact<S, ? extends Artifact.State> a) {
+    <C extends Artifact.State> AbstractArtifact<S,C> addArtifact(AbstractArtifact<S, C> a) {
         if(a == null) {
             throw new IllegalArgumentException("Artifact is null");
         }
@@ -77,6 +76,7 @@ public abstract class AbstractArtifact<P extends Artifact.State, S extends Artif
                 artifacts.add(a);
         }
         a.parent = this;
+        return a;
     }
 
     @Override
@@ -115,6 +115,7 @@ public abstract class AbstractArtifact<P extends Artifact.State, S extends Artif
 
     @Override
     public S getState(P parent, Context ctx) {
-        return validate(parent, ctx);
+        //return validate(parent, ctx);
+        return getInitialState(parent, ctx);
     }
 }
