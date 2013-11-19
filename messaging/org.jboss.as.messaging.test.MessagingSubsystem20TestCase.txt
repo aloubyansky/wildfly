@@ -1,0 +1,1451 @@
+-------------------------------------------------------------------------------
+Test set: org.jboss.as.messaging.test.MessagingSubsystem20TestCase
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 1, Errors: 0, Skipped: 15, Time elapsed: 7.337 sec <<< FAILURE!
+testTransformersAS720(org.jboss.as.messaging.test.MessagingSubsystem20TestCase)  Time elapsed: 5.129 sec  <<< FAILURE!
+org.junit.ComparisonFailure: hornetq-server/default/: {
+    "allow-failback" => false,
+    "async-connection-execution-enabled" => false,
+    "backup" => false,
+    "backup-group-name" => undefined,
+    "check-for-live-server" => false,
+    "cluster-password" => expression "${messaging.cluster.user.password}",
+    "cluster-user" => expression "${messaging.cluster.user.name}",
+    "clustered" => false,
+    "connection-ttl-override" => 5432L,
+    "create-bindings-dir" => false,
+    "create-journal-dir" => true,
+    "failback-delay" => 9876L,
+    "failover-on-shutdown" => true,
+    "id-cache-size" => 102030,
+    "jmx-domain" => "my.jmx.domain",
+    "jmx-management-enabled" => false,
+    "journal-buffer-size" => 2468L,
+    "journal-buffer-timeout" => 1357L,
+    "journal-compact-min-files" => 2,
+    "journal-compact-percentage" => 83,
+    "journal-file-size" => 102400L,
+    "journal-max-io" => 50,
+    "journal-min-files" => 2,
+    "journal-sync-non-transactional" => true,
+    "journal-sync-transactional" => false,
+    "journal-type" => "NIO",
+    "log-journal-write-rate" => true,
+    "management-address" => "my.management.address",
+    "management-notification-address" => "my.management.notif.address",
+    "memory-measure-interval" => 2048L,
+    "memory-warning-threshold" => 1024,
+    "message-counter-enabled" => true,
+    "message-counter-max-day-history" => 23,
+    "message-counter-sample-period" => 7654L,
+    "message-expiry-scan-period" => 7654L,
+    "message-expiry-thread-priority" => 7,
+    "page-max-concurrent-io" => 10,
+    "perf-blast-pages" => 70,
+    "persist-delivery-count-before-delivery" => true,
+    "persist-id-cache" => false,
+    "persistence-enabled" => false,
+    "remoting-incoming-interceptors" => undefined,
+    "remoting-interceptors" => [
+        "foo.bar",
+        "bar.foo"
+    ],
+    "remoting-outgoing-interceptors" => undefined,
+    "replication-clustername" => undefined,
+    "run-sync-speed-test" => false,
+    "runtime-queue" => undefined,
+    "scheduled-thread-pool-max-size" => expression "${messaging.scheduled.thread.pool.max.size:6}",
+    "security-domain" => "someDomain",
+    "security-enabled" => false,
+    "security-invalidation-interval" => 1234L,
+    "server-dump-interval" => 8642L,
+    "shared-store" => true,
+    "thread-pool-max-size" => expression "${messaging.thread.pool.max.size:5}",
+    "transaction-timeout" => 4321L,
+    "transaction-timeout-scan-period" => 5432L,
+    "wild-card-routing-enabled" => false,
+    "acceptor" => {"myacceptor" => {
+        "factory-class" => "org.hornetq.core.remoting.impl.netty.NettyAcceptorFactory",
+        "socket-binding" => undefined,
+        "param" => {"batch-delay" => {"value" => "50"}}
+    }},
+    "address-setting" => {"#" => {
+        "address-full-policy" => "BLOCK",
+        "dead-letter-address" => "jms.queue.DLQ",
+        "expiry-address" => "jms.queue.ExpiryQueue",
+        "last-value-queue" => false,
+        "max-delivery-attempts" => 5,
+        "max-size-bytes" => 10485760L,
+        "message-counter-history-day-limit" => 10,
+        "page-max-cache-size" => 7,
+        "page-size-bytes" => 10485760L,
+        "redelivery-delay" => 0L,
+        "redistribution-delay" => 0L,
+        "send-to-dla-on-no-route" => false
+    }},
+    "bridge" => {
+        "bridge1" => {
+            "check-period" => 666L,
+            "confirmation-window-size" => 350,
+            "connection-ttl" => 36000L,
+            "discovery-group-name" => undefined,
+            "filter" => "afilter",
+            "forwarding-address" => "forwardingaddress1",
+            "ha" => true,
+            "max-retry-interval" => 3000L,
+            "min-large-message-size" => 10240,
+            "password" => expression "${password:secret}",
+            "queue-name" => "coreQueueA",
+            "reconnect-attempts" => 3,
+            "retry-interval" => 750L,
+            "retry-interval-multiplier" => big decimal 2,
+            "static-connectors" => [
+                "in-vm",
+                "netty"
+            ],
+            "transformer-class-name" => "foo.bar",
+            "use-duplicate-detection" => true,
+            "user" => expression "${user:Brian}"
+        },
+        "bridge2" => {
+            "check-period" => 30000L,
+            "confirmation-window-size" => 1048576,
+            "connection-ttl" => 60000L,
+            "discovery-group-name" => "groupC",
+            "filter" => undefined,
+            "forwarding-address" => undefined,
+            "ha" => false,
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "password" => "CHANGE ME!!",
+            "queue-name" => "coreQueueB",
+            "reconnect-attempts" => -1,
+            "retry-interval" => 2000L,
+            "retry-interval-multiplier" => 1.0,
+            "static-connectors" => undefined,
+            "transformer-class-name" => undefined,
+            "use-duplicate-detection" => true,
+            "user" => "HORNETQ.CLUSTER.ADMIN.USER"
+        }
+    },
+    "broadcast-group" => {
+        "groupA" => {
+            "broadcast-period" => 2500L,
+            "connectors" => [
+                "netty",
+                "netty-throughput"
+            ],
+            "group-address" => "224.0.1.105",
+            "group-port" => 23456,
+            "local-bind-address" => "localhost",
+            "local-bind-port" => 12345
+        },
+        "groupB" => {
+            "broadcast-period" => 2000L,
+            "group-address" => "224.0.1.105",
+            "group-port" => 34567,
+            "local-bind-port" => -1
+        },
+        "groupS" => {
+            "broadcast-period" => 2000L,
+            "local-bind-port" => -1,
+            "socket-binding" => "group-s-binding"
+        }
+    },
+    "cluster-connection" => {
+        "cc1" => {
+            "allow-direct-connections-only" => false,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 3456L,
+            "check-period" => 2345L,
+            "cluster-connection-address" => "cc1-address",
+            "confirmation-window-size" => 459,
+            "connection-ttl" => 1234L,
+            "connector-ref" => "netty",
+            "discovery-group-name" => undefined,
+            "forward-when-no-consumers" => true,
+            "max-hops" => 7,
+            "max-retry-interval" => 3600L,
+            "min-large-message-size" => 10245,
+            "notification-attempts" => 2,
+            "notification-interval" => 1000L,
+            "reconnect-attempts" => -1,
+            "retry-interval" => 987L,
+            "retry-interval-multiplier" => big decimal 3.0,
+            "static-connectors" => [
+                "in-vm",
+                "netty"
+            ],
+            "use-duplicate-detection" => true
+        },
+        "cc2" => {
+            "allow-direct-connections-only" => true,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 30000L,
+            "check-period" => 30000L,
+            "cluster-connection-address" => "cc2-address",
+            "confirmation-window-size" => 1048576,
+            "connection-ttl" => 60000L,
+            "connector-ref" => "netty",
+            "discovery-group-name" => undefined,
+            "forward-when-no-consumers" => false,
+            "max-hops" => 1,
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "notification-attempts" => 2,
+            "notification-interval" => 1000L,
+            "reconnect-attempts" => -1,
+            "retry-interval" => 500L,
+            "retry-interval-multiplier" => 1.0,
+            "static-connectors" => [
+                "in-vm",
+                "netty"
+            ],
+            "use-duplicate-detection" => true
+        },
+        "cc3" => {
+            "allow-direct-connections-only" => false,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 30000L,
+            "check-period" => 30000L,
+            "cluster-connection-address" => "cc3-address",
+            "confirmation-window-size" => 1048576,
+            "connection-ttl" => 60000L,
+            "connector-ref" => "netty",
+            "discovery-group-name" => "groupC",
+            "forward-when-no-consumers" => false,
+            "max-hops" => 1,
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "notification-attempts" => 2,
+            "notification-interval" => 1000L,
+            "reconnect-attempts" => -1,
+            "retry-interval" => 500L,
+            "retry-interval-multiplier" => 1.0,
+            "static-connectors" => undefined,
+            "use-duplicate-detection" => true
+        },
+        "cc4" => {
+            "allow-direct-connections-only" => false,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 30000L,
+            "check-period" => 30000L,
+            "cluster-connection-address" => "cc4-address",
+            "confirmation-window-size" => 1048576,
+            "connection-ttl" => 60000L,
+            "connector-ref" => "netty-throughput",
+            "discovery-group-name" => undefined,
+            "forward-when-no-consumers" => false,
+            "max-hops" => 1,
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "notification-attempts" => 2,
+            "notification-interval" => 1000L,
+            "reconnect-attempts" => -1,
+            "retry-interval" => 500L,
+            "retry-interval-multiplier" => 1.0,
+            "static-connectors" => [
+                "in-vm",
+                "netty"
+            ],
+            "use-duplicate-detection" => true
+        },
+        "cc5" => {
+            "allow-direct-connections-only" => false,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 30000L,
+            "check-period" => 30000L,
+            "cluster-connection-address" => "cc3-address",
+            "confirmation-window-size" => 1048576,
+            "connection-ttl" => 60000L,
+            "connector-ref" => "netty",
+            "discovery-group-name" => undefined,
+            "forward-when-no-consumers" => false,
+            "max-hops" => 1,
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "notification-attempts" => 2,
+            "notification-interval" => 1000L,
+            "reconnect-attempts" => -1,
+            "retry-interval" => 500L,
+            "retry-interval-multiplier" => 1.0,
+            "static-connectors" => undefined,
+            "use-duplicate-detection" => true
+        }
+    },
+    "connection-factory" => {
+        "InVmConnectionFactory" => {
+            "auto-group" => false,
+            "block-on-acknowledge" => false,
+            "block-on-durable-send" => true,
+            "block-on-non-durable-send" => false,
+            "cache-large-message-client" => false,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 30000L,
+            "client-failure-check-period" => 30000L,
+            "client-id" => undefined,
+            "compress-large-messages" => false,
+            "confirmation-window-size" => -1,
+            "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+            "connection-ttl" => 60000L,
+            "connector" => {"in-vm" => undefined},
+            "consumer-max-rate" => -1,
+            "consumer-window-size" => 1048576,
+            "discovery-group-name" => undefined,
+            "discovery-initial-wait-timeout" => undefined,
+            "dups-ok-batch-size" => 1048576,
+            "entries" => ["java:/ConnectionFactory"],
+            "factory-type" => "GENERIC",
+            "failover-on-initial-connection" => false,
+            "failover-on-server-shutdown" => undefined,
+            "group-id" => undefined,
+            "ha" => false,
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "pre-acknowledge" => false,
+            "producer-max-rate" => -1,
+            "producer-window-size" => 65536,
+            "reconnect-attempts" => 0,
+            "retry-interval" => 2000L,
+            "retry-interval-multiplier" => 1.0,
+            "scheduled-thread-pool-max-size" => 5,
+            "thread-pool-max-size" => 30,
+            "transaction-batch-size" => 1048576,
+            "use-global-pools" => true
+        },
+        "RemoteConnectionFactory" => {
+            "auto-group" => false,
+            "block-on-acknowledge" => false,
+            "block-on-durable-send" => true,
+            "block-on-non-durable-send" => false,
+            "cache-large-message-client" => false,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 30000L,
+            "client-failure-check-period" => 30000L,
+            "client-id" => "testClient",
+            "compress-large-messages" => false,
+            "confirmation-window-size" => -1,
+            "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+            "connection-ttl" => 60000L,
+            "connector" => {"netty" => undefined},
+            "consumer-max-rate" => -1,
+            "consumer-window-size" => 1048576,
+            "discovery-group-name" => undefined,
+            "discovery-initial-wait-timeout" => undefined,
+            "dups-ok-batch-size" => 1048576,
+            "entries" => ["RemoteConnectionFactory"],
+            "factory-type" => "XA_QUEUE",
+            "failover-on-initial-connection" => false,
+            "failover-on-server-shutdown" => undefined,
+            "group-id" => undefined,
+            "ha" => false,
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "pre-acknowledge" => false,
+            "producer-max-rate" => -1,
+            "producer-window-size" => 65536,
+            "reconnect-attempts" => 0,
+            "retry-interval" => 2000L,
+            "retry-interval-multiplier" => 1.0,
+            "scheduled-thread-pool-max-size" => 5,
+            "thread-pool-max-size" => 30,
+            "transaction-batch-size" => 1048576,
+            "use-global-pools" => true
+        },
+        "otherConnectionFactory" => {
+            "auto-group" => true,
+            "block-on-acknowledge" => false,
+            "block-on-durable-send" => false,
+            "block-on-non-durable-send" => false,
+            "cache-large-message-client" => false,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 123L,
+            "client-failure-check-period" => 12345L,
+            "client-id" => "myClientID",
+            "compress-large-messages" => false,
+            "confirmation-window-size" => -1,
+            "connection-load-balancing-policy-class-name" => "not.a.real.Class",
+            "connection-ttl" => 56789L,
+            "connector" => undefined,
+            "consumer-max-rate" => 789,
+            "consumer-window-size" => 456,
+            "discovery-group-name" => "groupC",
+            "discovery-initial-wait-timeout" => undefined,
+            "dups-ok-batch-size" => 256,
+            "entries" => ["otherConnectionFactory"],
+            "factory-type" => "GENERIC",
+            "failover-on-initial-connection" => true,
+            "failover-on-server-shutdown" => true,
+            "group-id" => "myGroup",
+            "ha" => true,
+            "max-retry-interval" => 10000L,
+            "min-large-message-size" => 2048,
+            "pre-acknowledge" => true,
+            "producer-max-rate" => 1024,
+            "producer-window-size" => -1,
+            "reconnect-attempts" => 2,
+            "retry-interval" => 500L,
+            "retry-interval-multiplier" => big decimal 2.5,
+            "scheduled-thread-pool-max-size" => 24,
+            "thread-pool-max-size" => 48,
+            "transaction-batch-size" => 512,
+            "use-global-pools" => true
+        }
+    },
+    "connector" => {"myconnector" => {
+        "factory-class" => "org.hornetq.core.remoting.impl.netty.NettyConnectorFactory",
+        "socket-binding" => undefined,
+        "param" => {
+            "host" => {"value" => "192.168.1.2"},
+            "port" => {"value" => "5445"}
+        }
+    }},
+    "connector-service" => {
+        "a" => {
+            "factory-class" => "foo.bar",
+            "param" => undefined
+        },
+        "b" => {
+            "factory-class" => "bar.foo",
+            "param" => {
+                "foo" => {"value" => "bar"},
+                "bar" => {"value" => "2"}
+            }
+        }
+    },
+    "discovery-group" => {
+        "groupC" => {
+            "group-address" => "224.0.1.105",
+            "group-port" => 45678,
+            "initial-wait-timeout" => 7500L,
+            "local-bind-address" => "localhost",
+            "refresh-timeout" => 3500L
+        },
+        "groupD" => {
+            "group-address" => "224.0.1.105",
+            "group-port" => 56789,
+            "initial-wait-timeout" => 10000L,
+            "refresh-timeout" => 10000L
+        },
+        "groupT" => {
+            "initial-wait-timeout" => 10000L,
+            "refresh-timeout" => 10000L,
+            "socket-binding" => "group-t-binding"
+        }
+    },
+    "divert" => {
+        "testDivert1" => {
+            "divert-address" => "address1",
+            "exclusive" => true,
+            "filter" => "afilter",
+            "forwarding-address" => "forwardingaddress1",
+            "routing-name" => "routing",
+            "transformer-class-name" => "org.jboss.test.Transformer"
+        },
+        "testDivert2" => {
+            "divert-address" => "address2",
+            "exclusive" => false,
+            "filter" => undefined,
+            "forwarding-address" => "forwardingaddress2",
+            "routing-name" => undefined,
+            "transformer-class-name" => undefined
+        }
+    },
+    "grouping-handler" => {"grouping-handler" => {
+        "grouping-handler-address" => "handler-address",
+        "timeout" => 5000,
+        "type" => "LOCAL"
+    }},
+    "in-vm-acceptor" => {"in-vm" => {
+        "server-id" => 0,
+        "param" => {"direct-deliver" => {"value" => "true"}}
+    }},
+    "in-vm-connector" => {"in-vm" => {
+        "param" => undefined,
+        "server-id" => 0
+    }},
+    "jms-queue" => {"testQueue" => {
+        "durable" => true,
+        "entries" => ["queue/test"],
+        "selector" => "color='red'"
+    }},
+    "jms-topic" => {"testTopic" => {"entries" => ["topic/test"]}},
+    "path" => {
+        "paging-directory" => {
+            "path" => "test",
+            "relative-to" => "test"
+        },
+        "bindings-directory" => {
+            "path" => "test",
+            "relative-to" => "test"
+        },
+        "journal-directory" => {
+            "path" => "test",
+            "relative-to" => "test"
+        },
+        "large-messages-directory" => {
+            "path" => "test",
+            "relative-to" => "test"
+        }
+    },
+    "pooled-connection-factory" => {
+        "hornetq-ra" => {
+            "auto-group" => true,
+            "block-on-acknowledge" => false,
+            "block-on-durable-send" => false,
+            "block-on-non-durable-send" => false,
+            "cache-large-message-client" => false,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 123L,
+            "client-failure-check-period" => 12345L,
+            "client-id" => "myClientID",
+            "compress-large-messages" => false,
+            "confirmation-window-size" => -1,
+            "connection-load-balancing-policy-class-name" => "not.a.real.Class",
+            "connection-ttl" => 56789L,
+            "connector" => {"in-vm" => undefined},
+            "consumer-max-rate" => 789,
+            "consumer-window-size" => 456,
+            "discovery-group-name" => undefined,
+            "discovery-initial-wait-timeout" => undefined,
+            "dups-ok-batch-size" => 256,
+            "entries" => ["java:/JmsXA"],
+            "failover-on-initial-connection" => true,
+            "failover-on-server-shutdown" => true,
+            "group-id" => "myGroup",
+            "ha" => true,
+            "initial-connect-attempts" => 1,
+            "initial-message-packet-size" => 1500,
+            "jndi-params" => "whatever",
+            "max-pool-size" => 242,
+            "max-retry-interval" => 10000L,
+            "min-large-message-size" => 2048,
+            "min-pool-size" => 42,
+            "password" => "alicepassword",
+            "pre-acknowledge" => true,
+            "producer-max-rate" => 1024,
+            "producer-window-size" => -1,
+            "reconnect-attempts" => 2,
+            "retry-interval" => 500L,
+            "retry-interval-multiplier" => big decimal 2.5,
+            "scheduled-thread-pool-max-size" => 24,
+            "setup-attempts" => 123,
+            "setup-interval" => 456L,
+            "thread-pool-max-size" => 48,
+            "transaction" => "xa",
+            "transaction-batch-size" => 512,
+            "use-auto-recovery" => true,
+            "use-global-pools" => true,
+            "use-jndi" => false,
+            "use-local-tx" => true,
+            "user" => "alice"
+        },
+        "hornetq-ra-local" => {
+            "auto-group" => false,
+            "block-on-acknowledge" => false,
+            "block-on-durable-send" => true,
+            "block-on-non-durable-send" => false,
+            "cache-large-message-client" => false,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 30000L,
+            "client-failure-check-period" => 30000L,
+            "client-id" => undefined,
+            "compress-large-messages" => false,
+            "confirmation-window-size" => -1,
+            "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+            "connection-ttl" => 60000L,
+            "connector" => {"in-vm" => undefined},
+            "consumer-max-rate" => -1,
+            "consumer-window-size" => 1048576,
+            "discovery-group-name" => undefined,
+            "discovery-initial-wait-timeout" => undefined,
+            "dups-ok-batch-size" => 1048576,
+            "entries" => ["java:/JmsLocal"],
+            "failover-on-initial-connection" => false,
+            "failover-on-server-shutdown" => undefined,
+            "group-id" => undefined,
+            "ha" => false,
+            "initial-connect-attempts" => 1,
+            "initial-message-packet-size" => 1500,
+            "jndi-params" => undefined,
+            "max-pool-size" => -1,
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "min-pool-size" => -1,
+            "password" => "alicepassword",
+            "pre-acknowledge" => false,
+            "producer-max-rate" => -1,
+            "producer-window-size" => 65536,
+            "reconnect-attempts" => -1,
+            "retry-interval" => 2000L,
+            "retry-interval-multiplier" => 1.0,
+            "scheduled-thread-pool-max-size" => 5,
+            "setup-attempts" => undefined,
+            "setup-interval" => undefined,
+            "thread-pool-max-size" => 30,
+            "transaction" => "local",
+            "transaction-batch-size" => 1048576,
+            "use-auto-recovery" => true,
+            "use-global-pools" => true,
+            "use-jndi" => undefined,
+            "use-local-tx" => undefined,
+            "user" => "alice"
+        },
+        "hornetq-ra-none" => {
+            "auto-group" => false,
+            "block-on-acknowledge" => false,
+            "block-on-durable-send" => true,
+            "block-on-non-durable-send" => false,
+            "cache-large-message-client" => false,
+            "call-failover-timeout" => -1L,
+            "call-timeout" => 30000L,
+            "client-failure-check-period" => 30000L,
+            "client-id" => undefined,
+            "compress-large-messages" => false,
+            "confirmation-window-size" => -1,
+            "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+            "connection-ttl" => 60000L,
+            "connector" => {"in-vm" => undefined},
+            "consumer-max-rate" => -1,
+            "consumer-window-size" => 1048576,
+            "discovery-group-name" => undefined,
+            "discovery-initial-wait-timeout" => undefined,
+            "dups-ok-batch-size" => 1048576,
+            "entries" => ["java:/JmsNone"],
+            "failover-on-initial-connection" => false,
+            "failover-on-server-shutdown" => undefined,
+            "group-id" => undefined,
+            "ha" => false,
+            "initial-connect-attempts" => 1,
+            "initial-message-packet-size" => 1500,
+            "jndi-params" => undefined,
+            "max-pool-size" => -1,
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "min-pool-size" => -1,
+            "password" => "alicepassword",
+            "pre-acknowledge" => false,
+            "producer-max-rate" => -1,
+            "producer-window-size" => 65536,
+            "reconnect-attempts" => -1,
+            "retry-interval" => 2000L,
+            "retry-interval-multiplier" => 1.0,
+            "scheduled-thread-pool-max-size" => 5,
+            "setup-attempts" => undefined,
+            "setup-interval" => undefined,
+            "thread-pool-max-size" => 30,
+            "transaction" => "none",
+            "transaction-batch-size" => 1048576,
+            "use-auto-recovery" => true,
+            "use-global-pools" => true,
+            "use-jndi" => undefined,
+            "use-local-tx" => undefined,
+            "user" => "alice"
+        }
+    },
+    "queue" => {
+        "coreQueueA" => {
+            "durable" => true,
+            "filter" => "afilter",
+            "queue-address" => "addressA"
+        },
+        "coreQueueB" => {
+            "durable" => true,
+            "filter" => undefined,
+            "queue-address" => "addressB"
+        }
+    },
+    "remote-acceptor" => {
+        "netty" => {
+            "param" => undefined,
+            "socket-binding" => "messaging"
+        },
+        "netty-throughput" => {
+            "socket-binding" => "messaging-throughput",
+            "param" => {
+                "batch-delay" => {"value" => "50"},
+                "direct-deliver" => {"value" => "false"}
+            }
+        }
+    },
+    "remote-connector" => {
+        "netty" => {
+            "param" => undefined,
+            "socket-binding" => "messaging"
+        },
+        "netty-throughput" => {
+            "socket-binding" => "messaging-throughput",
+            "param" => {"batch-delay" => {"value" => "50"}}
+        }
+    },
+    "security-setting" => {"#" => {"role" => {
+        "guest" => {
+            "consume" => true,
+            "create-durable-queue" => false,
+            "create-non-durable-queue" => true,
+            "delete-durable-queue" => false,
+            "delete-non-durable-queue" => true,
+            "manage" => false,
+            "send" => true
+        },
+        "adming" => {
+            "consume" => false,
+            "create-durable-queue" => false,
+            "create-non-durable-queue" => false,
+            "delete-durable-queue" => false,
+            "delete-non-durable-queue" => false,
+            "manage" => true,
+            "send" => false
+        }
+    }}}
+}
+{
+    "shared-store" => true,
+    "thread-pool-max-size" => expression "${messaging.thread.pool.max.size:5}",
+    "remoting-interceptors" => [
+        "foo.bar",
+        "bar.foo"
+    ],
+    "create-bindings-dir" => false,
+    "journal-buffer-size" => 2468L,
+    "security-invalidation-interval" => 1234L,
+    "message-counter-enabled" => true,
+    "journal-type" => "NIO",
+    "journal-sync-transactional" => false,
+    "journal-compact-min-files" => 2,
+    "log-journal-write-rate" => true,
+    "journal-max-io" => 50,
+    "scheduled-thread-pool-max-size" => expression "${messaging.scheduled.thread.pool.max.size:6}",
+    "security-enabled" => false,
+    "memory-warning-threshold" => 1024,
+    "journal-compact-percentage" => 83,
+    "failover-on-shutdown" => true,
+    "backup-group-name" => undefined,
+    "cluster-user" => expression "${messaging.cluster.user.name}",
+    "run-sync-speed-test" => false,
+    "jmx-domain" => "my.jmx.domain",
+    "transaction-timeout" => 4321L,
+    "cluster-password" => expression "${messaging.cluster.user.password}",
+    "create-journal-dir" => true,
+    "message-counter-sample-period" => 7654L,
+    "connection-ttl-override" => 5432L,
+    "persistence-enabled" => false,
+    "allow-failback" => false,
+    "remoting-outgoing-interceptors" => undefined,
+    "transaction-timeout-scan-period" => 5432L,
+    "persist-delivery-count-before-delivery" => true,
+    "page-max-concurrent-io" => 10,
+    "journal-min-files" => 2,
+    "check-for-live-server" => false,
+    "management-notification-address" => "my.management.notif.address",
+    "journal-buffer-timeout" => 1357L,
+    "management-address" => "my.management.address",
+    "journal-file-size" => 102400L,
+    "journal-sync-non-transactional" => true,
+    "persist-id-cache" => false,
+    "backup" => false,
+    "jmx-management-enabled" => false,
+    "async-connection-execution-enabled" => false,
+    "perf-blast-pages" => 70,
+    "memory-measure-interval" => 2048L,
+    "server-dump-interval" => 8642L,
+    "message-expiry-thread-priority" => 7,
+    "live-connector-ref" => undefined,
+    "replication-clustername" => undefined,
+    "failback-delay" => 9876L,
+    "id-cache-size" => 102030,
+    "security-domain" => "someDomain",
+    "message-expiry-scan-period" => 7654L,
+    "remoting-incoming-interceptors" => undefined,
+    "wild-card-routing-enabled" => false,
+    "message-counter-max-day-history" => 23,
+    "in-vm-acceptor" => {"in-vm" => {
+        "server-id" => 0,
+        "param" => {"direct-deliver" => {"value" => "true"}}
+    }},
+    "jms-queue" => {"testQueue" => {
+        "selector" => "color='red'",
+        "durable" => true,
+        "entries" => ["queue/test"]
+    }},
+    "security-setting" => {"#" => {"role" => {
+        "guest" => {
+            "delete-non-durable-queue" => true,
+            "create-non-durable-queue" => true,
+            "send" => true,
+            "delete-durable-queue" => false,
+            "manage" => false,
+            "create-durable-queue" => false,
+            "consume" => true
+        },
+        "adming" => {
+            "delete-non-durable-queue" => false,
+            "create-non-durable-queue" => false,
+            "send" => false,
+            "delete-durable-queue" => false,
+            "manage" => true,
+            "create-durable-queue" => false,
+            "consume" => false
+        }
+    }}},
+    "grouping-handler" => {"grouping-handler" => {
+        "type" => "LOCAL",
+        "timeout" => 5000,
+        "grouping-handler-address" => "handler-address"
+    }},
+    "address-setting" => {"#" => {
+        "redistribution-delay" => 0L,
+        "last-value-queue" => false,
+        "page-size-bytes" => 10485760L,
+        "address-full-policy" => "BLOCK",
+        "max-delivery-attempts" => 5,
+        "max-size-bytes" => 10485760L,
+        "expiry-address" => "jms.queue.ExpiryQueue",
+        "dead-letter-address" => "jms.queue.DLQ",
+        "page-max-cache-size" => 7,
+        "redelivery-delay" => 0L,
+        "send-to-dla-on-no-route" => false,
+        "message-counter-history-day-limit" => 10
+    }},
+    "acceptor" => {"myacceptor" => {
+        "factory-class" => "org.hornetq.core.remoting.impl.netty.NettyAcceptorFactory",
+        "socket-binding" => undefined,
+        "param" => {"batch-delay" => {"value" => "50"}}
+    }},
+    "jms-topic" => {"testTopic" => {"entries" => ["topic/test"]}},
+    "in-vm-connector" => {"in-vm" => {"server-id" => 0}},
+    "divert" => {
+        "testDivert1" => {
+            "divert-address" => "address1",
+            "exclusive" => true,
+            "routing-name" => "routing",
+            "forwarding-address" => "forwardingaddress1",
+            "filter" => "afilter",
+            "transformer-class-name" => "org.jboss.test.Transformer"
+        },
+        "testDivert2" => {
+            "divert-address" => "address2",
+            "exclusive" => false,
+            "routing-name" => undefined,
+            "forwarding-address" => "forwardingaddress2",
+            "filter" => undefined,
+            "transformer-class-name" => undefined
+        }
+    },
+    "queue" => {
+        "coreQueueA" => {
+            "durable" => true,
+            "queue-address" => "addressA",
+            "filter" => "afilter"
+        },
+        "coreQueueB" => {
+            "durable" => true,
+            "queue-address" => "addressB",
+            "filter" => undefined
+        }
+    },
+    "pooled-connection-factory" => {
+        "hornetq-ra" => {
+            "thread-pool-max-size" => 48,
+            "transaction" => "xa",
+            "dups-ok-batch-size" => 256,
+            "pre-acknowledge" => true,
+            "setup-interval" => 456L,
+            "password" => "alicepassword",
+            "block-on-acknowledge" => false,
+            "reconnect-attempts" => 2,
+            "max-pool-size" => 242,
+            "block-on-durable-send" => false,
+            "scheduled-thread-pool-max-size" => 24,
+            "client-failure-check-period" => 12345L,
+            "client-id" => "myClientID",
+            "connection-load-balancing-policy-class-name" => "not.a.real.Class",
+            "group-id" => "myGroup",
+            "failover-on-server-shutdown" => true,
+            "use-jndi" => false,
+            "consumer-max-rate" => 789,
+            "transaction-batch-size" => 512,
+            "call-timeout" => 123L,
+            "use-local-tx" => true,
+            "ha" => true,
+            "setup-attempts" => 123,
+            "discovery-group-name" => undefined,
+            "initial-message-packet-size" => 1500,
+            "producer-window-size" => -1,
+            "auto-group" => true,
+            "connector" => {"in-vm" => undefined},
+            "max-retry-interval" => 10000L,
+            "min-large-message-size" => 2048,
+            "producer-max-rate" => 1024,
+            "discovery-initial-wait-timeout" => undefined,
+            "compress-large-messages" => false,
+            "retry-interval-multiplier" => big decimal 2.5,
+            "consumer-window-size" => 456,
+            "entries" => ["java:/JmsXA"],
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => -1,
+            "connection-ttl" => 56789L,
+            "use-global-pools" => true,
+            "use-auto-recovery" => true,
+            "jndi-params" => "whatever",
+            "failover-on-initial-connection" => true,
+            "min-pool-size" => 42,
+            "retry-interval" => 500L,
+            "block-on-non-durable-send" => false,
+            "cache-large-message-client" => false,
+            "user" => "alice",
+            "initial-connect-attempts" => 1
+        },
+        "hornetq-ra-local" => {
+            "thread-pool-max-size" => 30,
+            "transaction" => "local",
+            "dups-ok-batch-size" => 1048576,
+            "pre-acknowledge" => false,
+            "setup-interval" => undefined,
+            "password" => "alicepassword",
+            "block-on-acknowledge" => false,
+            "reconnect-attempts" => -1,
+            "max-pool-size" => -1,
+            "block-on-durable-send" => true,
+            "scheduled-thread-pool-max-size" => 5,
+            "client-failure-check-period" => 30000L,
+            "client-id" => undefined,
+            "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+            "group-id" => undefined,
+            "failover-on-server-shutdown" => undefined,
+            "use-jndi" => undefined,
+            "consumer-max-rate" => -1,
+            "transaction-batch-size" => 1048576,
+            "call-timeout" => 30000L,
+            "use-local-tx" => undefined,
+            "ha" => false,
+            "setup-attempts" => undefined,
+            "discovery-group-name" => undefined,
+            "initial-message-packet-size" => 1500,
+            "producer-window-size" => 65536,
+            "auto-group" => false,
+            "connector" => {"in-vm" => undefined},
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "producer-max-rate" => -1,
+            "discovery-initial-wait-timeout" => undefined,
+            "compress-large-messages" => false,
+            "retry-interval-multiplier" => 1.0,
+            "consumer-window-size" => 1048576,
+            "entries" => ["java:/JmsLocal"],
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => -1,
+            "connection-ttl" => 60000L,
+            "use-global-pools" => true,
+            "use-auto-recovery" => true,
+            "jndi-params" => undefined,
+            "failover-on-initial-connection" => false,
+            "min-pool-size" => -1,
+            "retry-interval" => 2000L,
+            "block-on-non-durable-send" => false,
+            "cache-large-message-client" => false,
+            "user" => "alice",
+            "initial-connect-attempts" => 1
+        },
+        "hornetq-ra-none" => {
+            "thread-pool-max-size" => 30,
+            "transaction" => "none",
+            "dups-ok-batch-size" => 1048576,
+            "pre-acknowledge" => false,
+            "setup-interval" => undefined,
+            "password" => "alicepassword",
+            "block-on-acknowledge" => false,
+            "reconnect-attempts" => -1,
+            "max-pool-size" => -1,
+            "block-on-durable-send" => true,
+            "scheduled-thread-pool-max-size" => 5,
+            "client-failure-check-period" => 30000L,
+            "client-id" => undefined,
+            "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+            "group-id" => undefined,
+            "failover-on-server-shutdown" => undefined,
+            "use-jndi" => undefined,
+            "consumer-max-rate" => -1,
+            "transaction-batch-size" => 1048576,
+            "call-timeout" => 30000L,
+            "use-local-tx" => undefined,
+            "ha" => false,
+            "setup-attempts" => undefined,
+            "discovery-group-name" => undefined,
+            "initial-message-packet-size" => 1500,
+            "producer-window-size" => 65536,
+            "auto-group" => false,
+            "connector" => {"in-vm" => undefined},
+            "max-retry-interval" => 2000L,
+            "min-large-message-size" => 102400,
+            "producer-max-rate" => -1,
+            "discovery-initial-wait-timeout" => undefined,
+            "compress-large-messages" => false,
+            "retry-interval-multiplier" => 1.0,
+            "consumer-window-size" => 1048576,
+            "entries" => ["java:/JmsNone"],
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => -1,
+            "connection-ttl" => 60000L,
+            "use-global-pools" => true,
+            "use-auto-recovery" => true,
+            "jndi-params" => undefined,
+            "failover-on-initial-connection" => false,
+            "min-pool-size" => -1,
+            "retry-interval" => 2000L,
+            "block-on-non-durable-send" => false,
+            "cache-large-message-client" => false,
+            "user" => "alice",
+            "initial-connect-attempts" => 1
+        }
+    },
+    "connector" => {"myconnector" => {
+        "factory-class" => "org.hornetq.core.remoting.impl.netty.NettyConnectorFactory",
+        "socket-binding" => undefined,
+        "param" => {
+            "host" => {"value" => "192.168.1.2"},
+            "port" => {"value" => "5445"}
+        }
+    }},
+    "remote-connector" => {
+        "netty" => {"socket-binding" => "messaging"},
+        "netty-throughput" => {
+            "socket-binding" => "messaging-throughput",
+            "param" => {"batch-delay" => {"value" => "50"}}
+        }
+    },
+    "remote-acceptor" => {
+        "netty" => {"socket-binding" => "messaging"},
+        "netty-throughput" => {
+            "socket-binding" => "messaging-throughput",
+            "param" => {
+                "batch-delay" => {"value" => "50"},
+                "direct-deliver" => {"value" => "false"}
+            }
+        }
+    },
+    "cluster-connection" => {
+        "cc1" => {
+            "min-large-message-size" => 10245,
+            "cluster-connection-address" => "cc1-address",
+            "retry-interval-multiplier" => big decimal 3.0,
+            "reconnect-attempts" => -1,
+            "max-hops" => 7,
+            "use-duplicate-detection" => true,
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => 459,
+            "check-period" => 2345L,
+            "connection-ttl" => 1234L,
+            "forward-when-no-consumers" => true,
+            "call-timeout" => 3456L,
+            "static-connectors" => [
+                "in-vm",
+                "netty"
+            ],
+            "notification-attempts" => 2,
+            "retry-interval" => 987L,
+            "notification-interval" => 1000L,
+            "allow-direct-connections-only" => false,
+            "discovery-group-name" => undefined,
+            "max-retry-interval" => 3600L,
+            "connector-ref" => "netty"
+        },
+        "cc2" => {
+            "min-large-message-size" => 102400,
+            "cluster-connection-address" => "cc2-address",
+            "retry-interval-multiplier" => 1.0,
+            "reconnect-attempts" => -1,
+            "max-hops" => 1,
+            "use-duplicate-detection" => true,
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => 1048576,
+            "check-period" => 30000L,
+            "connection-ttl" => 60000L,
+            "forward-when-no-consumers" => false,
+            "call-timeout" => 30000L,
+            "static-connectors" => [
+                "in-vm",
+                "netty"
+            ],
+            "notification-attempts" => 2,
+            "retry-interval" => 500L,
+            "notification-interval" => 1000L,
+            "allow-direct-connections-only" => true,
+            "discovery-group-name" => undefined,
+            "max-retry-interval" => 2000L,
+            "connector-ref" => "netty"
+        },
+        "cc3" => {
+            "min-large-message-size" => 102400,
+            "cluster-connection-address" => "cc3-address",
+            "retry-interval-multiplier" => 1.0,
+            "reconnect-attempts" => -1,
+            "max-hops" => 1,
+            "use-duplicate-detection" => true,
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => 1048576,
+            "check-period" => 30000L,
+            "connection-ttl" => 60000L,
+            "forward-when-no-consumers" => false,
+            "call-timeout" => 30000L,
+            "static-connectors" => undefined,
+            "notification-attempts" => 2,
+            "retry-interval" => 500L,
+            "notification-interval" => 1000L,
+            "allow-direct-connections-only" => false,
+            "discovery-group-name" => "groupC",
+            "max-retry-interval" => 2000L,
+            "connector-ref" => "netty"
+        },
+        "cc4" => {
+            "min-large-message-size" => 102400,
+            "cluster-connection-address" => "cc4-address",
+            "retry-interval-multiplier" => 1.0,
+            "reconnect-attempts" => -1,
+            "max-hops" => 1,
+            "use-duplicate-detection" => true,
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => 1048576,
+            "check-period" => 30000L,
+            "connection-ttl" => 60000L,
+            "forward-when-no-consumers" => false,
+            "call-timeout" => 30000L,
+            "static-connectors" => [
+                "in-vm",
+                "netty"
+            ],
+            "notification-attempts" => 2,
+            "retry-interval" => 500L,
+            "notification-interval" => 1000L,
+            "allow-direct-connections-only" => false,
+            "discovery-group-name" => undefined,
+            "max-retry-interval" => 2000L,
+            "connector-ref" => "netty-throughput"
+        },
+        "cc5" => {
+            "min-large-message-size" => 102400,
+            "cluster-connection-address" => "cc3-address",
+            "retry-interval-multiplier" => 1.0,
+            "reconnect-attempts" => -1,
+            "max-hops" => 1,
+            "use-duplicate-detection" => true,
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => 1048576,
+            "check-period" => 30000L,
+            "connection-ttl" => 60000L,
+            "forward-when-no-consumers" => false,
+            "call-timeout" => 30000L,
+            "static-connectors" => undefined,
+            "notification-attempts" => 2,
+            "retry-interval" => 500L,
+            "notification-interval" => 1000L,
+            "allow-direct-connections-only" => false,
+            "discovery-group-name" => undefined,
+            "max-retry-interval" => 2000L,
+            "connector-ref" => "netty"
+        }
+    },
+    "connection-factory" => {
+        "InVmConnectionFactory" => {
+            "min-large-message-size" => 102400,
+            "producer-max-rate" => -1,
+            "thread-pool-max-size" => 30,
+            "discovery-initial-wait-timeout" => undefined,
+            "compress-large-messages" => false,
+            "retry-interval-multiplier" => 1.0,
+            "dups-ok-batch-size" => 1048576,
+            "pre-acknowledge" => false,
+            "consumer-window-size" => 1048576,
+            "reconnect-attempts" => 0,
+            "block-on-acknowledge" => false,
+            "block-on-durable-send" => true,
+            "scheduled-thread-pool-max-size" => 5,
+            "client-failure-check-period" => 30000L,
+            "client-id" => undefined,
+            "entries" => ["java:/ConnectionFactory"],
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => -1,
+            "factory-type" => "GENERIC",
+            "connection-ttl" => 60000L,
+            "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+            "use-global-pools" => true,
+            "failover-on-server-shutdown" => undefined,
+            "group-id" => undefined,
+            "consumer-max-rate" => -1,
+            "transaction-batch-size" => 1048576,
+            "call-timeout" => 30000L,
+            "failover-on-initial-connection" => false,
+            "ha" => false,
+            "retry-interval" => 2000L,
+            "discovery-group-name" => undefined,
+            "producer-window-size" => 65536,
+            "block-on-non-durable-send" => false,
+            "auto-group" => false,
+            "connector" => {"in-vm" => undefined},
+            "cache-large-message-client" => false,
+            "max-retry-interval" => 2000L
+        },
+        "RemoteConnectionFactory" => {
+            "min-large-message-size" => 102400,
+            "producer-max-rate" => -1,
+            "thread-pool-max-size" => 30,
+            "discovery-initial-wait-timeout" => undefined,
+            "compress-large-messages" => false,
+            "retry-interval-multiplier" => 1.0,
+            "dups-ok-batch-size" => 1048576,
+            "pre-acknowledge" => false,
+            "consumer-window-size" => 1048576,
+            "reconnect-attempts" => 0,
+            "block-on-acknowledge" => false,
+            "block-on-durable-send" => true,
+            "scheduled-thread-pool-max-size" => 5,
+            "client-failure-check-period" => 30000L,
+            "client-id" => "testClient",
+            "entries" => ["RemoteConnectionFactory"],
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => -1,
+            "factory-type" => "XA_QUEUE",
+            "connection-ttl" => 60000L,
+            "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+            "use-global-pools" => true,
+            "failover-on-server-shutdown" => undefined,
+            "group-id" => undefined,
+            "consumer-max-rate" => -1,
+            "transaction-batch-size" => 1048576,
+            "call-timeout" => 30000L,
+            "failover-on-initial-connection" => false,
+            "ha" => false,
+            "retry-interval" => 2000L,
+            "discovery-group-name" => undefined,
+            "producer-window-size" => 65536,
+            "block-on-non-durable-send" => false,
+            "auto-group" => false,
+            "connector" => {"netty" => undefined},
+            "cache-large-message-client" => false,
+            "max-retry-interval" => 2000L
+        },
+        "otherConnectionFactory" => {
+            "min-large-message-size" => 2048,
+            "producer-max-rate" => 1024,
+            "thread-pool-max-size" => 48,
+            "discovery-initial-wait-timeout" => undefined,
+            "compress-large-messages" => false,
+            "retry-interval-multiplier" => big decimal 2.5,
+            "dups-ok-batch-size" => 256,
+            "pre-acknowledge" => true,
+            "consumer-window-size" => 456,
+            "reconnect-attempts" => 2,
+            "block-on-acknowledge" => false,
+            "block-on-durable-send" => false,
+            "scheduled-thread-pool-max-size" => 24,
+            "client-failure-check-period" => 12345L,
+            "client-id" => "myClientID",
+            "entries" => ["otherConnectionFactory"],
+            "call-failover-timeout" => -1L,
+            "confirmation-window-size" => -1,
+            "factory-type" => "GENERIC",
+            "connection-ttl" => 56789L,
+            "connection-load-balancing-policy-class-name" => "not.a.real.Class",
+            "use-global-pools" => true,
+            "failover-on-server-shutdown" => true,
+            "group-id" => "myGroup",
+            "consumer-max-rate" => 789,
+            "transaction-batch-size" => 512,
+            "call-timeout" => 123L,
+            "failover-on-initial-connection" => true,
+            "ha" => true,
+            "retry-interval" => 500L,
+            "discovery-group-name" => "groupC",
+            "producer-window-size" => -1,
+            "block-on-non-durable-send" => false,
+            "auto-group" => true,
+            "connector" => undefined,
+            "cache-large-message-client" => false,
+            "max-retry-interval" => 10000L
+        }
+    },
+    "broadcast-group" => {
+        "groupA" => {
+            "jgroups-stack" => undefined,
+            "jgroups-channel" => undefined,
+            "group-address" => "224.0.1.105",
+            "group-port" => 23456,
+            "socket-binding" => undefined,
+            "broadcast-period" => 2500L,
+            "connectors" => [
+                "netty",
+                "netty-throughput"
+            ],
+            "local-bind-address" => "localhost",
+            "local-bind-port" => 12345
+        },
+        "groupB" => {
+            "jgroups-stack" => undefined,
+            "jgroups-channel" => undefined,
+            "group-address" => "224.0.1.105",
+            "group-port" => 34567,
+            "socket-binding" => undefined,
+            "broadcast-period" => 2000L,
+            "connectors" => undefined,
+            "local-bind-address" => undefined,
+            "local-bind-port" => -1
+        },
+        "groupS" => {
+            "jgroups-stack" => undefined,
+            "jgroups-channel" => undefined,
+            "group-address" => undefined,
+            "group-port" => undefined,
+            "socket-binding" => "group-s-binding",
+            "broadcast-period" => 2000L,
+            "connectors" => undefined,
+            "local-bind-address" => undefined,
+            "local-bind-port" => -1
+        }
+    },
+    "path" => {
+        "journal-directory" => {
+            "path" => "test",
+            "relative-to" => "test"
+        },
+        "paging-directory" => {
+            "path" => "test",
+            "relative-to" => "test"
+        },
+        "large-messages-directory" => {
+            "path" => "test",
+            "relative-to" => "test"
+        },
+        "bindings-directory" => {
+            "path" => "test",
+            "relative-to" => "test"
+        }
+    },
+    "bridge" => {
+        "bridge1" => {
+            "min-large-message-size" => 10240,
+            "retry-interval-multiplier" => big decimal 2,
+            "reconnect-attempts" => 3,
+            "password" => expression "${password:secret}",
+            "use-duplicate-detection" => true,
+            "confirmation-window-size" => 350,
+            "check-period" => 666L,
+            "connection-ttl" => 36000L,
+            "forwarding-address" => "forwardingaddress1",
+            "transformer-class-name" => "foo.bar",
+            "ha" => true,
+            "static-connectors" => [
+                "in-vm",
+                "netty"
+            ],
+            "retry-interval" => 750L,
+            "discovery-group-name" => undefined,
+            "queue-name" => "coreQueueA",
+            "max-retry-interval" => 3000L,
+            "user" => expression "${user:Brian}",
+            "filter" => "afilter"
+        },
+        "bridge2" => {
+            "min-large-message-size" => 102400,
+            "retry-interval-multiplier" => 1.0,
+            "reconnect-attempts" => -1,
+            "password" => "CHANGE ME!!",
+            "use-duplicate-detection" => true,
+            "confirmation-window-size" => 1048576,
+            "check-period" => 30000L,
+            "connection-ttl" => 60000L,
+            "forwarding-address" => undefined,
+            "transformer-class-name" => undefined,
+            "ha" => false,
+            "static-connectors" => undefined,
+            "retry-interval" => 2000L,
+            "discovery-group-name" => "groupC",
+            "queue-name" => "coreQueueB",
+            "max-retry-interval" => 2000L,
+            "user" => "HORNETQ.CLUSTER.ADMIN.USER",
+            "filter" => undefined
+        }
+    },
+    "discovery-group" => {
+        "groupC" => {
+            "refresh-timeout" => 3500L,
+            "jgroups-stack" => undefined,
+            "jgroups-channel" => undefined,
+            "group-address" => "224.0.1.105",
+            "group-port" => 45678,
+            "local-bind-address" => "localhost",
+            "socket-binding" => undefined,
+            "initial-wait-timeout" => 7500L
+        },
+        "groupD" => {
+            "refresh-timeout" => 10000L,
+            "jgroups-stack" => undefined,
+            "jgroups-channel" => undefined,
+            "group-address" => "224.0.1.105",
+            "group-port" => 56789,
+            "local-bind-address" => undefined,
+            "socket-binding" => undefined,
+            "initial-wait-timeout" => 10000L
+        },
+        "groupT" => {
+            "refresh-timeout" => 10000L,
+            "jgroups-stack" => undefined,
+            "jgroups-channel" => undefined,
+            "group-address" => undefined,
+            "group-port" => undefined,
+            "local-bind-address" => undefined,
+            "socket-binding" => "group-t-binding",
+            "initial-wait-timeout" => 10000L
+        }
+    },
+    "connector-service" => {
+        "a" => {"factory-class" => "foo.bar"},
+        "b" => {
+            "factory-class" => "bar.foo",
+            "param" => {
+                "foo" => {"value" => "bar"},
+                "bar" => {"value" => "2"}
+            }
+        }
+    }
+} expected:<...ord, cluster-user, c[lustered, c]onnection-factory, c...> but was:<...ord, cluster-user, c[]onnection-factory, c...>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.jboss.as.model.test.ModelTestUtils.compare(ModelTestUtils.java:337)
+	at org.jboss.as.model.test.ModelTestUtils.compare(ModelTestUtils.java:350)
+	at org.jboss.as.model.test.ModelTestUtils.compare(ModelTestUtils.java:350)
+	at org.jboss.as.model.test.ModelTestUtils.compare(ModelTestUtils.java:206)
+	at org.jboss.as.subsystem.test.SubsystemTestDelegate.checkSubsystemModelTransformation(SubsystemTestDelegate.java:456)
+	at org.jboss.as.subsystem.test.AbstractSubsystemTest.checkSubsystemModelTransformation(AbstractSubsystemTest.java:277)
+	at org.jboss.as.subsystem.test.AbstractSubsystemTest.checkSubsystemModelTransformation(AbstractSubsystemTest.java:264)
+	at org.jboss.as.messaging.test.MessagingSubsystem20TestCase.testTransformers(MessagingSubsystem20TestCase.java:514)
+	at org.jboss.as.messaging.test.MessagingSubsystem20TestCase.testTransformersAS720(MessagingSubsystem20TestCase.java:133)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:234)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:133)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:188)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:166)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:86)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:101)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)

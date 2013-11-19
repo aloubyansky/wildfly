@@ -1,0 +1,2324 @@
+Nov 19, 2013 2:23:57 PM org.jboss.as.messaging.MessagingSubsystemParser processHornetQServer
+WARN: JBAS011608: Element CLUSTERED is deprecated and will not be taken into account
+Nov 19, 2013 2:23:57 PM org.jboss.as.messaging.Messaging12SubsystemParser processBridge
+WARN: JBAS011608: Element FAILOVER_ON_SERVER_SHUTDOWN is deprecated and will not be taken into account
+Using cached maven url for org.jboss.as:jboss-as-messaging:7.2.0.Final from /home/avoka/git/wildfly/target/model-test-classpath-cache/maven-org.jboss.as-x-jboss-as-messaging-x-7.2.0.Final
+Using cached maven url for org.hornetq:hornetq-server:2.3.0.CR1 from /home/avoka/git/wildfly/target/model-test-classpath-cache/maven-org.hornetq-x-hornetq-server-x-2.3.0.CR1
+Using cached maven url for org.hornetq:hornetq-jms-server:2.3.0.CR1 from /home/avoka/git/wildfly/target/model-test-classpath-cache/maven-org.hornetq-x-hornetq-jms-server-x-2.3.0.CR1
+Using cached maven url for org.hornetq:hornetq-core-client:2.3.0.CR1 from /home/avoka/git/wildfly/target/model-test-classpath-cache/maven-org.hornetq-x-hornetq-core-client-x-2.3.0.CR1
+Using cached maven url for org.hornetq:hornetq-jms-client:2.3.0.CR1 from /home/avoka/git/wildfly/target/model-test-classpath-cache/maven-org.hornetq-x-hornetq-jms-client-x-2.3.0.CR1
+Using cached maven url for org.hornetq:hornetq-ra:2.3.0.CR1 from /home/avoka/git/wildfly/target/model-test-classpath-cache/maven-org.hornetq-x-hornetq-ra-x-2.3.0.CR1
+Nov 19, 2013 2:23:58 PM org.jboss.msc.service.ServiceContainerImpl <clinit>
+INFO: JBoss MSC version 1.2.0.CR1
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute clustered is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute remoting-interceptors is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:58 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute remoting-interceptors is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AbstractOperationContext executeStep
+ERROR: JBAS014613: Operation ("add") failed - address: ([
+    ("subsystem" => "messaging"),
+    ("hornetq-server" => "default")
+]) - failure description: "JBAS014802: Cannot resolve expression 'expression \"${messaging.cluster.user.password}\"' -- java.lang.IllegalStateException: Failed to resolve expression: ${messaging.cluster.user.password}"
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AbstractOperationContext executeStep
+ERROR: JBAS014613: Operation ("add") failed - address: ([
+    ("subsystem" => "messaging"),
+    ("hornetq-server" => "default")
+]) - failure description: "JBAS014802: Cannot resolve expression 'expression \"${messaging.cluster.user.password}\"' -- java.lang.IllegalStateException: Failed to resolve expression: ${messaging.cluster.user.password}"
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.AbstractOperationContext executeStep
+ERROR: JBAS014613: Operation ("add") failed - address: ([
+    ("subsystem" => "messaging"),
+    ("hornetq-server" => "empty")
+]) - failure description: {"JBAS014771: Services with missing/unavailable dependencies" => [
+    "jboss.messaging.empty is missing [jboss.security.security-domain.other]",
+    "jboss.messaging.empty.jms.manager is missing [jboss.as.server-executor]"
+]}
+Nov 19, 2013 2:23:59 PM org.jboss.as.controller.ContainerStateMonitor release
+INFO: JBAS014774: Service status report
+JBAS014775:    New missing/unsatisfied dependencies:
+      service jboss.as.server-executor (missing) dependents: [service jboss.messaging.empty.jms.manager] 
+      service jboss.binding.group-s-binding (missing) dependents: [service jboss.messaging.default.bindings.broadcast.groupS] 
+      service jboss.binding.group-t-binding (missing) dependents: [service jboss.messaging.default.bindings.discovery.groupT] 
+      service jboss.security.security-domain.other (missing) dependents: [service jboss.messaging.empty] 
+
+ModelTestUtils.compare: [hornetq-server, jms-bridge]
+                        [hornetq-server, jms-bridge]
+ModelTestUtils.compare: [default, empty]
+                        [default, empty]
+ModelTestUtils.compare: [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+                        [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+ModelTestUtils.compare: [myacceptor]
+                        [myacceptor]
+ModelTestUtils.compare: [factory-class, param, socket-binding]
+                        [factory-class, param, socket-binding]
+ModelTestUtils.compare: [batch-delay]
+                        [batch-delay]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [#]
+                        [#]
+ModelTestUtils.compare: [address-full-policy, dead-letter-address, expiry-address, expiry-delay, last-value-queue, max-delivery-attempts, max-size-bytes, message-counter-history-day-limit, page-max-cache-size, page-size-bytes, redelivery-delay, redistribution-delay, send-to-dla-on-no-route]
+                        [address-full-policy, dead-letter-address, expiry-address, expiry-delay, last-value-queue, max-delivery-attempts, max-size-bytes, message-counter-history-day-limit, page-max-cache-size, page-size-bytes, redelivery-delay, redistribution-delay, send-to-dla-on-no-route]
+ModelTestUtils.compare: [bridge1, bridge2]
+                        [bridge1, bridge2]
+ModelTestUtils.compare: [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+                        [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+ModelTestUtils.compare: [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+                        [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+ModelTestUtils.compare: [groupA, groupB, groupS]
+                        [groupA, groupB, groupS]
+ModelTestUtils.compare: [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+                        [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+ModelTestUtils.compare: [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+                        [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+ModelTestUtils.compare: [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+                        [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+ModelTestUtils.compare: [cc1, cc2, cc3, cc4, cc5]
+                        [cc1, cc2, cc3, cc4, cc5]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [InVmConnectionFactory, RemoteConnectionFactory, otherConnectionFactory]
+                        [InVmConnectionFactory, RemoteConnectionFactory, otherConnectionFactory]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+ModelTestUtils.compare: [netty]
+                        [netty]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+ModelTestUtils.compare: [myconnector]
+                        [myconnector]
+ModelTestUtils.compare: [factory-class, param, socket-binding]
+                        [factory-class, param, socket-binding]
+ModelTestUtils.compare: [host, port]
+                        [host, port]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [a, b]
+                        [a, b]
+ModelTestUtils.compare: [factory-class, param]
+                        [factory-class, param]
+ModelTestUtils.compare: [factory-class, param]
+                        [factory-class, param]
+ModelTestUtils.compare: [bar, foo]
+                        [bar, foo]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [groupC, groupD, groupT]
+                        [groupC, groupD, groupT]
+ModelTestUtils.compare: [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+                        [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+ModelTestUtils.compare: [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+                        [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+ModelTestUtils.compare: [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+                        [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+ModelTestUtils.compare: [testDivert1, testDivert2]
+                        [testDivert1, testDivert2]
+ModelTestUtils.compare: [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+                        [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+ModelTestUtils.compare: [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+                        [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+ModelTestUtils.compare: [grouping-handler]
+                        [grouping-handler]
+ModelTestUtils.compare: [grouping-handler-address, timeout, type]
+                        [grouping-handler-address, timeout, type]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [param, server-id]
+                        [param, server-id]
+ModelTestUtils.compare: [direct-deliver]
+                        [direct-deliver]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [param, server-id]
+                        [param, server-id]
+ModelTestUtils.compare: [testQueue]
+                        [testQueue]
+ModelTestUtils.compare: [durable, entries, selector]
+                        [durable, entries, selector]
+ModelTestUtils.compare: [testTopic]
+                        [testTopic]
+ModelTestUtils.compare: [entries]
+                        [entries]
+ModelTestUtils.compare: [bindings-directory, journal-directory, large-messages-directory, paging-directory]
+                        [bindings-directory, journal-directory, large-messages-directory, paging-directory]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [hornetq-ra, hornetq-ra-local, hornetq-ra-none]
+                        [hornetq-ra, hornetq-ra-local, hornetq-ra-none]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [coreQueueA, coreQueueB]
+                        [coreQueueA, coreQueueB]
+ModelTestUtils.compare: [durable, filter, queue-address]
+                        [durable, filter, queue-address]
+ModelTestUtils.compare: [durable, filter, queue-address]
+                        [durable, filter, queue-address]
+ModelTestUtils.compare: [netty, netty-throughput]
+                        [netty, netty-throughput]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [batch-delay, direct-deliver]
+                        [batch-delay, direct-deliver]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [netty, netty-throughput]
+                        [netty, netty-throughput]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [batch-delay]
+                        [batch-delay]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [#]
+                        [#]
+ModelTestUtils.compare: [role]
+                        [role]
+ModelTestUtils.compare: [adming, guest]
+                        [adming, guest]
+ModelTestUtils.compare: [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+                        [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+ModelTestUtils.compare: [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+                        [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+ModelTestUtils.compare: [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+                        [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+Using cached maven url for org.wildfly:wildfly-subsystem-test-framework:8.0.0.Beta2-SNAPSHOT from /home/avoka/git/wildfly/target/model-test-classpath-cache/maven-org.wildfly-x-wildfly-subsystem-test-framework-x-8.0.0.Beta2-SNAPSHOT
+Using cached maven url for org.wildfly:wildfly-model-test:8.0.0.Beta2-SNAPSHOT from /home/avoka/git/wildfly/target/model-test-classpath-cache/maven-org.wildfly-x-wildfly-model-test-x-8.0.0.Beta2-SNAPSHOT
+Using cached recursive maven urls for org.jboss.as:jboss-as-server:7.2.0.Final from /home/avoka/git/wildfly/target/model-test-classpath-cache/maven-recursive-org.jboss.as-x-jboss-as-server-x-7.2.0.Final
+Using cached maven url for org.wildfly:wildfly-subsystem-test-controller-7.2.0:8.0.0.Beta2-SNAPSHOT from /home/avoka/git/wildfly/target/model-test-classpath-cache/maven-org.wildfly-x-wildfly-subsystem-test-controller-7.2.0-x-8.0.0.Beta2-SNAPSHOT
+SubsystemTestDelegate.checkSubsystemModelTransformation: legacy
+{
+    "jms-bridge" => undefined,
+    "hornetq-server" => {
+        "default" => {
+            "allow-failback" => false,
+            "async-connection-execution-enabled" => false,
+            "backup" => false,
+            "backup-group-name" => undefined,
+            "check-for-live-server" => false,
+            "cluster-password" => expression "${messaging.cluster.user.password}",
+            "cluster-user" => expression "${messaging.cluster.user.name}",
+            "clustered" => false,
+            "connection-ttl-override" => 5432L,
+            "create-bindings-dir" => false,
+            "create-journal-dir" => true,
+            "failback-delay" => 9876L,
+            "failover-on-shutdown" => true,
+            "id-cache-size" => 102030,
+            "jmx-domain" => "my.jmx.domain",
+            "jmx-management-enabled" => false,
+            "journal-buffer-size" => 2468L,
+            "journal-buffer-timeout" => 1357L,
+            "journal-compact-min-files" => 2,
+            "journal-compact-percentage" => 83,
+            "journal-file-size" => 102400L,
+            "journal-max-io" => 50,
+            "journal-min-files" => 2,
+            "journal-sync-non-transactional" => true,
+            "journal-sync-transactional" => false,
+            "journal-type" => "NIO",
+            "log-journal-write-rate" => true,
+            "management-address" => "my.management.address",
+            "management-notification-address" => "my.management.notif.address",
+            "memory-measure-interval" => 2048L,
+            "memory-warning-threshold" => 1024,
+            "message-counter-enabled" => true,
+            "message-counter-max-day-history" => 23,
+            "message-counter-sample-period" => 7654L,
+            "message-expiry-scan-period" => 7654L,
+            "message-expiry-thread-priority" => 7,
+            "page-max-concurrent-io" => 10,
+            "perf-blast-pages" => 70,
+            "persist-delivery-count-before-delivery" => true,
+            "persist-id-cache" => false,
+            "persistence-enabled" => false,
+            "remoting-incoming-interceptors" => undefined,
+            "remoting-interceptors" => [
+                "foo.bar",
+                "bar.foo"
+            ],
+            "remoting-outgoing-interceptors" => undefined,
+            "replication-clustername" => undefined,
+            "run-sync-speed-test" => false,
+            "runtime-queue" => undefined,
+            "scheduled-thread-pool-max-size" => expression "${messaging.scheduled.thread.pool.max.size:6}",
+            "security-domain" => "someDomain",
+            "security-enabled" => false,
+            "security-invalidation-interval" => 1234L,
+            "server-dump-interval" => 8642L,
+            "shared-store" => true,
+            "thread-pool-max-size" => expression "${messaging.thread.pool.max.size:5}",
+            "transaction-timeout" => 4321L,
+            "transaction-timeout-scan-period" => 5432L,
+            "wild-card-routing-enabled" => false,
+            "acceptor" => {"myacceptor" => {
+                "factory-class" => "org.hornetq.core.remoting.impl.netty.NettyAcceptorFactory",
+                "socket-binding" => undefined,
+                "param" => {"batch-delay" => {"value" => "50"}}
+            }},
+            "address-setting" => {"#" => {
+                "address-full-policy" => "BLOCK",
+                "dead-letter-address" => "jms.queue.DLQ",
+                "expiry-address" => "jms.queue.ExpiryQueue",
+                "last-value-queue" => false,
+                "max-delivery-attempts" => 5,
+                "max-size-bytes" => 10485760L,
+                "message-counter-history-day-limit" => 10,
+                "page-max-cache-size" => 7,
+                "page-size-bytes" => 10485760L,
+                "redelivery-delay" => 0L,
+                "redistribution-delay" => 0L,
+                "send-to-dla-on-no-route" => false
+            }},
+            "bridge" => {
+                "bridge1" => {
+                    "check-period" => 666L,
+                    "confirmation-window-size" => 350,
+                    "connection-ttl" => 36000L,
+                    "discovery-group-name" => undefined,
+                    "filter" => "afilter",
+                    "forwarding-address" => "forwardingaddress1",
+                    "ha" => true,
+                    "max-retry-interval" => 3000L,
+                    "min-large-message-size" => 10240,
+                    "password" => expression "${password:secret}",
+                    "queue-name" => "coreQueueA",
+                    "reconnect-attempts" => 3,
+                    "retry-interval" => 750L,
+                    "retry-interval-multiplier" => big decimal 2,
+                    "static-connectors" => [
+                        "in-vm",
+                        "netty"
+                    ],
+                    "transformer-class-name" => "foo.bar",
+                    "use-duplicate-detection" => true,
+                    "user" => expression "${user:Brian}"
+                },
+                "bridge2" => {
+                    "check-period" => 30000L,
+                    "confirmation-window-size" => 1048576,
+                    "connection-ttl" => 60000L,
+                    "discovery-group-name" => "groupC",
+                    "filter" => undefined,
+                    "forwarding-address" => undefined,
+                    "ha" => false,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "password" => "CHANGE ME!!",
+                    "queue-name" => "coreQueueB",
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 2000L,
+                    "retry-interval-multiplier" => 1.0,
+                    "static-connectors" => undefined,
+                    "transformer-class-name" => undefined,
+                    "use-duplicate-detection" => true,
+                    "user" => "HORNETQ.CLUSTER.ADMIN.USER"
+                }
+            },
+            "broadcast-group" => {
+                "groupA" => {
+                    "broadcast-period" => 2500L,
+                    "connectors" => [
+                        "netty",
+                        "netty-throughput"
+                    ],
+                    "group-address" => "224.0.1.105",
+                    "group-port" => 23456,
+                    "local-bind-address" => "localhost",
+                    "local-bind-port" => 12345
+                },
+                "groupB" => {
+                    "broadcast-period" => 2000L,
+                    "group-address" => "224.0.1.105",
+                    "group-port" => 34567,
+                    "local-bind-port" => -1
+                },
+                "groupS" => {
+                    "broadcast-period" => 2000L,
+                    "local-bind-port" => -1,
+                    "socket-binding" => "group-s-binding"
+                }
+            },
+            "cluster-connection" => {
+                "cc1" => {
+                    "allow-direct-connections-only" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 3456L,
+                    "check-period" => 2345L,
+                    "cluster-connection-address" => "cc1-address",
+                    "confirmation-window-size" => 459,
+                    "connection-ttl" => 1234L,
+                    "connector-ref" => "netty",
+                    "discovery-group-name" => undefined,
+                    "forward-when-no-consumers" => true,
+                    "max-hops" => 7,
+                    "max-retry-interval" => 3600L,
+                    "min-large-message-size" => 10245,
+                    "notification-attempts" => 2,
+                    "notification-interval" => 1000L,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 987L,
+                    "retry-interval-multiplier" => big decimal 3.0,
+                    "static-connectors" => [
+                        "in-vm",
+                        "netty"
+                    ],
+                    "use-duplicate-detection" => true
+                },
+                "cc2" => {
+                    "allow-direct-connections-only" => true,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "check-period" => 30000L,
+                    "cluster-connection-address" => "cc2-address",
+                    "confirmation-window-size" => 1048576,
+                    "connection-ttl" => 60000L,
+                    "connector-ref" => "netty",
+                    "discovery-group-name" => undefined,
+                    "forward-when-no-consumers" => false,
+                    "max-hops" => 1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "notification-attempts" => 2,
+                    "notification-interval" => 1000L,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => 1.0,
+                    "static-connectors" => [
+                        "in-vm",
+                        "netty"
+                    ],
+                    "use-duplicate-detection" => true
+                },
+                "cc3" => {
+                    "allow-direct-connections-only" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "check-period" => 30000L,
+                    "cluster-connection-address" => "cc3-address",
+                    "confirmation-window-size" => 1048576,
+                    "connection-ttl" => 60000L,
+                    "connector-ref" => "netty",
+                    "discovery-group-name" => "groupC",
+                    "forward-when-no-consumers" => false,
+                    "max-hops" => 1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "notification-attempts" => 2,
+                    "notification-interval" => 1000L,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => 1.0,
+                    "static-connectors" => undefined,
+                    "use-duplicate-detection" => true
+                },
+                "cc4" => {
+                    "allow-direct-connections-only" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "check-period" => 30000L,
+                    "cluster-connection-address" => "cc4-address",
+                    "confirmation-window-size" => 1048576,
+                    "connection-ttl" => 60000L,
+                    "connector-ref" => "netty-throughput",
+                    "discovery-group-name" => undefined,
+                    "forward-when-no-consumers" => false,
+                    "max-hops" => 1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "notification-attempts" => 2,
+                    "notification-interval" => 1000L,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => 1.0,
+                    "static-connectors" => [
+                        "in-vm",
+                        "netty"
+                    ],
+                    "use-duplicate-detection" => true
+                },
+                "cc5" => {
+                    "allow-direct-connections-only" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "check-period" => 30000L,
+                    "cluster-connection-address" => "cc3-address",
+                    "confirmation-window-size" => 1048576,
+                    "connection-ttl" => 60000L,
+                    "connector-ref" => "netty",
+                    "discovery-group-name" => undefined,
+                    "forward-when-no-consumers" => false,
+                    "max-hops" => 1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "notification-attempts" => 2,
+                    "notification-interval" => 1000L,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => 1.0,
+                    "static-connectors" => undefined,
+                    "use-duplicate-detection" => true
+                }
+            },
+            "connection-factory" => {
+                "InVmConnectionFactory" => {
+                    "auto-group" => false,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => true,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "client-failure-check-period" => 30000L,
+                    "client-id" => undefined,
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+                    "connection-ttl" => 60000L,
+                    "connector" => {"in-vm" => undefined},
+                    "consumer-max-rate" => -1,
+                    "consumer-window-size" => 1048576,
+                    "discovery-group-name" => undefined,
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 1048576,
+                    "entries" => ["java:/ConnectionFactory"],
+                    "factory-type" => "GENERIC",
+                    "failover-on-initial-connection" => false,
+                    "failover-on-server-shutdown" => undefined,
+                    "group-id" => undefined,
+                    "ha" => false,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "pre-acknowledge" => false,
+                    "producer-max-rate" => -1,
+                    "producer-window-size" => 65536,
+                    "reconnect-attempts" => 0,
+                    "retry-interval" => 2000L,
+                    "retry-interval-multiplier" => 1.0,
+                    "scheduled-thread-pool-max-size" => 5,
+                    "thread-pool-max-size" => 30,
+                    "transaction-batch-size" => 1048576,
+                    "use-global-pools" => true
+                },
+                "RemoteConnectionFactory" => {
+                    "auto-group" => false,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => true,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "client-failure-check-period" => 30000L,
+                    "client-id" => "testClient",
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+                    "connection-ttl" => 60000L,
+                    "connector" => {"netty" => undefined},
+                    "consumer-max-rate" => -1,
+                    "consumer-window-size" => 1048576,
+                    "discovery-group-name" => undefined,
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 1048576,
+                    "entries" => ["RemoteConnectionFactory"],
+                    "factory-type" => "XA_QUEUE",
+                    "failover-on-initial-connection" => false,
+                    "failover-on-server-shutdown" => undefined,
+                    "group-id" => undefined,
+                    "ha" => false,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "pre-acknowledge" => false,
+                    "producer-max-rate" => -1,
+                    "producer-window-size" => 65536,
+                    "reconnect-attempts" => 0,
+                    "retry-interval" => 2000L,
+                    "retry-interval-multiplier" => 1.0,
+                    "scheduled-thread-pool-max-size" => 5,
+                    "thread-pool-max-size" => 30,
+                    "transaction-batch-size" => 1048576,
+                    "use-global-pools" => true
+                },
+                "otherConnectionFactory" => {
+                    "auto-group" => true,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => false,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 123L,
+                    "client-failure-check-period" => 12345L,
+                    "client-id" => "myClientID",
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "not.a.real.Class",
+                    "connection-ttl" => 56789L,
+                    "connector" => undefined,
+                    "consumer-max-rate" => 789,
+                    "consumer-window-size" => 456,
+                    "discovery-group-name" => "groupC",
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 256,
+                    "entries" => ["otherConnectionFactory"],
+                    "factory-type" => "GENERIC",
+                    "failover-on-initial-connection" => true,
+                    "failover-on-server-shutdown" => true,
+                    "group-id" => "myGroup",
+                    "ha" => true,
+                    "max-retry-interval" => 10000L,
+                    "min-large-message-size" => 2048,
+                    "pre-acknowledge" => true,
+                    "producer-max-rate" => 1024,
+                    "producer-window-size" => -1,
+                    "reconnect-attempts" => 2,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => big decimal 2.5,
+                    "scheduled-thread-pool-max-size" => 24,
+                    "thread-pool-max-size" => 48,
+                    "transaction-batch-size" => 512,
+                    "use-global-pools" => true
+                }
+            },
+            "connector" => {"myconnector" => {
+                "factory-class" => "org.hornetq.core.remoting.impl.netty.NettyConnectorFactory",
+                "socket-binding" => undefined,
+                "param" => {
+                    "host" => {"value" => "192.168.1.2"},
+                    "port" => {"value" => "5445"}
+                }
+            }},
+            "connector-service" => {
+                "a" => {
+                    "factory-class" => "foo.bar",
+                    "param" => undefined
+                },
+                "b" => {
+                    "factory-class" => "bar.foo",
+                    "param" => {
+                        "foo" => {"value" => "bar"},
+                        "bar" => {"value" => "2"}
+                    }
+                }
+            },
+            "discovery-group" => {
+                "groupC" => {
+                    "group-address" => "224.0.1.105",
+                    "group-port" => 45678,
+                    "initial-wait-timeout" => 7500L,
+                    "local-bind-address" => "localhost",
+                    "refresh-timeout" => 3500L
+                },
+                "groupD" => {
+                    "group-address" => "224.0.1.105",
+                    "group-port" => 56789,
+                    "initial-wait-timeout" => 10000L,
+                    "refresh-timeout" => 10000L
+                },
+                "groupT" => {
+                    "initial-wait-timeout" => 10000L,
+                    "refresh-timeout" => 10000L,
+                    "socket-binding" => "group-t-binding"
+                }
+            },
+            "divert" => {
+                "testDivert1" => {
+                    "divert-address" => "address1",
+                    "exclusive" => true,
+                    "filter" => "afilter",
+                    "forwarding-address" => "forwardingaddress1",
+                    "routing-name" => "routing",
+                    "transformer-class-name" => "org.jboss.test.Transformer"
+                },
+                "testDivert2" => {
+                    "divert-address" => "address2",
+                    "exclusive" => false,
+                    "filter" => undefined,
+                    "forwarding-address" => "forwardingaddress2",
+                    "routing-name" => undefined,
+                    "transformer-class-name" => undefined
+                }
+            },
+            "grouping-handler" => {"grouping-handler" => {
+                "grouping-handler-address" => "handler-address",
+                "timeout" => 5000,
+                "type" => "LOCAL"
+            }},
+            "in-vm-acceptor" => {"in-vm" => {
+                "server-id" => 0,
+                "param" => {"direct-deliver" => {"value" => "true"}}
+            }},
+            "in-vm-connector" => {"in-vm" => {
+                "param" => undefined,
+                "server-id" => 0
+            }},
+            "jms-queue" => {"testQueue" => {
+                "durable" => true,
+                "entries" => ["queue/test"],
+                "selector" => "color='red'"
+            }},
+            "jms-topic" => {"testTopic" => {"entries" => ["topic/test"]}},
+            "path" => {
+                "paging-directory" => {
+                    "path" => "test",
+                    "relative-to" => "test"
+                },
+                "bindings-directory" => {
+                    "path" => "test",
+                    "relative-to" => "test"
+                },
+                "journal-directory" => {
+                    "path" => "test",
+                    "relative-to" => "test"
+                },
+                "large-messages-directory" => {
+                    "path" => "test",
+                    "relative-to" => "test"
+                }
+            },
+            "pooled-connection-factory" => {
+                "hornetq-ra" => {
+                    "auto-group" => true,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => false,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 123L,
+                    "client-failure-check-period" => 12345L,
+                    "client-id" => "myClientID",
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "not.a.real.Class",
+                    "connection-ttl" => 56789L,
+                    "connector" => {"in-vm" => undefined},
+                    "consumer-max-rate" => 789,
+                    "consumer-window-size" => 456,
+                    "discovery-group-name" => undefined,
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 256,
+                    "entries" => ["java:/JmsXA"],
+                    "failover-on-initial-connection" => true,
+                    "failover-on-server-shutdown" => true,
+                    "group-id" => "myGroup",
+                    "ha" => true,
+                    "initial-connect-attempts" => 1,
+                    "initial-message-packet-size" => 1500,
+                    "jndi-params" => "whatever",
+                    "max-pool-size" => 242,
+                    "max-retry-interval" => 10000L,
+                    "min-large-message-size" => 2048,
+                    "min-pool-size" => 42,
+                    "password" => "alicepassword",
+                    "pre-acknowledge" => true,
+                    "producer-max-rate" => 1024,
+                    "producer-window-size" => -1,
+                    "reconnect-attempts" => 2,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => big decimal 2.5,
+                    "scheduled-thread-pool-max-size" => 24,
+                    "setup-attempts" => 123,
+                    "setup-interval" => 456L,
+                    "thread-pool-max-size" => 48,
+                    "transaction" => "xa",
+                    "transaction-batch-size" => 512,
+                    "use-auto-recovery" => true,
+                    "use-global-pools" => true,
+                    "use-jndi" => false,
+                    "use-local-tx" => true,
+                    "user" => "alice"
+                },
+                "hornetq-ra-local" => {
+                    "auto-group" => false,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => true,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "client-failure-check-period" => 30000L,
+                    "client-id" => undefined,
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+                    "connection-ttl" => 60000L,
+                    "connector" => {"in-vm" => undefined},
+                    "consumer-max-rate" => -1,
+                    "consumer-window-size" => 1048576,
+                    "discovery-group-name" => undefined,
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 1048576,
+                    "entries" => ["java:/JmsLocal"],
+                    "failover-on-initial-connection" => false,
+                    "failover-on-server-shutdown" => undefined,
+                    "group-id" => undefined,
+                    "ha" => false,
+                    "initial-connect-attempts" => 1,
+                    "initial-message-packet-size" => 1500,
+                    "jndi-params" => undefined,
+                    "max-pool-size" => -1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "min-pool-size" => -1,
+                    "password" => "alicepassword",
+                    "pre-acknowledge" => false,
+                    "producer-max-rate" => -1,
+                    "producer-window-size" => 65536,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 2000L,
+                    "retry-interval-multiplier" => 1.0,
+                    "scheduled-thread-pool-max-size" => 5,
+                    "setup-attempts" => undefined,
+                    "setup-interval" => undefined,
+                    "thread-pool-max-size" => 30,
+                    "transaction" => "local",
+                    "transaction-batch-size" => 1048576,
+                    "use-auto-recovery" => true,
+                    "use-global-pools" => true,
+                    "use-jndi" => undefined,
+                    "use-local-tx" => undefined,
+                    "user" => "alice"
+                },
+                "hornetq-ra-none" => {
+                    "auto-group" => false,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => true,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "client-failure-check-period" => 30000L,
+                    "client-id" => undefined,
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+                    "connection-ttl" => 60000L,
+                    "connector" => {"in-vm" => undefined},
+                    "consumer-max-rate" => -1,
+                    "consumer-window-size" => 1048576,
+                    "discovery-group-name" => undefined,
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 1048576,
+                    "entries" => ["java:/JmsNone"],
+                    "failover-on-initial-connection" => false,
+                    "failover-on-server-shutdown" => undefined,
+                    "group-id" => undefined,
+                    "ha" => false,
+                    "initial-connect-attempts" => 1,
+                    "initial-message-packet-size" => 1500,
+                    "jndi-params" => undefined,
+                    "max-pool-size" => -1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "min-pool-size" => -1,
+                    "password" => "alicepassword",
+                    "pre-acknowledge" => false,
+                    "producer-max-rate" => -1,
+                    "producer-window-size" => 65536,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 2000L,
+                    "retry-interval-multiplier" => 1.0,
+                    "scheduled-thread-pool-max-size" => 5,
+                    "setup-attempts" => undefined,
+                    "setup-interval" => undefined,
+                    "thread-pool-max-size" => 30,
+                    "transaction" => "none",
+                    "transaction-batch-size" => 1048576,
+                    "use-auto-recovery" => true,
+                    "use-global-pools" => true,
+                    "use-jndi" => undefined,
+                    "use-local-tx" => undefined,
+                    "user" => "alice"
+                }
+            },
+            "queue" => {
+                "coreQueueA" => {
+                    "durable" => true,
+                    "filter" => "afilter",
+                    "queue-address" => "addressA"
+                },
+                "coreQueueB" => {
+                    "durable" => true,
+                    "filter" => undefined,
+                    "queue-address" => "addressB"
+                }
+            },
+            "remote-acceptor" => {
+                "netty" => {
+                    "param" => undefined,
+                    "socket-binding" => "messaging"
+                },
+                "netty-throughput" => {
+                    "socket-binding" => "messaging-throughput",
+                    "param" => {
+                        "batch-delay" => {"value" => "50"},
+                        "direct-deliver" => {"value" => "false"}
+                    }
+                }
+            },
+            "remote-connector" => {
+                "netty" => {
+                    "param" => undefined,
+                    "socket-binding" => "messaging"
+                },
+                "netty-throughput" => {
+                    "socket-binding" => "messaging-throughput",
+                    "param" => {"batch-delay" => {"value" => "50"}}
+                }
+            },
+            "security-setting" => {"#" => {"role" => {
+                "guest" => {
+                    "consume" => true,
+                    "create-durable-queue" => false,
+                    "create-non-durable-queue" => true,
+                    "delete-durable-queue" => false,
+                    "delete-non-durable-queue" => true,
+                    "manage" => false,
+                    "send" => true
+                },
+                "adming" => {
+                    "consume" => false,
+                    "create-durable-queue" => false,
+                    "create-non-durable-queue" => false,
+                    "delete-durable-queue" => false,
+                    "delete-non-durable-queue" => false,
+                    "manage" => true,
+                    "send" => false
+                }
+            }}}
+        },
+        "empty" => {
+            "acceptor" => undefined,
+            "address-setting" => undefined,
+            "allow-failback" => true,
+            "async-connection-execution-enabled" => true,
+            "backup" => false,
+            "backup-group-name" => undefined,
+            "bridge" => undefined,
+            "broadcast-group" => undefined,
+            "check-for-live-server" => false,
+            "cluster-connection" => undefined,
+            "cluster-password" => "CHANGE ME!!",
+            "cluster-user" => "HORNETQ.CLUSTER.ADMIN.USER",
+            "clustered" => false,
+            "connection-factory" => undefined,
+            "connection-ttl-override" => -1L,
+            "connector" => undefined,
+            "connector-service" => undefined,
+            "create-bindings-dir" => true,
+            "create-journal-dir" => true,
+            "discovery-group" => undefined,
+            "divert" => undefined,
+            "failback-delay" => 5000L,
+            "failover-on-shutdown" => false,
+            "grouping-handler" => undefined,
+            "id-cache-size" => 20000,
+            "in-vm-acceptor" => undefined,
+            "in-vm-connector" => undefined,
+            "jms-queue" => undefined,
+            "jms-topic" => undefined,
+            "jmx-domain" => "org.hornetq",
+            "jmx-management-enabled" => false,
+            "journal-buffer-size" => undefined,
+            "journal-buffer-timeout" => undefined,
+            "journal-compact-min-files" => 10,
+            "journal-compact-percentage" => 30,
+            "journal-file-size" => 10485760,
+            "journal-max-io" => undefined,
+            "journal-min-files" => 2,
+            "journal-sync-non-transactional" => true,
+            "journal-sync-transactional" => true,
+            "journal-type" => "ASYNCIO",
+            "log-journal-write-rate" => false,
+            "management-address" => "jms.queue.hornetq.management",
+            "management-notification-address" => "hornetq.notifications",
+            "memory-measure-interval" => -1L,
+            "memory-warning-threshold" => 25,
+            "message-counter-enabled" => false,
+            "message-counter-max-day-history" => 10,
+            "message-counter-sample-period" => 10000L,
+            "message-expiry-scan-period" => 30000L,
+            "message-expiry-thread-priority" => 3,
+            "page-max-concurrent-io" => 5,
+            "path" => undefined,
+            "perf-blast-pages" => -1,
+            "persist-delivery-count-before-delivery" => false,
+            "persist-id-cache" => true,
+            "persistence-enabled" => true,
+            "pooled-connection-factory" => undefined,
+            "queue" => undefined,
+            "remote-acceptor" => undefined,
+            "remote-connector" => undefined,
+            "remoting-incoming-interceptors" => undefined,
+            "remoting-interceptors" => undefined,
+            "remoting-outgoing-interceptors" => undefined,
+            "replication-clustername" => undefined,
+            "run-sync-speed-test" => false,
+            "runtime-queue" => undefined,
+            "scheduled-thread-pool-max-size" => 5,
+            "security-domain" => "other",
+            "security-enabled" => true,
+            "security-invalidation-interval" => 10000L,
+            "security-setting" => undefined,
+            "server-dump-interval" => -1L,
+            "shared-store" => true,
+            "thread-pool-max-size" => 30,
+            "transaction-timeout" => 300000L,
+            "transaction-timeout-scan-period" => 1000L,
+            "wild-card-routing-enabled" => true
+        }
+    }
+}
+SubsystemTestDelegate.checkSubsystemModelTransformation: transformed
+{
+    "jms-bridge" => undefined,
+    "hornetq-server" => {
+        "default" => {
+            "allow-failback" => false,
+            "async-connection-execution-enabled" => false,
+            "backup" => false,
+            "backup-group-name" => undefined,
+            "check-for-live-server" => false,
+            "cluster-password" => expression "${messaging.cluster.user.password}",
+            "cluster-user" => expression "${messaging.cluster.user.name}",
+            "clustered" => false,
+            "connection-ttl-override" => 5432L,
+            "create-bindings-dir" => false,
+            "create-journal-dir" => true,
+            "failback-delay" => 9876L,
+            "failover-on-shutdown" => true,
+            "id-cache-size" => 102030,
+            "jmx-domain" => "my.jmx.domain",
+            "jmx-management-enabled" => false,
+            "journal-buffer-size" => 2468L,
+            "journal-buffer-timeout" => 1357L,
+            "journal-compact-min-files" => 2,
+            "journal-compact-percentage" => 83,
+            "journal-file-size" => 102400L,
+            "journal-max-io" => 50,
+            "journal-min-files" => 2,
+            "journal-sync-non-transactional" => true,
+            "journal-sync-transactional" => false,
+            "journal-type" => "NIO",
+            "log-journal-write-rate" => true,
+            "management-address" => "my.management.address",
+            "management-notification-address" => "my.management.notif.address",
+            "memory-measure-interval" => 2048L,
+            "memory-warning-threshold" => 1024,
+            "message-counter-enabled" => true,
+            "message-counter-max-day-history" => 23,
+            "message-counter-sample-period" => 7654L,
+            "message-expiry-scan-period" => 7654L,
+            "message-expiry-thread-priority" => 7,
+            "page-max-concurrent-io" => 10,
+            "perf-blast-pages" => 70,
+            "persist-delivery-count-before-delivery" => true,
+            "persist-id-cache" => false,
+            "persistence-enabled" => false,
+            "remoting-incoming-interceptors" => undefined,
+            "remoting-interceptors" => [
+                "foo.bar",
+                "bar.foo"
+            ],
+            "remoting-outgoing-interceptors" => undefined,
+            "replication-clustername" => undefined,
+            "run-sync-speed-test" => false,
+            "runtime-queue" => undefined,
+            "scheduled-thread-pool-max-size" => expression "${messaging.scheduled.thread.pool.max.size:6}",
+            "security-domain" => "someDomain",
+            "security-enabled" => false,
+            "security-invalidation-interval" => 1234L,
+            "server-dump-interval" => 8642L,
+            "shared-store" => true,
+            "thread-pool-max-size" => expression "${messaging.thread.pool.max.size:5}",
+            "transaction-timeout" => 4321L,
+            "transaction-timeout-scan-period" => 5432L,
+            "wild-card-routing-enabled" => false,
+            "acceptor" => {"myacceptor" => {
+                "factory-class" => "org.hornetq.core.remoting.impl.netty.NettyAcceptorFactory",
+                "socket-binding" => undefined,
+                "param" => {"batch-delay" => {"value" => "50"}}
+            }},
+            "address-setting" => {"#" => {
+                "address-full-policy" => "BLOCK",
+                "dead-letter-address" => "jms.queue.DLQ",
+                "expiry-address" => "jms.queue.ExpiryQueue",
+                "last-value-queue" => false,
+                "max-delivery-attempts" => 5,
+                "max-size-bytes" => 10485760L,
+                "message-counter-history-day-limit" => 10,
+                "page-max-cache-size" => 7,
+                "page-size-bytes" => 10485760L,
+                "redelivery-delay" => 0L,
+                "redistribution-delay" => 0L,
+                "send-to-dla-on-no-route" => false
+            }},
+            "bridge" => {
+                "bridge1" => {
+                    "check-period" => 666L,
+                    "confirmation-window-size" => 350,
+                    "connection-ttl" => 36000L,
+                    "discovery-group-name" => undefined,
+                    "filter" => "afilter",
+                    "forwarding-address" => "forwardingaddress1",
+                    "ha" => true,
+                    "max-retry-interval" => 3000L,
+                    "min-large-message-size" => 10240,
+                    "password" => expression "${password:secret}",
+                    "queue-name" => "coreQueueA",
+                    "reconnect-attempts" => 3,
+                    "retry-interval" => 750L,
+                    "retry-interval-multiplier" => big decimal 2,
+                    "static-connectors" => [
+                        "in-vm",
+                        "netty"
+                    ],
+                    "transformer-class-name" => "foo.bar",
+                    "use-duplicate-detection" => true,
+                    "user" => expression "${user:Brian}"
+                },
+                "bridge2" => {
+                    "check-period" => 30000L,
+                    "confirmation-window-size" => 1048576,
+                    "connection-ttl" => 60000L,
+                    "discovery-group-name" => "groupC",
+                    "filter" => undefined,
+                    "forwarding-address" => undefined,
+                    "ha" => false,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "password" => "CHANGE ME!!",
+                    "queue-name" => "coreQueueB",
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 2000L,
+                    "retry-interval-multiplier" => 1.0,
+                    "static-connectors" => undefined,
+                    "transformer-class-name" => undefined,
+                    "use-duplicate-detection" => true,
+                    "user" => "HORNETQ.CLUSTER.ADMIN.USER"
+                }
+            },
+            "broadcast-group" => {
+                "groupA" => {
+                    "broadcast-period" => 2500L,
+                    "connectors" => [
+                        "netty",
+                        "netty-throughput"
+                    ],
+                    "group-address" => "224.0.1.105",
+                    "group-port" => 23456,
+                    "local-bind-address" => "localhost",
+                    "local-bind-port" => 12345
+                },
+                "groupB" => {
+                    "broadcast-period" => 2000L,
+                    "group-address" => "224.0.1.105",
+                    "group-port" => 34567,
+                    "local-bind-port" => -1
+                },
+                "groupS" => {
+                    "broadcast-period" => 2000L,
+                    "local-bind-port" => -1,
+                    "socket-binding" => "group-s-binding"
+                }
+            },
+            "cluster-connection" => {
+                "cc1" => {
+                    "allow-direct-connections-only" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 3456L,
+                    "check-period" => 2345L,
+                    "cluster-connection-address" => "cc1-address",
+                    "confirmation-window-size" => 459,
+                    "connection-ttl" => 1234L,
+                    "connector-ref" => "netty",
+                    "discovery-group-name" => undefined,
+                    "forward-when-no-consumers" => true,
+                    "max-hops" => 7,
+                    "max-retry-interval" => 3600L,
+                    "min-large-message-size" => 10245,
+                    "notification-attempts" => 2,
+                    "notification-interval" => 1000L,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 987L,
+                    "retry-interval-multiplier" => big decimal 3.0,
+                    "static-connectors" => [
+                        "in-vm",
+                        "netty"
+                    ],
+                    "use-duplicate-detection" => true
+                },
+                "cc2" => {
+                    "allow-direct-connections-only" => true,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "check-period" => 30000L,
+                    "cluster-connection-address" => "cc2-address",
+                    "confirmation-window-size" => 1048576,
+                    "connection-ttl" => 60000L,
+                    "connector-ref" => "netty",
+                    "discovery-group-name" => undefined,
+                    "forward-when-no-consumers" => false,
+                    "max-hops" => 1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "notification-attempts" => 2,
+                    "notification-interval" => 1000L,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => 1.0,
+                    "static-connectors" => [
+                        "in-vm",
+                        "netty"
+                    ],
+                    "use-duplicate-detection" => true
+                },
+                "cc3" => {
+                    "allow-direct-connections-only" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "check-period" => 30000L,
+                    "cluster-connection-address" => "cc3-address",
+                    "confirmation-window-size" => 1048576,
+                    "connection-ttl" => 60000L,
+                    "connector-ref" => "netty",
+                    "discovery-group-name" => "groupC",
+                    "forward-when-no-consumers" => false,
+                    "max-hops" => 1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "notification-attempts" => 2,
+                    "notification-interval" => 1000L,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => 1.0,
+                    "static-connectors" => undefined,
+                    "use-duplicate-detection" => true
+                },
+                "cc4" => {
+                    "allow-direct-connections-only" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "check-period" => 30000L,
+                    "cluster-connection-address" => "cc4-address",
+                    "confirmation-window-size" => 1048576,
+                    "connection-ttl" => 60000L,
+                    "connector-ref" => "netty-throughput",
+                    "discovery-group-name" => undefined,
+                    "forward-when-no-consumers" => false,
+                    "max-hops" => 1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "notification-attempts" => 2,
+                    "notification-interval" => 1000L,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => 1.0,
+                    "static-connectors" => [
+                        "in-vm",
+                        "netty"
+                    ],
+                    "use-duplicate-detection" => true
+                },
+                "cc5" => {
+                    "allow-direct-connections-only" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "check-period" => 30000L,
+                    "cluster-connection-address" => "cc3-address",
+                    "confirmation-window-size" => 1048576,
+                    "connection-ttl" => 60000L,
+                    "connector-ref" => "netty",
+                    "discovery-group-name" => undefined,
+                    "forward-when-no-consumers" => false,
+                    "max-hops" => 1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "notification-attempts" => 2,
+                    "notification-interval" => 1000L,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => 1.0,
+                    "static-connectors" => undefined,
+                    "use-duplicate-detection" => true
+                }
+            },
+            "connection-factory" => {
+                "InVmConnectionFactory" => {
+                    "auto-group" => false,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => true,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "client-failure-check-period" => 30000L,
+                    "client-id" => undefined,
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+                    "connection-ttl" => 60000L,
+                    "connector" => {"in-vm" => undefined},
+                    "consumer-max-rate" => -1,
+                    "consumer-window-size" => 1048576,
+                    "discovery-group-name" => undefined,
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 1048576,
+                    "entries" => ["java:/ConnectionFactory"],
+                    "factory-type" => "GENERIC",
+                    "failover-on-initial-connection" => false,
+                    "failover-on-server-shutdown" => undefined,
+                    "group-id" => undefined,
+                    "ha" => false,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "pre-acknowledge" => false,
+                    "producer-max-rate" => -1,
+                    "producer-window-size" => 65536,
+                    "reconnect-attempts" => 0,
+                    "retry-interval" => 2000L,
+                    "retry-interval-multiplier" => 1.0,
+                    "scheduled-thread-pool-max-size" => 5,
+                    "thread-pool-max-size" => 30,
+                    "transaction-batch-size" => 1048576,
+                    "use-global-pools" => true
+                },
+                "RemoteConnectionFactory" => {
+                    "auto-group" => false,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => true,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "client-failure-check-period" => 30000L,
+                    "client-id" => "testClient",
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+                    "connection-ttl" => 60000L,
+                    "connector" => {"netty" => undefined},
+                    "consumer-max-rate" => -1,
+                    "consumer-window-size" => 1048576,
+                    "discovery-group-name" => undefined,
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 1048576,
+                    "entries" => ["RemoteConnectionFactory"],
+                    "factory-type" => "XA_QUEUE",
+                    "failover-on-initial-connection" => false,
+                    "failover-on-server-shutdown" => undefined,
+                    "group-id" => undefined,
+                    "ha" => false,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "pre-acknowledge" => false,
+                    "producer-max-rate" => -1,
+                    "producer-window-size" => 65536,
+                    "reconnect-attempts" => 0,
+                    "retry-interval" => 2000L,
+                    "retry-interval-multiplier" => 1.0,
+                    "scheduled-thread-pool-max-size" => 5,
+                    "thread-pool-max-size" => 30,
+                    "transaction-batch-size" => 1048576,
+                    "use-global-pools" => true
+                },
+                "otherConnectionFactory" => {
+                    "auto-group" => true,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => false,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 123L,
+                    "client-failure-check-period" => 12345L,
+                    "client-id" => "myClientID",
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "not.a.real.Class",
+                    "connection-ttl" => 56789L,
+                    "connector" => undefined,
+                    "consumer-max-rate" => 789,
+                    "consumer-window-size" => 456,
+                    "discovery-group-name" => "groupC",
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 256,
+                    "entries" => ["otherConnectionFactory"],
+                    "factory-type" => "GENERIC",
+                    "failover-on-initial-connection" => true,
+                    "failover-on-server-shutdown" => true,
+                    "group-id" => "myGroup",
+                    "ha" => true,
+                    "max-retry-interval" => 10000L,
+                    "min-large-message-size" => 2048,
+                    "pre-acknowledge" => true,
+                    "producer-max-rate" => 1024,
+                    "producer-window-size" => -1,
+                    "reconnect-attempts" => 2,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => big decimal 2.5,
+                    "scheduled-thread-pool-max-size" => 24,
+                    "thread-pool-max-size" => 48,
+                    "transaction-batch-size" => 512,
+                    "use-global-pools" => true
+                }
+            },
+            "connector" => {"myconnector" => {
+                "factory-class" => "org.hornetq.core.remoting.impl.netty.NettyConnectorFactory",
+                "socket-binding" => undefined,
+                "param" => {
+                    "host" => {"value" => "192.168.1.2"},
+                    "port" => {"value" => "5445"}
+                }
+            }},
+            "connector-service" => {
+                "a" => {
+                    "factory-class" => "foo.bar",
+                    "param" => undefined
+                },
+                "b" => {
+                    "factory-class" => "bar.foo",
+                    "param" => {
+                        "foo" => {"value" => "bar"},
+                        "bar" => {"value" => "2"}
+                    }
+                }
+            },
+            "discovery-group" => {
+                "groupC" => {
+                    "group-address" => "224.0.1.105",
+                    "group-port" => 45678,
+                    "initial-wait-timeout" => 7500L,
+                    "local-bind-address" => "localhost",
+                    "refresh-timeout" => 3500L
+                },
+                "groupD" => {
+                    "group-address" => "224.0.1.105",
+                    "group-port" => 56789,
+                    "initial-wait-timeout" => 10000L,
+                    "refresh-timeout" => 10000L
+                },
+                "groupT" => {
+                    "initial-wait-timeout" => 10000L,
+                    "refresh-timeout" => 10000L,
+                    "socket-binding" => "group-t-binding"
+                }
+            },
+            "divert" => {
+                "testDivert1" => {
+                    "divert-address" => "address1",
+                    "exclusive" => true,
+                    "filter" => "afilter",
+                    "forwarding-address" => "forwardingaddress1",
+                    "routing-name" => "routing",
+                    "transformer-class-name" => "org.jboss.test.Transformer"
+                },
+                "testDivert2" => {
+                    "divert-address" => "address2",
+                    "exclusive" => false,
+                    "filter" => undefined,
+                    "forwarding-address" => "forwardingaddress2",
+                    "routing-name" => undefined,
+                    "transformer-class-name" => undefined
+                }
+            },
+            "grouping-handler" => {"grouping-handler" => {
+                "grouping-handler-address" => "handler-address",
+                "timeout" => 5000,
+                "type" => "LOCAL"
+            }},
+            "in-vm-acceptor" => {"in-vm" => {
+                "server-id" => 0,
+                "param" => {"direct-deliver" => {"value" => "true"}}
+            }},
+            "in-vm-connector" => {"in-vm" => {
+                "param" => undefined,
+                "server-id" => 0
+            }},
+            "jms-queue" => {"testQueue" => {
+                "durable" => true,
+                "entries" => ["queue/test"],
+                "selector" => "color='red'"
+            }},
+            "jms-topic" => {"testTopic" => {"entries" => ["topic/test"]}},
+            "path" => {
+                "paging-directory" => {
+                    "path" => "test",
+                    "relative-to" => "test"
+                },
+                "bindings-directory" => {
+                    "path" => "test",
+                    "relative-to" => "test"
+                },
+                "journal-directory" => {
+                    "path" => "test",
+                    "relative-to" => "test"
+                },
+                "large-messages-directory" => {
+                    "path" => "test",
+                    "relative-to" => "test"
+                }
+            },
+            "pooled-connection-factory" => {
+                "hornetq-ra" => {
+                    "auto-group" => true,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => false,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 123L,
+                    "client-failure-check-period" => 12345L,
+                    "client-id" => "myClientID",
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "not.a.real.Class",
+                    "connection-ttl" => 56789L,
+                    "connector" => {"in-vm" => undefined},
+                    "consumer-max-rate" => 789,
+                    "consumer-window-size" => 456,
+                    "discovery-group-name" => undefined,
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 256,
+                    "entries" => ["java:/JmsXA"],
+                    "failover-on-initial-connection" => true,
+                    "failover-on-server-shutdown" => true,
+                    "group-id" => "myGroup",
+                    "ha" => true,
+                    "initial-connect-attempts" => 1,
+                    "initial-message-packet-size" => 1500,
+                    "jndi-params" => "whatever",
+                    "max-pool-size" => 242,
+                    "max-retry-interval" => 10000L,
+                    "min-large-message-size" => 2048,
+                    "min-pool-size" => 42,
+                    "password" => "alicepassword",
+                    "pre-acknowledge" => true,
+                    "producer-max-rate" => 1024,
+                    "producer-window-size" => -1,
+                    "reconnect-attempts" => 2,
+                    "retry-interval" => 500L,
+                    "retry-interval-multiplier" => big decimal 2.5,
+                    "scheduled-thread-pool-max-size" => 24,
+                    "setup-attempts" => 123,
+                    "setup-interval" => 456L,
+                    "thread-pool-max-size" => 48,
+                    "transaction" => "xa",
+                    "transaction-batch-size" => 512,
+                    "use-auto-recovery" => true,
+                    "use-global-pools" => true,
+                    "use-jndi" => false,
+                    "use-local-tx" => true,
+                    "user" => "alice"
+                },
+                "hornetq-ra-local" => {
+                    "auto-group" => false,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => true,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "client-failure-check-period" => 30000L,
+                    "client-id" => undefined,
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+                    "connection-ttl" => 60000L,
+                    "connector" => {"in-vm" => undefined},
+                    "consumer-max-rate" => -1,
+                    "consumer-window-size" => 1048576,
+                    "discovery-group-name" => undefined,
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 1048576,
+                    "entries" => ["java:/JmsLocal"],
+                    "failover-on-initial-connection" => false,
+                    "failover-on-server-shutdown" => undefined,
+                    "group-id" => undefined,
+                    "ha" => false,
+                    "initial-connect-attempts" => 1,
+                    "initial-message-packet-size" => 1500,
+                    "jndi-params" => undefined,
+                    "max-pool-size" => -1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "min-pool-size" => -1,
+                    "password" => "alicepassword",
+                    "pre-acknowledge" => false,
+                    "producer-max-rate" => -1,
+                    "producer-window-size" => 65536,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 2000L,
+                    "retry-interval-multiplier" => 1.0,
+                    "scheduled-thread-pool-max-size" => 5,
+                    "setup-attempts" => undefined,
+                    "setup-interval" => undefined,
+                    "thread-pool-max-size" => 30,
+                    "transaction" => "local",
+                    "transaction-batch-size" => 1048576,
+                    "use-auto-recovery" => true,
+                    "use-global-pools" => true,
+                    "use-jndi" => undefined,
+                    "use-local-tx" => undefined,
+                    "user" => "alice"
+                },
+                "hornetq-ra-none" => {
+                    "auto-group" => false,
+                    "block-on-acknowledge" => false,
+                    "block-on-durable-send" => true,
+                    "block-on-non-durable-send" => false,
+                    "cache-large-message-client" => false,
+                    "call-failover-timeout" => -1L,
+                    "call-timeout" => 30000L,
+                    "client-failure-check-period" => 30000L,
+                    "client-id" => undefined,
+                    "compress-large-messages" => false,
+                    "confirmation-window-size" => -1,
+                    "connection-load-balancing-policy-class-name" => "org.hornetq.api.core.client.loadbalance.RoundRobinConnectionLoadBalancingPolicy",
+                    "connection-ttl" => 60000L,
+                    "connector" => {"in-vm" => undefined},
+                    "consumer-max-rate" => -1,
+                    "consumer-window-size" => 1048576,
+                    "discovery-group-name" => undefined,
+                    "discovery-initial-wait-timeout" => undefined,
+                    "dups-ok-batch-size" => 1048576,
+                    "entries" => ["java:/JmsNone"],
+                    "failover-on-initial-connection" => false,
+                    "failover-on-server-shutdown" => undefined,
+                    "group-id" => undefined,
+                    "ha" => false,
+                    "initial-connect-attempts" => 1,
+                    "initial-message-packet-size" => 1500,
+                    "jndi-params" => undefined,
+                    "max-pool-size" => -1,
+                    "max-retry-interval" => 2000L,
+                    "min-large-message-size" => 102400,
+                    "min-pool-size" => -1,
+                    "password" => "alicepassword",
+                    "pre-acknowledge" => false,
+                    "producer-max-rate" => -1,
+                    "producer-window-size" => 65536,
+                    "reconnect-attempts" => -1,
+                    "retry-interval" => 2000L,
+                    "retry-interval-multiplier" => 1.0,
+                    "scheduled-thread-pool-max-size" => 5,
+                    "setup-attempts" => undefined,
+                    "setup-interval" => undefined,
+                    "thread-pool-max-size" => 30,
+                    "transaction" => "none",
+                    "transaction-batch-size" => 1048576,
+                    "use-auto-recovery" => true,
+                    "use-global-pools" => true,
+                    "use-jndi" => undefined,
+                    "use-local-tx" => undefined,
+                    "user" => "alice"
+                }
+            },
+            "queue" => {
+                "coreQueueA" => {
+                    "durable" => true,
+                    "filter" => "afilter",
+                    "queue-address" => "addressA"
+                },
+                "coreQueueB" => {
+                    "durable" => true,
+                    "filter" => undefined,
+                    "queue-address" => "addressB"
+                }
+            },
+            "remote-acceptor" => {
+                "netty" => {
+                    "param" => undefined,
+                    "socket-binding" => "messaging"
+                },
+                "netty-throughput" => {
+                    "socket-binding" => "messaging-throughput",
+                    "param" => {
+                        "batch-delay" => {"value" => "50"},
+                        "direct-deliver" => {"value" => "false"}
+                    }
+                }
+            },
+            "remote-connector" => {
+                "netty" => {
+                    "param" => undefined,
+                    "socket-binding" => "messaging"
+                },
+                "netty-throughput" => {
+                    "socket-binding" => "messaging-throughput",
+                    "param" => {"batch-delay" => {"value" => "50"}}
+                }
+            },
+            "security-setting" => {"#" => {"role" => {
+                "guest" => {
+                    "consume" => true,
+                    "create-durable-queue" => false,
+                    "create-non-durable-queue" => true,
+                    "delete-durable-queue" => false,
+                    "delete-non-durable-queue" => true,
+                    "manage" => false,
+                    "send" => true
+                },
+                "adming" => {
+                    "consume" => false,
+                    "create-durable-queue" => false,
+                    "create-non-durable-queue" => false,
+                    "delete-durable-queue" => false,
+                    "delete-non-durable-queue" => false,
+                    "manage" => true,
+                    "send" => false
+                }
+            }}}
+        },
+        "empty" => {
+            "acceptor" => undefined,
+            "address-setting" => undefined,
+            "allow-failback" => true,
+            "async-connection-execution-enabled" => true,
+            "backup" => false,
+            "backup-group-name" => undefined,
+            "bridge" => undefined,
+            "broadcast-group" => undefined,
+            "check-for-live-server" => false,
+            "cluster-connection" => undefined,
+            "cluster-password" => "CHANGE ME!!",
+            "cluster-user" => "HORNETQ.CLUSTER.ADMIN.USER",
+            "clustered" => false,
+            "connection-factory" => undefined,
+            "connection-ttl-override" => -1L,
+            "connector" => undefined,
+            "connector-service" => undefined,
+            "create-bindings-dir" => true,
+            "create-journal-dir" => true,
+            "discovery-group" => undefined,
+            "divert" => undefined,
+            "failback-delay" => 5000L,
+            "failover-on-shutdown" => false,
+            "grouping-handler" => undefined,
+            "id-cache-size" => 20000,
+            "in-vm-acceptor" => undefined,
+            "in-vm-connector" => undefined,
+            "jms-queue" => undefined,
+            "jms-topic" => undefined,
+            "jmx-domain" => "org.hornetq",
+            "jmx-management-enabled" => false,
+            "journal-buffer-size" => undefined,
+            "journal-buffer-timeout" => undefined,
+            "journal-compact-min-files" => 10,
+            "journal-compact-percentage" => 30,
+            "journal-file-size" => 10485760,
+            "journal-max-io" => undefined,
+            "journal-min-files" => 2,
+            "journal-sync-non-transactional" => true,
+            "journal-sync-transactional" => true,
+            "journal-type" => "ASYNCIO",
+            "log-journal-write-rate" => false,
+            "management-address" => "jms.queue.hornetq.management",
+            "management-notification-address" => "hornetq.notifications",
+            "memory-measure-interval" => -1L,
+            "memory-warning-threshold" => 25,
+            "message-counter-enabled" => false,
+            "message-counter-max-day-history" => 10,
+            "message-counter-sample-period" => 10000L,
+            "message-expiry-scan-period" => 30000L,
+            "message-expiry-thread-priority" => 3,
+            "page-max-concurrent-io" => 5,
+            "path" => undefined,
+            "perf-blast-pages" => -1,
+            "persist-delivery-count-before-delivery" => false,
+            "persist-id-cache" => true,
+            "persistence-enabled" => true,
+            "pooled-connection-factory" => undefined,
+            "queue" => undefined,
+            "remote-acceptor" => undefined,
+            "remote-connector" => undefined,
+            "remoting-incoming-interceptors" => undefined,
+            "remoting-interceptors" => undefined,
+            "remoting-outgoing-interceptors" => undefined,
+            "replication-clustername" => undefined,
+            "run-sync-speed-test" => false,
+            "runtime-queue" => undefined,
+            "scheduled-thread-pool-max-size" => 5,
+            "security-domain" => "other",
+            "security-enabled" => true,
+            "security-invalidation-interval" => 10000L,
+            "security-setting" => undefined,
+            "server-dump-interval" => -1L,
+            "shared-store" => true,
+            "thread-pool-max-size" => 30,
+            "transaction-timeout" => 300000L,
+            "transaction-timeout-scan-period" => 1000L,
+            "wild-card-routing-enabled" => true
+        }
+    }
+}
+ModelTestUtils.compare: [hornetq-server]
+                        [hornetq-server]
+ModelTestUtils.compare: [default, empty]
+                        [default, empty]
+ModelTestUtils.compare: [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-interceptors, run-sync-speed-test, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+                        [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, connection-factory, connection-ttl-override, connector, connector-service, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-interceptors, run-sync-speed-test, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+Nov 19, 2013 2:24:02 PM org.jboss.as.messaging.MessagingSubsystemParser processHornetQServer
+WARN: JBAS011608: Element CLUSTERED is deprecated and will not be taken into account
+Nov 19, 2013 2:24:02 PM org.jboss.as.messaging.Messaging12SubsystemParser processBridge
+WARN: JBAS011608: Element FAILOVER_ON_SERVER_SHUTDOWN is deprecated and will not be taken into account
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute clustered is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute remoting-interceptors is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:02 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.messaging.MessagingSubsystemParser processHornetQServer
+WARN: JBAS011608: Element CLUSTERED is deprecated and will not be taken into account
+Nov 19, 2013 2:24:03 PM org.jboss.as.messaging.Messaging12SubsystemParser processBridge
+WARN: JBAS011608: Element FAILOVER_ON_SERVER_SHUTDOWN is deprecated and will not be taken into account
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute clustered is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute remoting-interceptors is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+ModelTestUtils.compare: [deployment, subsystem]
+                        [deployment, subsystem]
+ModelTestUtils.compare: [messaging]
+                        [messaging]
+ModelTestUtils.compare: [hornetq-server, jms-bridge]
+                        [hornetq-server, jms-bridge]
+ModelTestUtils.compare: [default, empty]
+                        [default, empty]
+ModelTestUtils.compare: [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+                        [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+ModelTestUtils.compare: [myacceptor]
+                        [myacceptor]
+ModelTestUtils.compare: [factory-class, param, socket-binding]
+                        [factory-class, param, socket-binding]
+ModelTestUtils.compare: [batch-delay]
+                        [batch-delay]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [#]
+                        [#]
+ModelTestUtils.compare: [address-full-policy, dead-letter-address, expiry-address, expiry-delay, last-value-queue, max-delivery-attempts, max-size-bytes, message-counter-history-day-limit, page-max-cache-size, page-size-bytes, redelivery-delay, redistribution-delay, send-to-dla-on-no-route]
+                        [address-full-policy, dead-letter-address, expiry-address, expiry-delay, last-value-queue, max-delivery-attempts, max-size-bytes, message-counter-history-day-limit, page-max-cache-size, page-size-bytes, redelivery-delay, redistribution-delay, send-to-dla-on-no-route]
+ModelTestUtils.compare: [bridge1, bridge2]
+                        [bridge1, bridge2]
+ModelTestUtils.compare: [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+                        [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+ModelTestUtils.compare: [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+                        [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+ModelTestUtils.compare: [groupA, groupB, groupS]
+                        [groupA, groupB, groupS]
+ModelTestUtils.compare: [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+                        [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+ModelTestUtils.compare: [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+                        [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+ModelTestUtils.compare: [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+                        [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+ModelTestUtils.compare: [cc1, cc2, cc3, cc4, cc5]
+                        [cc1, cc2, cc3, cc4, cc5]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [InVmConnectionFactory, RemoteConnectionFactory, otherConnectionFactory]
+                        [InVmConnectionFactory, RemoteConnectionFactory, otherConnectionFactory]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+ModelTestUtils.compare: [netty]
+                        [netty]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+ModelTestUtils.compare: [myconnector]
+                        [myconnector]
+ModelTestUtils.compare: [factory-class, param, socket-binding]
+                        [factory-class, param, socket-binding]
+ModelTestUtils.compare: [host, port]
+                        [host, port]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [a, b]
+                        [a, b]
+ModelTestUtils.compare: [factory-class, param]
+                        [factory-class, param]
+ModelTestUtils.compare: [factory-class, param]
+                        [factory-class, param]
+ModelTestUtils.compare: [bar, foo]
+                        [bar, foo]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [groupC, groupD, groupT]
+                        [groupC, groupD, groupT]
+ModelTestUtils.compare: [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+                        [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+ModelTestUtils.compare: [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+                        [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+ModelTestUtils.compare: [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+                        [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+ModelTestUtils.compare: [testDivert1, testDivert2]
+                        [testDivert1, testDivert2]
+ModelTestUtils.compare: [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+                        [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+ModelTestUtils.compare: [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+                        [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+ModelTestUtils.compare: [grouping-handler]
+                        [grouping-handler]
+ModelTestUtils.compare: [grouping-handler-address, timeout, type]
+                        [grouping-handler-address, timeout, type]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [param, server-id]
+                        [param, server-id]
+ModelTestUtils.compare: [direct-deliver]
+                        [direct-deliver]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [param, server-id]
+                        [param, server-id]
+ModelTestUtils.compare: [testQueue]
+                        [testQueue]
+ModelTestUtils.compare: [durable, entries, selector]
+                        [durable, entries, selector]
+ModelTestUtils.compare: [testTopic]
+                        [testTopic]
+ModelTestUtils.compare: [entries]
+                        [entries]
+ModelTestUtils.compare: [bindings-directory, journal-directory, large-messages-directory, paging-directory]
+                        [bindings-directory, journal-directory, large-messages-directory, paging-directory]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [hornetq-ra, hornetq-ra-local, hornetq-ra-none]
+                        [hornetq-ra, hornetq-ra-local, hornetq-ra-none]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [coreQueueA, coreQueueB]
+                        [coreQueueA, coreQueueB]
+ModelTestUtils.compare: [durable, filter, queue-address]
+                        [durable, filter, queue-address]
+ModelTestUtils.compare: [durable, filter, queue-address]
+                        [durable, filter, queue-address]
+ModelTestUtils.compare: [netty, netty-throughput]
+                        [netty, netty-throughput]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [batch-delay, direct-deliver]
+                        [batch-delay, direct-deliver]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [netty, netty-throughput]
+                        [netty, netty-throughput]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [batch-delay]
+                        [batch-delay]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [#]
+                        [#]
+ModelTestUtils.compare: [role]
+                        [role]
+ModelTestUtils.compare: [adming, guest]
+                        [adming, guest]
+ModelTestUtils.compare: [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+                        [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+ModelTestUtils.compare: [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+                        [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+ModelTestUtils.compare: [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+                        [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute clustered is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute remoting-interceptors is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute failover-on-server-shutdown is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute local-bind-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-address is deprecated, and it might be removed in future version!
+Nov 19, 2013 2:24:03 PM org.jboss.as.controller.AttributeDefinition validateAndSet
+INFO: JBAS014627: Attribute group-port is deprecated, and it might be removed in future version!
+ModelTestUtils.compare: [deployment, subsystem]
+                        [deployment, subsystem]
+ModelTestUtils.compare: [messaging]
+                        [messaging]
+ModelTestUtils.compare: [hornetq-server, jms-bridge]
+                        [hornetq-server, jms-bridge]
+ModelTestUtils.compare: [default, empty]
+                        [default, empty]
+ModelTestUtils.compare: [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+                        [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+ModelTestUtils.compare: [myacceptor]
+                        [myacceptor]
+ModelTestUtils.compare: [factory-class, param, socket-binding]
+                        [factory-class, param, socket-binding]
+ModelTestUtils.compare: [batch-delay]
+                        [batch-delay]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [#]
+                        [#]
+ModelTestUtils.compare: [address-full-policy, dead-letter-address, expiry-address, expiry-delay, last-value-queue, max-delivery-attempts, max-size-bytes, message-counter-history-day-limit, page-max-cache-size, page-size-bytes, redelivery-delay, redistribution-delay, send-to-dla-on-no-route]
+                        [address-full-policy, dead-letter-address, expiry-address, expiry-delay, last-value-queue, max-delivery-attempts, max-size-bytes, message-counter-history-day-limit, page-max-cache-size, page-size-bytes, redelivery-delay, redistribution-delay, send-to-dla-on-no-route]
+ModelTestUtils.compare: [bridge1, bridge2]
+                        [bridge1, bridge2]
+ModelTestUtils.compare: [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+                        [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+ModelTestUtils.compare: [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+                        [check-period, confirmation-window-size, connection-ttl, discovery-group-name, failover-on-server-shutdown, filter, forwarding-address, ha, max-retry-interval, min-large-message-size, password, queue-name, reconnect-attempts, reconnect-attempts-on-same-node, retry-interval, retry-interval-multiplier, static-connectors, transformer-class-name, use-duplicate-detection, user]
+ModelTestUtils.compare: [groupA, groupB, groupS]
+                        [groupA, groupB, groupS]
+ModelTestUtils.compare: [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+                        [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+ModelTestUtils.compare: [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+                        [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+ModelTestUtils.compare: [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+                        [broadcast-period, connectors, group-address, group-port, jgroups-channel, jgroups-stack, local-bind-address, local-bind-port, socket-binding]
+ModelTestUtils.compare: [cc1, cc2, cc3, cc4, cc5]
+                        [cc1, cc2, cc3, cc4, cc5]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+                        [allow-direct-connections-only, call-failover-timeout, call-timeout, check-period, cluster-connection-address, confirmation-window-size, connection-ttl, connector-ref, discovery-group-name, forward-when-no-consumers, max-hops, max-retry-interval, min-large-message-size, notification-attempts, notification-interval, reconnect-attempts, retry-interval, retry-interval-multiplier, static-connectors, use-duplicate-detection]
+ModelTestUtils.compare: [InVmConnectionFactory, RemoteConnectionFactory, otherConnectionFactory]
+                        [InVmConnectionFactory, RemoteConnectionFactory, otherConnectionFactory]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+ModelTestUtils.compare: [netty]
+                        [netty]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, factory-type, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, max-retry-interval, min-large-message-size, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, thread-pool-max-size, transaction-batch-size, use-global-pools]
+ModelTestUtils.compare: [myconnector]
+                        [myconnector]
+ModelTestUtils.compare: [factory-class, param, socket-binding]
+                        [factory-class, param, socket-binding]
+ModelTestUtils.compare: [host, port]
+                        [host, port]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [a, b]
+                        [a, b]
+ModelTestUtils.compare: [factory-class, param]
+                        [factory-class, param]
+ModelTestUtils.compare: [factory-class, param]
+                        [factory-class, param]
+ModelTestUtils.compare: [bar, foo]
+                        [bar, foo]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [groupC, groupD, groupT]
+                        [groupC, groupD, groupT]
+ModelTestUtils.compare: [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+                        [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+ModelTestUtils.compare: [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+                        [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+ModelTestUtils.compare: [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+                        [group-address, group-port, initial-wait-timeout, jgroups-channel, jgroups-stack, local-bind-address, refresh-timeout, socket-binding]
+ModelTestUtils.compare: [testDivert1, testDivert2]
+                        [testDivert1, testDivert2]
+ModelTestUtils.compare: [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+                        [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+ModelTestUtils.compare: [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+                        [divert-address, exclusive, filter, forwarding-address, routing-name, transformer-class-name]
+ModelTestUtils.compare: [grouping-handler]
+                        [grouping-handler]
+ModelTestUtils.compare: [grouping-handler-address, timeout, type]
+                        [grouping-handler-address, timeout, type]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [param, server-id]
+                        [param, server-id]
+ModelTestUtils.compare: [direct-deliver]
+                        [direct-deliver]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [param, server-id]
+                        [param, server-id]
+ModelTestUtils.compare: [testQueue]
+                        [testQueue]
+ModelTestUtils.compare: [durable, entries, selector]
+                        [durable, entries, selector]
+ModelTestUtils.compare: [testTopic]
+                        [testTopic]
+ModelTestUtils.compare: [entries]
+                        [entries]
+ModelTestUtils.compare: [bindings-directory, journal-directory, large-messages-directory, paging-directory]
+                        [bindings-directory, journal-directory, large-messages-directory, paging-directory]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [path, relative-to]
+                        [path, relative-to]
+ModelTestUtils.compare: [hornetq-ra, hornetq-ra-local, hornetq-ra-none]
+                        [hornetq-ra, hornetq-ra-local, hornetq-ra-none]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+                        [auto-group, block-on-acknowledge, block-on-durable-send, block-on-non-durable-send, cache-large-message-client, call-failover-timeout, call-timeout, client-failure-check-period, client-id, compress-large-messages, confirmation-window-size, connection-load-balancing-policy-class-name, connection-ttl, connector, consumer-max-rate, consumer-window-size, discovery-group-name, discovery-initial-wait-timeout, dups-ok-batch-size, entries, failover-on-initial-connection, failover-on-server-shutdown, group-id, ha, initial-connect-attempts, initial-message-packet-size, jndi-params, max-pool-size, max-retry-interval, min-large-message-size, min-pool-size, password, pre-acknowledge, producer-max-rate, producer-window-size, reconnect-attempts, retry-interval, retry-interval-multiplier, scheduled-thread-pool-max-size, setup-attempts, setup-interval, thread-pool-max-size, transaction, transaction-batch-size, use-auto-recovery, use-global-pools, use-jndi, use-local-tx, user]
+ModelTestUtils.compare: [in-vm]
+                        [in-vm]
+ModelTestUtils.compare: [coreQueueA, coreQueueB]
+                        [coreQueueA, coreQueueB]
+ModelTestUtils.compare: [durable, filter, queue-address]
+                        [durable, filter, queue-address]
+ModelTestUtils.compare: [durable, filter, queue-address]
+                        [durable, filter, queue-address]
+ModelTestUtils.compare: [netty, netty-throughput]
+                        [netty, netty-throughput]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [batch-delay, direct-deliver]
+                        [batch-delay, direct-deliver]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [netty, netty-throughput]
+                        [netty, netty-throughput]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [param, socket-binding]
+                        [param, socket-binding]
+ModelTestUtils.compare: [batch-delay]
+                        [batch-delay]
+ModelTestUtils.compare: [value]
+                        [value]
+ModelTestUtils.compare: [#]
+                        [#]
+ModelTestUtils.compare: [role]
+                        [role]
+ModelTestUtils.compare: [adming, guest]
+                        [adming, guest]
+ModelTestUtils.compare: [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+                        [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+ModelTestUtils.compare: [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+                        [consume, create-durable-queue, create-non-durable-queue, delete-durable-queue, delete-non-durable-queue, manage, send]
+ModelTestUtils.compare: [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]
+                        [acceptor, address-setting, allow-failback, async-connection-execution-enabled, backup, backup-group-name, bridge, broadcast-group, check-for-live-server, cluster-connection, cluster-password, cluster-user, clustered, connection-factory, connection-ttl-override, connector, connector-service, core-address, create-bindings-dir, create-journal-dir, discovery-group, divert, failback-delay, failover-on-shutdown, grouping-handler, id-cache-size, in-vm-acceptor, in-vm-connector, jms-queue, jms-topic, jmx-domain, jmx-management-enabled, journal-buffer-size, journal-buffer-timeout, journal-compact-min-files, journal-compact-percentage, journal-file-size, journal-max-io, journal-min-files, journal-sync-non-transactional, journal-sync-transactional, journal-type, live-connector-ref, log-journal-write-rate, management-address, management-notification-address, memory-measure-interval, memory-warning-threshold, message-counter-enabled, message-counter-max-day-history, message-counter-sample-period, message-expiry-scan-period, message-expiry-thread-priority, page-max-concurrent-io, path, perf-blast-pages, persist-delivery-count-before-delivery, persist-id-cache, persistence-enabled, pooled-connection-factory, queue, remote-acceptor, remote-connector, remoting-incoming-interceptors, remoting-interceptors, remoting-outgoing-interceptors, replication-clustername, run-sync-speed-test, runtime-queue, scheduled-thread-pool-max-size, security-domain, security-enabled, security-invalidation-interval, security-setting, server-dump-interval, servlet-connector, shared-store, thread-pool-max-size, transaction-timeout, transaction-timeout-scan-period, wild-card-routing-enabled]

@@ -327,7 +327,8 @@ public class ModelTestUtils {
             ModelNode model2 = ignoreUndefined ? trimUndefinedChildren(node2) : node2;
             final Set<String> keys1 = new TreeSet<String>(model1.keys());
             final Set<String> keys2 = new TreeSet<String>(model2.keys());
-
+            System.out.println("ModelTestUtils.compare: " + keys1);
+            System.out.println("                        " + keys2);
             // compare string representations of the keys to help see the difference
             if (!keys1.toString().equals(keys2.toString())){
                 //Just to make debugging easier
