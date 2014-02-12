@@ -46,6 +46,8 @@ public enum Namespace {
 
     CLI_1_2("urn:jboss:cli:1.2"),
 
+    CLI_1_3("urn:jboss:cli:1.3"),
+
     CLI_2_0("urn:jboss:cli:2.0");
 
     /**
