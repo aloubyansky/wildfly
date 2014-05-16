@@ -29,12 +29,9 @@ import static org.jboss.as.patching.Constants.MODULES;
 import static org.jboss.as.patching.IoUtils.mkdir;
 import static org.jboss.as.patching.runner.TestUtils.randomString;
 
-import javax.xml.stream.XMLStreamException;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 import org.jboss.as.patching.Constants;

@@ -72,6 +72,7 @@ import org.jboss.as.controller.ProxyController;
 import org.jboss.as.controller.ProxyOperationAddressTranslator;
 import org.jboss.as.controller.ResourceDefinition;
 import org.jboss.as.controller.RunningMode;
+import org.jboss.as.controller.SimpleOperationDefinitionBuilder;
 import org.jboss.as.controller.TransformingProxyController;
 import org.jboss.as.controller.access.management.DelegatingConfigurableAuthorizer;
 import org.jboss.as.controller.audit.ManagedAuditLogger;
@@ -88,12 +89,14 @@ import org.jboss.as.controller.persistence.ExtensibleConfigurationPersister;
 import org.jboss.as.controller.registry.ImmutableManagementResourceRegistration;
 import org.jboss.as.controller.registry.ManagementResourceRegistration;
 import org.jboss.as.controller.registry.Resource;
+import org.jboss.as.controller.registry.OperationEntry.Flag;
 import org.jboss.as.controller.services.path.PathManagerService;
 import org.jboss.as.controller.transform.Transformers;
 import org.jboss.as.domain.controller.DomainController;
 import org.jboss.as.domain.controller.LocalHostControllerInfo;
 import org.jboss.as.domain.controller.SlaveRegistrationException;
 import org.jboss.as.domain.controller.operations.ApplyMissingDomainModelResourcesHandler;
+import org.jboss.as.domain.controller.operations.DomainPatchRebootStepHandler;
 import org.jboss.as.domain.controller.operations.coordination.PrepareStepHandler;
 import org.jboss.as.domain.controller.resources.DomainRootDefinition;
 import org.jboss.as.domain.management.CoreManagementResourceDefinition;
@@ -111,6 +114,7 @@ import org.jboss.as.host.controller.model.host.AdminOnlyDomainConfigPolicy;
 import org.jboss.as.host.controller.operations.LocalHostControllerInfoImpl;
 import org.jboss.as.host.controller.operations.StartServersHandler;
 import org.jboss.as.host.controller.resources.ServerConfigResourceDefinition;
+import org.jboss.as.patching.management.DomainPatchResourceDefinition;
 import org.jboss.as.process.CommandLineConstants;
 import org.jboss.as.process.ExitCodes;
 import org.jboss.as.process.ProcessControllerClient;
@@ -711,6 +715,11 @@ public class DomainModelControllerService extends AbstractControllerService impl
             final ExtensionRegistry extensionRegistry, final PathManagerService pathManager) {
         initializeDomainResource(root, configurationPersister, contentRepository, fileRepository, true,
                 hostControllerInfo, extensionRegistry, null, pathManager);
+
+        root.registerOperationHandler(
+                new SimpleOperationDefinitionBuilder("reboot", DomainPatchResourceDefinition.getResourceDescriptionResolver("patching"))
+                .withFlag(Flag.MASTER_HOST_CONTROLLER_ONLY)
+                .build(), new DomainPatchRebootStepHandler(this.environment, environment.getModulePath(), this.injectedProcessControllerConnection.getValue().getClient()));
     }
 
     public void initializeSlaveDomainRegistry(final ManagementResourceRegistration root,

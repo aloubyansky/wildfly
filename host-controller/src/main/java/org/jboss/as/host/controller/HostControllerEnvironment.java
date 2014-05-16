@@ -216,7 +216,7 @@ public class HostControllerEnvironment extends ProcessEnvironment {
     private final File domainBaseDir;
     private final File domainConfigurationDir;
     private final ConfigurationFile hostConfigurationFile;
-    private final String domainConfig;
+//    private final String domainConfig;
     private final String initialDomainConfig;
     private ConfigurationFile domainConfigurationFile;
     private final File domainContentDir;
@@ -238,10 +238,12 @@ public class HostControllerEnvironment extends ProcessEnvironment {
     private volatile String hostControllerName;
     private final HostRunningModeControl runningModeControl;
 
+    private final RawCommandLineArgs rawCommandLineArgs;
+
     public HostControllerEnvironment(Map<String, String> hostSystemProperties, boolean isRestart, String modulePath,
-                                     InetAddress processControllerAddress, Integer processControllerPort, InetAddress hostControllerAddress,
-                                     Integer hostControllerPort, String defaultJVM, String domainConfig, String initialDomainConfig, String hostConfig,
-                                     String initialHostConfig, RunningMode initialRunningMode, boolean backupDomainFiles, boolean useCachedDc, ProductConfig productConfig) {
+                                     InetAddress processControllerAddress, InetAddress hostControllerAddress,
+                                     String initialDomainConfig, String initialHostConfig, RunningMode initialRunningMode,
+                                     ProductConfig productConfig, RawCommandLineArgs args) {
 
         if (hostSystemProperties == null) {
             throw MESSAGES.nullVar("hostSystemProperties");
@@ -253,23 +255,22 @@ public class HostControllerEnvironment extends ProcessEnvironment {
         if (processControllerAddress == null) {
             throw MESSAGES.nullVar("processControllerAddress");
         }
-        if (processControllerPort == null) {
+        if (args.getProcessControllerPort() == null) {
             throw MESSAGES.nullVar("processControllerPort");
         }
         if (hostControllerAddress == null) {
             throw MESSAGES.nullVar("hostControllerAddress");
         }
-        if (hostControllerPort == null) {
-            throw MESSAGES.nullVar("hostControllerPort");
-        }
-        this.processControllerPort = processControllerPort;
         this.processControllerAddress = processControllerAddress;
+        this.processControllerPort = args.getProcessControllerPort();
         this.hostControllerAddress = hostControllerAddress;
-        this.hostControllerPort = hostControllerPort;
+        this.hostControllerPort = args.getHostControllerPort() != null ? args.getHostControllerPort() : 0;
         this.isRestart = isRestart;
         this.modulePath = modulePath;
         this.initialRunningMode = initialRunningMode;
         this.runningModeControl = new HostRunningModeControl(initialRunningMode, RestartMode.SERVERS);
+
+        this.rawCommandLineArgs = args;
 
         // Calculate host and default server name
         String hostName = hostSystemProperties.get(HOST_NAME);
@@ -361,9 +362,8 @@ public class HostControllerEnvironment extends ProcessEnvironment {
         WildFlySecurityManager.setPropertyPrivileged(DOMAIN_CONFIG_DIR, this.domainConfigurationDir.getAbsolutePath());
 
         final String defaultHostConfig = WildFlySecurityManager.getPropertyPrivileged(JBOSS_HOST_DEFAULT_CONFIG, "host.xml");
-        hostConfigurationFile = new ConfigurationFile(domainConfigurationDir, defaultHostConfig, initialHostConfig == null ? hostConfig : initialHostConfig, initialHostConfig == null);
+        hostConfigurationFile = new ConfigurationFile(domainConfigurationDir, defaultHostConfig, initialHostConfig == null ? rawCommandLineArgs.getHostConfig() : initialHostConfig, initialHostConfig == null);
 
-        this.domainConfig = domainConfig;
         this.initialDomainConfig = initialDomainConfig;
 
         tmp = getFileFromProperty(DOMAIN_DATA_DIR);
@@ -445,6 +445,7 @@ public class HostControllerEnvironment extends ProcessEnvironment {
         this.domainTempDir = tmp;
         WildFlySecurityManager.setPropertyPrivileged(DOMAIN_TEMP_DIR, this.domainTempDir.getAbsolutePath());
 
+        String defaultJVM = rawCommandLineArgs.getDefaultJVM();
         if(defaultJVM != null) {
             if (defaultJVM.equals("java")) {
                 defaultJVM = DefaultJvmUtils.findJavaExecutable(DefaultJvmUtils.getCurrentJvmHome());
@@ -454,9 +455,13 @@ public class HostControllerEnvironment extends ProcessEnvironment {
             this.defaultJVM = null;
         }
 
-        this.backupDomainFiles = backupDomainFiles;
-        this.useCachedDc = useCachedDc;
+        this.backupDomainFiles = rawCommandLineArgs.isBackupDC();
+        this.useCachedDc = rawCommandLineArgs.isCachedDC();
         this.productConfig = productConfig;
+    }
+
+    public RawCommandLineArgs getRawCommandLineArgs() {
+        return rawCommandLineArgs;
     }
 
     /**
@@ -751,7 +756,7 @@ public class HostControllerEnvironment extends ProcessEnvironment {
     }
 
     String getDomainConfig() {
-        return domainConfig;
+        return rawCommandLineArgs.getDomainConfig();
     }
 
     String getInitialDomainConfig() {

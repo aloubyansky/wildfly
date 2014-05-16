@@ -46,7 +46,60 @@ public class BasicHistoryUnitTestCase extends AbstractPatchingTest {
     static final String[] FILE_ONE = {"bin", "standalone.sh"};
     static final String[] FILE_TWO = {"bin", "standalone.conf"};
     static final String[] FILE_EXISTING = {"bin", "test"};
+/*
+    @Test
+    public void testTempPatch() throws Exception {
 
+        final PatchingTestBuilder builder = createDefaultBuilder();
+
+        final PatchingTestStepBuilder oneOff1 = builder.createStepBuilder();
+        oneOff1.setPatchId("oneOff1")
+                .oneOffPatchIdentity(PRODUCT_VERSION)
+                .addFileWithRandomContent(new byte[20], new String[]{"misc-patch", "test-file"})
+        ;
+
+        System.out.println(oneOff1.getPatchDir().getAbsolutePath());
+        File f = new File("/home/avoka/git/patch");
+        f.mkdirs();
+        copy(oneOff1.getPatchDir(), f);
+        writePatch(f, oneOff1.build());
+    }
+
+    protected void copy(File src, File dest) throws Exception {
+        if(src.isDirectory()) {
+            dest = new File(dest, src.getName());
+            if(!dest.mkdirs()) {
+                throw new Exception("failed to create " + dest.getAbsolutePath());
+            }
+            for(File f : src.listFiles()) {
+                copy(f, dest);
+            }
+        } else {
+            dest = new File(dest, src.getName());
+            java.io.FileInputStream fis = null;
+            java.io.FileOutputStream fos = null;
+            try {
+                fis = new java.io.FileInputStream(src);
+                fos = new java.io.FileOutputStream(dest);
+                final byte[] buf = new byte[2048];
+                int i = fis.read(buf);
+                while(i > 0) {
+                    fos.write(buf, 0, i);
+                    i = fis.read(buf);
+                }
+            } catch(Exception e) {
+                throw e;
+            } finally {
+                try {
+                    if(fis != null) fis.close();
+                } catch(Exception e) {}
+                try {
+                    if(fos != null) fos.close();
+                } catch(Exception e) {}
+            }
+        }
+    }
+*/
     @Test
     public void testBasicPatchHistory() throws IOException, PatchingException {
 

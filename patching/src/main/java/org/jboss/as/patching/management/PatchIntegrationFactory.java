@@ -62,7 +62,16 @@ public final class PatchIntegrationFactory implements ModelControllerServiceInit
 
     @Override
     public void initializeDomain(final ServiceTarget serviceTarget, final ManagementResourceRegistration registration, final Resource resource) {
-        // Nothing required here
+
+        // Install the installation manager service
+        //final ServiceController<InstallationManager> imController = InstallationManagerService.installService(serviceTarget);
+
+        // Register the patch resource description
+        registration.registerSubModel(DomainPatchResourceDefinition.INSTANCE);
+        // and resource
+        DomainPatchResource patchResource = new DomainPatchResource();
+        resource.registerChild(DomainPatchResourceDefinition.PATH, patchResource);
+
     }
 
 }

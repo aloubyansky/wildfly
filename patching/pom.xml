@@ -41,12 +41,22 @@
 
         <dependency>
             <groupId>org.jboss</groupId>
+            <artifactId>jboss-common-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss</groupId>
             <artifactId>jboss-dmr</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.wildfly</groupId>
             <artifactId>wildfly-controller</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-process-controller</artifactId>
         </dependency>
 
         <dependency>
@@ -88,7 +98,7 @@
         <dependency>
             <groupId>org.jboss.logmanager</groupId>
             <artifactId>jboss-logmanager</artifactId>
-            <scope>test</scope>
+<!--            <scope>test</scope> -->
         </dependency>
 
         <dependency>
@@ -97,5 +107,9 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.jboss.stdio</groupId>
+            <artifactId>jboss-stdio</artifactId>
+        </dependency>
     </dependencies>
 </project>

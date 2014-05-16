@@ -22,12 +22,23 @@
 
 package org.jboss.as.host.controller;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.concurrent.CountDownLatch;
 
 import org.jboss.as.controller.ControlledProcessState;
 import org.jboss.as.controller.ControlledProcessStateService;
+import org.jboss.as.patching.process.InputHandler;
+import org.jboss.as.patching.process.InputOutputHandlerFactory;
+import org.jboss.as.patching.process.PatchingMessenger;
+import org.jboss.msc.service.Service;
 import org.jboss.msc.service.ServiceContainer;
+import org.jboss.msc.service.ServiceName;
 import org.jboss.msc.service.ServiceTarget;
+import org.jboss.msc.service.StartContext;
+import org.jboss.msc.service.StartException;
+import org.jboss.msc.service.StopContext;
+import org.jboss.msc.value.InjectedValue;
 
 /**
  * Bootstrap of the HostController process.
@@ -55,7 +66,7 @@ public class HostControllerBootstrap {
      *
      * @throws Exception
      */
-    public void bootstrap() throws Exception {
+    public void bootstrap(InputStream input) throws Exception {
 
         final HostRunningModeControl runningModeControl = environment.getRunningModeControl();
         final ControlledProcessState processState = new ControlledProcessState(true);
@@ -64,6 +75,95 @@ public class HostControllerBootstrap {
         ControlledProcessStateService.addService(target, processState);
         final HostControllerService hcs = new HostControllerService(environment, runningModeControl, authCode, processState);
         target.addService(HostControllerService.HC_SERVICE_NAME, hcs).install();
+        HostControllerAgentService.addService(target, input);
+    }
+
+    public static class HostControllerAgentService implements Service<String> {
+
+        public static final ServiceName HC_AGENT_NAME = ServiceName.JBOSS.append("host-controller", "agent");
+
+        static void addService(ServiceTarget target, InputStream input) {
+            final HostControllerAgentService agent = new HostControllerAgentService(input);
+            target.addService(HostControllerAgentService.HC_AGENT_NAME, agent)
+            .addDependency(ProcessControllerConnectionService.SERVICE_NAME, ProcessControllerConnectionService.class, agent.injectedProcessControllerConnection)
+            .install();
+        }
+
+        private final InputStream input;
+        private final InjectedValue<ProcessControllerConnectionService> injectedProcessControllerConnection = new InjectedValue<ProcessControllerConnectionService>();
+        private Thread receiver;
+
+        public HostControllerAgentService(InputStream input) {
+            if(input == null) {
+                throw new IllegalArgumentException("Input is null");
+            }
+            this.input = input;
+        }
+
+        @Override
+        public String getValue() throws IllegalStateException, IllegalArgumentException {
+            return null;
+        }
+
+        @Override
+        public void start(StartContext context) throws StartException {
+            System.out.println("HC AGENT STARTING");
+
+            receiver = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    final InputHandler inputHandler = InputOutputHandlerFactory.getInputHandler(input);
+                    final PatchingMessenger msgr = new PatchingMessenger(injectedProcessControllerConnection.getValue().getClient(), "patching-process");
+
+                    try {
+                        try {
+                            msgr.send("HC AGENT is up");
+                            System.out.println("HC AGENT sent the up notification");
+                        } catch(IOException e) {
+                            synchronized (input) {
+                                System.out.println("NOTIFYING 2");
+                                input.notify();
+                            }
+                            throw new IllegalStateException("Failed to obtain output stream for the patching process.");
+                        }
+
+                        System.out.println("HC AGENT waiting for input");
+                        while (inputHandler.waitUntilAvailable()) {
+                            final String msg = inputHandler.unmarshalNext();
+                            System.out.println("HC AGENT received " + msg);
+
+                            if("PatchingProcess sais quit".equals(msg)) {
+                                break;
+                            } else {
+                                try {
+                                    msgr.send("HC AGENT: i see you're saying '" + msg + "' but may i quit, pls?");
+                                } catch(IOException e) {
+                                    synchronized (input) {
+                                        System.out.println("NOTIFYING 1");
+                                        input.notify();
+                                    }
+                                    throw new IllegalStateException("Failed to obtain output stream for the patching process.");
+                                }
+                            }
+                        }
+                        System.out.println("HC AGENT done receiving");
+                    } catch(IOException e) {
+                        e.printStackTrace();
+                    }
+                    synchronized(input){
+                        System.out.println("HC AGENT notifying");
+                        input.notify();
+                    }
+                }}, "hc-agent");
+            receiver.start();
+            System.out.println("HC AGENT STARTED");
+        }
+
+        @Override
+        public void stop(StopContext context) {
+            System.out.println("HC AGENT STOPPED");
+            receiver.interrupt();
+        }
     }
 
     private static class ShutdownHook extends Thread {

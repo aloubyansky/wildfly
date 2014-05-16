@@ -127,7 +127,16 @@ final class ManagedProcess {
         this.lock = lock;
         processController = controller;
         this.authKey = authKey;
-        isPrivileged = privileged;
+        if(privileged) {
+            isPrivileged = true;
+        } else if("patching-process".equals(processName)) {
+            isPrivileged = true;
+        } else if("Host Controller".equals(processName)) {
+            isPrivileged = true;
+        } else {
+            isPrivileged = false;
+        }
+        if(isPrivileged) new Exception("privileged " + processName).printStackTrace();
         respawnPolicy = respawn ? RespawnPolicy.RESPAWN : RespawnPolicy.NONE;
         log = Logger.getMessageLogger(ProcessLogger.class, "org.jboss.as.process." + processName + ".status");
     }
