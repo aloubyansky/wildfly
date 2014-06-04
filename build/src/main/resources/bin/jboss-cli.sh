@@ -1,9 +1,14 @@
 #!/bin/sh
 
+SYS_PROPS=""
 CLI_OPTS=""
 while [ "$#" -gt 0 ]
 do
     case "$1" in
+      -D*)
+          SYS_PROPS="$SYS_PROPS \"$1\""
+          ;;
+
       *)
           CLI_OPTS="$CLI_OPTS \"$1\""
           ;;
@@ -94,4 +99,4 @@ fi
 # Sample JPDA settings for remote socket debugging
 #JAVA_OPTS="$JAVA_OPTS -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n"
 
-eval \"$JAVA\" $JAVA_OPTS -jar \"$JBOSS_HOME/jboss-modules.jar\" -mp \"${JBOSS_MODULEPATH}\" org.jboss.as.cli "$CLI_OPTS"
+eval \"$JAVA\" $JAVA_OPTS "$SYS_PROPS" -jar \"$JBOSS_HOME/jboss-modules.jar\" -mp \"${JBOSS_MODULEPATH}\" org.jboss.as.cli "$CLI_OPTS"
