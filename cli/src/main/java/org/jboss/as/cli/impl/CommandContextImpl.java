@@ -1447,10 +1447,18 @@ class CommandContextImpl implements CommandContext, ModelControllerClientFactory
                     NameCallback ncb = (NameCallback) current;
                     if (username == null) {
                         showRealm();
+                        final boolean completionEnabled = console.isCompletionEnabled();
+                        if(completionEnabled) {
+                            console.setCompletionEnabled(false);
+                        }
                         try {
                             username = readLine("Username: ", false, true);
                         } catch (CommandLineException e) {
                             throw new IOException("Failed to read username.", e);
+                        } finally {
+                            if (completionEnabled) {
+                                console.setCompletionEnabled(true);
+                            }
                         }
                         if (username == null || username.length() == 0) {
                             throw new SaslException("No username supplied.");
@@ -1463,10 +1471,18 @@ class CommandContextImpl implements CommandContext, ModelControllerClientFactory
                     if (password == null) {
                         showRealm();
                         String temp;
+                        final boolean completionEnabled = console.isCompletionEnabled();
+                        if(completionEnabled) {
+                            console.setCompletionEnabled(false);
+                        }
                         try {
                             temp = readLine("Password: ", true, false);
                         } catch (CommandLineException e) {
                             throw new IOException("Failed to read password.", e);
+                        } finally {
+                            if (completionEnabled) {
+                                console.setCompletionEnabled(true);
+                            }
                         }
                         if (temp != null) {
                             password = temp.toCharArray();

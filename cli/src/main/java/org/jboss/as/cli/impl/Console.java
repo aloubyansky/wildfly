@@ -25,7 +25,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.jboss.aesh.console.ConsoleOutput;
@@ -33,7 +35,6 @@ import org.jboss.as.cli.CliInitializationException;
 import org.jboss.as.cli.CommandContext;
 import org.jboss.as.cli.CommandHistory;
 import org.jboss.as.cli.CommandLineCompleter;
-
 import org.jboss.aesh.complete.CompleteOperation;
 import org.jboss.aesh.complete.Completion;
 import org.jboss.aesh.console.Config;
@@ -72,6 +73,20 @@ public interface Console {
 
     int getTerminalHeight();
 
+    /**
+     * Checks whether the tab-completion is enabled.
+     *
+     * @return  true if tab-completion is enabled, false - otherwise
+     */
+    boolean isCompletionEnabled();
+
+    /**
+     * Enables or disables the tab-completion.
+     *
+     * @param completionEnabled  true will enable the tab-completion, false will disable it
+     */
+    void setCompletionEnabled(boolean completionEnabled);
+
     static final class Factory {
 
         public static Console getConsole(CommandContext ctx) throws CliInitializationException {
@@ -93,12 +108,17 @@ public interface Console {
                 private CommandContext cmdCtx = ctx;
                 private org.jboss.aesh.console.Console console = finalAeshConsole;
                 private CommandHistory history = new HistoryImpl();
+                private boolean completionEnabled = true;
+                private List<Completion> completers = Collections.emptyList();
 
                 @Override
                 public void addCompleter(final CommandLineCompleter completer) {
-                    console.addCompletion(new Completion() {
+                    final Completion completion = new Completion() {
                         @Override
                         public void complete(CompleteOperation co) {
+                            if(!completionEnabled) {
+                                return;
+                            }
                             int offset =  completer.complete(cmdCtx,
                                     co.getBuffer(), co.getCursor(), co.getCompletionCandidates());
                             co.setOffset(offset);
@@ -108,7 +128,18 @@ public interface Console {
                             else
                                 co.doAppendSeparator(false);
                         }
-                    });
+                    };
+                    if(completers.isEmpty()) {
+                        completers = Collections.singletonList(completion);
+                    } else {
+                        if(completers.size() == 1) {
+                            final Completion first = completers.get(0);
+                            completers = new ArrayList<Completion>();
+                            completers.add(first);
+                        }
+                        completers.add(completion);
+                    }
+                    console.addCompletion(completion);
                 }
 
                 @Override
@@ -201,6 +232,30 @@ public interface Console {
                 @Override
                 public int getTerminalHeight() {
                     return console.getTerminalSize().getHeight();
+                }
+
+
+                @Override
+                public boolean isCompletionEnabled() {
+                    return completionEnabled;
+                }
+
+                @Override
+                public void setCompletionEnabled(boolean completionEnabled) {
+                    this.completionEnabled = completionEnabled;
+                    // hack to disable aesh alias completion
+                    try {
+                        console.stop();
+                        final Settings settings = Settings.getInstance();
+                        //settings.setDisableCompletion(!completionEnabled); this doesn't work
+                        settings.setAliasEnabled(completionEnabled);
+                        console.reset(settings);
+                        console.addCompletions(completers);
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                        throw new IllegalStateException(e);
+                    }
                 }
 
             class HistoryImpl implements CommandHistory {
