@@ -447,6 +447,26 @@ public class DeploymentOverlayCLITestCase {
     }
 
     @Test
+    public void testWildcardOverrideWithRedeployAffectedForSubdeployments() throws Exception {
+
+        ctx.handle("deploy " + ear1.getAbsolutePath());
+        ctx.handle("deploy " + war2.getAbsolutePath());
+
+        String response = readResponse("deployment0");
+        assertEquals("NON OVERRIDDEN", response);
+        response = readResponse("deployment1");
+        assertEquals("NON OVERRIDDEN", response);
+
+        ctx.handle("deployment-overlay add --name=overlay-test --content=WEB-INF/web.xml=" + overrideXml.getAbsolutePath()
+            + " --deployments=*.war --redeploy-affected");
+
+        response = readResponse("deployment1");
+        assertEquals("OVERRIDDEN", response);
+        response = readResponse("deployment0");
+        assertEquals("OVERRIDDEN", response);
+    }
+
+    @Test
     public void testMultipleLinks() throws Exception {
 
         ctx.handle("deployment-overlay add --name=overlay-test --content=WEB-INF/web.xml=" + overrideXml.getAbsolutePath()
