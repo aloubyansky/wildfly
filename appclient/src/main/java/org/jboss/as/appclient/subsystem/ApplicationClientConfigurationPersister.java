@@ -28,6 +28,7 @@ import java.util.Set;
 
 import javax.xml.namespace.QName;
 
+import org.jboss.as.controller.ManagementModel;
 import org.jboss.as.controller.PathAddress;
 import org.jboss.as.controller.persistence.ConfigurationPersistenceException;
 import org.jboss.as.controller.persistence.SubsystemMarshallingContext;
@@ -81,7 +82,7 @@ public class ApplicationClientConfigurationPersister extends XmlConfigurationPer
 
 
     @Override
-    public PersistenceResource store(final ModelNode model, final Set<PathAddress> affectedAddresses) throws ConfigurationPersistenceException {
+    public PersistenceResource store(final ManagementModel model, final Set<PathAddress> affectedAddresses) throws ConfigurationPersistenceException {
         return new PersistenceResource() {
             @Override
             public void commit() {
@@ -101,8 +102,8 @@ public class ApplicationClientConfigurationPersister extends XmlConfigurationPer
     }
 
     @Override
-    public List<ModelNode> load() throws ConfigurationPersistenceException {
-        List<ModelNode> nodes = super.load();
+    public List<ModelNode> load(ManagementModel model) throws ConfigurationPersistenceException {
+        List<ModelNode> nodes = super.load(model);
         return AppClientServerConfiguration.serverConfiguration(filePath, deploymentName, hostUrl, propertiesFileURL, parameters, nodes);
     }
 
