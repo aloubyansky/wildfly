@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="mail-server" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,mail-session,server"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.mail.session.server.$server"/>
+  </provides>
+  <requires>
+    <capability name="$profile.org.wildfly.security.credential-store.$credential-reference" optional="true"/>
+    <capability name="org.wildfly.network.outbound-socket-binding.$outbound-socket-binding-ref"/>
+  </requires>
+  <refs>
+    <ref feature="mail-session"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="transactions" feature-id="true"/>
+    <param name="mail-session" default="default" feature-id="true"/>
+    <param name="server" feature-id="true"/>
+    <param name="credential-reference" nillable="true"/>
+    <param name="outbound-socket-binding-ref"/>
+  </params>
+</feature-spec>

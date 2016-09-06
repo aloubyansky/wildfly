@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.domain">
+    <dependencies>
+        <feature-pack dependency="servlet">
+            <package name="config.domain"/>
+        </feature-pack>
+        <feature-pack dependency="core">
+            <package name="config.security-manager"/>
+        </feature-pack>
+        <package name="config.jmx"/>
+        <package name="config.base"/>
+        <package name="config.infinispan.cache.local"/>
+    </dependencies>
+</package-spec>

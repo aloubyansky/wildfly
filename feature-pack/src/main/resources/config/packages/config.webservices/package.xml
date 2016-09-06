@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.webservices">
+    <dependencies>
+        <package name="org.jboss.as.webservices.main"/>
+    </dependencies>
+</package-spec>

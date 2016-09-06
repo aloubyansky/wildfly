@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.jaxrs">
+    <dependencies>
+        <package name="org.jboss.as.jaxrs.main"/>
+    </dependencies>
+</package-spec>

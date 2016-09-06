@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="infinispan-cache-container-distributed-cache-store" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,cache-container,distributed-cache,store"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.clustering.infinispan.cache.store.$store"/>
+  </provides>
+  <requires>
+    <capability name="$profile.org.wildfly.management.path.$relative-to" optional="true"/>
+  </requires>
+  <refs>
+    <ref feature="infinispan-cache-container-distributed-cache"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="jca" feature-id="true"/>
+    <param name="cache-container" feature-id="true"/>
+    <param name="distributed-cache" feature-id="true"/>
+    <param name="store" default="file" feature-id="true"/>
+    <param name="passivation" nillable="true"/>
+    <param name="purge" nillable="true"/>
+    <param name="relative-to" nillable="true"/>
+  </params>
+</feature-spec>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="security-domain-authentication-jaspi" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,security-domain,authentication"/>
+  </annotation>
+  <refs>
+    <ref feature="security-domain"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="security-domain" feature-id="true"/>
+    <param name="authentication" default="jaspi" feature-id="true"/>
+  </params>
+</feature-spec>

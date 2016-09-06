@@ -1,0 +1,10 @@
+/subsystem=messaging-activemq/server=default:write-attribute(name=cluster-password,value="\${jboss.messaging.cluster.password:CHANGE ME!!}")
+/subsystem=messaging-activemq/server=default/address-setting=#:write-attribute(name=redistribution-delay,value="1000")
+
+/subsystem=messaging-activemq/server=default/connection-factory=RemoteConnectionFactory:write-attribute(name=ha,value="true")
+/subsystem=messaging-activemq/server=default/connection-factory=RemoteConnectionFactory:write-attribute(name=block-on-acknowledge,value="true")
+/subsystem=messaging-activemq/server=default/connection-factory=RemoteConnectionFactory:write-attribute(name=reconnect-attempts,value="-1")
+
+/subsystem=messaging-activemq/server=default/broadcast-group=bg-group1:add(jgroups-channel="activemq-cluster",connectors=["http-connector"])
+/subsystem=messaging-activemq/server=default/discovery-group=dg-group1:add(jgroups-channel="activemq-cluster")
+/subsystem=messaging-activemq/server=default/cluster-connection=my-cluster:add(cluster-connection-address="jms",connector-name="http-connector",discovery-group="dg-group1")

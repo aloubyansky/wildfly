@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ejb3-thread-pool" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,thread-pool"/>
+  </annotation>
+  <refs>
+    <ref feature="ejb3"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ejb3" feature-id="true"/>
+    <param name="thread-pool" default="default" feature-id="true"/>
+    <param name="max-threads" default="10"/>
+    <param name="keepalive-time" default="{time=100,unit=MILLISECONDS}"/>
+  </params>
+</feature-spec>

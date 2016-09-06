@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="dist.legacy">
+    <dependencies>
+        <package name="modules.all"/>
+        <package name="dist.standalone"/>
+        <package name="dist.standalone-ha"/>
+        <package name="dist.standalone-full"/>
+        <package name="dist.standalone-full-ha"/>
+        <package name="dist.domain"/>
+        <package name="dist.domain-ha"/>
+        <package name="dist.domain-full"/>
+        <package name="dist.domain-full-ha"/>
+        <package name="dist.domain-load-balancer"/>
+        <feature-pack dependency="servlet">
+            <package name="modules.all"/>
+        </feature-pack>
+        <feature-pack dependency="core">
+            <package name="modules.all"/>
+            <!--
+            <package name="config.domain-servers">
+                <parameters>
+                    <parameter name="domain">
+                        <package-scripts xmlns="urn:wildfly:package-script:1.0">
+                            <script path="server-group.cli">
+                                <param name="serverGroup" value="main-server-group"/>
+                                <param name="profileName" value="full"/>
+                                <param name="socketGroupName" value="full"/>
+                            </script>
+                            <script path="server-group.cli">
+                                <param name="serverGroup" value="other-server-group"/>
+                                <param name="profileName" value="full-ha"/>
+                                <param name="socketGroupName" value="full-ha"/>
+                            </script>
+                        </package-scripts>
+                    </parameter>
+                    <parameter name="host">
+                        <package-scripts xmlns="urn:wildfly:package-script:1.0">
+                            <script path="server-config.cli" prefix="/host=${host:master}">
+                                <param name="serverName" value="server-one"/>
+                                <param name="serverGroup" value="main-server-group"/>
+                                <param name="autoStart" value="true"/>
+                                <param name="portOffset" value="0"/>
+                            </script>
+                            <script path="server-config.cli" prefix="/host=${host:master}">
+                                <param name="serverName" value="server-two"/>
+                                <param name="serverGroup" value="main-server-group"/>
+                                <param name="autoStart" value="true"/>
+                                <param name="portOffset" value="150"/>
+                            </script>
+                            <script path="server-config.cli" prefix="/host=${host:master}">
+                                <param name="serverName" value="server-three"/>
+                                <param name="serverGroup" value="other-server-group"/>
+                                <param name="autoStart" value="false"/>
+                                <param name="portOffset" value="250"/>
+                            </script>
+                        </package-scripts>
+                    </parameter>
+                </parameters>
+            </package>
+            -->
+        </feature-pack>
+    </dependencies>
+</package-spec>

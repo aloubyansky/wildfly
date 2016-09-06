@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.jpa">
+    <dependencies>
+        <package name="org.jboss.as.jpa.main"/>
+    </dependencies>
+</package-spec>

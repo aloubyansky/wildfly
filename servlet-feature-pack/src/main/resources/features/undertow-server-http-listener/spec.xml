@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="undertow-server-http-listener" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,http-listener"/>
+    <elem name="op-params" value="socket-binding,redirect-socket,enable-http2,worker,buffer-pool"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.undertow.listener.$http-listener"/>
+  </provides>
+  <requires>
+    <capability name="org.wildfly.network.socket-binding.$socket-binding"/>
+    <capability name="org.wildfly.network.socket-binding.$redirect-socket"/>
+    <capability name="$profile.org.wildfly.io.buffer-pool.$buffer-pool"/>
+    <capability name="$profile.org.wildfly.io.worker.$worker"/>
+  </requires>
+  <refs>
+    <ref feature="undertow-server"/>
+    <ref dependency="core" feature="io-worker">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="io-subsystem" maps-to="subsystem"/>
+      <param name="worker" maps-to="worker"/>
+    </ref>
+    <ref dependency="core" feature="io-buffer-pool">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="io-subsystem" maps-to="subsystem"/>
+      <param name="buffer-pool" maps-to="buffer-pool"/>
+    </ref>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="server" feature-id="true"/>
+    <param name="http-listener" default="default" feature-id="true"/>
+    <param name="socket-binding" default="http"/>
+    <param name="redirect-socket" default="https"/>
+    <param name="enable-http2" default="false"/>
+    <param name="worker" default="default"/>
+    <param name="buffer-pool" default="default"/>
+    <param name="io-subsystem" default="io"/>
+  </params>
+</feature-spec>

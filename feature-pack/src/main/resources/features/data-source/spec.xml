@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="data-source" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,data-source"/>
+  </annotation>
+  <refs>
+    <ref feature="datasources"/>
+    <ref feature="jdbc-driver">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="driver-name" maps-to="jdbc-driver"/>
+    </ref>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="datasources" feature-id="true"/>
+    <param name="data-source" feature-id="true"/>
+    <param name="jndi-name"/>
+    <param name="enabled" default="true"/>
+    <param name="use-java-context" default="true"/>
+    <param name="connection-url"/>
+    <param name="driver-name"/>
+    <param name="user-name"/>
+    <param name="password"/>
+  </params>
+</feature-spec>

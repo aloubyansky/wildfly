@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ejb3-strict-max-bean-pool" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,strict-max-bean-instance-pool"/>
+  </annotation>
+  <refs>
+    <ref feature="ejb3"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ejb3" feature-id="true"/>
+    <param name="strict-max-bean-instance-pool" feature-id="true"/>
+    <param name="derive-size"/>
+    <param name="timeout" default="5"/>
+    <param name="timeout-unit" default="MINUTES"/>
+  </params>
+</feature-spec>
