@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.undertow.ajp-listener">
+    <dependencies>
+        <package name="config.socket-binding.ajp"/>
+        <package name="config.undertow"/>
+    </dependencies>
+</package-spec>

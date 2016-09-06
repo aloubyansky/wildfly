@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="jca-archive-validation" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,archive-validation"/>
+  </annotation>
+  <refs>
+    <ref feature="jca"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="jca" feature-id="true"/>
+    <param name="archive-validation" default="archive-validation" feature-id="true"/>
+    <param name="enabled" default="true"/>
+    <param name="fail-on-error" default="true"/>
+    <param name="fail-on-warn" default="false"/>
+  </params>
+</feature-spec>

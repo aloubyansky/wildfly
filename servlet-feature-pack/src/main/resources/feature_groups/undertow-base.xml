@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="undertow-base" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature spec="undertow">
+        <feature spec="undertow-buffer-cache"/>
+        <feature spec="undertow-config-filter"/>
+        <feature spec="undertow-config-handler"/>
+        <feature spec="undertow-server">
+            <feature spec="undertow-server-host"/>
+            <feature spec="undertow-server-http-listener">
+                <param name="enable-http2" value="true"/>
+            </feature>
+        </feature>
+        <feature spec="undertow-servlet-container"/>
+    </feature>
+</feature-group-spec>

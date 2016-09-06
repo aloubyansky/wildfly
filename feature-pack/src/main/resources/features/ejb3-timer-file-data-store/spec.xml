@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ejb3-timer-file-data-store" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,service,file-data-store"/>
+  </annotation>
+  <refs>
+    <ref feature="ejb3-timer-service"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ejb3" feature-id="true"/>
+    <param name="service" default="timer-service" feature-id="true"/>
+    <param name="file-data-store" default="default-file-store" feature-id="true"/>
+    <param name="path" default="timer-service-data"/>
+    <param name="relative-to" default="jboss.server.data.dir"/>
+  </params>
+</feature-spec>

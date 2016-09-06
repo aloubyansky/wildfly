@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="security" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature spec="security">
+        <feature spec="security-domain">
+            <param name="security-domain" value="other"/>
+            <feature spec="security-domain-authentication-classic">
+                <feature spec="security-domain-classic-login-module">
+                    <param name="login-module" value="RealmDirect"/>
+                    <param name="code" value="RealmDirect"/>
+                    <param name="flag" value="required"/>
+                    <param name="module-options" value="{password-stacking=useFirstPass}"/>
+                </feature>
+                <feature spec="security-domain-classic-login-module">
+                    <param name="login-module" value="Remoting"/>
+                    <param name="code" value="Remoting"/>
+                    <param name="flag" value="optional"/>
+                    <param name="module-options" value="{password-stacking=useFirstPass}"/>
+                </feature>
+            </feature>
+        </feature>
+    </feature>
+</feature-group-spec>

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.security">
+    <dependencies>
+        <feature-pack dependency="servlet">
+            <package name="config.security"/>
+        </feature-pack>
+    </dependencies>
+</package-spec>

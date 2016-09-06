@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="undertow-server-host-filter-ref" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,server-host,filter-ref"/>
+    <elem name="addr-params-mapping" value="host,profile,subsystem,server,host,filter-ref"/>
+    <elem name="op-params"/>
+  </annotation>
+  <refs>
+    <ref feature="undertow-server-host"/>
+<!--     <ref feature="undertow-config-filter-response-header" nillable="true"> it could also be a ref to mod-cluster
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="filter-config" maps-to="configuration"/>
+      <param name="filter-ref" maps-to="response-header"/>
+    </ref>
+ -->  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="server" feature-id="true"/>
+    <param name="server-host" feature-id="true"/>
+    <param name="filter-ref" feature-id="true"/>
+  </params>
+</feature-spec>

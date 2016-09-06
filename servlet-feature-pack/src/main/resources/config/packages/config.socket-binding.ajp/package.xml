@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.socket-binding.ajp">
+    <dependencies>
+        <feature-pack dependency="core">
+            <package name="config.socket-binding-group"/>
+        </feature-pack>
+    </dependencies>
+</package-spec>

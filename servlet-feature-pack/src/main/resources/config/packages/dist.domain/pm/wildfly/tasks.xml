@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<tasks xmlns="urn:wildfly:wildfly-feature-pack-tasks:2.0">
+    <config-generator>
+        <domain profile="default"/>
+    </config-generator>
+</tasks>

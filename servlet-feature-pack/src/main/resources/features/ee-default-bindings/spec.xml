@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ee-default-bindings" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,service"/>
+  </annotation>
+  <refs>
+    <ref feature="ee"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="service" default="default-bindings" feature-id="true"/>
+    <param name="context-service"/>
+    <param name="managed-executor-service"/>
+    <param name="managed-scheduled-executor-service"/>
+    <param name="managed-thread-factory"/>
+    <param name="datasource" nillable="true"/>
+    <param name="jms-connection-factory" nillable="true"/>
+  </params>
+</feature-spec>

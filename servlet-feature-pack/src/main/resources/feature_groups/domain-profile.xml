@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="domain-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <feature-pack dependency="core">
+        <feature-group name="domain-profile">
+            <include feature-id="root-logger:subsystem=logging,root-logger=ROOT">
+                <param name="handlers" value="[&quot;FILE&quot;]"/>
+            </include>
+            <exclude spec="logging-console-handler"/>
+        </feature-group>
+    </feature-pack>
+
+    <feature-group name="basic-profile"/>
+
+</feature-group-spec>

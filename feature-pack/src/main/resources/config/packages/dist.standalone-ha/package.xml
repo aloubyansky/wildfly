@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="dist.standalone-ha">
+    <dependencies>
+        <package name="misc.standalone"/>
+        <package name="config.standalone-ha"/>
+        <package name="product.conf"/>
+    </dependencies>
+</package-spec>

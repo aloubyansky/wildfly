@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ee-thread-factory" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,managed-thread-factory"/>
+  </annotation>
+  <refs>
+    <ref feature="ee"/>
+    <ref feature="ee-context-service"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="managed-thread-factory" feature-id="true"/>
+    <param name="jndi-name"/>
+    <param name="context-service"/>
+  </params>
+</feature-spec>

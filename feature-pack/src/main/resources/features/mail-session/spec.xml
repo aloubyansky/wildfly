@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="mail-session" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,mail-session"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.mail.session.$mail-session"/>
+  </provides>
+  <refs>
+    <ref feature="mail"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="transactions" feature-id="true"/>
+    <param name="mail-session" default="default" feature-id="true"/>
+    <param name="jndi-name" default="java:jboss/mail/Default"/>
+  </params>
+</feature-spec>

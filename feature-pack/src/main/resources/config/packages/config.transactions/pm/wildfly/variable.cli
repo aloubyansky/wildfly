@@ -1,0 +1,2 @@
+/socket-binding-group=$socketGroup-sockets/socket-binding=txn-recovery-environment:add(port="4712")
+/socket-binding-group=$socketGroup-sockets/socket-binding=txn-status-manager:add(port="4713")

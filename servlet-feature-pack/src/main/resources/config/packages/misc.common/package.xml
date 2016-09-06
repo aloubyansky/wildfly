@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="misc.common">
+    <dependencies>
+        <package name="LICENSE.txt"/>
+        <package name="README.txt"/>
+        <package name="copyright.txt"/>
+        <package name="welcome-content"/>
+        <feature-pack dependency="core">
+            <package name="misc.common"/>
+        </feature-pack>
+    </dependencies>
+</package-spec>

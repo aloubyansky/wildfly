@@ -1,0 +1,6 @@
+/extension=org.jboss.as.security:add
+/subsystem=security:add
+/subsystem=security/security-domain=other:add(cache-type="default")
+/subsystem=security/security-domain=other/authentication=classic:add
+/subsystem=security/security-domain=other/authentication=classic/login-module=RealmDirect:add(code="RealmDirect",flag="required",module-options={"password-stacking" => "useFirstPass"})
+/subsystem=security/security-domain=other/authentication=classic/login-module=Remoting:add(code="Remoting",flag="optional",module-options={"password-stacking" => "useFirstPass"})

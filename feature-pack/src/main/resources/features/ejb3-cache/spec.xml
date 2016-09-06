@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ejb3-cache" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,cache"/>
+  </annotation>
+  <refs>
+    <ref feature="ejb3"/>
+    <ref feature="ejb3-passivation-store" nillable="true"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ejb3" feature-id="true"/>
+    <param name="cache" feature-id="true"/>
+    <param name="passivation-store"/>
+    <param name="aliases"/>
+  </params>
+</feature-spec>
