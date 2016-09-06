@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="singleton-policy-election" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,singleton-policy,election-policy"/>
+    <elem name="op-params" value="name-preferences,position,socket-binding-preferences"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.clustering.singleton.policy.election.$election-policy"/>
+  </provides>
+  <requires>
+    <capability name="$profile.org.wildfly.network.outbound-socket-binding.$socket-binding-preferences" optional="true"/>
+  </requires>
+  <refs>
+    <ref feature="singleton-policy"/>
+    <ref dependency="core" feature="profile" include="true" nillable="true"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="singleton" feature-id="true"/>
+    <param name="singleton-policy" feature-id="true"/>
+    <param name="election-policy" feature-id="true"/>
+    <param name="name-preferences" nillable="true"/>
+    <param name="position" nillable="true"/>
+    <param name="socket-binding-preferences" nillable="true"/>
+  </params>
+</feature-spec>

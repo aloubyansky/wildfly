@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ejb3-passivation-store" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,passivation-store"/>
+    <elem name="op-params" value="cache-container,max-size"/>
+  </annotation>
+  <refs>
+    <ref feature="ejb3"/>
+    <ref feature="infinispan-cache-container">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="infinispan-subsystem" maps-to="subsystem"/>
+      <param name="cache-container" maps-to="cache-container"/>
+    </ref>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ejb3" feature-id="true"/>
+    <param name="passivation-store" feature-id="true"/>
+    <param name="cache-container" default="ejb"/>
+    <param name="max-size" default="10000"/>
+    <param name="infinispan-subsystem" default="infinispan"/>
+  </params>
+</feature-spec>

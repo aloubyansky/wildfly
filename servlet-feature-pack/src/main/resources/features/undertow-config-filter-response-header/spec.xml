@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="undertow-config-filter-response-header" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,configuration,response-header"/>
+  </annotation>
+  <refs>
+    <ref feature="undertow-config-filter"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="configuration" feature-id="true"/>
+    <param name="response-header" feature-id="true"/>
+    <param name="header-name"/>
+    <param name="header-value"/>
+  </params>
+</feature-spec>

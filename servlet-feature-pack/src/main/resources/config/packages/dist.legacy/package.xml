@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="dist.legacy">
+    <dependencies>
+        <package name="dist.servlet.legacy"/>
+        <package name="dist.load-balancer"/>
+    </dependencies>
+</package-spec>

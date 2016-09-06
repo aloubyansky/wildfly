@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="infinispan-cache-container" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,cache-container"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.clustering.cache.default-node-factory.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.cache.default-singleton-service-builder-factory.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.cache.default-registry.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.cache.default-registry-entry.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.cache.default-registry-factory.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.cache.default-group.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.cache.default-service-provider-registry.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.cache-container.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.cache-container-configuration.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.default-cache.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.default-cache-configuration.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.key-affinity-factory.$cache-container"/>
+  </provides>
+  <requires>
+    <capability name="$profile.org.wildfly.clustering.infinispan.cache-configuration.$cache-container.$default-cache" optional="true"/>
+  </requires>
+  <refs>
+    <ref feature="infinispan"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="jca" feature-id="true"/>
+    <param name="cache-container" feature-id="true"/>
+    <param name="aliases" nillable="true"/>
+    <param name="cache-manager-status" nillable="true"/>
+    <param name="cluster-name" nillable="true"/>
+    <param name="coordinator-address" nillable="true"/>
+    <param name="default-cache" nillable="true"/>
+    <param name="eviction-executor" nillable="true"/>
+    <param name="is-coordinator" nillable="true"/>
+    <param name="jndi-name" nillable="true"/>
+    <param name="listener-executor" nillable="true"/>
+    <param name="local-address" nillable="true"/>
+    <param name="module" nillable="true"/>
+    <param name="replication-queue-executor" nillable="true"/>
+    <param name="start" nillable="true"/>
+    <param name="statistics-enabled" nillable="true"/>
+  </params>
+</feature-spec>

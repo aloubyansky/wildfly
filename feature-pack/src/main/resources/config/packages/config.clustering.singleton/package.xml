@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.clustering.singleton">
+    <dependencies>
+        <package name="org.wildfly.extension.clustering.singleton.main"/>
+        <package name="config.infinispan.cache.base"/>
+    </dependencies>
+</package-spec>

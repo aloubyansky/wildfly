@@ -102,6 +102,7 @@
         <feature-group name="domain-full-ha"/>
         <feature-group name="domain-load-balancer"/>
 
+
         <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
             <feature spec="domain.server-group">
                 <param name="server-group" value="main-server-group"/>

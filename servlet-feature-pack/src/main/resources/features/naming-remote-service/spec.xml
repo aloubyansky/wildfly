@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="naming-remote-service" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,service"/>
+  </annotation>
+  <refs>
+    <ref feature="naming"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="naming" feature-id="true"/>
+    <param name="service" default="remote-naming"/>
+  </params>
+</feature-spec>

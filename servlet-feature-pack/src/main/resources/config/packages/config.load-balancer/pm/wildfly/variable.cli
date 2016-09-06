@@ -1,0 +1,2 @@
+/socket-binding-group=$socketGroup-sockets/socket-binding=mcmp-management:add(interface="private",port="\${jboss.mcmp.port:8090}")
+/socket-binding-group=$socketGroup-sockets/socket-binding=modcluster:add(interface="private",multicast-address="\${jboss.modcluster.multicast.address:224.0.1.105}",multicast-port="23364")

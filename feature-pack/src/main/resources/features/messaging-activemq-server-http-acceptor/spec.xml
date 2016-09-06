@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="messaging-activemq-server-http-acceptor" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,http-acceptor"/>
+  </annotation>
+  <refs>
+    <ref feature="messaging-activemq-server"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="messaging-activemq" feature-id="true"/>
+    <param name="server" default="default" feature-id="true"/>
+    <param name="http-acceptor" default="http-connector" feature-id="true"/>
+    <param name="http-listener"/>
+    <param name="endpoint"/>
+    <param name="params" nillable="true"/>
+    <param name="upgrade-legacy" nillable="true"/>
+  </params>
+</feature-spec>

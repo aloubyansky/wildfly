@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="jaxrs" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem"/>
+    <elem name="op-params"/>
+  </annotation>
+  <refs>
+    <ref dependency="core" feature="extension" include="true"/>
+    <ref dependency="core" feature="profile" include="true" nillable="true"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="jaxrs" feature-id="true"/>
+    <param name="extension" default="org.jboss.as.jaxrs"/>
+  </params>
+  <packages>
+    <package name="org.jboss.as.jaxrs.main"/>
+  </packages>
+</feature-spec>

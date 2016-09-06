@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="batch-jberet-thread-pool" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,thread-pool"/>
+  </annotation>
+  <refs>
+    <ref feature="batch-jberet"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="batch-jberet" feature-id="true"/>
+    <param name="thread-pool" default="batch" feature-id="true"/>
+    <param name="max-threads" default="10"/>
+    <param name="keepalive-time" default="{time=30,unit=SECONDS}"/>
+  </params>
+</feature-spec>
