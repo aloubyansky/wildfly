@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="messaging-activemq-server-address-setting" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,address-setting"/>
+  </annotation>
+  <refs>
+    <ref feature="messaging-activemq-server"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="messaging-activemq" feature-id="true"/>
+    <param name="server" default="default" feature-id="true"/>
+    <param name="address-setting" default="#" feature-id="true"/>
+    <param name="dead-letter-address" default="jms.queue.DLQ"/>
+    <param name="expiry-address" default="jms.queue.ExpiryQueue"/>
+    <param name="max-size-bytes" default="10485760"/>
+    <param name="page-size-bytes" default="2097152"/>
+    <param name="message-counter-history-day-limit" default="10"/>
+    <param name="redistribution-delay" nillable="true"/>
+  </params>
+</feature-spec>

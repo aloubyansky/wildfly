@@ -1,0 +1,2 @@
+/extension=org.jboss.as.naming:add
+/subsystem=naming:add

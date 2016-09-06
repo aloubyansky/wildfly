@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="misc.common">
+    <dependencies>
+        <feature-pack dependency="servlet">
+            <package name="misc.common"/>
+        </feature-pack>
+        <package name="appclient"/>
+        <package name="bin"/>
+        <package name="docs"/>
+    </dependencies>
+</package-spec>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="messaging-activemq-server-broadcast-group" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,broadcast-group"/>
+  </annotation>
+  <refs>
+    <ref feature="messaging-activemq-server"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="messaging-activemq" feature-id="true"/>
+    <param name="server" default="default" feature-id="true"/>
+    <param name="broadcast-group" default="bg-group1" feature-id="true"/>
+    <param name="jgroups-channel" default="activemq-cluster"/>
+    <param name="connectors" default="[http-connector]"/>
+  </params>
+</feature-spec>

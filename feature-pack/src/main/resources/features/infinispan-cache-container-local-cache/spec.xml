@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="infinispan-cache-container-local-cache" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,cache-container,local-cache"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.clustering.cache.service-provider-registry.$local-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.registry.$local-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.singleton-service-builder-factory.$local-cache"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.cache-configuration.$cache-container.$local-cache"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.cache.$local-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.node-factory.$local-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.registry-entry.$local-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.group.$local-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.registry-factory.$local-cache"/>
+  </provides>
+  <refs>
+    <ref feature="infinispan-cache-container"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="cache-container" feature-id="true"/>
+    <param name="local-cache" feature-id="true"/>
+  </params>
+</feature-spec>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ee-default-data-source-binding" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="write-attribute">
+    <elem name="addr-params" value="host,profile,subsystem,service"/>
+    <elem name="op-params" value="datasource"/>
+  </annotation>
+  <refs>
+    <ref feature="ee-default-bindings"/>
+    <ref dependency="core" feature="profile" nillable="true"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ee" feature-id="true"/>
+    <param name="service" default="default-bindings" feature-id="true"/>
+    <param name="datasource"/>
+  </params>
+</feature-spec>

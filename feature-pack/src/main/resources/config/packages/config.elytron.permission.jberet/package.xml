@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.elytron.permission.jberet">
+    <dependencies>
+        <feature-pack dependency="core">
+            <package name="config.elytron"/>
+        </feature-pack>
+        <package name="config.jberet"/>
+    </dependencies>
+</package-spec>

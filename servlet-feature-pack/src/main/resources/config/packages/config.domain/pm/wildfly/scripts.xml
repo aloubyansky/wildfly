@@ -1,0 +1,5 @@
+<scripts xmlns="urn:wildfly:package-scripts:1.0">
+    <host>
+        <script>/host=${host:master}/core-service=management/management-interface=native-interface:add(security-realm="ManagementRealm",interface="management",port="${jboss.management.native.port:9999}")</script>
+    </host>
+</scripts>

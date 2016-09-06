@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="infinispan-cache-container-replicated-cache-transaction" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,cache-container,replicated-cache,component"/>
+  </annotation>
+  <refs>
+    <ref feature="infinispan-cache-container-replicated-cache"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="jca" feature-id="true"/>
+    <param name="cache-container" feature-id="true"/>
+    <param name="replicated-cache" feature-id="true"/>
+    <param name="component" default="transaction" feature-id="true"/>
+    <param name="mode" default="BATCH"/>
+  </params>
+</feature-spec>

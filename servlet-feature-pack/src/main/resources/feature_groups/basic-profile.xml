@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="basic-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <feature-pack dependency="core">
+        <feature-group name="io"/>
+    </feature-pack>
+
+    <feature spec="naming"/>
+    <feature-group name="security"/>
+    <feature-group name="ee"/>
+    <feature-group name="undertow"/>
+
+</feature-group-spec>

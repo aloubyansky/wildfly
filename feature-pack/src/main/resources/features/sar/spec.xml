@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="sar" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem"/>
+    <elem name="op-params"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.sar-deployment"/>
+  </provides>
+  <requires>
+    <capability name="$profile.org.wildfly.management.jmx"/>
+  </requires>
+  <refs>
+    <ref dependency="core" feature="extension" include="true"/>
+    <ref name="profile" dependency="core" feature="profile" include="true" nillable="true"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="sar" feature-id="true"/>
+    <param name="extension" default="org.jboss.as.sar"/>
+  </params>
+  <packages>
+    <package name="org.jboss.as.sar.main"/>
+  </packages>
+</feature-spec>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ejb3" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem"/>
+    <elem name="op-params" value="default-slsb-instance-pool,default-stateful-bean-access-timeout,default-sfsb-cache,
+                                  default-sfsb-passivation-disabled-cache,default-singleton-bean-access-timeout,
+                                  default-security-domain,default-missing-method-permissions-deny-access,log-system-exceptions,
+                                  default-resource-adapter-name,default-mdb-instance-pool"/>
+  </annotation>
+  <refs>
+    <ref dependency="core" feature="extension" include="true"/>
+    <ref dependency="core" feature="profile" include="true" nillable="true"/>
+    <ref feature="ejb3-strict-max-bean-pool">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="default-slsb-instance-pool" maps-to="strict-max-bean-instance-pool"/>
+    </ref>
+    <ref name="default-sfsb-cache" feature="ejb3-cache">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="default-sfsb-cache" maps-to="cache"/>
+    </ref>
+    <ref name="default-sfsb-passivation-disabled-cache" feature="ejb3-cache">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="default-sfsb-passivation-disabled-cache" maps-to="cache"/>
+    </ref>
+    <ref name="default-security-domain" dependency="servlet" feature="security-domain">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="security-subsystem" maps-to="subsystem"/>
+      <param name="default-security-domain" maps-to="security-domain"/>
+    </ref>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ejb3" feature-id="true"/>
+    <param name="extension" default="org.jboss.as.ejb3"/>
+    <param name="default-slsb-instance-pool"/>
+    <param name="default-stateful-bean-access-timeout" default="5000"/>
+    <param name="default-sfsb-cache"/>
+    <param name="default-sfsb-passivation-disabled-cache"/>
+    <param name="default-singleton-bean-access-timeout" default="5000"/>
+    <param name="security-subsystem" default="security"/>
+    <param name="default-security-domain"/>
+    <param name="default-missing-method-permissions-deny-access" default="true"/>
+    <param name="log-system-exceptions" default="true"/>
+    <param name="default-resource-adapter-name" nillable="true"/>
+    <param name="default-mdb-instance-pool" nillable="true"/>
+  </params>
+  <packages>
+    <package name="org.jboss.as.ejb3.main"/>
+  </packages>
+</feature-spec>

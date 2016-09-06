@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="undertow-server-host-location" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,server-host,location"/>
+    <elem name="addr-params-mapping" value="host,profile,subsystem,server,host,location"/>
+    <elem name="op-params" value="handler"/>
+  </annotation>
+  <refs>
+    <ref feature="undertow-server-host"/>
+    <ref feature="undertow-config-handler-file" nillable="true">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="handler-config" maps-to="configuration"/>
+      <param name="handler" maps-to="file"/>
+    </ref>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="server" feature-id="true"/>
+    <param name="server-host" feature-id="true"/>
+    <param name="location" feature-id="true"/>
+    <param name="handler-config" default="handler"/>
+    <param name="handler"/>
+  </params>
+</feature-spec>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="iiop-openjdk" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature spec="iiop-openjdk">
+        <param name="socket-binding" value="iiop"/>
+        <param name="security" value="identity"/>
+    </feature>
+</feature-group-spec>

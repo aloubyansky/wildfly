@@ -1,0 +1,1 @@
+/subsystem=ejb3/service=iiop:add(enable-by-default="false",use-qualified-name="false")

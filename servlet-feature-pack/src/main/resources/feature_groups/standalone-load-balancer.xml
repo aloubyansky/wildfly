@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="standalone-load-balancer" xmlns="urn:wildfly:pm-feature-group:1.0">
+        <feature-pack dependency="core">
+            <feature spec="socket-binding-group">
+                <param name="socket-binding-group" value="standard-sockets"/>
+                <param name="port-offset" value="${jboss.socket.binding.port-offset:0}"/>
+                <feature-group name="default-sockets"/>
+                <feature-pack dependency="this">
+                    <feature-group name="load-balancer-sockets"/>
+                </feature-pack>
+            </feature>
+
+            <feature-group name="logging"/>
+            <feature-group name="io"/>
+
+            <feature-group name="security-realms"/>
+            <feature-group name="audit"/>
+
+            <feature-group name="interfaces"/>
+            <feature spec="interface">
+                <param name="interface" value="private"/>
+                <param name="inet-address" value="${jboss.bind.address.private:127.0.0.1}"/>
+            </feature>
+
+            <feature-group name="management-interfaces"/>
+            <feature-group name="access-control"/>
+        </feature-pack>
+
+        <feature-group name="undertow-load-balancer"/>
+</feature-group-spec>

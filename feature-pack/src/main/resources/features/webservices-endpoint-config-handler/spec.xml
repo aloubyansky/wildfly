@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="webservices-endpoint-config-handler" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,endpoint-config,pre-handler-chain,handler"/>
+  </annotation>
+  <refs>
+    <ref feature="webservices-endpoint-config-pre-handler-chain"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="jca" feature-id="true"/>
+    <param name="endpoint-config" feature-id="true"/>
+    <param name="pre-handler-chain" feature-id="true"/>
+    <param name="handler" default="RecordingHandler" feature-id="true"/>
+    <param name="class" default="org.jboss.ws.common.invocation.RecordingServerHandler"/>
+  </params>
+</feature-spec>

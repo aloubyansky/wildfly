@@ -1,0 +1,6 @@
+/subsystem=webservices:add(wsdl-host="\${jboss.bind.address:127.0.0.1}")
+/subsystem=webservices/client-config=Standard-Client-Config:add
+/subsystem=webservices/endpoint-config=Recording-Endpoint-Config:add
+/subsystem=webservices/endpoint-config=Recording-Endpoint-Config/pre-handler-chain=recording-handlers:add(protocol-bindings="##SOAP11_HTTP ##SOAP11_HTTP_MTOM ##SOAP12_HTTP ##SOAP12_HTTP_MTOM")
+/subsystem=webservices/endpoint-config=Recording-Endpoint-Config/pre-handler-chain=recording-handlers/handler=RecordingHandler:add(class="org.jboss.ws.common.invocation.RecordingServerHandler")
+/subsystem=webservices/endpoint-config=Standard-Endpoint-Config:add

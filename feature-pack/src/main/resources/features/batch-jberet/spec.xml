@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="batch-jberet" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem"/>
+    <elem name="op-params" value="default-job-repository,default-thread-pool"/>
+  </annotation>
+  <refs>
+    <ref dependency="core" feature="extension" include="true"/>
+    <ref dependency="core" feature="profile" include="true" nillable="true"/>
+    <ref feature="batch-jberet-in-memory-job-repository">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="default-job-repository" maps-to="in-memory-job-repository"/>
+    </ref>
+    <ref feature="batch-jberet-thread-pool">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="default-thread-pool" maps-to="thread-pool"/>
+    </ref>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="batch-jberet" feature-id="true"/>
+    <param name="extension" default="org.wildfly.extension.batch.jberet"/>
+    <param name="default-job-repository" default="in-memory"/>
+    <param name="default-thread-pool" default="batch"/>
+  </params>
+  <packages>
+    <package name="org.wildfly.extension.batch.jberet.main"/>
+  </packages>
+</feature-spec>
