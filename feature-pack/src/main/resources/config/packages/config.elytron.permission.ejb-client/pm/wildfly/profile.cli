@@ -1,0 +1,1 @@
+/subsystem=elytron/constant-permission-mapper=constant-permission-mapper:list-add(name=permissions,value={class-name=org.jboss.ejb.client.RemoteEJBPermission,module=org.jboss.ejb-client})

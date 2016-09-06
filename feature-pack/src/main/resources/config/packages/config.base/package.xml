@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.base">
+    <dependencies>
+        <feature-pack dependency="core">
+            <package name="config.remoting"/>
+        </feature-pack>
+        <package name="config.security"/>
+        <package name="config.ee"/>
+        <package name="config.naming"/>
+        <package name="config.infinispan"/>
+        <package name="config.connector"/>
+        <package name="config.ejb3"/>
+        <package name="config.jaxrs"/>
+        <package name="config.jdr"/>
+        <package name="config.jpa"/>
+        <package name="config.jsf"/>
+        <package name="config.mail"/>
+        <package name="config.pojo"/>
+        <package name="config.sar"/>
+        <package name="config.transactions"/>
+        <package name="config.webservices"/>
+        <package name="config.weld"/>
+        <package name="config.jberet"/>
+        <package name="config.bean-validation"/>
+        <package name="config.elytron.permission.jberet" optional="true"/>
+        <package name="config.elytron.permission.ejb-client" optional="true"/>
+        <package name="config.elytron.permission.tx-client" optional="true"/>
+    </dependencies>
+</package-spec>

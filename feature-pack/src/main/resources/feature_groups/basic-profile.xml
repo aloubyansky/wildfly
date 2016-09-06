@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="basic-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <feature-pack dependency="core">
+        <feature-group name="remoting"/>
+    </feature-pack>
+
+    <feature-pack dependency="servlet">
+
+        <feature spec="security-domain">
+            <param name="subsystem" value="security"/>
+            <param name="security-domain" value="jboss-ejb-policy"/>
+            <feature spec="security-domain-authorization">
+                <feature spec="security-domain-authorization-policy-module">
+                    <param name="policy-module" value="Delegating"/>
+                    <param name="code" value="Delegating"/>
+                    <param name="flag" value="required"/>
+                </feature>
+            </feature>
+        </feature>
+        <feature spec="security-domain">
+            <param name="subsystem" value="security"/>
+            <param name="security-domain" value="jboss-web-policy"/>
+            <feature spec="security-domain-authorization">
+                <feature spec="security-domain-authorization-policy-module">
+                    <param name="policy-module" value="Delegating"/>
+                    <param name="code" value="Delegating"/>
+                    <param name="flag" value="required"/>
+                </feature>
+            </feature>
+        </feature>
+        <feature spec="security-domain">
+            <param name="subsystem" value="security"/>
+            <param name="security-domain" value="jaspitest"/>
+            <feature spec="security-domain-authentication-jaspi">
+                <feature spec="security-domain-jaspi-auth-module">
+                    <param name="auth-module" value="Dummy"/>
+                    <param name="code" value="Dummy"/>
+                </feature>
+                <feature spec="security-domain-login-module-stack">
+                    <param name="login-module-stack" value="dummy"/>
+                    <feature spec="security-domain-login-module">
+                        <param name="login-module" value="Dummy"/>
+                        <param name="code" value="Dummy"/>
+                        <param name="flag" value="optional"/>
+                    </feature>
+                </feature>
+            </feature>
+        </feature>
+
+        <feature spec="ee">
+            <feature spec="ee-context-service">
+                <param name="context-service" value="default"/>
+                <param name="use-transaction-setup-provider" value="true"/>
+            </feature>
+        </feature>
+
+        <feature spec="naming">
+            <feature spec="naming-remote-service"/>
+        </feature>
+
+        <feature spec="resource-adapters"/>
+    </feature-pack>
+
+    <feature spec="bean-validation"/>
+    <feature-group name="transactions"/>
+    <feature-group name="jca"/>
+    <feature-group name="datasources"/>
+    <feature-group name="ejb3"/>
+    <feature-group name="jpa"/>
+    <feature spec="jsf"/>
+    <feature spec="jaxrs"/>
+    <feature spec="jdr"/>
+    <feature spec="pojo"/>
+    <feature spec="sar"/>
+    <feature-group name="batch-jberet"/>
+    <feature-group name="mail"/>
+    <feature-group name="webservices"/>
+    <feature spec="weld"/>
+</feature-group-spec>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="infinispan-cache-container-replicated-cache" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,cache-container,replicated-cache"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.clustering.cache.service-provider-registry.$cache-container.$replicated-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.registry.$cache-container.$replicated-cache"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.cache-container.cache.transport.$cache-container.$replicated-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.singleton-service-builder-factory.$cache-container.$replicated-cache"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.cache-configuration.$cache-container.$replicated-cache"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.cache.$cache-container.$replicated-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.node-factory.$cache-container.$replicated-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.registry-entry.$cache-container.$replicated-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.group.$cache-container.$replicated-cache"/>
+    <capability name="$profile.org.wildfly.clustering.cache.registry-factory.$cache-container.$replicated-cache"/>
+  </provides>
+  <requires>
+    <capability name="$profile.org.wildfly.clustering.infinispan.transport.channel-factory.$cache-container"/>
+  </requires>
+  <refs>
+    <ref feature="infinispan-cache-container"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="cache-container" feature-id="true"/>
+    <param name="replicated-cache" feature-id="true"/>
+    <param name="mode" nillable="true"/>
+  </params>
+</feature-spec>

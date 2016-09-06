@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.standalone-ha">
+    <dependencies>
+        <feature-pack dependency="servlet">
+            <package name="config.standalone"/>
+            <package name="config.undertow.ajp-listener"/>
+        </feature-pack>
+        <package name="config.base"/>
+        <package name="config.ejb3.ha"/>
+        <package name="config.jgroups"/>
+        <package name="config.modcluster"/>
+        <package name="config.infinispan.cache.dist"/>
+        <package name="config.clustering.singleton"/>
+    </dependencies>
+</package-spec>

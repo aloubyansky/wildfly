@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="messaging-activemq-server-security-setting-role" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,security-setting,role"/>
+  </annotation>
+  <refs>
+    <ref feature="messaging-activemq-server-security-setting"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="messaging-activemq" feature-id="true"/>
+    <param name="server" default="default" feature-id="true"/>
+    <param name="security-setting" default="#" feature-id="true"/>
+    <param name="role" feature-id="true"/>
+    <param name="consume" nillable="true"/>
+    <param name="create-non-durable-queue" nillable="true"/>
+    <param name="delete-non-durable-queue" nillable="true"/>
+    <param name="send" nillable="true"/>
+  </params>
+</feature-spec>

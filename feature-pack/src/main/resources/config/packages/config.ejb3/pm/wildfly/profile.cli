@@ -1,0 +1,17 @@
+/subsystem=ejb3:add(default-slsb-instance-pool="slsb-strict-max-pool",default-stateful-bean-access-timeout="5000",default-sfsb-cache="simple",default-sfsb-passivation-disabled-cache="simple",default-singleton-bean-access-timeout="5000",default-security-domain="other",default-missing-method-permissions-deny-access="true",log-system-exceptions="true")
+/subsystem=ejb3/cache=simple:add
+/subsystem=ejb3/cache=distributable:add(passivation-store="infinispan",aliases=["passivating","clustered"])
+/subsystem=ejb3/passivation-store=infinispan:add(cache-container="ejb",max-size="10000")
+/subsystem=ejb3/service=async:add(thread-pool-name="default")
+/subsystem=ejb3/service=remote:add(connector-ref="http-remoting-connector",thread-pool-name="default")
+/subsystem=ejb3/service=remote/channel-creation-options=MAX_OUTBOUND_MESSAGES:add(value="1234",type="remoting")
+/subsystem=ejb3/service=remote/channel-creation-options=READ_TIMEOUT:add(value="\${prop.remoting-connector.read.timeout:20}",type="xnio")
+/subsystem=ejb3/service=timer-service:add(thread-pool-name="default",default-data-store="default-file-store")
+/subsystem=ejb3/service=timer-service/file-data-store=default-file-store:add(path="timer-service-data",relative-to="jboss.server.data.dir")
+/subsystem=ejb3/strict-max-bean-instance-pool=mdb-strict-max-pool:add(derive-size="from-cpu-count",timeout="5",timeout-unit="MINUTES")
+/subsystem=ejb3/strict-max-bean-instance-pool=slsb-strict-max-pool:add(derive-size="from-worker-pools",timeout="5",timeout-unit="MINUTES")
+/subsystem=ejb3/thread-pool=default:add(max-threads="10",keepalive-time={"time" => 100,"unit" => "MILLISECONDS"})
+
+/subsystem=security/security-domain=jboss-ejb-policy:add(cache-type="default")
+/subsystem=security/security-domain=jboss-ejb-policy/authorization=classic:add
+/subsystem=security/security-domain=jboss-ejb-policy/authorization=classic/policy-module=Delegating:add(code="Delegating",flag="required")

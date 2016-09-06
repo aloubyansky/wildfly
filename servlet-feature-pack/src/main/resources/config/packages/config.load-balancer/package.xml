@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.load-balancer">
+    <dependencies>
+        <feature-pack dependency="core">
+            <package name="config.base"/>
+        </feature-pack>
+        <package name="config.interface.private"/>
+        <package name="config.undertow.load-balancer"/>
+    </dependencies>
+</package-spec>

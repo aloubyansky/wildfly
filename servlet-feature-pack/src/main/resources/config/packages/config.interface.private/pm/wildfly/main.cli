@@ -1,0 +1,1 @@
+/interface=private:add(inet-address="\${jboss.bind.address.private:127.0.0.1}")

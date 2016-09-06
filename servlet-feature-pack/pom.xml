@@ -506,6 +506,22 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.jboss.pm</groupId>
+                <artifactId>wildfly-feature-pack-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>feature-pack-build</id>
+                        <goals>
+                            <goal>wf-build</goal>
+                        </goals>
+                        <phase>compile</phase>
+                        <configuration>
+                            <release-name>WildFly Servlet</release-name>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

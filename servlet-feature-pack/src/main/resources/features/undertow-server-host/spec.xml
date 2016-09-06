@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="undertow-server-host" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,server-host"/>
+    <elem name="addr-params-mapping" value="host,profile,subsystem,server,host"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.undertow.host.$server-host"/>
+    <capability name="$profile.org.wildfly.web.host.$server-host"/>
+  </provides>
+  <refs>
+    <ref feature="undertow-server"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="server" feature-id="true"/>
+    <param name="server-host" default="default-host" feature-id="true"/>
+    <param name="alias" default="[&quot;localhost&quot;]"/>
+  </params>
+</feature-spec>

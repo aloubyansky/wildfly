@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="domain-ha" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <feature-pack dependency="servlet">
+        <feature-group name="domain-interfaces"/>
+    </feature-pack>
+
+    <feature-pack dependency="core">
+        <feature spec="socket-binding-group">
+            <param name="socket-binding-group" value="ha-sockets"/>
+            <feature-pack dependency="this">
+                <feature-group name="domain-sockets"/>
+                <feature-group name="ha-sockets"/>
+            </feature-pack>
+            <feature-group name="domain-server-groups"/>
+        </feature>
+
+        <feature spec="profile">
+            <param name="profile" value="ha"/>
+
+            <feature-pack dependency="this">
+                <feature-group name="domain-profile"/>
+                <feature-group name="basic-ha-profile"/>
+            </feature-pack>
+
+        </feature>
+
+        <feature spec="system-property">
+            <param name="system-property" value="java.net.preferIPv4Stack"/>
+            <param name="value" value="true"/>
+        </feature>
+        <feature-group name="access-control"/>
+        <feature-group name="domain-host-excludes"/>
+    </feature-pack>
+
+</feature-group-spec>

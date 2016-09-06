@@ -1,0 +1,6 @@
+/subsystem=ee:add(spec-descriptor-property-replacement="false")
+/subsystem=ee/context-service=default:add(jndi-name="java:jboss/ee/concurrency/context/default",use-transaction-setup-provider="false")
+/subsystem=ee/managed-executor-service=default:add(jndi-name="java:jboss/ee/concurrency/executor/default",context-service="default",hung-task-threshold="60000",keepalive-time="5000")
+/subsystem=ee/managed-scheduled-executor-service=default:add(jndi-name="java:jboss/ee/concurrency/scheduler/default",context-service="default",hung-task-threshold="60000",keepalive-time="3000")
+/subsystem=ee/managed-thread-factory=default:add(jndi-name="java:jboss/ee/concurrency/factory/default",context-service="default")
+/subsystem=ee/service=default-bindings:add(context-service="java:jboss/ee/concurrency/context/default",managed-executor-service="java:jboss/ee/concurrency/executor/default",managed-scheduled-executor-service="java:jboss/ee/concurrency/scheduler/default",managed-thread-factory="java:jboss/ee/concurrency/factory/default")

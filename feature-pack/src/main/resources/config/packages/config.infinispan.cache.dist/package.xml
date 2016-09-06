@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.infinispan.cache.dist">
+    <dependencies>
+        <package name="config.infinispan.cache.base"/>
+        <package name="config.jgroups"/>
+    </dependencies>
+</package-spec>
