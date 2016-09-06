@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="undertow-server-https-listener" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,https-listener"/>
+    <elem name="op-params" value="socket-binding,security-realm,enable-http2"/>
+  </annotation>
+  <refs>
+    <ref feature="undertow-server"/>
+    <!-- <ref dependency="core" feature="security-realm"/> -->
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="server" feature-id="true"/>
+    <param name="https-listener" default="https" feature-id="true"/>
+    <param name="socket-binding" default="https"/>
+    <!-- <param name="core-service" default="management"/> -->
+    <param name="security-realm" default="ApplicationRealm"/>
+    <param name="enable-http2" default="false"/>
+  </params>
+</feature-spec>

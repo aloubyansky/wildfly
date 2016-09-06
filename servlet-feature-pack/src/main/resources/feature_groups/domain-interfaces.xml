@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="domain-interfaces" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <origin name="core">
+        <feature-group name="domain-interfaces"/>        
+    </origin>
+    <feature spec="interface">
+        <param name="interface" value="private"/>
+        <param name="inet-address" value="${jboss.bind.address.private:127.0.0.1}"/>
+    </feature>
+
+</feature-group-spec>

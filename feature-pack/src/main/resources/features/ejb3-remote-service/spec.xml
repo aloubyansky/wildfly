@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ejb3-remote-service" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,service"/>
+    <elem name="op-params" value="thread-pool-name,connector-ref"/>
+  </annotation>
+  <refs>
+    <ref feature="ejb3"/>
+    <ref feature="ejb3-thread-pool">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="thread-pool-name" maps-to="thread-pool"/>
+    </ref>
+    <ref dependency="core" feature="remoting-http-connector">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="remoting-subsystem" maps-to="subsystem"/>
+      <param name="connector-ref" maps-to="http-connector"/>
+    </ref>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ejb3" feature-id="true"/>
+    <param name="service" default="remote" feature-id="true"/>
+    <param name="thread-pool-name" default="default"/>
+    <param name="remoting-subsystem" default="remoting"/>
+    <param name="connector-ref"/>
+  </params>
+</feature-spec>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="undertow" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature-group name="undertow-base"/>
+    <feature spec="undertow">
+        <param name="default-security-domain" value="other"/>
+        <feature spec="undertow-config-filter">
+            <feature spec="undertow-config-filter-response-header">
+                <param name="response-header" value="server-header"/>
+                <param name="header-name" value="Server"/>
+                <param name="header-value" value="WildFly/11"/>
+            </feature>
+            <feature spec="undertow-config-filter-response-header">
+                <param name="response-header" value="x-powered-by-header"/>
+                <param name="header-name" value="X-Powered-By"/>
+                <param name="header-value" value="Undertow/1"/>
+            </feature>
+        </feature>
+        <feature spec="undertow-config-handler">
+            <feature spec="undertow-config-handler-file">
+                <param name="file" value="welcome-content"/>
+                <param name="path" value="${jboss.home.dir}/welcome-content"/>
+            </feature>
+        </feature>
+        <feature spec="undertow-server">
+            <feature spec="undertow-server-host">
+                <feature spec="undertow-server-host-filter-ref">
+                    <param name="filter-ref" value="server-header"/>
+                </feature>
+                <feature spec="undertow-server-host-filter-ref">
+                    <param name="filter-ref" value="x-powered-by-header"/>
+                </feature>
+                <feature spec="undertow-server-host-location">
+                    <param name="location" value="\/"/>
+                    <param name="handler" value="welcome-content"/>
+                </feature>
+                <feature spec="undertow-server-host-http-invoker">
+                    <param name="security-realm" value="ApplicationRealm"/>
+                </feature>
+            </feature>
+            <feature spec="undertow-server-https-listener">
+                <param name="enable-http2" value="true"/>
+            </feature>
+        </feature>
+        <feature spec="undertow-servlet-container">
+            <feature spec="undertow-servlet-setting-jsp"/>
+            <feature spec="undertow-servlet-setting-websockets"/>
+        </feature>
+    </feature>
+</feature-group-spec>

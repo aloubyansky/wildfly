@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="messaging-activemq-server-pooled-connection-factory" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,pooled-connection-factory"/>
+  </annotation>
+  <refs>
+    <ref feature="messaging-activemq-server"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="messaging-activemq" feature-id="true"/>
+    <param name="server" default="default" feature-id="true"/>
+    <param name="pooled-connection-factory" default="activemq-ra" feature-id="true"/>
+    <param name="entries"/>
+    <param name="connectors" nillable="true"/>
+    <param name="transaction" nillable="true"/>
+  </params>
+</feature-spec>

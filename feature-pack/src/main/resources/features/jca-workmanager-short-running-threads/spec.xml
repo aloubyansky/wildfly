@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="jca-workmanager-short-running-threads" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,workmanager,short-running-threads"/>
+  </annotation>
+  <refs>
+    <ref feature="jca-workmanager"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="jca" feature-id="true"/>
+    <param name="workmanager" default="default" feature-id="true"/>
+    <param name="short-running-threads" default="default" feature-id="true"/>
+    <param name="core-threads" default="50"/>
+    <param name="queue-length" default="50"/>
+    <param name="max-threads" default="50"/>
+    <param name="keepalive-time" default="{time=10,unit=SECONDS}"/>
+  </params>
+</feature-spec>

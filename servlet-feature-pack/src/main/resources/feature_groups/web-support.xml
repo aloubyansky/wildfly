@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="web-support" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <origin name="core">
+        <feature-group name="security-realms"/>
+        <feature-group name="interfaces"/>
+        <feature spec="socket-binding-group">
+            <origin name="this">
+                <feature-group name="standalone-sockets"/>
+            </origin>
+        </feature>
+        <feature-group name="io"/>
+        <feature-group name="deployment-scanner"/>
+    </origin>
+    <feature-group name="security"/>
+    <feature-group name="undertow"/>
+</feature-group-spec>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="undertow-server-ajp-listener" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,ajp-listener"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.undertow.listener.$ajp-listener"/>
+  </provides>
+  <requires>
+    <capability name="org.wildfly.network.socket-binding.$socket-binding"/>
+    <capability name="org.wildfly.network.socket-binding.$redirect-socket" optional="true"/>
+    <capability name="$profile.org.wildfly.io.buffer-pool.$buffer-pool"/>
+    <capability name="$profile.org.wildfly.io.worker.$worker"/>
+  </requires>
+  <refs>
+    <ref feature="undertow-server"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="server" feature-id="true"/>
+    <param name="ajp-listener" default="ajp" feature-id="true"/>
+    <param name="socket-binding" default="ajp"/>
+    <param name="redirect-socket" nillable="true"/>
+    <param name="buffer-pool" default="default"/>
+    <param name="worker" default="default"/>
+  </params>
+</feature-spec>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="modcluster-config-dynamic-load-provider-load-metric" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,mod-cluster-config,dynamic-load-provider,load-metric"/>
+  </annotation>
+  <refs>
+    <ref feature="modcluster-config-dynamic-load-provider"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="modcluster" feature-id="true"/>
+    <param name="mod-cluster-config" default="configuration" feature-id="true"/>
+    <param name="dynamic-load-provider" default="configuration" feature-id="true"/>
+    <param name="load-metric" feature-id="true"/>
+    <param name="type"/>
+  </params>
+</feature-spec>

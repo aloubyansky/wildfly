@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="modcluster-config" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,mod-cluster-config"/>
+    <elem name="op-params" value="advertise-socket,connector,ssl-context"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.mod_cluster"/>
+  </provides>
+  <requires>
+    <capability name="org.wildfly.network.socket-binding.$advertise-socket" optional="true"/>
+    <capability name="$profile.org.wildfly.undertow.listener.$connector"/>
+    <capability name="$profile.org.wildfly.security.ssl-context.$ssl-context" optional="true"/>
+  </requires>
+  <refs>
+    <ref feature="modcluster"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="modcluster" feature-id="true"/>
+    <param name="mod-cluster-config" default="configuration" feature-id="true"/>
+    <param name="advertise-socket" default="modcluster" nillable="true"/>
+    <param name="connector" default="ajp"/>
+    <param name="ssl-context" nillable="true"/>
+  </params>
+</feature-spec>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="security-domain-classic-login-module" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,security-domain,authentication,login-module"/>
+  </annotation>
+  <refs>
+    <ref feature="security-domain-authentication-classic"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="security-domain" feature-id="true"/>
+    <param name="authentication" feature-id="true"/>
+    <param name="login-module" feature-id="true"/>
+    <param name="code"/>
+    <param name="flag"/>
+    <param name="module-options"/>
+  </params>
+</feature-spec>

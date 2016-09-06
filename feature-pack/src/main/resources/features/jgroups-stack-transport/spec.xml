@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="jgroups-stack-transport" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,stack,transport"/>
+    <elem name="op-params" value="socket-binding"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.clustering.jgroups.transport.$transport"/>
+  </provides>
+  <requires>
+    <capability name="org.wildfly.network.socket-binding.$socket-binding"/>
+    <capability name="org.wildfly.network.socket-binding.$diagnostics-socket-binding" optional="true"/>
+  </requires>
+  <refs>
+    <ref feature="jgroups-stack"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="jgroups" feature-id="true"/>
+    <param name="stack" feature-id="true"/>
+    <param name="transport" feature-id="true"/>
+    <param name="socket-binding" />
+    <param name="diagnostics-socket-binding" nillable="true"/>
+  </params>
+</feature-spec>
