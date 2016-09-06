@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ee" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem"/>
+    <elem name="op-params" value="spec-descriptor-property-replacement"/>
+  </annotation>
+  <refs>
+    <ref dependency="core" feature="extension" include="true"/>
+    <ref dependency="core" feature="profile" include="true" nillable="true"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ee" feature-id="true"/>
+    <param name="extension" default="org.jboss.as.ee"/>
+    <param name="spec-descriptor-property-replacement"/>
+  </params>
+  <packages>
+    <package name="org.jboss.as.ee.main"/>
+  </packages>
+</feature-spec>

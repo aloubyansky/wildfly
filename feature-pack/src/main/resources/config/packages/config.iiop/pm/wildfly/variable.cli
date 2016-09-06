@@ -1,0 +1,2 @@
+/socket-binding-group=$socketGroup-sockets/socket-binding=iiop:add(interface="unsecure",port="3528")
+/socket-binding-group=$socketGroup-sockets/socket-binding=iiop-ssl:add(interface="unsecure",port="3529")

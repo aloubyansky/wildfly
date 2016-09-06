@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ejb3-remote-channel-creation-option" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,service,name"/>
+    <elem name="addr-params-mapping" value="host,profile,subsystem,service,channel-creation-options"/>
+  </annotation>
+  <refs>
+    <ref feature="ejb3-remote-service"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ejb3" feature-id="true"/>
+    <param name="service" default="remote" feature-id="true"/>
+    <param name="name" feature-id="true"/>
+    <param name="value"/>
+    <param name="type"/>
+  </params>
+</feature-spec>

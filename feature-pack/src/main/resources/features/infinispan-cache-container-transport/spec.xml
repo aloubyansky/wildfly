@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="infinispan-cache-container-transport" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,cache-container,transport"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.clustering.command-dispatcher-factory.$transport"/>
+    <capability name="$profile.org.wildfly.clustering.group.$transport"/>
+    <capability name="$profile.org.wildfly.clustering.infinispan.transport.channel-factory.$cache-container"/>
+    <capability name="$profile.org.wildfly.clustering.node-factory.$transport"/>
+  </provides>
+  <requires>
+    <capability name="$profile.org.wildfly.clustering.jgroups.default-channel-factory"/>
+    <capability name="$profile.org.wildfly.clustering.jgroups.channel-factory.$channel" optional="true"/>
+  </requires>
+  <refs>
+    <ref feature="infinispan-cache-container"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="cache-container" feature-id="true"/>
+    <param name="transport" feature-id="true"/>
+    <param name="channel" nillable="true"/>
+    <param name="cluster" nillable="true"/>
+    <param name="executor" nillable="true"/>
+    <param name="lock-timeout" nillable="true"/>
+    <param name="stack" nillable="true"/>
+  </params>
+</feature-spec>

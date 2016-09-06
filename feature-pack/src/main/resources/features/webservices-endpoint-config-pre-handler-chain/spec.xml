@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="webservices-endpoint-config-pre-handler-chain" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,endpoint-config,pre-handler-chain"/>
+  </annotation>
+  <refs>
+    <ref feature="webservices-endpoint-config"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="jca" feature-id="true"/>
+    <param name="endpoint-config" feature-id="true"/>
+    <param name="pre-handler-chain" default="recording-handlers" feature-id="true"/>
+    <param name="protocol-bindings" default="##SOAP11_HTTP ##SOAP11_HTTP_MTOM ##SOAP12_HTTP ##SOAP12_HTTP_MTOM"/>
+  </params>
+</feature-spec>

@@ -1,0 +1,1 @@
+/subsystem=iiop-openjdk:add(socket-binding="iiop",security="identity",transactions="spec",server-requires-ssl="false",client-requires-ssl="false")

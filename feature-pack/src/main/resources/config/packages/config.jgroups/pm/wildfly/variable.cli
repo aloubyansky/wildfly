@@ -1,0 +1,3 @@
+/socket-binding-group=$socketGroup-sockets/socket-binding=jgroups-mping:add(interface="private",port="0",multicast-address="\${jboss.default.multicast.address:230.0.0.4}",multicast-port="45700")
+/socket-binding-group=$socketGroup-sockets/socket-binding=jgroups-tcp:add(interface="private",port="7600")
+/socket-binding-group=$socketGroup-sockets/socket-binding=jgroups-udp:add(interface="private",port="55200",multicast-address="\${jboss.default.multicast.address:230.0.0.4}",multicast-port="45688")

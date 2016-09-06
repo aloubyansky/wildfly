@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="jgroups-channel" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,channel"/>
+    <elem name="op-params" value="stack"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.clustering.jgroups.channel-module.$channel"/>
+    <capability name="$profile.org.wildfly.clustering.node-factory.$channel"/>
+    <capability name="$profile.org.wildfly.clustering.group.$channel"/>
+    <capability name="$profile.org.wildfly.clustering.command-dispatcher-factory.$channel"/>
+    <capability name="$profile.org.wildfly.clustering.jgroups.channel.$channel"/>
+    <capability name="$profile.org.wildfly.clustering.jgroups.channel-source.$channel"/>
+    <capability name="$profile.org.wildfly.clustering.jgroups.channel-cluster.$channel"/>
+    <capability name="$profile.org.wildfly.clustering.jgroups.channel-factory.$channel"/>
+  </provides>
+  <requires>
+    <capability name="$profile.org.wildfly.clustering.jgroups.channel-factory.$stack"/>
+  </requires>
+  <refs>
+    <ref feature="jgroups"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="jgroups" feature-id="true"/>
+    <param name="channel" feature-id="true"/>
+    <param name="stack"/>
+  </params>
+</feature-spec>

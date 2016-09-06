@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="messaging-activemq-server-cluster-connection" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,server,cluster-connection"/>
+  </annotation>
+  <refs>
+    <ref feature="messaging-activemq-server"/>
+    <ref feature="messaging-activemq-server-discovery-group"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="messaging-activemq" feature-id="true"/>
+    <param name="server" default="default" feature-id="true"/>
+    <param name="cluster-connection" default="my-cluster" feature-id="true"/>
+    <param name="cluster-connection-address" default="jms"/>
+    <param name="connector-name" default="http-connector"/>
+    <param name="discovery-group" default="dg-group1"/>
+  </params>
+</feature-spec>

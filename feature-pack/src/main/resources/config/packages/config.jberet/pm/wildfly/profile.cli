@@ -1,0 +1,5 @@
+batch
+/subsystem=batch-jberet:add(default-job-repository="in-memory",default-thread-pool="batch")
+/subsystem=batch-jberet/in-memory-job-repository=in-memory:add
+/subsystem=batch-jberet/thread-pool=batch:add(max-threads="10",keepalive-time={"time" => 30,"unit" => "SECONDS"})
+run-batch

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="dist.domain">
+    <dependencies>
+        <package name="misc.domain"/>
+        <package name="config.domain"/>
+        <package name="product.conf"/>
+    </dependencies>
+</package-spec>

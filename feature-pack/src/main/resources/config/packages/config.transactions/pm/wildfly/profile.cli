@@ -1,0 +1,2 @@
+/subsystem=transactions:add(process-id-uuid="true",socket-binding="txn-recovery-environment",status-socket-binding="txn-status-manager",object-store-relative-to="jboss.server.data.dir",object-store-path="tx-object-store")
+/subsystem=transactions/log-store=log-store:add

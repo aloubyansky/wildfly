@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="undertow-config-handler-file" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,configuration,file"/>
+  </annotation>
+  <refs>
+    <ref feature="undertow-config-handler"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="configuration" feature-id="true"/>
+    <param name="file" feature-id="true"/>
+    <param name="path"/>
+  </params>
+</feature-spec>

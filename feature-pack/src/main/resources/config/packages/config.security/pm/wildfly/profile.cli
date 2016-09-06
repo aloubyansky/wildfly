@@ -1,0 +1,9 @@
+/subsystem=security/security-domain=jaspitest:add(cache-type="default")
+/subsystem=security/security-domain=jaspitest/authentication=jaspi:add
+/subsystem=security/security-domain=jaspitest/authentication=jaspi/auth-module=Dummy:add(code="Dummy")
+/subsystem=security/security-domain=jaspitest/authentication=jaspi/login-module-stack=dummy:add
+/subsystem=security/security-domain=jaspitest/authentication=jaspi/login-module-stack=dummy/login-module=Dummy:add(code="Dummy",flag="optional")
+
+/subsystem=security/security-domain=jboss-web-policy:add(cache-type="default")
+/subsystem=security/security-domain=jboss-web-policy/authorization=classic:add
+/subsystem=security/security-domain=jboss-web-policy/authorization=classic/policy-module=Delegating:add(code="Delegating",flag="required")
