@@ -3,7 +3,7 @@
 
     <feature-pack dependency="core">
         <feature-group name="standalone-profile">
-            <exclude feature-id="subsystem:subsystem=discovery"/>
+            <exclude spec="discovery"/>
         </feature-group>
         <feature-group name="deployment-scanner"/>
     </feature-pack>
