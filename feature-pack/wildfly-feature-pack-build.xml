@@ -118,4 +118,12 @@
             </feature>
         </feature-pack>
     </config>
+
+    <config name="default-host" model="host">
+        <props>
+            <prop name="host-config-name" value="host.xml"/>
+            <prop name="domain-config-name" value="domain.xml"/>
+        </props>
+        <feature-group name="host"/>
+    </config>
 </build>
