@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="host-master" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <feature-pack dependency="core">
+        <feature-group name="host-master"/>
+        <feature spec="host">
+            <param name="host" value="master"/>
+
+            <feature spec="security-realm">
+                <param name="security-realm" value="ApplicationRealm"/>
+                <feature spec="server-identity">
+                    <param name="server-identity" value="ssl"/>
+                    <param name="keystore-path" value="application.keystore"/>
+                    <param name="keystore-relative-to" value="jboss.domain.config.dir"/>
+                    <param name="keystore-password" value="password"/>
+                    <param name="key-password" value="password"/>
+                    <param name="alias" value="server"/>
+                </feature>
+            </feature>
+
+            <feature spec="management-interface-native-interface">
+                <param name="security-realm" value="ManagementRealm"/>
+                <param name="interface" value="management"/>
+                <param name="port" value="${jboss.management.native.port:9999}"/>
+            </feature>
+
+            <feature spec="jvm">
+                <param name="environment-variables" value="undefined"/>
+            </feature>
+        </feature>
+    </feature-pack>
+
+</feature-group-spec>
