@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="host" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature-pack dependency="servlet">
+        <feature-group name="host">
+            <feature-pack dependency="core">
+                <exclude feature-id="interface:interface=unsecure"/>
+                <exclude feature-id="interface:interface=private"/>
+            </feature-pack>
+        </feature-group>
+    </feature-pack>
+    <feature-pack dependency="core">
+        <feature spec="host">
+            <param name="host" value="master"/>
+            <feature spec="jvm">
+                <feature spec="jvm-option">
+                    <param name="jvm-option" value="&quot;--add-exports=java.base/sun.nio.ch=ALL-UNNAMED&quot;"/>
+                </feature>
+            </feature>
+            <feature spec="server-config">
+                <param name="server-config" value="server-two"/>
+                <feature spec="server-config-jvm">
+                    <param name="jvm" value="default"/>
+                </feature>
+            </feature>
+            <feature spec="server-config">
+                <param name="server-config" value="server-three"/>
+                <feature spec="server-config-jvm">
+                    <param name="jvm" value="default"/>
+                </feature>
+            </feature>
+        </feature>
+    </feature-pack>
+</feature-group-spec>
