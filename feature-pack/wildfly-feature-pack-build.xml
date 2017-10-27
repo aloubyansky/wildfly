@@ -126,4 +126,20 @@
         </props>
         <feature-group name="host"/>
     </config>
+
+    <config name="host-master" model="host">
+        <props>
+            <prop name="host-config-name" value="host-master.xml"/>
+            <prop name="domain-config-name" value="domain.xml"/>
+        </props>
+        <feature-group name="host-master"/>
+    </config>
+
+    <config name="host-slave" model="host">
+        <props>
+            <prop name="host-config-name" value="host-slave.xml"/>
+            <prop name="domain-config-name" value="domain.xml"/>
+        </props>
+        <feature-group name="host-slave"/>
+    </config>
 </build>
