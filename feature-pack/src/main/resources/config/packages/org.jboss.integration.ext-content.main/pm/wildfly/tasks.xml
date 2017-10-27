@@ -2,6 +2,6 @@
 
 <tasks xmlns="urn:wildfly:wildfly-feature-pack-tasks:2.0">
     <copy-artifacts>
-        <copy-artifact artifact="org.jboss.seam.integration:jboss-seam-int-jbossas" to-location="modules/system/layers/base/org/jboss/integration/ext-content/main/bundled/jboss-seam-int.jar"/>
+        <copy-artifact artifact="org.jboss.seam.integration:jboss-seam-int-jbossas" to-location="modules/system/layers/base/org/jboss/integration/ext-content/main/bundled/jboss-seam-int-jbossas.jar"/>
     </copy-artifacts>
 </tasks>
