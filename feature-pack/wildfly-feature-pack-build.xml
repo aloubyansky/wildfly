@@ -25,13 +25,11 @@
         <dependency group-id="org.wildfly.core" artifact-id="wildfly-core-feature-pack">
             <name>core</name>
             <packages inherit="false">
-                <exclude name="config.discovery"/>
-                <include name="org.wildfly.extension.core-management.main"/>
                 <include name="docs"/>
-<!--
                 <include name="org.jboss.as.standalone.main"/>
                 <include name="org.jboss.as.domain-management.main"/>
- -->
+                <include name="org.jboss.as.domain-add-user.main"/>
+                <include name="org.jboss.as.domain-http-error-context.main"/>
             </packages>
             <default-configs inherit="false"/>
         </dependency>
@@ -46,13 +44,10 @@
         </dependency>
     </dependencies>
     <default-packages>
-        <package name="dist.legacy"/>
-        <!--
         <package name="product.conf"/>
         <package name="misc.standalone"/>
         <package name="misc.domain"/>
         <package name="modules.all"/>
-         -->
     </default-packages>
     <package-schemas>
         <group name="org.jboss.as"/>
