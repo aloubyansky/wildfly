@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-
-<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.pojo">
-    <dependencies>
-        <package name="org.jboss.as.pojo.main"/>
-    </dependencies>
-</package-spec>

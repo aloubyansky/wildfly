@@ -1,3 +1,0 @@
-/subsystem=undertow/configuration=filter/mod-cluster=load-balancer:add(management-socket-binding="mcmp-management",advertise-socket-binding="modcluster",enable-http2="true",max-retries="3")
-/subsystem=undertow/server=default-server/host=default-host/filter-ref=load-balancer:add
-/subsystem=undertow/server=default-server/http-listener=management:add(socket-binding="mcmp-management",enable-http2="true")

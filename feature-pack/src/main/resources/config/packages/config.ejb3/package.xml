@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-
-<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.ejb3">
-    <dependencies>
-        <package name="org.jboss.as.ejb3.main"/>
-        <package name="org.wildfly.iiop-openjdk.main"/>
-    </dependencies>
-</package-spec>

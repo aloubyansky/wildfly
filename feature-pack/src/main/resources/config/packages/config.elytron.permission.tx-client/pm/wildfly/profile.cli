@@ -1,1 +1,0 @@
-/subsystem=elytron/constant-permission-mapper=constant-permission-mapper:list-add(name=permissions,value={class-name=org.wildfly.transaction.client.RemoteTransactionPermission,module=org.wildfly.transaction.client})

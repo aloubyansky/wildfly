@@ -1,2 +1,0 @@
-/socket-binding-group=$socketGroup-sockets/socket-binding=http:add(port="\${jboss.http.port:8080}")
-/socket-binding-group=$socketGroup-sockets/socket-binding=https:add(port="\${jboss.https.port:8443}")
