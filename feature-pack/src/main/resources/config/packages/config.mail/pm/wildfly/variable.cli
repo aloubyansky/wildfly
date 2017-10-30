@@ -1,1 +1,0 @@
-/socket-binding-group=$socketGroup-sockets/remote-destination-outbound-socket-binding=mail-smtp:add(host="localhost",port="25")

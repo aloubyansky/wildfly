@@ -1,5 +1,0 @@
-batch
-/subsystem=singleton:add(default="default")
-/subsystem=singleton/singleton-policy=default:add(cache-container="server")
-/subsystem=singleton/singleton-policy=default/election-policy=simple:add
-run-batch
