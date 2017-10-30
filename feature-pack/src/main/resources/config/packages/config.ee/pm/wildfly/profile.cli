@@ -1,1 +1,0 @@
-/subsystem=ee/context-service=default:write-attribute(name="use-transaction-setup-provider",value="true")

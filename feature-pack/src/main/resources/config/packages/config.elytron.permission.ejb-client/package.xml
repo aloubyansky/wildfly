@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-
-<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.elytron.permission.ejb-client">
-    <dependencies>
-        <package name="config.ejb3"/>
-    </dependencies>
-</package-spec>

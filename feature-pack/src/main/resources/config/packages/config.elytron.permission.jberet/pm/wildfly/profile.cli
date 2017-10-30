@@ -1,1 +1,0 @@
-/subsystem=elytron/constant-permission-mapper=constant-permission-mapper:list-add(name=permissions,value={class-name=org.wildfly.extension.batch.jberet.deployment.BatchPermission,module=org.wildfly.extension.batch.jberet,target-name=*})

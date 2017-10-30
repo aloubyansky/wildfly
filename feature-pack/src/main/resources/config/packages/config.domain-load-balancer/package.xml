@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-
-<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.domain-load-balancer">
-    <dependencies>
-        <feature-pack dependency="servlet">
-            <package name="config.load-balancer"/>
-        </feature-pack>
-    </dependencies>
-</package-spec>
