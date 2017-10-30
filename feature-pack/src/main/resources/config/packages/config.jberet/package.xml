@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-
-<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.jberet">
-    <dependencies>
-        <package name="org.wildfly.extension.batch.jberet.main"/>
-    </dependencies>
-</package-spec>

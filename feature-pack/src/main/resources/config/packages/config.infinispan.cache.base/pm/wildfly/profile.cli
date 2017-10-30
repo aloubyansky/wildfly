@@ -1,8 +1,0 @@
-/subsystem=infinispan/cache-container=web:add(module="org.wildfly.clustering.web.infinispan")
-/subsystem=infinispan/cache-container=hibernate:add(module="org.hibernate.infinispan")
-/subsystem=infinispan/cache-container=ejb:add(aliases=["sfsb"],module="org.wildfly.clustering.ejb.infinispan")
-/subsystem=infinispan/cache-container=server:add(module="org.wildfly.clustering.server")
-
-/subsystem=infinispan/cache-container=hibernate/local-cache=local-query:add
-/subsystem=infinispan/cache-container=hibernate/local-cache=local-query/component=eviction:add(strategy="LRU",max-entries="10000")
-/subsystem=infinispan/cache-container=hibernate/local-cache=local-query/component=expiration:add(max-idle="100000")

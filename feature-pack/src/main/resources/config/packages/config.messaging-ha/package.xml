@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-
-<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.messaging-ha">
-    <dependencies>
-        <package name="config.messaging"/>
-        <package name="config.jgroups"/>
-    </dependencies>
-</package-spec>
