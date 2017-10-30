@@ -1,1 +1,0 @@
-/subsystem=ejb3:write-attribute(name="default-sfsb-cache",value="distributable")

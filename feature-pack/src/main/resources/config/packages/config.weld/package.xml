@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-
-<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.weld">
-    <dependencies>
-        <package name="org.jboss.as.weld.main"/>
-    </dependencies>
-</package-spec>

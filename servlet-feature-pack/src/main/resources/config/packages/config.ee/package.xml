@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-
-<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.ee">
-    <dependencies>
-        <package name="org.jboss.as.ee.main"/>
-    </dependencies>
-</package-spec>
