@@ -1,1 +1,0 @@
-/subsystem=jpa:add(default-datasource="",default-extended-persistence-inheritance="DEEP")

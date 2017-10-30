@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-
-<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.connector">
-    <dependencies>
-        <package name="org.jboss.as.connector.main"/>
-    </dependencies>
-</package-spec>

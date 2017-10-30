@@ -1,4 +1,0 @@
-/subsystem=modcluster:add
-/subsystem=modcluster/mod-cluster-config=configuration:add(advertise-socket="modcluster",connector="ajp")
-/subsystem=modcluster/mod-cluster-config=configuration/dynamic-load-provider=configuration:add
-/subsystem=modcluster/mod-cluster-config=configuration/dynamic-load-provider=configuration/load-metric=cpu:add(type="cpu")

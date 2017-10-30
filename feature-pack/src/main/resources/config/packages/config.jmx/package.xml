@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-
-<package-spec xmlns="urn:wildfly:pm-package:1.0" name="config.jmx">
-    <dependencies>
-        <feature-pack dependency="core">
-            <package name="config.jmx"/>
-        </feature-pack>
-    </dependencies>
-</package-spec>

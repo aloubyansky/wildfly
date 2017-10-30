@@ -1,1 +1,0 @@
-/socket-binding-group=$socketGroup-sockets/socket-binding=modcluster:add(port="0",multicast-address="\${jboss.modcluster.multicast.address:224.0.1.105}",multicast-port="23364")
