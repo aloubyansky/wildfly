@@ -92,7 +92,7 @@
         <feature-group name="standalone-full-ha"/>
     </config>
 
-    <config name="default-domain" model="domain">
+    <config name="domain.xml" model="domain">
         <props>
             <prop name="domain-config-name" value="domain.xml"/>
         </props>
@@ -121,7 +121,7 @@
         </feature-pack>
     </config>
 
-    <config name="default-host" model="host">
+    <config name="host.xml" model="host">
         <props>
             <prop name="host-config-name" value="host.xml"/>
             <prop name="domain-config-name" value="domain.xml"/>
@@ -129,7 +129,7 @@
         <feature-group name="host"/>
     </config>
 
-    <config name="host-master" model="host">
+    <config name="host-master.xml" model="host">
         <props>
             <prop name="host-config-name" value="host-master.xml"/>
             <prop name="domain-config-name" value="domain.xml"/>
@@ -137,7 +137,7 @@
         <feature-group name="host-master"/>
     </config>
 
-    <config name="host-slave" model="host">
+    <config name="host-slave.xml" model="host">
         <props>
             <prop name="host-config-name" value="host-slave.xml"/>
             <prop name="domain-config-name" value="domain.xml"/>
