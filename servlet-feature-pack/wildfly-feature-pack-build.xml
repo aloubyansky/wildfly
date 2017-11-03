@@ -25,19 +25,12 @@
         <dependency group-id="org.wildfly.core" artifact-id="wildfly-core-feature-pack">
             <name>core</name>
             <packages inherit="false">
-                <include name="docs"/>
-                <include name="org.jboss.as.standalone.main"/>
-                <include name="org.jboss.as.domain-management.main"/>
-                <include name="org.jboss.as.domain-add-user.main"/>
-                <include name="org.jboss.as.domain-http-error-context.main"/>
+                <exclude name="product.conf"/>
             </packages>
             <default-configs inherit="false"/>
         </dependency>
     </dependencies>
     <default-packages>
-        <package name="product.conf"/>
-        <package name="misc.standalone"/>
-        <package name="misc.domain"/>
         <package name="modules.all"/>
     </default-packages>
     <package-schemas>
@@ -47,6 +40,20 @@
         <group name="org.wildfly.core"/>
         <group name="org.wildfly.security"/>
     </package-schemas>
+
+    <config model="standalone">
+        <packages>
+            <package name="product.conf" optional="true"/>
+            <package name="misc.standalone"/>
+        </packages>
+    </config>
+
+    <config model="domain">
+        <packages>
+            <package name="product.conf" optional="true"/>
+            <package name="misc.domain"/>
+        </packages>
+    </config>
 
     <config name="standalone.xml" model="standalone">
         <props>
