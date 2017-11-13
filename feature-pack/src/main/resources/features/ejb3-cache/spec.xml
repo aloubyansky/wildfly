@@ -12,7 +12,7 @@
     <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
     <param name="subsystem" default="ejb3" feature-id="true"/>
     <param name="cache" feature-id="true"/>
-    <param name="passivation-store"/>
-    <param name="aliases"/>
+    <param name="passivation-store" nillable="true"/>
+    <param name="aliases" nillable="true"/>
   </params>
 </feature-spec>
