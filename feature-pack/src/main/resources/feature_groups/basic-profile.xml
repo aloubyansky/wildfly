@@ -6,6 +6,7 @@
     </feature-pack>
 
     <feature-pack dependency="servlet">
+        <feature-group name="basic-profile"/>
 
         <feature spec="security-domain">
             <param name="subsystem" value="security"/>
