@@ -13,7 +13,7 @@
     <param name="server" default="default" feature-id="true"/>
     <param name="http-acceptor" default="http-connector" feature-id="true"/>
     <param name="http-listener"/>
-    <param name="endpoint"/>
+    <param name="endpoint" nillable="true"/>
     <param name="params" nillable="true"/>
     <param name="upgrade-legacy" nillable="true"/>
   </params>
