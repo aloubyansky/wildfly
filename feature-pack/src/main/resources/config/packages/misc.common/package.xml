@@ -4,7 +4,11 @@
     <dependencies>
         <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
             <package name="misc.common"/>
+<<<<<<< 1121197698c8febaf88d522479f1e62704c25c87
         </origin>
+=======
+        </feature-pack>
+>>>>>>> made the docs optional
         <package name="appclient" optional="true"/>
         <package name="bin"/>
         <package name="docs" optional="true"/>
