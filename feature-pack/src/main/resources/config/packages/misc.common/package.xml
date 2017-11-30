@@ -5,8 +5,8 @@
         <feature-pack dependency="servlet">
             <package name="misc.common"/>
         </feature-pack>
-        <package name="appclient"/>
+        <package name="appclient" optional="true"/>
         <package name="bin"/>
-        <package name="docs"/>
+        <package name="docs" optional="true"/>
     </dependencies>
 </package-spec>
