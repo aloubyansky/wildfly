@@ -2,7 +2,7 @@
 
 <package-spec xmlns="urn:wildfly:pm-package:1.0" name="misc.standalone">
     <dependencies>
-        <feature-pack dependency="core">
+        <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
             <package name="misc.standalone"/>
         </feature-pack>
         <package name="misc.common"/>
