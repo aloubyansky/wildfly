@@ -23,7 +23,7 @@
 <build xmlns="urn:wildfly:feature-pack-build:2.0">
     <dependencies>
         <dependency group-id="org.wildfly.core" artifact-id="wildfly-core-feature-pack">
-            <name>core</name>
+            <name>org.wildfly.core:wildfly-core-feature-pack-new</name>
             <packages inherit="false">
                 <exclude name="product.conf"/>
             </packages>
@@ -99,4 +99,5 @@
         </props>
         <feature-group name="host-slave"/>
     </config>
+
 </build>

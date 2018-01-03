@@ -6,7 +6,7 @@
         <package name="README.txt"/>
         <package name="copyright.txt"/>
         <package name="welcome-content"/>
-        <feature-pack dependency="core">
+        <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
             <package name="misc.common"/>
         </feature-pack>
     </dependencies>
