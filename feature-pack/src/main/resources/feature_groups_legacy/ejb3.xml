@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="ejb3" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature spec="ejb3">
+        <param name="default-slsb-instance-pool" value="slsb-strict-max-pool"/>
+        <param name="default-sfsb-cache" value="simple"/>
+        <param name="default-sfsb-passivation-disabled-cache" value="simple"/>
+        <param name="default-security-domain" value="other"/>
+        <feature spec="ejb3-cache">
+            <param name="cache" value="simple"/>
+        </feature>
+        <feature spec="ejb3-cache">
+            <param name="cache" value="distributable"/>
+            <param name="passivation-store" value="infinispan"/>
+            <param name="aliases" value="[passivating,clustered]"/>
+        </feature>
+        <feature spec="ejb3-strict-max-bean-pool">
+            <param name="strict-max-bean-instance-pool" value="mdb-strict-max-pool"/>
+            <param name="derive-size" value="from-cpu-count"/>
+        </feature>
+        <feature spec="ejb3-strict-max-bean-pool">
+            <param name="strict-max-bean-instance-pool" value="slsb-strict-max-pool"/>
+            <param name="derive-size" value="from-worker-pools"/>
+        </feature>
+        <feature spec="ejb3-passivation-store">
+            <param name="passivation-store" value="infinispan"/>
+        </feature>
+        <feature spec="ejb3-async-service"/>
+        <feature spec="ejb3-remote-service">
+            <param name="connector-ref" value="http-remoting-connector"/>
+            <feature spec="ejb3-remote-channel-creation-option">
+                <param name="name" value="MAX_OUTBOUND_MESSAGES"/>
+                <param name="value" value="1234"/>
+                <param name="type" value="remoting"/>
+            </feature>
+            <feature spec="ejb3-remote-channel-creation-option">
+                <param name="name" value="READ_TIMEOUT"/>
+                <param name="value" value="${prop.remoting-connector.read.timeout:20}"/>
+                <param name="type" value="xnio"/>
+            </feature>
+        </feature>
+        <feature spec="ejb3-timer-service">
+            <feature spec="ejb3-timer-file-data-store"/>
+        </feature>
+        <feature spec="ejb3-thread-pool"/>
+    </feature>
+    <feature-pack dependency="core">
+        <feature spec="elytron">
+            <feature spec="elytron-constant-permission-mapper">
+                <feature spec="elytron-constant-permission-mapper-permission">
+                    <param name="permissions" value="{class-name=org.jboss.ejb.client.RemoteEJBPermission,module=org.jboss.ejb-client}"/>
+                </feature>
+            </feature>
+        </feature>
+    </feature-pack>
+</feature-group-spec>
