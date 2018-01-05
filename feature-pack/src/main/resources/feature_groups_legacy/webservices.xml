@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="jca" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature spec="webservices">
+        <feature spec="webservices-client-config"/>
+        <feature spec="webservices-endpoint-config">
+            <param name="endpoint-config" value="Recording-Endpoint-Config"/>
+            <feature spec="webservices-endpoint-config-pre-handler-chain">
+                <feature spec="webservices-endpoint-config-handler"/>
+            </feature>
+        </feature>
+        <feature spec="webservices-endpoint-config">
+            <param name="endpoint-config" value="Standard-Endpoint-Config"/>
+        </feature>
+    </feature>
+</feature-group-spec>

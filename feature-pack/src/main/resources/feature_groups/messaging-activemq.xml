@@ -70,7 +70,7 @@
         <param name="default-resource-adapter-name" value="${ejb.resource-adapter-name:activemq-ra.rar}"/>
         <param name="default-mdb-instance-pool" value="mdb-strict-max-pool"/>
     </feature>
-    <feature-pack dependency="servlet">
+    <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature spec="ee">
             <feature spec="ee-default-bindings">
                 <param name="jms-connection-factory" value="java:jboss/DefaultJMSConnectionFactory"/>

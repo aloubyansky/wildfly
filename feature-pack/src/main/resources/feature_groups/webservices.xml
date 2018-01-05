@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="jca" xmlns="urn:wildfly:pm-feature-group:1.0">
-    <feature spec="webservices">
-        <feature spec="webservices-client-config"/>
-        <feature spec="webservices-endpoint-config">
+    <feature spec="subsystem.webservices">
+        <feature spec="subsystem.webservices.client-config">
+            <param name="client-config" value="Standard-Client-Config"/>
+        </feature>
+        <feature spec="subsystem.webservices.endpoint-config">
             <param name="endpoint-config" value="Recording-Endpoint-Config"/>
-            <feature spec="webservices-endpoint-config-pre-handler-chain">
-                <feature spec="webservices-endpoint-config-handler"/>
+            <feature spec="subsystem.webservices.endpoint-config.pre-handler-chain">
+                <param name="pre-handler-chain" value="recording-handlers" />
+                <feature spec="subsystem.webservices.endpoint-config.pre-handler-chain.handler">
+                    <param name="handler" value="RecordingHandler"/>
+                    <param name="class" value="org.jboss.ws.common.invocation.RecordingServerHandler"/>
+                </feature>
             </feature>
         </feature>
-        <feature spec="webservices-endpoint-config">
+        <feature spec="subsystem.webservices.endpoint-config">
             <param name="endpoint-config" value="Standard-Endpoint-Config"/>
         </feature>
     </feature>

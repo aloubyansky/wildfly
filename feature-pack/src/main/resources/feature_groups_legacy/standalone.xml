@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="standalone" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <feature-pack dependency="core">
+
+        <feature-group name="interfaces"/>
+
+        <feature spec="socket-binding-group">
+            <param name="port-offset" value="${jboss.socket.binding.port-offset:0}"/>
+            <feature-pack dependency="this">
+                <feature-group name="standalone-sockets"/>
+            </feature-pack>
+        </feature>
+
+        <feature-group name="security-realms"/>
+        <feature-group name="audit"/>
+        <feature-group name="management-interfaces"/>
+        <feature-group name="access-control"/>
+    </feature-pack>
+
+    <feature-group name="standalone-profile"/>
+
+    <feature-group name="infinispan-local"/>
+</feature-group-spec>

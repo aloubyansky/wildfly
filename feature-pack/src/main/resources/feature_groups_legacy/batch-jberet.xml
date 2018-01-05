@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="batch-jberet" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature spec="batch-jberet">
+        <feature spec="batch-jberet-in-memory-job-repository"/>
+        <feature spec="batch-jberet-thread-pool"/>
+    </feature>
+    <feature-pack dependency="core">
+        <feature spec="elytron">
+            <feature spec="elytron-constant-permission-mapper">
+                <feature spec="elytron-constant-permission-mapper-permission">
+                    <param name="permissions" value="{class-name=org.wildfly.extension.batch.jberet.deployment.BatchPermission,module=org.wildfly.extension.batch.jberet,target-name=*}"/>
+                </feature>
+            </feature>
+        </feature>
+    </feature-pack>
+</feature-group-spec>

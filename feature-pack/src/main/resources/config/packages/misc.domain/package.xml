@@ -2,7 +2,7 @@
 
 <package-spec xmlns="urn:wildfly:pm-package:1.0" name="misc.domain">
     <dependencies>
-        <feature-pack dependency="servlet">
+        <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
             <package name="misc.domain"/>
         </feature-pack>
         <package name="misc.common"/>
