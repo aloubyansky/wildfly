@@ -50,15 +50,16 @@ public class BinaryRequirementCapability implements Capability {
      * @param configurator configures the capability
      */
     public BinaryRequirementCapability(final BinaryRequirement requirement, UnaryOperator<RuntimeCapability.Builder<Void>> configurator) {
-        RuntimeCapability.Builder<Void> builder = RuntimeCapability.Builder.of(requirement.getName(), true)
-                .setServiceType(requirement.getType())
-                .setDynamicNameMapper(address -> new String[] { address.getParent().getLastElement().getValue(), address.getLastElement().getValue() })
-                ;
-        this.definition = configurator.apply(builder).build();
+        this.definition = configurator.apply(RuntimeCapability.Builder.of(requirement.getName(), true)
+                .setDynamicNameMapper(pathElements -> new String[]{
+                            pathElements.getParent().getLastElement().getValue(),
+                            pathElements.getLastElement().getValue()})
+                .setServiceType(requirement.getType())).build();
     }
 
     @Override
     public RuntimeCapability<Void> getDefinition() {
         return this.definition;
     }
+
 }
