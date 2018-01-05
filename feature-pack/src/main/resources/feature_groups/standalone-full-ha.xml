@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="standalone-full" xmlns="urn:wildfly:pm-feature-group:1.0">
-
     <feature spec="interface">
         <param name="interface" value="unsecure"/>
         <param name="inet-address" value="${jboss.bind.address.unsecure:127.0.0.1}"/>

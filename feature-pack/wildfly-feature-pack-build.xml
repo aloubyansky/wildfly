@@ -56,21 +56,21 @@
             <package name="misc.standalone"/>
         </packages>
     </config>
-
+<!--
     <config model="domain">
         <packages>
             <package name="product.conf"/>
             <package name="misc.domain"/>
         </packages>
     </config>
-
+    -->
     <config name="standalone.xml" model="standalone">
         <props>
             <prop name="config-name" value="standalone.xml"/>
         </props>
         <feature-group name="standalone"/>
     </config>
-
+<!--
     <config name="standalone-ha.xml" model="standalone">
         <props>
             <prop name="config-name" value="standalone-ha.xml"/>
@@ -144,5 +144,5 @@
             <prop name="domain-config-name" value="domain.xml"/>
         </props>
         <feature-group name="host-slave"/>
-    </config>
+    </config>-->
 </build>
