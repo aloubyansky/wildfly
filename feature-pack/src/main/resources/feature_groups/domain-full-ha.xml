@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="domain-full-ha" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <feature-pack dependency="servlet">
+    <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="domain-interfaces"/>
     </feature-pack>
 
-    <feature-pack dependency="core">
+    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature spec="interface">
             <param name="interface" value="unsecure"/>
             <param name="inet-address" value="${jboss.bind.address.unsecure:127.0.0.1}"/>

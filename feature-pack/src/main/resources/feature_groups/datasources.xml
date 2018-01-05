@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="datasources" xmlns="urn:wildfly:pm-feature-group:1.0">
-    <feature spec="datasources">
-        <feature spec="jdbc-driver">
+    <feature spec="subsystem.datasources">
+        <feature spec="subsystem.datasources.jdbc-driver">
             <param name="jdbc-driver" value="h2"/>
             <param name="driver-name" value="h2"/>
             <param name="driver-module-name" value="com.h2database.h2"/>
             <param name="driver-xa-datasource-class-name" value="org.h2.jdbcx.JdbcDataSource"/>
         </feature>
-        <feature spec="data-source">
+        <feature spec="subsystem.datasources.data-source">
             <param name="data-source" value="ExampleDS"/>
             <param name="jndi-name" value="java:jboss/datasources/ExampleDS"/>
             <param name="data-source" value="ExampleDS"/>
@@ -17,8 +17,8 @@
             <param name="password" value="sa"/>
         </feature>
     </feature>
-    <feature-pack dependency="servlet">
-        <feature spec="ee-default-data-source-binding">
+    <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
+        <feature spec="subsystem.ee.service.default-bindings">
             <param name="datasource" value="java:jboss/datasources/ExampleDS"/>
         </feature>
     </feature-pack>

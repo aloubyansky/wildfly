@@ -23,14 +23,14 @@
 <build xmlns="urn:wildfly:feature-pack-build:2.0">
     <dependencies>
         <dependency group-id="org.wildfly.core" artifact-id="wildfly-core-feature-pack">
-            <name>core</name>
+            <name>org.wildfly.core:wildfly-core-feature-pack-new</name>
             <packages inherit="false">
                 <exclude name="product.conf"/>
             </packages>
             <default-configs inherit="false"/>
         </dependency>
         <dependency group-id="org.wildfly" artifact-id="wildfly-servlet-feature-pack">
-            <name>servlet</name>
+            <name>org.wildfly:wildfly-servlet-feature-pack-new</name>
             <packages inherit="false">
                 <exclude name="product.conf"/>
             </packages>
@@ -56,21 +56,21 @@
             <package name="misc.standalone"/>
         </packages>
     </config>
-
+<!--
     <config model="domain">
         <packages>
             <package name="product.conf"/>
             <package name="misc.domain"/>
         </packages>
     </config>
-
+    -->
     <config name="standalone.xml" model="standalone">
         <props>
             <prop name="config-name" value="standalone.xml"/>
         </props>
         <feature-group name="standalone"/>
     </config>
-
+<!--
     <config name="standalone-ha.xml" model="standalone">
         <props>
             <prop name="config-name" value="standalone-ha.xml"/>
@@ -143,5 +143,5 @@
             <prop name="domain-config-name" value="domain.xml"/>
         </props>
         <feature-group name="host-slave"/>
-    </config>
+    </config>-->
 </build>

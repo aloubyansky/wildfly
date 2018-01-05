@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="domain-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <feature-pack dependency="core">
+        <feature-group name="security-manager"/>
+    </feature-pack>
+
+    <feature-pack dependency="servlet">
+        <feature-group name="domain-profile">
+            <feature-pack dependency="core">
+                <exclude spec="jmx-remoting-connector"/>
+            </feature-pack>
+        </feature-group>
+    </feature-pack>
+
+    <feature-group name="basic-profile"/>
+
+</feature-group-spec>
