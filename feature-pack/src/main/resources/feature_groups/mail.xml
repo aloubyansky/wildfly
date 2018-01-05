@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="mail" xmlns="urn:wildfly:pm-feature-group:1.0">
-    <feature-pack dependency="core">
-        <feature spec="elytron">
-            <feature spec="elytron-constant-permission-mapper">
-                <feature spec="elytron-constant-permission-mapper-permission">
-                    <param name="permissions" value="{class-name=org.wildfly.transaction.client.RemoteTransactionPermission,module=org.wildfly.transaction.client}"/>
+    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+        <feature spec="subsystem.elytron">
+            <feature spec="subsystem.elytron.simple-permission-mapper">
+                <param name="simple-permission-mapper" value="default-permission-mapper" />
+                <feature spec="subsystem.elytron.simple-permission-mapper_permission-mappings">
+                    <param name="permission-mapping" value="{class-name=org.wildfly.transaction.client.RemoteTransactionPermission,module=org.wildfly.transaction.client}"/>
                 </feature>
             </feature>
         </feature>
     </feature-pack>
-    <feature spec="mail">
-        <feature spec="mail-session">
-            <feature spec="mail-server">
-                <param name="server" value="smtp"/>
+    <feature spec="subsystem.mail">
+        <feature spec="subsystem.mail.mail-session">
+            <param name="mail-session" value="default"/>
+            <param name="jndi-name" value="java:jboss/mail/Default"/>
+            <feature spec="subsystem.mail.mail-session.server.smtp">
                 <param name="outbound-socket-binding-ref" value="mail-smtp"/>
             </feature>
         </feature>

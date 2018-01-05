@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="load-balancer-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <feature-pack dependency="core">
+    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature-group name="logging"/>
         <feature-group name="io"/>
     </feature-pack>
-    <feature-pack dependency="servlet">
+    <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="undertow-load-balancer"/>
     </feature-pack>
 

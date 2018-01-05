@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="mail" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature-pack dependency="core">
+        <feature spec="elytron">
+            <feature spec="elytron-constant-permission-mapper">
+                <feature spec="elytron-constant-permission-mapper-permission">
+                    <param name="permissions" value="{class-name=org.wildfly.transaction.client.RemoteTransactionPermission,module=org.wildfly.transaction.client}"/>
+                </feature>
+            </feature>
+        </feature>
+    </feature-pack>
+    <feature spec="mail">
+        <feature spec="mail-session">
+            <feature spec="mail-server">
+                <param name="server" value="smtp"/>
+                <param name="outbound-socket-binding-ref" value="mail-smtp"/>
+            </feature>
+        </feature>
+    </feature>
+</feature-group-spec>
