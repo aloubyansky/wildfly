@@ -266,6 +266,7 @@
                             </externalArtifacts>
                             <standaloneExtensions>
                                 <extension>org.jboss.as.clustering.infinispan</extension>
+                                <extension>org.jboss.as.clustering.jgroups</extension>
                                 <extension>org.jboss.as.connector</extension>
                                 <extension>org.jboss.as.deployment-scanner</extension>
                                 <extension>org.jboss.as.ee</extension>
@@ -278,6 +279,7 @@
                                 <extension>org.jboss.as.jsr77</extension>
                                 <extension>org.jboss.as.logging</extension>
                                 <extension>org.jboss.as.mail</extension>
+                                <extension>org.jboss.as.modcluster</extension>
                                 <extension>org.jboss.as.naming</extension>
                                 <extension>org.jboss.as.pojo</extension>
                                 <extension>org.jboss.as.remoting</extension>
@@ -289,9 +291,10 @@
                                 <extension>org.wildfly.extension.batch.jberet</extension>
                                 <extension>org.wildfly.extension.bean-validation</extension>
                                 <extension>org.wildfly.extension.core-management</extension>
+                                <extension>org.wildfly.extension.clustering.singleton</extension>
                                 <extension>org.wildfly.extension.elytron</extension>
                                 <extension>org.wildfly.extension.io</extension>
-                                <!--<extension>org.wildfly.extension.messaging-activemq</extension>-->
+                                <extension>org.wildfly.extension.messaging-activemq</extension>
                                 <extension>org.wildfly.extension.request-controller</extension>
                                 <extension>org.wildfly.extension.security.manager</extension>
                                 <extension>org.wildfly.extension.undertow</extension>

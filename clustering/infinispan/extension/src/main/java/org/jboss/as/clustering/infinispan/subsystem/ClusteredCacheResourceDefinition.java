@@ -143,5 +143,6 @@ public class ClusteredCacheResourceDefinition extends CacheResourceDefinition {
                     new MetricHandler<>(new ClusteredCacheMetricExecutor(), ClusteredCacheMetric.class).register(registration);
                 }
             }));
+        ;
     }
 }

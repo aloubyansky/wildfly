@@ -70,7 +70,7 @@
         </props>
         <feature-group name="standalone"/>
     </config>
-<!--
+
     <config name="standalone-ha.xml" model="standalone">
         <props>
             <prop name="config-name" value="standalone-ha.xml"/>
@@ -91,7 +91,7 @@
         </props>
         <feature-group name="standalone-full-ha"/>
     </config>
-
+<!--
     <config name="domain.xml" model="domain">
         <props>
             <prop name="domain-config-name" value="domain.xml"/>

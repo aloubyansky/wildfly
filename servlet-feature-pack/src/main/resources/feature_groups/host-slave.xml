@@ -55,7 +55,6 @@
                 <param name="port" value="${jboss.domain.master.port:9999}"/>
             </feature>
         </feature>
-
     </feature>
 
 </feature-group-spec>
