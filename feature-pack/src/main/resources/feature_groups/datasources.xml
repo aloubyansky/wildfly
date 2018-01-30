@@ -9,6 +9,8 @@
         </feature>
         <feature spec="subsystem.datasources.data-source">
             <param name="data-source" value="ExampleDS"/>
+            <param name="enabled" value="true"/>
+            <param name="use-java-context" value="true"/>
             <param name="jndi-name" value="java:jboss/datasources/ExampleDS"/>
             <param name="data-source" value="ExampleDS"/>
             <param name="connection-url" value="&quot;jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE&quot;"/>
@@ -17,9 +19,9 @@
             <param name="password" value="sa"/>
         </feature>
     </feature>
-    <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
+    <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature spec="subsystem.ee.service.default-bindings">
             <param name="datasource" value="java:jboss/datasources/ExampleDS"/>
         </feature>
-    </feature-pack>
+    </origin>
 </feature-group-spec>

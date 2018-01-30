@@ -2,9 +2,9 @@
 
 <package-spec xmlns="urn:wildfly:pm-package:1.0" name="misc.domain">
     <dependencies>
-        <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+        <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
             <package name="misc.domain"/>
-        </feature-pack>
+        </origin>
         <package name="misc.common"/>
     </dependencies>
 </package-spec>

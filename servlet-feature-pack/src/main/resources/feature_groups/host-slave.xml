@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="host-slave" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature-group name="host-slave">
             <exclude spec="host.core-service.management.management-interface.http-interface"/>
             <include feature-id="host:host=slave">
@@ -57,6 +57,6 @@
             </feature>
 
         </feature>
-    </feature-pack>
+    </origin>
 
 </feature-group-spec>

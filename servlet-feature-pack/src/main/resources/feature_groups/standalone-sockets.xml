@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="standalone-sockets" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature-group name="default-sockets"/>
         <feature spec="socket-binding-group.socket-binding">
             <param name="socket-binding" value="ajp"/>
@@ -15,6 +15,6 @@
             <param name="socket-binding" value="https"/>
             <param name="port" value="${jboss.https.port:8443}"/>
         </feature>
-    </feature-pack>
+    </origin>
 
 </feature-group-spec>

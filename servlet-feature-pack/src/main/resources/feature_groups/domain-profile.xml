@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="domain-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature-group name="domain-profile">
             <include feature-id="profile.subsystem.logging.root-logger.ROOT:subsystem=logging,root-logger=ROOT">
                 <param name="handlers" value="[&quot;FILE&quot;]"/>
             </include>
             <exclude spec="profile.subsystem.logging.console-handler"/>
         </feature-group>
-    </feature-pack>
+    </origin>
 
     <feature-group name="domain-basic-profile"/>
 

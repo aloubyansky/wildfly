@@ -9,21 +9,15 @@
             <feature spec="subsystem.infinispan.cache-container.local-cache">
                 <param name="local-cache" value="passivation"/>
                 <feature spec="subsystem.infinispan.cache-container.local-cache.component.locking">
-                    <param name="isolation" value="false"/>
-                    <param name="striping" value="REPEATABLE_READ"/>
-                    <param name="acquire-timeout" value="15000L"/>
-                    <param name="concurrency-level" value="1000"/>
+                    <param name="isolation" value="REPEATABLE_READ"/>
                 </feature>
                 <feature spec="subsystem.infinispan.cache-container.local-cache.component.transaction">
-                    <param name="locking" value="PESSIMISTIC"/>
                     <param name="mode" value="BATCH"/>
-                    <param name="stop-timeout" value="10000L"/>
                 </feature>
                 <feature spec="subsystem.infinispan.cache-container.local-cache.store.file">
                     <param name="passivation" value="true"/>
                     <param name="purge" value="false"/>
-                    <param name="relative-to" value="jboss.server.data.dir"/>
-                    <param name="fetch-state" value="true"/>
+                    <unset param="relative-to"/>
                 </feature>
             </feature>
         </feature>
@@ -33,8 +27,13 @@
             <param name="module" value="org.hibernate.infinispan"/>
             <feature spec="subsystem.infinispan.cache-container.local-cache">
                 <param name="local-cache" value="local-query"/>
-                <feature spec="subsystem.infinispan.cache-container.local-cache.component.eviction"/>
-                <feature spec="subsystem.infinispan.cache-container.local-cache.component.expiration"/>
+                <feature spec="subsystem.infinispan.cache-container.local-cache.component.eviction">
+                    <param name="strategy" value="LRU"/>
+                    <param name="max-entries" value="10000"/>
+                </feature>
+                <feature spec="subsystem.infinispan.cache-container.local-cache.component.expiration">
+                    <param name="max-idle" value="100000"/>
+                </feature>
             </feature>
             <feature spec="subsystem.infinispan.cache-container.local-cache">
                 <param name="local-cache" value="timestamps"/>
@@ -44,8 +43,13 @@
                 <feature spec="subsystem.infinispan.cache-container.local-cache.component.transaction">
                     <param name="mode" value="NON_XA"/>
                 </feature>
-                <feature spec="subsystem.infinispan.cache-container.local-cache.component.eviction"/>
-                <feature spec="subsystem.infinispan.cache-container.local-cache.component.expiration"/>
+                <feature spec="subsystem.infinispan.cache-container.local-cache.component.eviction">
+                    <param name="strategy" value="LRU"/>
+                     <param name="max-entries" value="10000"/>
+                </feature>
+                <feature spec="subsystem.infinispan.cache-container.local-cache.component.expiration">
+                    <param name="max-idle" value="100000"/>
+                </feature>
             </feature>
         </feature>
 
@@ -57,21 +61,15 @@
             <feature spec="subsystem.infinispan.cache-container.local-cache">
                 <param name="local-cache" value="passivation"/>
                 <feature spec="subsystem.infinispan.cache-container.local-cache.component.locking">
-                    <param name="isolation" value="false"/>
-                    <param name="striping" value="REPEATABLE_READ"/>
-                    <param name="acquire-timeout" value="15000L"/>
-                    <param name="concurrency-level" value="1000"/>
+                    <param name="isolation" value="REPEATABLE_READ"/>
                 </feature>
                 <feature spec="subsystem.infinispan.cache-container.local-cache.component.transaction">
-                    <param name="locking" value="PESSIMISTIC"/>
                     <param name="mode" value="BATCH"/>
-                    <param name="stop-timeout" value="10000L"/>
                 </feature>
                 <feature spec="subsystem.infinispan.cache-container.local-cache.store.file">
                     <param name="passivation" value="true"/>
                     <param name="purge" value="false"/>
-                    <param name="relative-to" value="jboss.server.data.dir"/>
-                    <param name="fetch-state" value="true"/>
+                    <unset param="relative-to"/>
                 </feature>
             </feature>
         </feature>
@@ -82,7 +80,9 @@
             <param name="default-cache" value="default"/>
             <feature spec="subsystem.infinispan.cache-container.local-cache">
                 <param name="local-cache" value="default"/>
-                <feature spec="subsystem.infinispan.cache-container.local-cache.component.transaction"/>
+                <feature spec="subsystem.infinispan.cache-container.local-cache.component.transaction">
+                    <param name="mode" value="BATCH"/>
+                </feature>
             </feature>
         </feature>
 
