@@ -19,7 +19,6 @@
             <param name="password" value="sa"/>
         </feature>
     </feature>
-
     <feature spec="subsystem.ee.service.default-bindings">
         <param name="datasource" value="java:jboss/datasources/ExampleDS"/>
     </feature>
