@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="host-master" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature-group name="host-master"/>
         <feature spec="host">
             <param name="host" value="master"/>
@@ -32,6 +32,6 @@
                 <param name="environment-variables" value="PM_UNDEFINED"/>
             </feature>
         </feature>
-    </feature-pack>
+    </origin>
 
 </feature-group-spec>

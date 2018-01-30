@@ -3,21 +3,21 @@
 
     <feature-group name="domain-interfaces"/>
 
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
 
         <feature spec="domain.socket-binding-group">
             <param name="socket-binding-group" value="standard-sockets" />
             <param name="default-interface" value="public" />
-            <feature-pack dependency="this">
+            <origin name="this">
                 <feature-group name="domain-sockets"/>
-            </feature-pack>
+            </origin>
         </feature>
 
         <feature spec="profile">
             <param name="profile" value="default"/>
-            <feature-pack dependency="this">
+            <origin name="this">
                 <feature-group name="domain-profile"/>
-            </feature-pack>
+            </origin>
         </feature>
 
         <feature spec="domain.system-property">
@@ -26,6 +26,6 @@
         </feature>
         <feature-group name="domain-access-control"/>
         <feature-group name="domain-host-excludes"/>
-    </feature-pack>
+    </origin>
 
 </feature-group-spec>

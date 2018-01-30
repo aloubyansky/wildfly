@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="domain-ha" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
+    <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="domain-interfaces"/>
-    </feature-pack>
+    </origin>
 
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature spec="socket-binding-group">
             <param name="socket-binding-group" value="ha-sockets"/>
-            <feature-pack dependency="this">
+            <origin name="this">
                 <feature-group name="domain-sockets"/>
                 <feature-group name="ha-sockets"/>
-            </feature-pack>
+            </origin>
             <feature-group name="domain-server-groups"/>
         </feature>
 
         <feature spec="profile">
             <param name="profile" value="ha"/>
 
-            <feature-pack dependency="this">
+            <origin name="this">
                 <feature-group name="domain-profile"/>
                 <feature-group name="basic-ha-profile"/>
-            </feature-pack>
+            </origin>
 
         </feature>
 
@@ -31,6 +31,6 @@
         </feature>
         <feature-group name="access-control"/>
         <feature-group name="domain-host-excludes"/>
-    </feature-pack>
+    </origin>
 
 </feature-group-spec>

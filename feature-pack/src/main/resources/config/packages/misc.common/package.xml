@@ -2,9 +2,9 @@
 
 <package-spec xmlns="urn:wildfly:pm-package:1.0" name="misc.common">
     <dependencies>
-        <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
+        <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
             <package name="misc.common"/>
-        </feature-pack>
+        </origin>
         <package name="appclient" optional="true"/>
         <package name="bin"/>
         <package name="docs" optional="true"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="standalone-sockets" xmlns="urn:wildfly:pm-feature-group:1.0">
-    <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
+    <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="standalone-sockets"/>
-    </feature-pack>
+    </origin>
     <feature-group name="transactions-sockets"/>
     <feature-group name="mail-sockets"/>
 </feature-group-spec>

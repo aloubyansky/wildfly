@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="transactions-sockets" xmlns="urn:wildfly:pm-feature-group:1.0">
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature spec="socket-binding-group.socket-binding">
             <param name="socket-binding" value="txn-status-manager"/>
             <param name="port" value="4713"/>
@@ -9,5 +9,5 @@
             <param name="socket-binding" value="txn-recovery-environment"/>
             <param name="port" value="4712"/>
         </feature>
-    </feature-pack>
+    </origin>
 </feature-group-spec>

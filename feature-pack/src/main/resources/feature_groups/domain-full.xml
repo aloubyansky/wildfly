@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="domain-full" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
+    <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="domain-interfaces"/>
-    </feature-pack>
+    </origin>
 
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature spec="interface">
             <param name="interface" value="unsecure"/>
             <param name="inet-address" value="${jboss.bind.address.unsecure:127.0.0.1}"/>
@@ -13,17 +13,17 @@
 
         <feature spec="socket-binding-group">
             <param name="socket-binding-group" value="full-sockets"/>
-            <feature-pack dependency="this">
+            <origin name="this">
                 <feature-group name="domain-sockets"/>
                 <feature-group name="iiop-sockets"/>
-            </feature-pack>
+            </origin>
             <feature-group name="domain-server-groups"/>
         </feature>
 
         <feature spec="profile">
             <param name="profile" value="full"/>
 
-            <feature-pack dependency="this">
+            <origin name="this">
                 <feature-group name="domain-profile"/>
                 <feature-group name="infinispan-local"/>
                 <feature-group name="jsr77"/>
@@ -32,7 +32,7 @@
                 <feature spec="ejb3">
                     <feature spec="ejb3-iiop-service"/>
                 </feature>
-            </feature-pack>
+            </origin>
         </feature>
 
         <feature spec="system-property">
@@ -41,6 +41,6 @@
         </feature>
         <feature-group name="access-control"/>
         <feature-group name="domain-host-excludes"/>
-    </feature-pack>
+    </origin>
 
 </feature-group-spec>

@@ -23,6 +23,7 @@
 package org.jboss.as.clustering.infinispan.subsystem;
 
 import java.util.Set;
+import java.util.function.UnaryOperator;
 
 import org.jboss.as.clustering.controller.DefaultableCapabilityReference;
 import org.jboss.as.clustering.controller.SimpleAliasEntry;
@@ -93,17 +94,14 @@ public class JGroupsTransportResourceDefinition extends TransportResourceDefinit
         private final RuntimeCapability<Void> definition;
 
         Capability(UnaryRequirement requirement) {
-            this.definition = new UnaryRequirementCapability(requirement).getDefinition();
+            this.definition = new UnaryRequirementCapability(requirement, UnaryOperator.identity(),
+                    address -> new String[] {address.getParent().getLastElement().getValue()})
+                            .getDefinition();
         }
 
         @Override
         public RuntimeCapability<Void> getDefinition() {
             return this.definition;
-        }
-
-        @Override
-        public RuntimeCapability<?> resolve(PathAddress address) {
-            return this.definition.fromBaseCapability(address.getParent().getLastElement().getValue());
         }
     }
 
@@ -281,6 +279,8 @@ public class JGroupsTransportResourceDefinition extends TransportResourceDefinit
                 .addAttributes(ExecutorAttribute.class)
                 .addAttributes(DeprecatedAttribute.class)
                 .addCapabilities(Capability.class)
+                .addResourceCapabilityReference(new CapabilityReferenceRecorder.ResourceCapabilityReferenceRecorder(address -> new String[] {address.getParent().getLastElement().getValue()}, "org.wildfly.clustering.group",
+                        address -> new String[0], "org.wildfly.clustering.jgroups.default-channel-factory"), address -> null)
             , new JGroupsTransportServiceHandler());
     }
 

@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="basic-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
 
+<<<<<<< deefe35ac40fcc632f3dee0b744e0ff8be9d9d2b
     <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature-group name="remoting"/>
     </feature-pack>
+=======
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
+        <feature-group name="remoting">
+            <feature spec="subsystem.remoting">
+                <feature spec="subsystem.remoting.configuration.endpoint">
+                    <unset param="worker"/>
+                </feature>
+            </feature>
+        </feature-group>
+    </origin>
+>>>>>>> Updating feature groups with origin for feature pack reference
 
-    <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
+    <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="basic-profile"/>
+        <feature spec="subsystem.security.security-domain">
+            <param name="security-domain" value="other"/>
+            <param name="cache-type" value="default"/>
+        </feature>
 
         <feature spec="subsystem.security.security-domain">
             <param name="security-domain" value="jboss-ejb-policy"/>
+            <param name="cache-type" value="default"/>
             <feature spec="subsystem.security.security-domain.authorization.classic">
                 <feature spec="subsystem.security.security-domain.authorization.classic.policy-module">
                     <param name="policy-module" value="Delegating"/>
@@ -20,6 +37,7 @@
         </feature>
         <feature spec="subsystem.security.security-domain">
             <param name="security-domain" value="jboss-web-policy"/>
+            <param name="cache-type" value="default"/>
             <feature spec="subsystem.security.security-domain.authorization.classic">
                 <feature spec="subsystem.security.security-domain.authorization.classic.policy-module">
                     <param name="policy-module" value="Delegating"/>
@@ -29,6 +47,7 @@
             </feature>
         </feature>
         <feature spec="subsystem.security.security-domain">
+            <param name="cache-type" value="default"/>
             <param name="security-domain" value="jaspitest"/>
             <feature spec="subsystem.security.security-domain.authentication.jaspi">
                 <feature spec="subsystem.security.security-domain.authentication.jaspi.auth-module">
@@ -57,21 +76,21 @@
             <feature spec="subsystem.naming.service.remote-naming"/>
         </feature>
 
-    </feature-pack>
+    </origin>
 
-    <feature spec="subsystem.resource-adapters"/>
+    <feature-group name="batch-jberet"/>
     <feature spec="subsystem.bean-validation"/>
-    <feature-group name="transactions"/>
-    <feature-group name="jca"/>
     <feature-group name="datasources"/>
     <feature-group name="ejb3"/>
+    <feature spec="subsystem.resource-adapters"/>
+    <feature-group name="transactions"/>
+    <feature-group name="jca"/>
     <feature-group name="jpa"/>
     <feature spec="subsystem.jsf"/>
     <feature spec="subsystem.jaxrs"/>
     <feature spec="subsystem.jdr"/>
     <feature spec="subsystem.pojo"/>
     <feature spec="subsystem.sar"/>
-    <feature-group name="batch-jberet"/>
     <feature-group name="mail"/>
     <feature-group name="webservices"/>
     <feature spec="subsystem.weld"/>
