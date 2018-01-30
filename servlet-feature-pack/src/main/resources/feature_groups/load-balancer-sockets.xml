@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="load-balancer-sockets" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature spec="socket-binding-group.socket-binding">
             <param name="socket-binding" value="http"/>
             <param name="port" value="${jboss.http.port:8080}"/>
@@ -21,6 +21,6 @@
             <param name="multicast-address" value="${jboss.modcluster.multicast.address:224.0.1.105}"/>
             <param name="multicast-port" value="23364"/>
         </feature>
-    </feature-pack>
+    </origin>
 
 </feature-group-spec>

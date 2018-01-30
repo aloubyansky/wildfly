@@ -32,7 +32,6 @@ import org.jboss.as.clustering.controller.ResourceDescriptor;
 import org.jboss.as.clustering.controller.validation.EnumValidator;
 import org.jboss.as.controller.AttributeDefinition;
 import org.jboss.as.controller.ModelVersion;
-import org.jboss.as.controller.PathAddress;
 import org.jboss.as.controller.PathElement;
 import org.jboss.as.controller.SimpleAttributeDefinitionBuilder;
 import org.jboss.as.controller.capability.RuntimeCapability;
@@ -57,17 +56,14 @@ public class ClusteredCacheResourceDefinition extends CacheResourceDefinition {
         private final RuntimeCapability<Void> definition;
 
         Capability(String name) {
-            this.definition = RuntimeCapability.Builder.of(name, true).build();
+            this.definition = RuntimeCapability.Builder.of(name, true)
+                    .setDynamicNameMapper(address -> new String[] {address.getParent().getLastElement().getValue(), address.getLastElement().getValue()})
+                    .build();
         }
 
         @Override
         public RuntimeCapability<?> getDefinition() {
             return this.definition;
-        }
-
-        @Override
-        public RuntimeCapability<?> resolve(PathAddress address) {
-            return this.definition.fromBaseCapability(address.getParent().getLastElement().getValue(), address.getLastElement().getValue());
         }
     }
 
@@ -141,11 +137,12 @@ public class ClusteredCacheResourceDefinition extends CacheResourceDefinition {
                 .addAttributes(Attribute.class)
                 .addAttributes(DeprecatedAttribute.class)
                 .addCapabilities(Capability.class)
-                .addResourceCapabilityReference(new CapabilityReference(Capability.TRANSPORT, JGroupsTransportResourceDefinition.Requirement.CHANNEL), address -> address.getParent().getLastElement().getValue())
+                .addResourceCapabilityReference(new CapabilityReference(Capability.TRANSPORT, JGroupsTransportResourceDefinition.Requirement.CHANNEL, "cache-container"), address -> address.getParent().getLastElement().getValue())
             ), handler, registrationConfigurator.andThen(registration -> {
                 if (registration.isRuntimeOnlyRegistrationValid()) {
                     new MetricHandler<>(new ClusteredCacheMetricExecutor(), ClusteredCacheMetric.class).register(registration);
                 }
             }));
+        ;
     }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="mail-sockets" xmlns="urn:wildfly:pm-feature-group:1.0">
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature spec="socket-binding-group.remote-destination-outbound-socket-binding">
             <param name="remote-destination-outbound-socket-binding" value="mail-smtp"/>
             <param name="host" value="localhost"/>
             <param name="port" value="25"/>
         </feature>
-    </feature-pack>
+    </origin>
 </feature-group-spec>
