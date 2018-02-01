@@ -3,6 +3,4 @@
     <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="domain-sockets"/>
     </origin>
-    <feature-group name="transactions-sockets"/>
-    <feature-group name="mail-sockets"/>
 </feature-group-spec>

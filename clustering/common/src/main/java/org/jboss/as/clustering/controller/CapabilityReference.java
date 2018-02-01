@@ -22,11 +22,8 @@
 
 package org.jboss.as.clustering.controller;
 
-<<<<<<< b3c8b3fc18316144a0947abd0fe7fa263b5e81fa
-=======
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> Generating full feature specs and feature pack
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
