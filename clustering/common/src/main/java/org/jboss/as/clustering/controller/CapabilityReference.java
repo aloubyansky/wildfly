@@ -22,8 +22,9 @@
 
 package org.jboss.as.clustering.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
-import java.util.StringJoiner;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -134,20 +135,17 @@ public class CapabilityReference implements CapabilityReferenceRecorder {
     }
 
     @Override
-    public String getRequirementName(String... dynamicElements) {
-        StringJoiner pattern = new StringJoiner(".$");
-        pattern.add(requirement.getName());
+    public String[] getRequirementPatternSegments(String dynamicElement) {
+        List<String> pattern = new ArrayList<>();
         if (dynamicParts != null && dynamicParts.length > 0) {
             for (String part : dynamicParts) {
                 pattern.add(part);
             }
         }
-        if (dynamicElements != null && dynamicElements.length > 0) {
-            for (String part : dynamicElements) {
-                pattern.add(part);
-            }
+        if (dynamicElement != null && !dynamicElement.isEmpty()) {
+            pattern.add(dynamicElement);
         }
-        return pattern.toString();
+        return pattern.toArray(new String[pattern.size()]);
     }
 
     @Override

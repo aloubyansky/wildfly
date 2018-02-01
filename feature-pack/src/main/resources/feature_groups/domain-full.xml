@@ -6,16 +6,19 @@
     </origin>
 
     <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-        <feature spec="interface">
+        <feature spec="domain.interface">
             <param name="interface" value="unsecure"/>
             <param name="inet-address" value="${jboss.bind.address.unsecure:127.0.0.1}"/>
         </feature>
 
-        <feature spec="socket-binding-group">
+        <feature spec="domain.socket-binding-group">
             <param name="socket-binding-group" value="full-sockets"/>
+            <param name="default-interface" value="public" />
             <origin name="this">
                 <feature-group name="domain-sockets"/>
-                <feature-group name="iiop-sockets"/>
+                <feature-group name="domain-iiop-sockets"/>
+                <feature-group name="domain-mail-sockets"/>
+                <feature-group name="domain-transactions-sockets"/>
             </origin>
             <feature-group name="domain-server-groups"/>
         </feature>
@@ -25,21 +28,24 @@
 
             <origin name="this">
                 <feature-group name="domain-profile"/>
-                <feature-group name="infinispan-local"/>
-                <feature-group name="jsr77"/>
-                <feature-group name="iiop-openjdk"/>
-                <feature-group name="messaging-activemq"/>
-                <feature spec="ejb3">
-                    <feature spec="ejb3-iiop-service"/>
+                <feature-group name="domain-infinispan-local"/>
+                <feature-group name="domain-jsr77"/>
+                <feature-group name="domain-iiop-openjdk"/>
+                <feature-group name="domain-messaging-activemq"/>
+                <feature spec="profile.subsystem.ejb3">
+                    <feature spec="profile.subsystem.ejb3.service.iiop">
+                        <param name="enable-by-default" value="false"/>
+                        <param name="use-qualified-name" value="false"/>
+                    </feature>
                 </feature>
             </origin>
         </feature>
 
-        <feature spec="system-property">
+        <feature spec="domain.system-property">
             <param name="system-property" value="java.net.preferIPv4Stack"/>
             <param name="value" value="true"/>
         </feature>
-        <feature-group name="access-control"/>
+        <feature-group name="domain-access-control"/>
         <feature-group name="domain-host-excludes"/>
     </origin>
 

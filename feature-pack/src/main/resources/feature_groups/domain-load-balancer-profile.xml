@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="domain-load-balancer-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
+        <feature-group name="domain-logging"/>
+        <feature-group name="domain-io"/>
+    </origin>
+    <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
+        <feature-group name="domain-undertow-load-balancer"/>
+    </origin>
+
+</feature-group-spec>
