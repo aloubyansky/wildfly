@@ -56,14 +56,14 @@
             <package name="misc.standalone"/>
         </packages>
     </config>
-<!--
+
     <config model="domain">
         <packages>
             <package name="product.conf"/>
             <package name="misc.domain"/>
         </packages>
     </config>
-    -->
+
     <config name="standalone.xml" model="standalone">
         <props>
             <prop name="config-name" value="standalone.xml"/>
@@ -91,7 +91,7 @@
         </props>
         <feature-group name="standalone-full-ha"/>
     </config>
-<!--
+
     <config name="domain.xml" model="domain">
         <props>
             <prop name="domain-config-name" value="domain.xml"/>
@@ -101,7 +101,6 @@
         <feature-group name="domain-full"/>
         <feature-group name="domain-full-ha"/>
         <feature-group name="domain-load-balancer"/>
-
 
         <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
             <feature spec="domain.server-group">
@@ -144,5 +143,5 @@
             <prop name="domain-config-name" value="domain.xml"/>
         </props>
         <feature-group name="host-slave"/>
-    </config>-->
+    </config>
 </build>
