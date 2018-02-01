@@ -7,10 +7,11 @@
 
     <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
 
-        <feature spec="socket-binding-group">
+        <feature spec="domain.socket-binding-group">
+            <param name="default-interface" value="public" />
             <param name="socket-binding-group" value="load-balancer-sockets"/>
             <origin name="this">
-                <feature-group name="load-balancer-sockets"/>
+                <feature-group name="domain-load-balancer-sockets"/>
             </origin>
             <feature-group name="domain-server-groups"/>
         </feature>
@@ -19,12 +20,12 @@
             <param name="profile" value="load-balancer"/>
 
             <origin name="this">
-                <feature-group name="load-balancer-profile">
+                <feature-group name="domain-load-balancer-profile">
                     <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-                        <include feature-id="root-logger:subsystem=logging,root-logger=ROOT">
+                        <include feature-id="profile.subsystem.logging.root-logger.ROOT:subsystem=logging,root-logger=ROOT">
                             <param name="handlers" value="[&quot;FILE&quot;]"/>
                         </include>
-                        <exclude spec="logging-console-handler"/>
+                        <exclude spec="profile.subsystem.logging.console-handler"/>
                     </origin>
                 </feature-group>
 <<<<<<< deefe35ac40fcc632f3dee0b744e0ff8be9d9d2b
@@ -37,11 +38,11 @@
             <feature-group name="domain-server-groups"/>
         </feature>
 
-        <feature spec="system-property">
+        <feature spec="domain.system-property">
             <param name="system-property" value="java.net.preferIPv4Stack"/>
             <param name="value" value="true"/>
         </feature>
-        <feature-group name="access-control"/>
+        <feature-group name="domain-access-control"/>
         <feature-group name="domain-host-excludes"/>
     </origin>
 

@@ -6,10 +6,18 @@
     </origin>
 
     <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-        <feature spec="socket-binding-group">
-            <param name="socket-binding-group" value="standard-sockets"/>
+        <feature-group name="domain-interfaces"/>
+        <feature spec="interface">
+            <param name="interface" value="private"/>
+                <param name="inet-address" value="${jboss.bind.address.private:127.0.0.1}"/>
+        </feature>
+        <feature spec="domain.socket-binding-group">
+            <param name="socket-binding-group" value="standard-sockets" />
+            <param name="default-interface" value="public" />
             <origin name="this">
                 <feature-group name="domain-sockets"/>
+                <feature-group name="domain-transactions-sockets"/>
+                <feature-group name="domain-mail-sockets"/>
             </origin>
         </feature>
 
@@ -18,15 +26,15 @@
 
             <origin name="this">
                 <feature-group name="domain-profile"/>
-                <feature-group name="infinispan-local"/>
+                <feature-group name="domain-infinispan-local"/>
             </origin>
         </feature>
 
-        <feature spec="system-property">
+        <feature spec="domain.system-property">
             <param name="system-property" value="java.net.preferIPv4Stack"/>
             <param name="value" value="true"/>
         </feature>
-        <feature-group name="access-control"/>
+        <feature-group name="domain-access-control"/>
         <feature-group name="domain-host-excludes"/>
     </origin>
 

@@ -56,14 +56,14 @@
             <package name="misc.standalone"/>
         </packages>
     </config>
-<!--
+
     <config model="domain">
         <packages>
             <package name="product.conf"/>
             <package name="misc.domain"/>
         </packages>
     </config>
-    -->
+
     <config name="standalone.xml" model="standalone">
         <props>
             <prop name="config-name" value="standalone.xml"/>
@@ -91,7 +91,7 @@
         </props>
         <feature-group name="standalone-full-ha"/>
     </config>
-<!--
+
     <config name="domain.xml" model="domain">
         <props>
             <prop name="domain-config-name" value="domain.xml"/>
@@ -102,23 +102,23 @@
         <feature-group name="domain-full-ha"/>
         <feature-group name="domain-load-balancer"/>
 
-        <feature-pack dependency="core">
-            <feature spec="server-group">
+        <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
+            <feature spec="domain.server-group">
                 <param name="server-group" value="main-server-group"/>
                 <param name="profile" value="full" />
                 <param name="socket-binding-group" value="full-sockets" />
             </feature>
-            <feature spec="server-group">
+            <feature spec="domain.server-group">
                 <param name="server-group" value="other-server-group"/>
                 <param name="profile" value="full-ha" />
                 <param name="socket-binding-group" value="full-ha-sockets" />
-                    <feature spec="server-group-jvm">
+                    <feature spec="domain.server-group.jvm">
                         <param name="jvm" value="default"/>
                         <param name="heap-size" value="64m"/>
                         <param name="max-heap-size" value="512m"/>
                     </feature>
             </feature>
-        </feature-pack>
+        </origin>
     </config>
 
     <config name="host.xml" model="host">
@@ -143,5 +143,5 @@
             <prop name="domain-config-name" value="domain.xml"/>
         </props>
         <feature-group name="host-slave"/>
-    </config>-->
+    </config>
 </build>
