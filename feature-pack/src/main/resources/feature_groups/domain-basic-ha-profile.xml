@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="domain-basic-ha-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <feature-group name="domain-basic-profile">
+        <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
+            <include feature-id="profile.subsystem.undertow:subsystem=undertow">
+                <feature spec="profile.subsystem.undertow.server">
+                    <param name="server" value="default-server" />
+                    <feature spec="profile.subsystem.undertow.server.ajp-listener">
+                        <param name="ajp-listener" value="ajp"/>
+                        <param name="socket-binding" value="ajp"/>
+                        <unset param="worker"/>
+                        <unset param="buffer-pool"/>
+                    </feature>
+                </feature>
+            </include>
+        </origin>
+
+        <include feature-id="profile.subsystem.ejb3:subsystem=ejb3">
+            <param name="default-sfsb-cache" value="distributable"/>
+        </include>
+    </feature-group>
+
+    <feature-group name="domain-modcluster"/>
+    <feature-group name="domain-infinispan-dist"/>
+    <feature-group name="domain-jgroups"/>
+    <feature-group name="domain-singleton"/>
+
+</feature-group-spec>

@@ -22,7 +22,11 @@
 
 package org.jboss.as.clustering.controller;
 
-import java.util.StringJoiner;
+<<<<<<< b3c8b3fc18316144a0947abd0fe7fa263b5e81fa
+=======
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> Generating full feature specs and feature pack
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -135,23 +139,16 @@ public class CapabilityReference implements CapabilityReferenceRecorder {
 
     @Override
     public String[] getRequirementPatternSegments(String dynamicElement) {
-        int length = dynamicParts != null ? dynamicParts.length :0;
-        length = (dynamicElement != null && !dynamicElement.isEmpty()) ? length +1 : length;
-        String[] result = new String[length];
-        if(dynamicParts != null && dynamicParts.length > 0) {
-            System.arraycopy(dynamicParts, 0, result, 0, dynamicParts.length);
-        }
-        StringJoiner pattern = new StringJoiner(".$");
-        pattern.add(requirement.getName());
+        List<String> pattern = new ArrayList<>();
         if (dynamicParts != null && dynamicParts.length > 0) {
             for (String part : dynamicParts) {
                 pattern.add(part);
             }
         }
         if (dynamicElement != null && !dynamicElement.isEmpty()) {
-                result[length - 1] = dynamicElement;
+            pattern.add(dynamicElement);
         }
-        return result;
+        return pattern.toArray(new String[pattern.size()]);
     }
 
     @Override
