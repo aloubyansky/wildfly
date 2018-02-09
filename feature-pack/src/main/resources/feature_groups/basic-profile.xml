@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="basic-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-<<<<<<< deefe35ac40fcc632f3dee0b744e0ff8be9d9d2b
-    <feature-pack dependency="org.wildfly.core:wildfly-core-feature-pack-new">
-        <feature-group name="remoting"/>
-    </feature-pack>
-=======
     <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature-group name="remoting">
             <feature spec="subsystem.remoting">
@@ -15,7 +10,6 @@
             </feature>
         </feature-group>
     </origin>
->>>>>>> Updating feature groups with origin for feature pack reference
 
     <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="basic-profile"/>

@@ -28,13 +28,8 @@
                         <exclude spec="profile.subsystem.logging.console-handler"/>
                     </origin>
                 </feature-group>
-<<<<<<< deefe35ac40fcc632f3dee0b744e0ff8be9d9d2b
-            </feature-pack>
-
-=======
             </origin>
 
->>>>>>> Updating feature groups with origin for feature pack reference
             <feature-group name="domain-server-groups"/>
         </feature>
 

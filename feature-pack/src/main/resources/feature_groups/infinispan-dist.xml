@@ -29,10 +29,6 @@
             <param name="default-cache" value="local-query"/>
             <feature spec="subsystem.infinispan.cache-container.local-cache">
                 <param name="local-cache" value="local-query"/>
-                <feature spec="subsystem.infinispan.cache-container.local-cache.component.eviction">
-                    <param name="strategy" value="LRU"/>
-                    <param name="max-entries" value="10000"/>
-                </feature>
                 <feature spec="subsystem.infinispan.cache-container.local-cache.component.expiration">
                     <param name="max-idle" value="100000"/>
                 </feature>
@@ -48,10 +44,6 @@
                 <param name="invalidation-cache" value="entity"/>
                 <feature spec="subsystem.infinispan.cache-container.invalidation-cache.component.transaction">
                     <param name="mode" value="NON_XA"/>
-                </feature>
-                <feature spec="subsystem.infinispan.cache-container.invalidation-cache.component.eviction">
-                    <param name="strategy" value="LRU"/>
-                    <param name="max-entries" value="10000"/>
                 </feature>
                 <feature spec="subsystem.infinispan.cache-container.invalidation-cache.component.expiration">
                     <param name="max-idle" value="100000"/>

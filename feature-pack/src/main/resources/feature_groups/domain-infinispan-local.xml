@@ -27,10 +27,6 @@
             <param name="module" value="org.hibernate.infinispan"/>
             <feature spec="profile.subsystem.infinispan.cache-container.local-cache">
                 <param name="local-cache" value="local-query"/>
-                <feature spec="profile.subsystem.infinispan.cache-container.local-cache.component.eviction">
-                    <param name="strategy" value="LRU"/>
-                    <param name="max-entries" value="10000"/>
-                </feature>
                 <feature spec="profile.subsystem.infinispan.cache-container.local-cache.component.expiration">
                     <param name="max-idle" value="100000"/>
                 </feature>
@@ -42,10 +38,6 @@
                 <param name="local-cache" value="entity"/>
                 <feature spec="profile.subsystem.infinispan.cache-container.local-cache.component.transaction">
                     <param name="mode" value="NON_XA"/>
-                </feature>
-                <feature spec="profile.subsystem.infinispan.cache-container.local-cache.component.eviction">
-                    <param name="strategy" value="LRU"/>
-                     <param name="max-entries" value="10000"/>
                 </feature>
                 <feature spec="profile.subsystem.infinispan.cache-container.local-cache.component.expiration">
                     <param name="max-idle" value="100000"/>
