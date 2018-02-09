@@ -280,7 +280,7 @@ public class JGroupsTransportResourceDefinition extends TransportResourceDefinit
                 .addAttributes(DeprecatedAttribute.class)
                 .addCapabilities(Capability.class)
                 .addResourceCapabilityReference(new CapabilityReferenceRecorder.ResourceCapabilityReferenceRecorder(address -> new String[] {address.getParent().getLastElement().getValue()}, "org.wildfly.clustering.group",
-                        address -> new String[0], "org.wildfly.clustering.jgroups.default-channel-factory"), address -> null)
+                         "org.wildfly.clustering.jgroups.default-channel-factory"), address -> null)
             , new JGroupsTransportServiceHandler());
     }
 

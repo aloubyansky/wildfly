@@ -2,12 +2,6 @@
 <feature-group-spec name="basic-ha-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
 
     <feature-group name="basic-profile">
-<<<<<<< deefe35ac40fcc632f3dee0b744e0ff8be9d9d2b
-        <feature-pack dependency="org.wildfly:wildfly-servlet-feature-pack-new">
-            <include feature-id="undertow:subsystem=undertow">
-                <feature spec="undertow-server">
-                    <feature spec="undertow-server-ajp-listener"/>
-=======
         <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
             <include feature-id="subsystem.undertow:subsystem=undertow">
                 <feature spec="subsystem.undertow.server">
@@ -18,7 +12,6 @@
                         <unset param="worker"/>
                         <unset param="buffer-pool"/>
                     </feature>
->>>>>>> Updating feature groups with origin for feature pack reference
                 </feature>
             </include>
         </origin>

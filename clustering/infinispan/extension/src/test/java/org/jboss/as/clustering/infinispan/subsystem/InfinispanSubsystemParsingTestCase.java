@@ -83,6 +83,7 @@ public class InfinispanSubsystemParsingTestCase extends ClusteringSubsystemTest 
                 .require(CommonUnaryRequirement.OUTBOUND_SOCKET_BINDING, "hotrod-server-1", "hotrod-server-2")
                 .require(CommonUnaryRequirement.DATA_SOURCE, "ExampleDS")
                 .require(JGroupsRequirement.CHANNEL, "maximal-channel")
+//                .require(JGroupsDefaultRequirement.CHANNEL)
                 ;
     }
 
