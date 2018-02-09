@@ -74,7 +74,6 @@ public abstract class TransportResourceDefinition extends ChildResourceDefinitio
 
     TransportResourceDefinition(PathElement path, Consumer<ResourceDescriptor> configurator, ResourceServiceHandler handler) {
         super(path, InfinispanExtension.SUBSYSTEM_RESOLVER.createChildResolver(path));
-;
         ResourceDescriptor descriptor = new ResourceDescriptor(this.getResourceDescriptionResolver())
                 .addCapabilities(CLUSTERING_CAPABILITIES.values());
         configurator.accept(descriptor);
