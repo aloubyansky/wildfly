@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="mail" xmlns="urn:wildfly:pm-feature-group:1.0">
-    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-        <feature spec="subsystem.elytron">
-            <feature spec="subsystem.elytron.simple-permission-mapper">
-                <param name="simple-permission-mapper" value="default-permission-mapper" />
-                <feature spec="subsystem.elytron.simple-permission-mapper_permission-mappings">
-                    <param name="permission-mapping" value="{class-name=org.wildfly.transaction.client.RemoteTransactionPermission,module=org.wildfly.transaction.client}"/>
-                </feature>
+    <feature spec="subsystem.elytron">
+        <feature spec="subsystem.elytron.simple-permission-mapper">
+            <param name="simple-permission-mapper" value="default-permission-mapper" />
+            <feature spec="subsystem.elytron.simple-permission-mapper_permission-mappings">
+                <param name="permission-mapping" value="{class-name=org.wildfly.transaction.client.RemoteTransactionPermission,module=org.wildfly.transaction.client}"/>
             </feature>
         </feature>
-    </origin>
+    </feature>
     <feature spec="subsystem.mail">
         <feature spec="subsystem.mail.mail-session">
             <param name="mail-session" value="default"/>

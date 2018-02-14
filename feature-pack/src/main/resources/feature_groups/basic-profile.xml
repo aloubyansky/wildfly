@@ -1,76 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="basic-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-        <feature-group name="remoting">
-            <feature spec="subsystem.remoting">
-                <feature spec="subsystem.remoting.configuration.endpoint">
-                    <unset param="worker"/>
-                </feature>
+    <feature-group name="remoting">
+        <feature spec="subsystem.remoting">
+            <feature spec="subsystem.remoting.configuration.endpoint">
+                <unset param="worker"/>
             </feature>
-        </feature-group>
-    </origin>
+        </feature>
+    </feature-group>
 
     <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="basic-profile"/>
-        <feature spec="subsystem.security.security-domain">
-            <param name="security-domain" value="other"/>
-            <param name="cache-type" value="default"/>
-        </feature>
-
-        <feature spec="subsystem.security.security-domain">
-            <param name="security-domain" value="jboss-ejb-policy"/>
-            <param name="cache-type" value="default"/>
-            <feature spec="subsystem.security.security-domain.authorization.classic">
-                <feature spec="subsystem.security.security-domain.authorization.classic.policy-module">
-                    <param name="policy-module" value="Delegating"/>
-                    <param name="code" value="Delegating"/>
-                    <param name="flag" value="required"/>
-                </feature>
-            </feature>
-        </feature>
-        <feature spec="subsystem.security.security-domain">
-            <param name="security-domain" value="jboss-web-policy"/>
-            <param name="cache-type" value="default"/>
-            <feature spec="subsystem.security.security-domain.authorization.classic">
-                <feature spec="subsystem.security.security-domain.authorization.classic.policy-module">
-                    <param name="policy-module" value="Delegating"/>
-                    <param name="code" value="Delegating"/>
-                    <param name="flag" value="required"/>
-                </feature>
-            </feature>
-        </feature>
-        <feature spec="subsystem.security.security-domain">
-            <param name="cache-type" value="default"/>
-            <param name="security-domain" value="jaspitest"/>
-            <feature spec="subsystem.security.security-domain.authentication.jaspi">
-                <feature spec="subsystem.security.security-domain.authentication.jaspi.auth-module">
-                    <param name="auth-module" value="Dummy"/>
-                    <param name="code" value="Dummy"/>
-                </feature>
-                <feature spec="subsystem.security.security-domain.authentication.jaspi.login-module-stack">
-                    <param name="login-module-stack" value="dummy"/>
-                    <feature spec="subsystem.security.security-domain.authentication.jaspi.login-module-stack.login-module">
-                        <param name="login-module" value="Dummy"/>
-                        <param name="code" value="Dummy"/>
-                        <param name="flag" value="optional"/>
-                    </feature>
-                </feature>
-            </feature>
-        </feature>
-
-        <feature spec="subsystem.ee">
-            <feature spec="subsystem.ee.context-service">
-                <param name="context-service" value="default"/>
-                <param name="use-transaction-setup-provider" value="true"/>
-            </feature>
-        </feature>
-
-        <feature spec="subsystem.naming">
-            <feature spec="subsystem.naming.service.remote-naming"/>
-        </feature>
-
     </origin>
+
+    <feature spec="subsystem.security.security-domain">
+        <param name="security-domain" value="other"/>
+        <param name="cache-type" value="default"/>
+    </feature>
+
+    <feature spec="subsystem.security.security-domain">
+        <param name="security-domain" value="jboss-ejb-policy"/>
+        <param name="cache-type" value="default"/>
+        <feature spec="subsystem.security.security-domain.authorization.classic">
+            <feature spec="subsystem.security.security-domain.authorization.classic.policy-module">
+                <param name="policy-module" value="Delegating"/>
+                <param name="code" value="Delegating"/>
+                <param name="flag" value="required"/>
+            </feature>
+        </feature>
+    </feature>
+    <feature spec="subsystem.security.security-domain">
+        <param name="security-domain" value="jboss-web-policy"/>
+        <param name="cache-type" value="default"/>
+        <feature spec="subsystem.security.security-domain.authorization.classic">
+            <feature spec="subsystem.security.security-domain.authorization.classic.policy-module">
+                <param name="policy-module" value="Delegating"/>
+                <param name="code" value="Delegating"/>
+                <param name="flag" value="required"/>
+            </feature>
+        </feature>
+    </feature>
+    <feature spec="subsystem.security.security-domain">
+        <param name="cache-type" value="default"/>
+        <param name="security-domain" value="jaspitest"/>
+        <feature spec="subsystem.security.security-domain.authentication.jaspi">
+            <feature spec="subsystem.security.security-domain.authentication.jaspi.auth-module">
+                <param name="auth-module" value="Dummy"/>
+                <param name="code" value="Dummy"/>
+            </feature>
+            <feature spec="subsystem.security.security-domain.authentication.jaspi.login-module-stack">
+                <param name="login-module-stack" value="dummy"/>
+                <feature spec="subsystem.security.security-domain.authentication.jaspi.login-module-stack.login-module">
+                    <param name="login-module" value="Dummy"/>
+                    <param name="code" value="Dummy"/>
+                    <param name="flag" value="optional"/>
+                </feature>
+            </feature>
+        </feature>
+    </feature>
+
+    <feature spec="subsystem.ee">
+        <feature spec="subsystem.ee.context-service">
+            <param name="context-service" value="default"/>
+            <param name="use-transaction-setup-provider" value="true"/>
+        </feature>
+    </feature>
+
+    <feature spec="subsystem.naming">
+        <feature spec="subsystem.naming.service.remote-naming"/>
+    </feature>
 
     <feature-group name="batch-jberet"/>
     <feature spec="subsystem.bean-validation"/>
