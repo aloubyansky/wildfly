@@ -3,13 +3,11 @@
     <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="host-master"/>
     </origin>
-    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-        <feature spec="host">
-            <param name="host" value="master"/>
-            <feature spec="host.jvm">
-                <param name="jvm" value="default"/>
-                <param name="jvm-options" value="[&quot;--add-exports=java.base/sun.nio.ch=ALL-UNNAMED&quot;]"/>
-            </feature>
+    <feature spec="host">
+        <param name="host" value="master"/>
+        <feature spec="host.jvm">
+            <param name="jvm" value="default"/>
+            <param name="jvm-options" value="[&quot;--add-exports=java.base/sun.nio.ch=ALL-UNNAMED&quot;]"/>
         </feature>
-    </origin>
+    </feature>
 </feature-group-spec>

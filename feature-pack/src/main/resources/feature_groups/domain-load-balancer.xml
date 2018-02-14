@@ -1,44 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="domain-load-balancer" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
-        <feature-group name="domain-interfaces"/>
-    </origin>
+    <feature-group name="domain-interfaces"/>
 
-    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
+    <feature spec="domain.socket-binding-group">
+        <param name="default-interface" value="public" />
+        <param name="socket-binding-group" value="load-balancer-sockets"/>
+        <feature-group name="domain-load-balancer-sockets"/>
+        <feature-group name="domain-server-groups"/>
+    </feature>
 
-        <feature spec="domain.socket-binding-group">
-            <param name="default-interface" value="public" />
-            <param name="socket-binding-group" value="load-balancer-sockets"/>
-            <origin name="this">
-                <feature-group name="domain-load-balancer-sockets"/>
-            </origin>
-            <feature-group name="domain-server-groups"/>
-        </feature>
+    <feature spec="profile">
+        <param name="profile" value="load-balancer"/>
+        <feature-group name="domain-load-balancer-profile">
+            <include feature-id="profile.subsystem.logging.root-logger.ROOT:subsystem=logging,root-logger=ROOT">
+                <param name="handlers" value="[&quot;FILE&quot;]"/>
+            </include>
+            <exclude spec="profile.subsystem.logging.console-handler"/>
+        </feature-group>
+        <feature-group name="domain-server-groups"/>
+    </feature>
 
-        <feature spec="profile">
-            <param name="profile" value="load-balancer"/>
-
-            <origin name="this">
-                <feature-group name="domain-load-balancer-profile">
-                    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-                        <include feature-id="profile.subsystem.logging.root-logger.ROOT:subsystem=logging,root-logger=ROOT">
-                            <param name="handlers" value="[&quot;FILE&quot;]"/>
-                        </include>
-                        <exclude spec="profile.subsystem.logging.console-handler"/>
-                    </origin>
-                </feature-group>
-            </origin>
-
-            <feature-group name="domain-server-groups"/>
-        </feature>
-
-        <feature spec="domain.system-property">
-            <param name="system-property" value="java.net.preferIPv4Stack"/>
-            <param name="value" value="true"/>
-        </feature>
-        <feature-group name="domain-access-control"/>
-        <feature-group name="domain-host-excludes"/>
-    </origin>
+    <feature spec="domain.system-property">
+        <param name="system-property" value="java.net.preferIPv4Stack"/>
+        <param name="value" value="true"/>
+    </feature>
+    <feature-group name="domain-access-control"/>
+    <feature-group name="domain-host-excludes"/>
 
 </feature-group-spec>

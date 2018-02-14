@@ -2,31 +2,27 @@
 <feature-group-spec name="host" xmlns="urn:wildfly:pm-feature-group:1.0">
     <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="host">
-            <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-                <exclude feature-id="host.interface:interface=unsecure"/>
-                <exclude feature-id="host.interface:interface=private"/>
-            </origin>
+            <exclude feature-id="host.interface:interface=unsecure"/>
+            <exclude feature-id="host.interface:interface=private"/>
         </feature-group>
     </origin>
-    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-        <feature spec="host">
-            <param name="host" value="master"/>
-            <feature spec="host.jvm">
+    <feature spec="host">
+        <param name="host" value="master"/>
+        <feature spec="host.jvm">
+            <param name="jvm" value="default"/>
+            <param name="jvm-options" value="[&quot;--add-exports=java.base/sun.nio.ch=ALL-UNNAMED&quot;]"/>
+        </feature>
+        <feature spec="host.server-config">
+            <param name="server-config" value="server-two"/>
+            <feature spec="host.server-config.jvm">
                 <param name="jvm" value="default"/>
-                <param name="jvm-options" value="[&quot;--add-exports=java.base/sun.nio.ch=ALL-UNNAMED&quot;]"/>
-            </feature>
-            <feature spec="host.server-config">
-                <param name="server-config" value="server-two"/>
-                <feature spec="host.server-config.jvm">
-                    <param name="jvm" value="default"/>
-                </feature>
-            </feature>
-            <feature spec="host.server-config">
-                <param name="server-config" value="server-three"/>
-                <feature spec="host.server-config.jvm">
-                    <param name="jvm" value="default"/>
-                </feature>
             </feature>
         </feature>
-    </origin>
+        <feature spec="host.server-config">
+            <param name="server-config" value="server-three"/>
+            <feature spec="host.server-config.jvm">
+                <param name="jvm" value="default"/>
+            </feature>
+        </feature>
+    </feature>
 </feature-group-spec>
