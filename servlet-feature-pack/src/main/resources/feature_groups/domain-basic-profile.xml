@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="domain-basic-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-        <feature-group name="domain-io"/>
-    </origin>
-
+    <feature-group name="domain-io"/>
     <feature spec="profile.subsystem.naming"/>
     <feature-group name="domain-security"/>
     <feature-group name="domain-ee"/>
