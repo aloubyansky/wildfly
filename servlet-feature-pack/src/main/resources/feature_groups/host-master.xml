@@ -3,35 +3,36 @@
 
     <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature-group name="host-master"/>
-        <feature spec="host">
-            <param name="host" value="master"/>
+    </origin>
 
-            <feature spec="host.core-service.management.security-realm">
-                <param name="security-realm" value="ApplicationRealm"/>
-                <feature spec="host.core-service.management.security-realm.server-identity.ssl">
-                    <param name="keystore-path" value="application.keystore"/>
-                    <param name="keystore-relative-to" value="jboss.domain.config.dir"/>
-                    <param name="keystore-password" value="password"/>
-                    <param name="key-password" value="password"/>
-                    <param name="alias" value="server"/>
-                    <param name="generate-self-signed-certificate-host" value="localhost"/>
-                </feature>
-            </feature>
+    <feature spec="host">
+        <param name="host" value="master"/>
 
-            <feature spec="host.core-service.management.management-interface.native-interface">
-                <param name="security-realm" value="ManagementRealm"/>
-                <param name="interface" value="management"/>
-                <param name="port" value="${jboss.management.native.port:9999}"/>
-            </feature>
-
-            <feature spec="host.jvm">
-                <param name="jvm" value="default"/>
-                <param name="heap-size" value="64m"/>
-                <param name="max-heap-size" value="256m"/>
-                <param name="jvm-options" value="[&quot;-server&quot;,&quot;-XX:MetaspaceSize=96m&quot;,&quot;-XX:MaxMetaspaceSize=256m&quot;]"/>
-                <param name="environment-variables" value="PM_UNDEFINED"/>
+        <feature spec="host.core-service.management.security-realm">
+            <param name="security-realm" value="ApplicationRealm"/>
+            <feature spec="host.core-service.management.security-realm.server-identity.ssl">
+                <param name="keystore-path" value="application.keystore"/>
+                <param name="keystore-relative-to" value="jboss.domain.config.dir"/>
+                <param name="keystore-password" value="password"/>
+                <param name="key-password" value="password"/>
+                <param name="alias" value="server"/>
+                <param name="generate-self-signed-certificate-host" value="localhost"/>
             </feature>
         </feature>
-    </origin>
+
+        <feature spec="host.core-service.management.management-interface.native-interface">
+            <param name="security-realm" value="ManagementRealm"/>
+            <param name="interface" value="management"/>
+            <param name="port" value="${jboss.management.native.port:9999}"/>
+        </feature>
+
+        <feature spec="host.jvm">
+            <param name="jvm" value="default"/>
+            <param name="heap-size" value="64m"/>
+            <param name="max-heap-size" value="256m"/>
+            <param name="jvm-options" value="[&quot;-server&quot;,&quot;-XX:MetaspaceSize=96m&quot;,&quot;-XX:MaxMetaspaceSize=256m&quot;]"/>
+            <param name="environment-variables" value="PM_UNDEFINED"/>
+        </feature>
+    </feature>
 
 </feature-group-spec>

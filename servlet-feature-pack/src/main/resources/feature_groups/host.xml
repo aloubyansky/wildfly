@@ -3,14 +3,15 @@
 
     <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature-group name="host"/>
-         <feature spec="host">
-            <param name="host" value="master"/>
-            <feature spec="host.interface">
-                <param name="interface" value="private"/>
-                <param name="inet-address" value="${jboss.bind.address.private:127.0.0.1}"/>
-            </feature>
-        </feature>
     </origin>
+
+    <feature spec="host">
+        <param name="host" value="master"/>
+        <feature spec="host.interface">
+            <param name="interface" value="private"/>
+            <param name="inet-address" value="${jboss.bind.address.private:127.0.0.1}"/>
+        </feature>
+    </feature>
 
     <feature-group name="host-master"/>
 
