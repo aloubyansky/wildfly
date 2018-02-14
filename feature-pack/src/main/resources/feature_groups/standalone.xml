@@ -1,54 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="standalone" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-        <feature spec="server-root">
-            <param name="server-root" value="/" />
-        </feature>
+    <feature spec="server-root">
+        <param name="server-root" value="/" />
+    </feature>
 
-        <feature-group name="interfaces"/>
+    <feature-group name="interfaces"/>
 
-        <feature spec="socket-binding-group">
-            <param name="socket-binding-group" value="standard-sockets" />
-            <param name="port-offset" value="${jboss.socket.binding.port-offset:0}"/>
-            <param name="default-interface" value="public"/>
-            <origin name="this">
-                <feature-group name="standalone-sockets"/>
-            </origin>
-        </feature>
+    <feature spec="socket-binding-group">
+        <param name="socket-binding-group" value="standard-sockets" />
+        <param name="port-offset" value="${jboss.socket.binding.port-offset:0}"/>
+        <param name="default-interface" value="public"/>
+        <feature-group name="standalone-sockets"/>
+    </feature>
 
+    <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="security-realms"/>
-        <feature-group name="audit"/>
-        <feature-group name="management-interfaces"/>
-        <feature-group name="access-control"/>
     </origin>
+    <feature-group name="audit"/>
+    <feature-group name="management-interfaces"/>
+    <feature-group name="access-control"/>
 
     <feature-group name="standalone-profile"/>
 
     <feature-group name="infinispan-local"/>
+
     <!-- WORKAROUND permissions in Elytron -->
-    <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-        <feature spec="subsystem.elytron">
-            <feature spec="subsystem.elytron.simple-permission-mapper">
-                <param name="mapping-mode" value="first"/>
-                <param name="simple-permission-mapper" value="default-permission-mapper"/>
-                <feature spec="subsystem.elytron.simple-permission-mapper_permission-mappings">
-                    <param name="permission-mapping"
-                           value="{match-all=true,permissions=[{class-name=org.wildfly.security.auth.permission.LoginPermission},
+    <feature spec="subsystem.elytron">
+        <feature spec="subsystem.elytron.simple-permission-mapper">
+            <param name="mapping-mode" value="first"/>
+            <param name="simple-permission-mapper" value="default-permission-mapper"/>
+            <feature spec="subsystem.elytron.simple-permission-mapper_permission-mappings">
+                <param name="permission-mapping"
+                       value="{match-all=true,permissions=[{class-name=org.wildfly.security.auth.permission.LoginPermission},
 {class-name=org.wildfly.extension.batch.jberet.deployment.BatchPermission,module=org.wildfly.extension.batch.jberet,target-name=*},
 {class-name=org.jboss.ejb.client.RemoteEJBPermission,module=org.jboss.ejb-client},
 {class-name=org.wildfly.transaction.client.RemoteTransactionPermission,module=org.wildfly.transaction.client}
 ]}"/>
-                </feature>
-                <feature spec="subsystem.elytron.simple-permission-mapper_permission-mappings">
-                    <param name="permission-mapping"
-                               value="{principals=[anonymous],permissions=[
+            </feature>
+            <feature spec="subsystem.elytron.simple-permission-mapper_permission-mappings">
+                <param name="permission-mapping"
+                       value="{principals=[anonymous],permissions=[
 {class-name=org.wildfly.extension.batch.jberet.deployment.BatchPermission,module=org.wildfly.extension.batch.jberet,target-name=*},
 {class-name=org.jboss.ejb.client.RemoteEJBPermission,module=org.jboss.ejb-client},
 {class-name=org.wildfly.transaction.client.RemoteTransactionPermission,module=org.wildfly.transaction.client}
 ]}"/>
-                </feature>
             </feature>
         </feature>
-    </origin>
+    </feature>
 </feature-group-spec>
