@@ -3,7 +3,6 @@
     <feature spec="domain.socket-binding-group.socket-binding">
         <param name="socket-binding" value="jgroups-mping"/>
         <param name="interface" value="private"/>
-        <param name="port" value="0"/>
         <param name="multicast-address" value="${jboss.default.multicast.address:230.0.0.4}"/>
         <param name="multicast-port" value="45700"/>
     </feature>
