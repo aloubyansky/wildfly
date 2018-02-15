@@ -39,7 +39,7 @@
           <param name="protocol" value="MFC"/>
         </feature>
         <feature spec="subsystem.jgroups.stack.protocol">
-          <param name="protocol" value="FRAG2"/>
+          <param name="protocol" value="FRAG3"/>
         </feature>
       </feature>
       <feature spec="subsystem.jgroups.stack">
@@ -82,7 +82,7 @@
           <param name="protocol" value="MFC"/>
         </feature>
         <feature spec="subsystem.jgroups.stack.protocol">
-          <param name="protocol" value="FRAG2"/>
+          <param name="protocol" value="FRAG3"/>
         </feature>
       </feature>
       <feature spec="subsystem.jgroups.channel">
