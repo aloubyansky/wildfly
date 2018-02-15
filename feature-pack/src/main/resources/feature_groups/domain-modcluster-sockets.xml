@@ -4,6 +4,5 @@
         <param name="socket-binding" value="modcluster"/>
         <param name="multicast-address" value="${jboss.modcluster.multicast.address:224.0.1.105}"/>
         <param name="multicast-port" value="23364"/>
-        <param name="port" value="0"/>
     </feature>
 </feature-group-spec>

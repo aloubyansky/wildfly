@@ -24,11 +24,14 @@
 
         <feature spec="profile.subsystem.infinispan.cache-container">
             <param name="cache-container" value="hibernate"/>
-            <param name="module" value="org.hibernate.infinispan"/>
+            <param name="module" value="org.infinispan.hibernate-cache"/>
             <feature spec="profile.subsystem.infinispan.cache-container.local-cache">
                 <param name="local-cache" value="local-query"/>
                 <feature spec="profile.subsystem.infinispan.cache-container.local-cache.component.expiration">
                     <param name="max-idle" value="100000"/>
+                </feature>
+                <feature spec="profile.subsystem.infinispan.cache-container.local-cache.memory.object">
+                    <param name="size" value="10000"/>
                 </feature>
             </feature>
             <feature spec="profile.subsystem.infinispan.cache-container.local-cache">
@@ -41,6 +44,9 @@
                 </feature>
                 <feature spec="profile.subsystem.infinispan.cache-container.local-cache.component.expiration">
                     <param name="max-idle" value="100000"/>
+                </feature>
+                <feature spec="profile.subsystem.infinispan.cache-container.local-cache.memory.object">
+                    <param name="size" value="10000"/>
                 </feature>
             </feature>
         </feature>
