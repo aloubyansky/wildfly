@@ -95,23 +95,6 @@
                 <artifactId>wildfly-feature-pack-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>feature-pack-build</id>
-                        <goals>
-                            <goal>wf-build</goal>
-                        </goals>
-                        <phase>compile</phase>
-                        <configuration>
-                            <release-name>WildFly Full</release-name>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.jboss.pm</groupId>
-                <artifactId>wildfly-feature-pack-maven-plugin</artifactId>
-                <executions>
-                    <execution>
                         <id>feature-spec-build</id>
                         <goals>
                             <goal>wf-spec</goal>
@@ -226,7 +209,7 @@
                                 <extension>org.wildfly.extension.elytron</extension>
                             </hostExtensions>
                         </configuration>
-                        </execution>
+                    </execution>
                     <execution>
                         <id>feature-pack-build</id>
                         <goals>
