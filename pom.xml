@@ -194,6 +194,7 @@
         <version.org.jboss.metadata>11.0.0.Final</version.org.jboss.metadata>
         <version.org.jboss.mod_cluster>1.3.8.Final</version.org.jboss.mod_cluster>
         <version.org.jboss.openjdk-orb>8.1.0.Final</version.org.jboss.openjdk-orb>
+        <version.org.jboss.pm>1.0.0.Alpha-SNAPSHOT</version.org.jboss.pm>
         <version.org.jboss.xnio.netty.netty-xnio-transport>0.1.2.Final</version.org.jboss.xnio.netty.netty-xnio-transport>
         <version.org.jboss.resteasy>3.5.0.Final</version.org.jboss.resteasy>
         <version.org.jboss.seam.int>7.0.0.GA</version.org.jboss.seam.int>
@@ -792,6 +793,11 @@
                     <groupId>org.wildfly.build</groupId>
                     <artifactId>wildfly-server-provisioning-maven-plugin</artifactId>
                     <version>${version.org.wildfly.build-tools}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jboss.pm</groupId>
+                    <artifactId>wildfly-feature-pack-maven-plugin</artifactId>
+                    <version>${version.org.jboss.pm}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
