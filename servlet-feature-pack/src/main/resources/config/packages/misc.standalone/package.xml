@@ -4,7 +4,6 @@
     <dependencies>
         <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
             <package name="misc.standalone"/>
-            <package name="standalone"/>
         </origin>
         <package name="misc.common"/>
     </dependencies>
