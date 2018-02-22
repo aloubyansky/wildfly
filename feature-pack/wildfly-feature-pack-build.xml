@@ -102,23 +102,21 @@
         <feature-group name="domain-full-ha"/>
         <feature-group name="domain-load-balancer"/>
 
-        <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
-            <feature spec="domain.server-group">
-                <param name="server-group" value="main-server-group"/>
-                <param name="profile" value="full" />
-                <param name="socket-binding-group" value="full-sockets" />
-            </feature>
-            <feature spec="domain.server-group">
-                <param name="server-group" value="other-server-group"/>
-                <param name="profile" value="full-ha" />
-                <param name="socket-binding-group" value="full-ha-sockets" />
-                    <feature spec="domain.server-group.jvm">
-                        <param name="jvm" value="default"/>
-                        <param name="heap-size" value="64m"/>
-                        <param name="max-heap-size" value="512m"/>
-                    </feature>
-            </feature>
-        </origin>
+        <feature spec="domain.server-group">
+            <param name="server-group" value="main-server-group"/>
+            <param name="profile" value="full" />
+            <param name="socket-binding-group" value="full-sockets" />
+        </feature>
+        <feature spec="domain.server-group">
+            <param name="server-group" value="other-server-group"/>
+            <param name="profile" value="full-ha" />
+            <param name="socket-binding-group" value="full-ha-sockets" />
+                <feature spec="domain.server-group.jvm">
+                    <param name="jvm" value="default"/>
+                    <param name="heap-size" value="64m"/>
+                    <param name="max-heap-size" value="512m"/>
+                </feature>
+        </feature>
     </config>
 
     <config name="host.xml" model="host">
