@@ -34,7 +34,6 @@ import java.util.Set;
 import javax.ws.rs.core.Application;
 
 import org.jboss.as.controller.PathElement;
-import org.jboss.as.jaxrs.DeploymentRestResourcesDefintion;
 import org.jboss.as.jaxrs.JaxrsAnnotations;
 import org.jboss.as.jaxrs.JaxrsExtension;
 import org.jboss.as.jaxrs.logging.JaxrsLogger;
@@ -65,6 +64,8 @@ import static org.jboss.as.jaxrs.logging.JaxrsLogger.JAXRS_LOGGER;
 import static org.jboss.resteasy.plugins.server.servlet.ResteasyContextParameters.RESTEASY_SCAN;
 import static org.jboss.resteasy.plugins.server.servlet.ResteasyContextParameters.RESTEASY_SCAN_PROVIDERS;
 import static org.jboss.resteasy.plugins.server.servlet.ResteasyContextParameters.RESTEASY_SCAN_RESOURCES;
+
+import org.jboss.as.jaxrs.DeploymentRestResourcesDefinition;
 
 /**
  * Processor that finds jax-rs classes in the deployment
@@ -131,7 +132,7 @@ public class JaxrsScanningProcessor implements DeploymentUnitProcessor {
     private void addManagement(DeploymentUnit deploymentUnit, String componentClass) {
         try {
             final DeploymentResourceSupport deploymentResourceSupport = deploymentUnit.getAttachment(org.jboss.as.server.deployment.Attachments.DEPLOYMENT_RESOURCE_SUPPORT);
-            deploymentResourceSupport.getDeploymentSubModel(JaxrsExtension.SUBSYSTEM_NAME, PathElement.pathElement(DeploymentRestResourcesDefintion.REST_RESOURCE_NAME, componentClass));
+            deploymentResourceSupport.getDeploymentSubModel(JaxrsExtension.SUBSYSTEM_NAME, PathElement.pathElement(DeploymentRestResourcesDefinition.REST_RESOURCE_NAME, componentClass));
         } catch (Exception e) {
             JaxrsLogger.JAXRS_LOGGER.failedToRegisterManagementViewForRESTResources(componentClass, e);
         }

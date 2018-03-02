@@ -78,9 +78,9 @@ import org.wildfly.extension.undertow.deployment.UndertowDeploymentService;
  * @author <a href="mailto:lgao@redhat.com">Lin Gao</a>
  */
 @SuppressWarnings("deprecation")
-public class DeploymentRestResourcesDefintion extends SimpleResourceDefinition {
+public class DeploymentRestResourcesDefinition extends SimpleResourceDefinition {
 
-    public static DeploymentRestResourcesDefintion INSTANCE = new DeploymentRestResourcesDefintion();
+    public static DeploymentRestResourcesDefinition INSTANCE = new DeploymentRestResourcesDefinition();
 
     public static final String REST_RESOURCE_NAME = "rest-resource";
 
@@ -123,7 +123,7 @@ public class DeploymentRestResourcesDefintion extends SimpleResourceDefinition {
     public static final ObjectListAttributeDefinition SUB_RESOURCE_LOCATORS = new ObjectListAttributeDefinition.Builder(
             "sub-resource-locators", SUB_RESOURCE_LOCATOR).build();
 
-    private DeploymentRestResourcesDefintion() {
+    private DeploymentRestResourcesDefinition() {
         super(PathElement.pathElement(REST_RESOURCE_NAME), JaxrsExtension.getResolver("deployment"));
     }
 
