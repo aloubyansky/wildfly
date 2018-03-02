@@ -90,7 +90,7 @@ public class JaxrsExtension implements Extension {
         final ManagementResourceRegistration registration = subsystem.registerSubsystemModel(JaxrsSubsystemDefinition.INSTANCE);
         registration.registerOperationHandler(GenericSubsystemDescribeHandler.DEFINITION, GenericSubsystemDescribeHandler.INSTANCE);
         ManagementResourceRegistration jaxrsResReg = subsystem.registerDeploymentModel(JaxrsDeploymentDefinition.INSTANCE);
-        jaxrsResReg.registerSubModel(DeploymentRestResourcesDefintion.INSTANCE);
+        jaxrsResReg.registerSubModel(DeploymentRestResourcesDefinition.INSTANCE);
         subsystem.registerXMLElementWriter(parser);
     }
 
