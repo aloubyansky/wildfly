@@ -3,13 +3,13 @@
 
     <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
         <feature-group name="domain-profile">
-            <include feature-id="profile.subsystem.logging.root-logger.ROOT:subsystem=logging,root-logger=ROOT">
+            <include feature-id="subsystem.logging.root-logger.ROOT:subsystem=logging,root-logger=ROOT">
                 <param name="handlers" value="[&quot;FILE&quot;]"/>
             </include>
-            <exclude spec="profile.subsystem.logging.console-handler"/>
+            <exclude spec="subsystem.logging.console-handler"/>
         </feature-group>
     </origin>
 
-    <feature-group name="domain-basic-profile"/>
+    <feature-group name="basic-profile"/>
 
 </feature-group-spec>

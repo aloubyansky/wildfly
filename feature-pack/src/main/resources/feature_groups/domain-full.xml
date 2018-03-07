@@ -21,12 +21,12 @@
     <feature spec="profile">
         <param name="profile" value="full"/>
         <feature-group name="domain-profile"/>
-        <feature-group name="domain-infinispan-local"/>
-        <feature-group name="domain-jsr77"/>
-        <feature-group name="domain-iiop-openjdk"/>
-        <feature-group name="domain-messaging-activemq"/>
-        <feature spec="profile.subsystem.ejb3">
-            <feature spec="profile.subsystem.ejb3.service.iiop">
+        <feature-group name="infinispan-local"/>
+        <feature-group name="jsr77"/>
+        <feature-group name="iiop-openjdk"/>
+        <feature-group name="messaging-activemq"/>
+        <feature spec="subsystem.ejb3">
+            <feature spec="subsystem.ejb3.service.iiop">
                 <param name="enable-by-default" value="false"/>
                 <param name="use-qualified-name" value="false"/>
             </feature>

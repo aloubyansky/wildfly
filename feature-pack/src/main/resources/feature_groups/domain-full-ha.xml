@@ -22,12 +22,12 @@
     <feature spec="profile">
         <param name="profile" value="full-ha"/>
         <feature-group name="domain-profile"/>
-        <feature-group name="domain-basic-ha-profile"/>
-        <feature-group name="domain-jsr77"/>
-        <feature-group name="domain-iiop-openjdk"/>
-        <feature-group name="domain-messaging-activemq-ha"/>
-        <feature spec="profile.subsystem.ejb3">
-            <feature spec="profile.subsystem.ejb3.service.iiop">
+        <feature-group name="basic-ha-profile"/>
+        <feature-group name="jsr77"/>
+        <feature-group name="iiop-openjdk"/>
+        <feature-group name="messaging-activemq-ha"/>
+        <feature spec="subsystem.ejb3">
+            <feature spec="subsystem.ejb3.service.iiop">
                 <param name="enable-by-default" value="false"/>
                 <param name="use-qualified-name" value="false"/>
             </feature>

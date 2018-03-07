@@ -12,10 +12,10 @@
     <feature spec="profile">
         <param name="profile" value="load-balancer"/>
         <feature-group name="domain-load-balancer-profile">
-            <include feature-id="profile.subsystem.logging.root-logger.ROOT:subsystem=logging,root-logger=ROOT">
+            <include feature-id="subsystem.logging.root-logger.ROOT:subsystem=logging,root-logger=ROOT">
                 <param name="handlers" value="[&quot;FILE&quot;]"/>
             </include>
-            <exclude spec="profile.subsystem.logging.console-handler"/>
+            <exclude spec="subsystem.logging.console-handler"/>
         </feature-group>
         <feature-group name="domain-server-groups"/>
     </feature>
