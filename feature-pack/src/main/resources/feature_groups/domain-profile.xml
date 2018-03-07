@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-group-spec name="domain-profile" xmlns="urn:wildfly:pm-feature-group:1.0">
 
-    <feature-group name="domain-security-manager"/>
+    <feature-group name="security-manager"/>
 
     <origin name="org.wildfly:wildfly-servlet-feature-pack-new">
         <feature-group name="domain-profile">
-            <exclude spec="profile.subsystem.jmx.remoting-connector.jmx"/>
+            <exclude spec="subsystem.jmx.remoting-connector.jmx"/>
         </feature-group>
     </origin>
 
-    <feature-group name="domain-basic-profile"/>
+    <feature-group name="basic-profile"/>
 
 </feature-group-spec>

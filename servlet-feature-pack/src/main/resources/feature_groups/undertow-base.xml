@@ -10,6 +10,7 @@
             <param name="server" value="default-server" />
             <feature spec="subsystem.undertow.server.host">
                 <param name="host" value="default-host" />
+                <param name="alias" value="[localhost]"/>
             </feature>
             <feature spec="subsystem.undertow.server.http-listener">
                 <param name="socket-binding" value="http"/>

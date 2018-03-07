@@ -17,7 +17,7 @@
     <feature spec="profile">
         <param name="profile" value="default"/>
         <feature-group name="domain-profile"/>
-        <feature-group name="domain-infinispan-local"/>
+        <feature-group name="infinispan-local"/>
     </feature>
 
     <feature spec="domain.system-property">

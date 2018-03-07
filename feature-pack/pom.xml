@@ -131,6 +131,7 @@
                                 </externalArtifact>
                             </externalArtifacts>
                             <standaloneExtensions>
+                                <extension>org.wildfly.extension.discovery</extension>
                                 <extension>org.jboss.as.clustering.infinispan</extension>
                                 <extension>org.jboss.as.clustering.jgroups</extension>
                                 <extension>org.jboss.as.connector</extension>

@@ -16,7 +16,7 @@
     <feature spec="profile">
         <param name="profile" value="ha"/>
         <feature-group name="domain-profile"/>
-        <feature-group name="domain-basic-ha-profile"/>
+        <feature-group name="basic-ha-profile"/>
     </feature>
 
     <feature spec="domain.system-property">
