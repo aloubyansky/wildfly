@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="infinispan-local" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature spec="infinispan">
+        
+        <feature spec="infinispan-cache-container">
+            <param name="cache-container" value="web"/>
+            <param name="module" value="org.wildfly.clustering.web.infinispan"/>
+            <param name="default-cache" value="passivation"/>
+            <feature spec="infinispan-cache-container-local-cache">
+                <param name="local-cache" value="passivation"/>
+                <feature spec="infinispan-cache-container-local-cache-locking"/>
+                <feature spec="infinispan-cache-container-local-cache-transaction"/>
+                <feature spec="infinispan-cache-container-local-cache-store"/>
+            </feature>
+        </feature>
+        
+        <feature spec="infinispan-cache-container">
+            <param name="cache-container" value="hibernate"/>
+            <param name="module" value="org.hibernate.infinispan"/>
+            <feature spec="infinispan-cache-container-local-cache">
+                <param name="local-cache" value="local-query"/>
+                <feature spec="infinispan-cache-container-local-cache-eviction"/>
+                <feature spec="infinispan-cache-container-local-cache-expiration"/>
+            </feature>
+            <feature spec="infinispan-cache-container-local-cache">
+                <param name="local-cache" value="timestamps"/>
+            </feature>
+            <feature spec="infinispan-cache-container-local-cache">
+                <param name="local-cache" value="entity"/>
+                <feature spec="infinispan-cache-container-local-cache-transaction">
+                    <param name="mode" value="NON_XA"/>
+                </feature>
+                <feature spec="infinispan-cache-container-local-cache-eviction"/>
+                <feature spec="infinispan-cache-container-local-cache-expiration"/>
+            </feature>
+        </feature>
+
+        <feature spec="infinispan-cache-container">
+            <param name="cache-container" value="ejb"/>
+            <param name="module" value="org.wildfly.clustering.ejb.infinispan"/>
+            <param name="aliases" value="[sfsb]"/>
+            <param name="default-cache" value="passivation"/>
+            <feature spec="infinispan-cache-container-local-cache">
+                <param name="local-cache" value="passivation"/>
+                <feature spec="infinispan-cache-container-local-cache-locking"/>
+                <feature spec="infinispan-cache-container-local-cache-transaction"/>
+                <feature spec="infinispan-cache-container-local-cache-store"/>
+            </feature>
+        </feature>
+
+        <feature spec="infinispan-cache-container">
+            <param name="cache-container" value="server"/>
+            <param name="module" value="org.wildfly.clustering.server"/>
+            <param name="default-cache" value="default"/>
+            <feature spec="infinispan-cache-container-local-cache">
+                <param name="local-cache" value="default"/>
+                <feature spec="infinispan-cache-container-local-cache-transaction"/>
+            </feature>
+        </feature>
+        
+    </feature>
+</feature-group-spec>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<feature-group-spec xmlns="urn:wildfly:pm-feature-group:1.0" name="ds-support">
+    <origin name="core">
+        <feature spec="socket-binding-group">
+            <origin name="this">
+                <feature-group name="transactions-sockets"/>
+            </origin>
+        </feature>
+    </origin>
+    <feature-group name="jca"/>
+    <feature-group name="transactions"/>
+    <origin name="servlet">
+        <feature spec="naming"/>
+        <feature-group name="ee"/>
+    </origin>
+    <feature spec="datasources"/>
+</feature-group-spec>

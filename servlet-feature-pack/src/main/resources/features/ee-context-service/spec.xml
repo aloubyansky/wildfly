@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ee-context-service" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,context-service"/>
+  </annotation>
+  <refs>
+    <ref feature="ee"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" feature-id="true"/>
+    <param name="context-service" feature-id="true"/>
+    <param name="jndi-name"/>
+    <param name="use-transaction-setup-provider"/>
+  </params>
+</feature-spec>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="undertow" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem"/>
+    <elem name="op-params" value="default-security-domain,default-server,default-servlet-container,default-virtual-host,instance-id,statistics-enabled"/>
+  </annotation>
+  <provides>
+    <capability name="$profile.org.wildfly.undertow"/>
+    <capability name="$profile.org.wildfly.undertow.http-invoker"/>
+  </provides>
+  <requires>
+    <capability name="$profile.org.wildfly.undertow.servlet-container.$default-servlet-container"/>
+    <capability name="$profile.org.wildfly.undertow.server.$default-server"/>
+    <capability name="$profile.org.wildfly.undertow.host.$default-virtual-host"/>
+  </requires>
+  <refs>
+    <ref dependency="core" feature="extension" include="true"/>
+    <ref dependency="core" feature="profile" include="true" nillable="true"/>
+    <ref feature="undertow-server">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="default-server" maps-to="server"/>
+    </ref>
+    <ref feature="undertow-server-host">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="default-server" maps-to="server"/>
+      <param name="default-virtual-host" maps-to="server-host"/>
+    </ref>
+    <ref feature="undertow-servlet-container">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="default-servlet-container" maps-to="servlet-container"/>
+    </ref>
+    <ref feature="security-domain" nillable="true">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="security-subsystem" maps-to="subsystem"/>
+      <param name="default-security-domain" maps-to="security-domain"/>
+    </ref>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="undertow" feature-id="true"/>
+    <param name="extension" default="org.wildfly.extension.undertow"/>
+    <param name="default-security-domain" nillable="true"/>
+    <param name="security-subsystem" default="security"/>
+    <param name="default-server" default="default-server"/>
+    <param name="default-servlet-container" default="default"/>
+    <param name="default-virtual-host" default="default-host"/>
+    <param name="instance-id" default="${jboss.node.name}"/>
+    <param name="statistics-enabled" nillable="true"/>
+  </params>
+  <packages>
+    <package name="org.wildfly.extension.undertow.main"/>
+  </packages>
+</feature-spec>

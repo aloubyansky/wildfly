@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="jdbc-driver" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,jdbc-driver"/>
+  </annotation>
+  <refs>
+    <ref feature="datasources"/>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="datasources" feature-id="true"/>
+    <param name="jdbc-driver" feature-id="true"/>
+    <param name="driver-name"/>
+    <param name="driver-module-name"/>
+    <param name="driver-xa-datasource-class-name"/>
+  </params>
+</feature-spec>

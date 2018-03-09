@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-spec name="ejb3-timer-service" xmlns="urn:wildfly:pm-feature-spec:1.0">
+  <annotation name="add">
+    <elem name="addr-params" value="host,profile,subsystem,service"/>
+  </annotation>
+  <refs>
+    <ref feature="ejb3"/>
+    <ref feature="ejb3-thread-pool">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="thread-pool-name" maps-to="thread-pool"/>
+    </ref>
+    <ref feature="ejb3-timer-file-data-store">
+      <param name="host" maps-to="host"/>
+      <param name="profile" maps-to="profile"/>
+      <param name="subsystem" maps-to="subsystem"/>
+      <param name="service" maps-to="service"/>
+      <param name="default-data-store" maps-to="file-data-store"/>
+    </ref>
+  </refs>
+  <params>
+    <param name="host" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="profile" default="PM_UNDEFINED" feature-id="true"/>
+    <param name="subsystem" default="ejb3" feature-id="true"/>
+    <param name="service" default="timer-service" feature-id="true"/>
+    <param name="thread-pool-name" default="default"/>
+    <param name="default-data-store" default="default-file-store"/>
+  </params>
+</feature-spec>

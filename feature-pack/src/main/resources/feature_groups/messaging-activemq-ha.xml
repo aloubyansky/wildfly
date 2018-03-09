@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="messaging-activemq-ha" xmlns="urn:wildfly:pm-feature-group:1.0">
+    <feature-group name="messaging-activemq"/>
+    <feature spec="messaging-activemq">
+        <feature spec="messaging-activemq-server">
+            <param name="cluster-password" value="${jboss.messaging.cluster.password:CHANGE ME!!}"/>
+            <feature spec="messaging-activemq-server-address-setting">
+                <param name="redistribution-delay" value="1000"/>
+            </feature>
+            <feature spec="messaging-activemq-server-connection-factory">
+                <param name="connection-factory" value="RemoteConnectionFactory"/>
+                <param name="ha" value="true"/>
+                <param name="reconnect-attempts" value="-1"/>
+                <param name="block-on-acknowledge" value="true"/>
+            </feature>
+            <feature spec="messaging-activemq-server-broadcast-group"/>
+            <feature spec="messaging-activemq-server-discovery-group"/>
+            <feature spec="messaging-activemq-server-cluster-connection"/>
+        </feature>
+    </feature>
+</feature-group-spec>

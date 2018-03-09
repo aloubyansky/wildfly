@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature-group-spec name="host" xmlns="urn:wildfly:pm-feature-group:1.0">
+
+    <origin name="core">
+        <feature-group name="host"/>
+    </origin>
+    <feature spec="host">
+        <param name="host" value="master"/>
+        <feature spec="interface">
+            <param name="interface" value="private"/>
+            <param name="inet-address" value="${jboss.bind.address.private:127.0.0.1}"/>
+        </feature>
+    </feature>
+
+    <feature-group name="host-master"/>
+
+</feature-group-spec>
