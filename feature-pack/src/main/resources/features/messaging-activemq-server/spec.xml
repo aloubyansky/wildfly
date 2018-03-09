@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-spec name="messaging-activemq-server" xmlns="urn:wildfly:pm-feature-spec:1.0">
-  <annotation name="add">
+  <annotation name="jboss-op">
+    <elem name="name" value="add"/>
     <elem name="addr-params" value="host,profile,subsystem,server"/>
   </annotation>
   <provides>

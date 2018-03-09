@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature-spec name="infinispan-cache-container-distributed-cache-transaction" xmlns="urn:wildfly:pm-feature-spec:1.0">
-  <annotation name="add">
+  <annotation name="jboss-op">
+    <elem name="name" value="add"/>
     <elem name="addr-params" value="host,profile,subsystem,cache-container,distributed-cache,component"/>
   </annotation>
   <refs>
