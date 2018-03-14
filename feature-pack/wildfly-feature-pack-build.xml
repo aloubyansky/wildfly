@@ -51,6 +51,9 @@
     </package-schemas>
 
     <config model="standalone">
+        <props>
+            <prop name="config.branch-is-batch" value="true"/>
+        </props>
         <packages>
             <package name="product.conf"/>
             <package name="misc.standalone"/>
@@ -58,6 +61,9 @@
     </config>
 
     <config model="domain">
+        <props>
+            <prop name="config.branch-is-batch" value="true"/>
+        </props>
         <packages>
             <package name="product.conf"/>
             <package name="misc.domain"/>
