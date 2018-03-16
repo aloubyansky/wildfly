@@ -56,46 +56,34 @@
     </config>
 
     <config name="standalone.xml" model="standalone">
-        <props>
-            <prop name="config-name" value="standalone.xml"/>
-        </props>
         <feature-group name="standalone"/>
     </config>
 
     <config name="standalone-load-balancer.xml" model="standalone">
         <props>
-            <prop name="config-name" value="standalone-load-balancer.xml"/>
+            <prop name="--server-config" value="standalone-load-balancer.xml"/>
         </props>
         <feature-group name="standalone-load-balancer"/>
     </config>
 
     <config name="domain.xml" model="domain">
-        <props>
-            <prop name="domain-config-name" value="domain.xml"/>
-        </props>
         <feature-group name="domain"/>
     </config>
 
     <config name="host.xml" model="host">
-        <props>
-            <prop name="host-config-name" value="host.xml"/>
-            <prop name="domain-config-name" value="domain.xml"/>
-        </props>
         <feature-group name="host"/>
     </config>
 
     <config name="host-master.xml" model="host">
         <props>
-            <prop name="host-config-name" value="host-master.xml"/>
-            <prop name="domain-config-name" value="domain.xml"/>
+            <prop name="--host-config" value="host-master.xml"/>
         </props>
         <feature-group name="host-master"/>
     </config>
 
     <config name="host-slave.xml" model="host">
         <props>
-            <prop name="host-config-name" value="host-slave.xml"/>
-            <prop name="domain-config-name" value="domain.xml"/>
+            <prop name="--host-config" value="host-slave.xml"/>
         </props>
         <feature-group name="host-slave"/>
     </config>
