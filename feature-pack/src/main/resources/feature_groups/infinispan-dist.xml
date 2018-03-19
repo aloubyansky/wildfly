@@ -34,7 +34,7 @@
                     <param name="max-idle" value="100000"/>
                 </feature>
                 <feature spec="subsystem.infinispan.cache-container.local-cache.memory.object">
-                    <param name="size" value="100000"/>
+                    <param name="size" value="10000"/>
                 </feature>
             </feature>
             <feature spec="subsystem.infinispan.cache-container.transport.jgroups">
