@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<package-spec xmlns="urn:wildfly:pm-package:1.0" name="misc.domain">
+    <dependencies>
+        <origin name="org.wildfly.core:wildfly-core-feature-pack-new">
+            <package name="misc.domain"/>
+        </origin>
+        <package name="misc.common"/>
+    </dependencies>
+</package-spec>

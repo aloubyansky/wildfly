@@ -48,8 +48,7 @@
 
     <dependencies>
 
-		<!-- feature pack dependencies -->
-
+        <!-- feature pack dependencies -->
         <dependency>
             <groupId>org.wildfly.core</groupId>
             <artifactId>wildfly-core-feature-pack</artifactId>
@@ -488,7 +487,26 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <executions></executions>
+                <executions>
+                     <execution>
+                        <id>copy-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/resources/specs</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/src/main/resources</directory>
+                                    <excludes>
+                                        <exclude>features</exclude>
+                                    </excludes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.wildfly.build</groupId>
@@ -506,7 +524,96 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.jboss.pm</groupId>
+                <artifactId>wildfly-feature-pack-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>feature-pack-build</id>
+                        <goals>
+                            <goal>wf-build</goal>
+                        </goals>
+                        <phase>compile</phase>
+                        <configuration>
+                            <release-name>WildFly Servlet</release-name>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
+            <plugin>
+                <groupId>org.jboss.pm</groupId>
+                <artifactId>wildfly-feature-pack-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>feature-spec-build</id>
+                        <goals>
+                            <goal>wf-spec</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/resources/specs/features</outputDirectory>
+                            <moduleDirectory>src/main/resources/modules/</moduleDirectory>
+                            <featurePacks>
+                                <featurePack>
+                                    <groupId>org.wildfly.core</groupId>
+                                    <artifactId>wildfly-core-feature-pack-new</artifactId>
+                                    <version>${version.org.wildfly.core}</version>
+                                    <type>zip</type>
+                                    <extension>zip</extension>
+                                </featurePack>
+                            </featurePacks>
+                            <standaloneExtensions>
+                                <extension>org.jboss.as.deployment-scanner</extension>
+                                <extension>org.jboss.as.ee</extension>
+                                <extension>org.jboss.as.jmx</extension>
+                                <extension>org.jboss.as.logging</extension>
+                                <extension>org.jboss.as.naming</extension>
+                                <extension>org.jboss.as.security</extension>
+                                <extension>org.wildfly.extension.core-management</extension>
+                                <extension>org.wildfly.extension.elytron</extension>
+                                <extension>org.wildfly.extension.io</extension>
+                                <extension>org.wildfly.extension.request-controller</extension>
+                                <extension>org.wildfly.extension.security.manager</extension>
+                                <extension>org.wildfly.extension.undertow</extension>
+                                <extension>org.jboss.as.remoting</extension>
+                                <extension>org.wildfly.extension.discovery</extension>
+                            </standaloneExtensions>
+                            <domainExtensions>
+                                <extension>org.jboss.as.ee</extension>
+                                <extension>org.jboss.as.jmx</extension>
+                                <extension>org.jboss.as.logging</extension>
+                                <extension>org.jboss.as.naming</extension>
+                                <extension>org.jboss.as.security</extension>
+                                <extension>org.wildfly.extension.core-management</extension>
+                                <extension>org.wildfly.extension.elytron</extension>
+                                <extension>org.wildfly.extension.io</extension>
+                                <extension>org.wildfly.extension.request-controller</extension>
+                                <extension>org.wildfly.extension.undertow</extension>
+                                <extension>org.jboss.as.remoting</extension>
+                                <extension>org.wildfly.extension.discovery</extension>
+                                <extension>org.wildfly.extension.security.manager</extension>
+                            </domainExtensions>
+                            <hostExtensions>
+                                <extension>org.jboss.as.jmx</extension>
+                                <extension>org.wildfly.extension.core-management</extension>
+                                <extension>org.wildfly.extension.discovery</extension>
+                                <extension>org.wildfly.extension.elytron</extension>
+                            </hostExtensions>
+                        </configuration>
+                        </execution>
+                    <execution>
+                        <id>feature-pack-build</id>
+                        <goals>
+                            <goal>wf-build</goal>
+                        </goals>
+                        <phase>compile</phase>
+                        <configuration>
+                            <resources-dir>target/resources/specs</resources-dir>
+                            <release-name>WildFly Servlet</release-name>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>

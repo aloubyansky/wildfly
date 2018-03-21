@@ -153,6 +153,7 @@
         <version.checkstyle>8.5</version.checkstyle>
         <version.help.plugin>2.2</version.help.plugin>
         <version.jacoco.plugin>0.7.9</version.jacoco.plugin>
+        <version.org.jboss.pm>1.0.0.Alpha-SNAPSHOT</version.org.jboss.pm>
 
         <!-- TODO This is an unusual case where we override the version only for this client. The parent pom version is
                   using the 1.1 version for the Java EE 8 tech preview though the client still currently expects 1.0.
@@ -581,6 +582,11 @@
                     <groupId>org.wildfly.build</groupId>
                     <artifactId>wildfly-server-provisioning-maven-plugin</artifactId>
                     <version>${version.org.wildfly.build-tools}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jboss.pm</groupId>
+                    <artifactId>wildfly-feature-pack-maven-plugin</artifactId>
+                    <version>${version.org.jboss.pm}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
