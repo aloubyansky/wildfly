@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<tasks xmlns="urn:wildfly:wildfly-feature-pack-tasks:2.0">
+    <example-configs>
+        <config model="standalone" name="standalone-genericjms.xml" group="standalone-genericjms"/>
+        <config model="standalone" name="standalone-jts.xml" group="standalone-jts"/>
+        <config model="standalone" name="standalone-minimalistic.xml" group="standalone-minimalistic"/>
+        <config model="standalone" name="standalone-picketlink.xml" group="standalone-picketlink"/>
+        <config model="standalone" name="standalone-rts.xml" group="standalone-rts"/>
+        <config model="standalone" name="standalone-xts.xml" group="standalone-xts"/>
+    </example-configs>
+</tasks>
