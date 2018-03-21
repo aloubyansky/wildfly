@@ -57,6 +57,7 @@ public class ResourceRegistration implements Registration<ManagementResourceRegi
     @Override
     public void register(ManagementResourceRegistration registration) {
         new CapabilityRegistration(this.descriptor.getCapabilities().keySet()).register(registration);
+        registration.registerRequirements(this.descriptor.getResourceCapabilityReferences().keySet());
 
         // Register attributes before add operation
         this.writeAttributeRegistration.register(registration);

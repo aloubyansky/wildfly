@@ -101,7 +101,9 @@ public class JGroupsTransportResourceDefinition extends TransportResourceDefinit
         private final RuntimeCapability<Void> definition;
 
         Capability(UnaryRequirement requirement) {
-            this.definition = new UnaryRequirementCapability(requirement, this).getDefinition();
+            this.definition = new UnaryRequirementCapability(requirement, UnaryOperator.identity(),
+                    address -> new String[] {address.getParent().getLastElement().getValue()})
+                            .getDefinition();
         }
 
         @Override

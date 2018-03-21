@@ -25,7 +25,6 @@ package org.jboss.as.clustering.infinispan.subsystem;
 import java.util.function.UnaryOperator;
 
 import org.jboss.as.clustering.controller.CapabilityReference;
-import org.jboss.as.clustering.controller.DynamicCapabilityNameResolver;
 import org.jboss.as.clustering.controller.ManagementResourceRegistration;
 import org.jboss.as.clustering.controller.MetricHandler;
 import org.jboss.as.clustering.controller.ResourceDescriptor;
@@ -56,7 +55,10 @@ public class ClusteredCacheResourceDefinition extends CacheResourceDefinition {
         private final RuntimeCapability<Void> definition;
 
         Capability(String name) {
-            this.definition = RuntimeCapability.Builder.of(name, true).setDynamicNameMapper(DynamicCapabilityNameResolver.PARENT_CHILD).build();
+//            this.definition = RuntimeCapability.Builder.of(name, true).setDynamicNameMapper(DynamicCapabilityNameResolver.PARENT_CHILD).build();
+            this.definition = RuntimeCapability.Builder.of(name, true)
+                    .setDynamicNameMapper(address -> new String[] {address.getParent().getLastElement().getValue(), address.getLastElement().getValue()})
+                    .build();
         }
 
         @Override
@@ -149,7 +151,7 @@ public class ClusteredCacheResourceDefinition extends CacheResourceDefinition {
                     .addAttributes(Attribute.class)
                     .addAttributes(DeprecatedAttribute.class)
                     .addCapabilities(Capability.class)
-                    .addResourceCapabilityReference(new CapabilityReference(Capability.TRANSPORT, JGroupsTransportResourceDefinition.Requirement.CHANNEL), address -> address.getParent().getLastElement().getValue())
+                    .addResourceCapabilityReference(new CapabilityReference(Capability.TRANSPORT, JGroupsTransportResourceDefinition.Requirement.CHANNEL, "cache-container"), address -> address.getParent().getLastElement().getValue())
                     ;
         }
     }
