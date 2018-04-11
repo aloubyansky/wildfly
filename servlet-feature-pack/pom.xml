@@ -61,6 +61,19 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>org.wildfly.core</groupId>
+            <artifactId>wildfly-core-feature-pack-new</artifactId>
+            <version>${version.org.wildfly.core}</version>
+            <type>zip</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!-- module and copy artifact dependencies -->
 
         <dependency>
@@ -610,6 +623,7 @@
                         <configuration>
                             <resources-dir>target/resources/specs</resources-dir>
                             <release-name>WildFly Servlet</release-name>
+                            <feature-pack-name>${project.artifactId}-new</feature-pack-name>
                         </configuration>
                     </execution>
                 </executions>
