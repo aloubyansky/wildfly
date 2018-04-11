@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<feature-group-spec xmlns="urn:wildfly:pm-feature-group:1.0" name="ds-support">
+    <feature spec="interface">
+        <param name="interface" value="public"/>
+        <param name="inet-address" value="${jboss.bind.address:127.0.0.1}"/>
+    </feature>
+    <feature spec="socket-binding-group">
+        <param name="socket-binding-group" value="standard-sockets"/>
+        <param name="default-interface" value="public"/>
+        <feature-group name="transactions-sockets"/>
+    </feature>
+    <feature-group name="jca"/>
+    <feature-group name="transactions"/>
+    <feature spec="subsystem.naming"/>
+    <feature-group name="ee"/>
+    <feature spec="subsystem.datasources"/>
+</feature-group-spec>
