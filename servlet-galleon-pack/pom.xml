@@ -43,7 +43,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <license.directory>${project.build.directory}/${project.build.finalName}/content/docs/licenses</license.directory>
+        <license.directory>${project.build.directory}/resources/content/docs/licenses</license.directory>
     </properties>
 
     <dependencies>
@@ -511,7 +511,7 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${basedir}/target/resources/content/docs/licenses</outputDirectory>
+                            <outputDirectory>${license.directory}</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>${project.basedir}/src/license</directory>
@@ -557,10 +557,10 @@
                         <phase>process-resources</phase>
                         <configuration>
                             <transformationSets>
-                                 <transformationSet>
-                                    <dir>${basedir}/target/resources/content/docs/licenses</dir>
+                                <transformationSet>
+                                    <dir>${license.directory}</dir>
                                     <includes>
-                                         <include>*licenses.xml</include>
+                                        <include>*licenses.xml</include>
                                     </includes>
                                     <stylesheet>src/main/resources/content/docs/licenses/licenses.xsl</stylesheet>
                                     <outputDir>${license.directory}</outputDir>
