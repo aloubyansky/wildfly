@@ -544,6 +544,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>xml-maven-plugin</artifactId>
@@ -581,6 +582,7 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
 
             <plugin>
                 <groupId>org.wildfly.galleon-plugins</groupId>

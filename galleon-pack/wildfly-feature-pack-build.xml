@@ -68,6 +68,17 @@
         <feature-group name="standalone"/>
     </config>
 
+    <config name="standalone-ee8.xml" model="standalone">
+        <props>
+            <prop name="--server-config" value="standalone-ee8.xml"/>
+        </props>
+        <feature-group name="standalone"/>
+        <feature spec="system-property">
+            <param name="system-property" value="ee8.preview.mode"/>
+            <param name="value" value="true"/>
+        </feature>
+    </config>
+
     <config name="standalone-ha.xml" model="standalone">
         <props>
             <prop name="--server-config" value="standalone-ha.xml"/>
@@ -88,7 +99,14 @@
         </props>
         <feature-group name="standalone-full-ha"/>
     </config>
-
+<!--
+    <config name="standalone-activemq-colocated.xml" model="standalone">
+        <props>
+            <prop name="- -server-config" value="standalone-activemq-colocated.xml"/>
+        </props>
+        <feature-group name="standalone-activemq-colocated"/>
+    </config>
+ -->
     <config name="domain.xml" model="domain">
         <feature-group name="domain"/>
         <feature-group name="domain-ha"/>

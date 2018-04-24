@@ -89,7 +89,7 @@
                         <goals>
                             <goal>provision</goal>
                         </goals>
-                        <phase>prepare-package</phase>
+                        <phase>compile</phase>
                         <configuration>
                             <install-dir>${basedir}/target/${project.build.finalName}</install-dir>
                             <feature-packs>
@@ -239,6 +239,7 @@
                 </plugins>
             </build>
         </profile>
+        <!--
         <profile>
             <id>generate-licenses-html</id>
             <activation>
@@ -257,11 +258,11 @@
                                 <configuration>
                                     <tasks>
                                         <fileset id="licenses.xml.list" dir="${basedir}/target/${server.output.dir.prefix}-${server.output.dir.version}/docs/licenses" includes="*licenses.xml"/>
-                                        <!--
+                                        < ! - -
                                         <property name="prop.licenses.xml.list" refid="licenses.xml.list"/>
                                         <echo>List of licenses.xml in ${basedir}/target/${server.output.dir.prefix}-${server.output.dir.version}/docs/licenses</echo>
                                         <echo>${prop.licenses.xml.list}</echo>
-                                        -->
+                                        - - >
                                         <pathconvert pathsep="&#xA;" property="license-files-list-items" refid="licenses.xml.list">
                                             <chainedmapper>
                                                 <mapper type="flatten"/>
@@ -333,6 +334,7 @@
                 </plugins>
             </build>
         </profile>
+        -->
     </profiles>
 
 </project>
