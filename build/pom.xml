@@ -75,6 +75,7 @@
                                 <feature-pack>
                                     <groupId>org.wildfly.core</groupId>
                                     <artifactId>wildfly-core-galleon-pack</artifactId>
+                                    <inherit-configs>false</inherit-configs>
                                     <excluded-packages>
                                         <name>product.conf</name>
                                         <name>docs.schema</name>
@@ -83,6 +84,13 @@
                                 <feature-pack>
                                     <groupId>${project.groupId}</groupId>
                                     <artifactId>wildfly-servlet-galleon-pack</artifactId>
+                                    <inherit-configs>false</inherit-configs>
+                                    <included-configs>
+                                        <config>
+                                            <model>standalone</model>
+                                            <name>standalone-load-balancer.xml</name>
+                                        </config>
+                                    </included-configs>
                                     <excluded-packages>
                                         <name>product.conf</name>
                                         <name>docs.schema</name>

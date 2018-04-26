@@ -79,6 +79,7 @@
                                 <feature-pack>
                                     <groupId>org.wildfly.core</groupId>
                                     <artifactId>wildfly-core-galleon-pack</artifactId>
+                                    <inherit-configs>false</inherit-configs>
                                     <excluded-packages>
                                         <name>product.conf</name>
                                         <name>docs.schema</name>
