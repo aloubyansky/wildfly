@@ -6,15 +6,15 @@
             <param name="cache-type" value="default"/>
             <feature spec="subsystem.security.security-domain.authentication.classic">
                 <feature spec="subsystem.security.security-domain.authentication.classic.login-module">
-                    <param name="login-module" value="RealmDirect"/>
-                    <param name="code" value="RealmDirect"/>
-                    <param name="flag" value="required"/>
-                    <param name="module-options" value="{password-stacking=useFirstPass}"/>
-                </feature>
-                <feature spec="subsystem.security.security-domain.authentication.classic.login-module">
                     <param name="login-module" value="Remoting"/>
                     <param name="code" value="Remoting"/>
                     <param name="flag" value="optional"/>
+                    <param name="module-options" value="{password-stacking=useFirstPass}"/>
+                </feature>
+                <feature spec="subsystem.security.security-domain.authentication.classic.login-module">
+                    <param name="login-module" value="RealmDirect"/>
+                    <param name="code" value="RealmDirect"/>
+                    <param name="flag" value="required"/>
                     <param name="module-options" value="{password-stacking=useFirstPass}"/>
                 </feature>
             </feature>
