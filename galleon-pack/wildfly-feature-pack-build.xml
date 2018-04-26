@@ -106,7 +106,15 @@
         </props>
         <feature-group name="standalone-activemq-colocated"/>
     </config>
- -->
+
+    <config name="standalone-picketlink.xml" model="standalone">
+        <props>
+            <prop name="- -server-config" value="standalone-picketlink.xml"/>
+        </props>
+        <feature-group name="standalone-picketlink"/>
+    </config>
+-->
+
     <config name="domain.xml" model="domain">
         <feature-group name="domain"/>
         <feature-group name="domain-ha"/>
