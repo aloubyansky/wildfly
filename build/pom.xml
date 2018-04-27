@@ -125,6 +125,7 @@
                         <configuration>
                             <tasks>
                                 <move file="${project.build.directory}/${project.build.finalName}/standalone/configuration/standalone-jts.xml" toDir="${project.build.directory}/${project.build.finalName}/docs/examples/configs" />
+                                <move file="${project.build.directory}/${project.build.finalName}/standalone/configuration/standalone-picketlink.xml" toDir="${project.build.directory}/${project.build.finalName}/docs/examples/configs" />
                                 <move file="${project.build.directory}/${project.build.finalName}/standalone/configuration/standalone-rts.xml" toDir="${project.build.directory}/${project.build.finalName}/docs/examples/configs" />
                                 <move file="${project.build.directory}/${project.build.finalName}/standalone/configuration/standalone-xts.xml" toDir="${project.build.directory}/${project.build.finalName}/docs/examples/configs" />
                             </tasks>

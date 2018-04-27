@@ -106,14 +106,14 @@
         </props>
         <feature-group name="standalone-activemq-colocated"/>
     </config>
+    -->
 
     <config name="standalone-picketlink.xml" model="standalone">
         <props>
-            <prop name="- -server-config" value="standalone-picketlink.xml"/>
+            <prop name="--server-config" value="standalone-picketlink.xml"/>
         </props>
         <feature-group name="standalone-picketlink"/>
     </config>
--->
 
     <config name="standalone-jts.xml" model="standalone">
         <props>
