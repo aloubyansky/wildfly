@@ -23,7 +23,7 @@
 <build xmlns="urn:wildfly:feature-pack-build:2.0">
     <dependencies>
         <dependency group-id="org.wildfly.core" artifact-id="wildfly-core-galleon-pack">
-            <name>org.wildfly.core:wildfly-core-galleon-pack-new</name>
+            <name>org.wildfly.core:wildfly-core-galleon-pack</name>
             <packages inherit="false">
                 <exclude name="product.conf"/>
             </packages>
@@ -141,6 +141,13 @@
             <prop name="--server-config" value="standalone-xts.xml"/>
         </props>
         <feature-group name="standalone-xts"/>
+    </config>
+
+    <config name="standalone-minimalistic.xml" model="standalone">
+        <props>
+            <prop name="--server-config" value="standalone-minimalistic.xml"/>
+        </props>
+        <feature-group name="standalone-minimalistic"/>
     </config>
 
     <config name="domain.xml" model="domain">
