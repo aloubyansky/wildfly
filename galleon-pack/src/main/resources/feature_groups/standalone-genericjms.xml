@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feature-group-spec name="standalone-full" xmlns="urn:jboss:galleon:feature-group:1.0">
+<feature-group-spec name="standalone-genericjms" xmlns="urn:jboss:galleon:feature-group:1.0">
 
-    <feature-group name="standalone"/>
+    <feature-group name="standalone">
+        <exclude spec="subsystem.resource-adapters"/>
+        <feature spec="subsystem.resource-adapters">
+            <feature spec="subsystem.resource-adapters.resource-adapter">
+                <param name="resource-adapter" value="generic-jms-ra.rar"/>
+                <param name="module" value="org.jboss.genericjms"/>
+                <param name="transaction-support" value="NoTransaction"/>
+                <feature spec="subsystem.resource-adapters.resource-adapter.connection-definitions">
+                    <param name="class-name" value="org.jboss.resource.adapter.jms.JmsManagedConnectionFactory"/>
+                    <param name="jndi-name" value="${genericjms.cf.jndi-name}"/>
+                    <param name="connection-definitions" value="${genericjms.cf.pool-name}"/>
+                    <param name="security-application" value="true"/>
+                    <feature spec="subsystem.resource-adapters.resource-adapter.connection-definitions.config-properties">
+                        <param name="config-properties" value="JndiParameters"/>
+                        <param name="value" value="&quot;java.naming.factory.initial=${genericjms.cf.jndi.contextfactory};java.naming.provider.url=${genericjms.cf.jndi.url}&quot;"/>
+                    </feature>
+                    <feature spec="subsystem.resource-adapters.resource-adapter.connection-definitions.config-properties">
+                        <param name="config-properties" value="ConnectionFactory"/>
+                        <param name="value" value="${genericjms.cf.jndi.lookup}"/>
+                    </feature>
+                </feature>
+            </feature>
+        </feature>
+    </feature-group>
 
     <feature spec="interface">
         <param name="interface" value="unsecure"/>
@@ -16,13 +39,5 @@
 
     <feature-group name="jsr77"/>
     <feature-group name="iiop-openjdk"/>
-    <feature-group name="messaging-activemq"/>
-
-    <feature spec="subsystem.ejb3">
-        <feature spec="subsystem.ejb3.service.iiop">
-            <param name="enable-by-default" value="false"/>
-            <param name="use-qualified-name" value="false"/>
-        </feature>
-    </feature>
 
 </feature-group-spec>

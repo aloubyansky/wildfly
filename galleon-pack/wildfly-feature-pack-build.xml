@@ -128,6 +128,14 @@
         <feature-group name="standalone-picketlink"/>
     </config>
 
+
+    <config name="standalone-genericjms.xml" model="standalone">
+        <props>
+            <prop name="--server-config" value="standalone-genericjms.xml"/>
+        </props>
+        <feature-group name="standalone-genericjms"/>
+    </config>
+
 <!--
     <config name="standalone-activemq-colocated.xml" model="standalone">
         <props>
