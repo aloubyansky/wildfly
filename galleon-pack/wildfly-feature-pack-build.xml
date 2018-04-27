@@ -115,11 +115,11 @@
     </config>
 -->
 
-    <config name="standalone-xts.xml" model="standalone">
+    <config name="standalone-jts.xml" model="standalone">
         <props>
-            <prop name="--server-config" value="standalone-xts.xml"/>
+            <prop name="--server-config" value="standalone-jts.xml"/>
         </props>
-        <feature-group name="standalone-xts"/>
+        <feature-group name="standalone-jts"/>
     </config>
 
     <config name="standalone-rts.xml" model="standalone">
@@ -127,6 +127,13 @@
             <prop name="--server-config" value="standalone-rts.xml"/>
         </props>
         <feature-group name="standalone-rts"/>
+    </config>
+
+    <config name="standalone-xts.xml" model="standalone">
+        <props>
+            <prop name="--server-config" value="standalone-xts.xml"/>
+        </props>
+        <feature-group name="standalone-xts"/>
     </config>
 
     <config name="domain.xml" model="domain">
