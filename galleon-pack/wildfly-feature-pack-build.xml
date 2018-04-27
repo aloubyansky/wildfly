@@ -114,6 +114,13 @@
         <feature-group name="standalone-rts"/>
     </config>
 
+    <config name="standalone-jts.xml" model="standalone">
+        <props>
+            <prop name="--server-config" value="standalone-jts.xml"/>
+        </props>
+        <feature-group name="standalone-jts"/>
+    </config>
+
     <config name="standalone-picketlink.xml" model="standalone">
         <props>
             <prop name="--server-config" value="standalone-picketlink.xml"/>
