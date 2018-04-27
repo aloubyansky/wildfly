@@ -99,6 +99,28 @@
         </props>
         <feature-group name="standalone-full-ha"/>
     </config>
+
+    <config name="standalone-xts.xml" model="standalone">
+        <props>
+            <prop name="--server-config" value="standalone-xts.xml"/>
+        </props>
+        <feature-group name="standalone-xts"/>
+    </config>
+
+    <config name="standalone-rts.xml" model="standalone">
+        <props>
+            <prop name="--server-config" value="standalone-rts.xml"/>
+        </props>
+        <feature-group name="standalone-rts"/>
+    </config>
+
+    <config name="standalone-picketlink.xml" model="standalone">
+        <props>
+            <prop name="--server-config" value="standalone-picketlink.xml"/>
+        </props>
+        <feature-group name="standalone-picketlink"/>
+    </config>
+
 <!--
     <config name="standalone-activemq-colocated.xml" model="standalone">
         <props>
