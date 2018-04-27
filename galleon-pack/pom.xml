@@ -54,7 +54,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
-                     <execution>
+                    <execution>
                         <id>copy-resources</id>
                         <phase>process-resources</phase>
                         <goals>
@@ -213,6 +213,7 @@
                                 <extension>org.jboss.as.transactions</extension>
                                 <extension>org.jboss.as.webservices</extension>
                                 <extension>org.jboss.as.weld</extension>
+                                <extension>org.jboss.as.xts</extension>
                                 <extension>org.wildfly.extension.batch.jberet</extension>
                                 <extension>org.wildfly.extension.bean-validation</extension>
                                 <extension>org.wildfly.extension.core-management</extension>
@@ -223,6 +224,7 @@
                                 <extension>org.wildfly.extension.messaging-activemq</extension>
                                 <extension>org.wildfly.extension.picketlink</extension>
                                 <extension>org.wildfly.extension.request-controller</extension>
+                                <extension>org.wildfly.extension.rts</extension>
                                 <extension>org.wildfly.extension.security.manager</extension>
                                 <extension>org.wildfly.extension.undertow</extension>
                                 <extension>org.wildfly.iiop-openjdk</extension>
@@ -251,6 +253,7 @@
                                 <extension>org.jboss.as.transactions</extension>
                                 <extension>org.jboss.as.webservices</extension>
                                 <extension>org.jboss.as.weld</extension>
+                                <extension>org.jboss.as.xts</extension>
                                 <extension>org.wildfly.extension.batch.jberet</extension>
                                 <extension>org.wildfly.extension.bean-validation</extension>
                                 <extension>org.wildfly.extension.clustering.singleton</extension>
@@ -261,6 +264,7 @@
                                 <extension>org.wildfly.extension.messaging-activemq</extension>
                                 <extension>org.wildfly.extension.picketlink</extension>
                                 <extension>org.wildfly.extension.request-controller</extension>
+                                <extension>org.wildfly.extension.rts</extension>
                                 <extension>org.wildfly.extension.security.manager</extension>
                                 <extension>org.wildfly.extension.undertow</extension>
                                 <extension>org.wildfly.iiop-openjdk</extension>
