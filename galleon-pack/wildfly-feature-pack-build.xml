@@ -89,6 +89,7 @@
         <feature-group name="standalone-full-ha"/>
     </config>
 
+
     <config name="domain.xml" model="domain">
         <feature-group name="domain"/>
         <feature-group name="domain-ha"/>
