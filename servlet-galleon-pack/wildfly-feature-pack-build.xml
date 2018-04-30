@@ -61,9 +61,6 @@
     </config>
 
     <config name="standalone-load-balancer.xml" model="standalone">
-        <props>
-            <prop name="--server-config" value="standalone-load-balancer.xml"/>
-        </props>
         <feature-group name="standalone-load-balancer"/>
     </config>
 
@@ -76,16 +73,10 @@
     </config>
 
     <config name="host-master.xml" model="host">
-        <props>
-            <prop name="--host-config" value="host-master.xml"/>
-        </props>
         <feature-group name="host-master"/>
     </config>
 
     <config name="host-slave.xml" model="host">
-        <props>
-            <prop name="--host-config" value="host-slave.xml"/>
-        </props>
         <feature-group name="host-slave"/>
     </config>
 
