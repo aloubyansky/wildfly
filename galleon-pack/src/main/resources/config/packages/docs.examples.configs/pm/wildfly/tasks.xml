@@ -2,11 +2,26 @@
 
 <tasks xmlns="urn:wildfly:wildfly-feature-pack-tasks:2.0">
     <example-configs>
-        <config model="standalone" name="standalone-genericjms.xml" group="standalone-genericjms"/>
-        <config model="standalone" name="standalone-jts.xml" group="standalone-jts"/>
-        <config model="standalone" name="standalone-minimalistic.xml" group="standalone-minimalistic"/>
-        <config model="standalone" name="standalone-picketlink.xml" group="standalone-picketlink"/>
-        <config model="standalone" name="standalone-rts.xml" group="standalone-rts"/>
-        <config model="standalone" name="standalone-xts.xml" group="standalone-xts"/>
+        <config model="standalone" name="standalone-genericjms.xml">
+            <feature-group name="standalone-genericjms"/>
+        </config>
+        <config model="standalone" name="standalone-jts.xml">
+            <feature-group name="standalone-jts"/>
+        </config>
+        <config model="standalone" name="standalone-minimalistic.xml">
+            <feature-group name="standalone-minimalistic"/>
+        </config>
+        <config model="standalone" name="standalone-picketlink.xml">
+            <props>
+                <prop name="config.branch-per-spec" value="false"/>
+            </props>
+            <feature-group name="standalone-picketlink"/>
+        </config>
+        <config model="standalone" name="standalone-rts.xml">
+            <feature-group name="standalone-rts"/>
+        </config>
+        <config model="standalone" name="standalone-xts.xml">
+            <feature-group name="standalone-xts"/>
+        </config>
     </example-configs>
 </tasks>
