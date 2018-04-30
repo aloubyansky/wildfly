@@ -161,7 +161,7 @@
         <version.help.plugin>2.2</version.help.plugin>
         <version.jacoco.plugin>0.7.9</version.jacoco.plugin>
         <version.org.jboss.galleon>1.0.0.Alpha7</version.org.jboss.galleon>
-        <version.org.wildfly.galleon-plugins>1.0.0.Alpha12</version.org.wildfly.galleon-plugins>
+        <version.org.wildfly.galleon-plugins>1.0.0.Alpha13</version.org.wildfly.galleon-plugins>
 
         <!-- TODO This is an unusual case where we override the version only for this client. The parent pom version is
                   using the 1.1 version for the Java EE 8 tech preview though the client still currently expects 1.0.
