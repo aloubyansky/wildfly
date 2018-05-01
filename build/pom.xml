@@ -79,6 +79,7 @@
                                     <excluded-packages>
                                         <name>product.conf</name>
                                         <name>docs.schema</name>
+                                        <name>docs.licenses.merge</name>
                                     </excluded-packages>
                                 </feature-pack>
                                 <feature-pack>

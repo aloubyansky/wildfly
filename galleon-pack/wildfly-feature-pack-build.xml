@@ -26,6 +26,7 @@
             <name>org.wildfly.core:wildfly-core-galleon-pack</name>
             <packages inherit="false">
                 <exclude name="product.conf"/>
+                <include name="docs.licenses.merge"/>
             </packages>
             <default-configs inherit="false"/>
         </dependency>
