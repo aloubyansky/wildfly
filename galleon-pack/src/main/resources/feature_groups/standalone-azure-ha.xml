@@ -20,7 +20,7 @@
     <origin name="org.wildfly:wildfly-servlet-galleon-pack">
         <feature-group name="security-realms"/>
     </origin>
-    <feature-group name="audit"/>
+    <feature-group name="management-audit"/>
     <feature-group name="management-interfaces"/>
     <feature-group name="access-control"/>
 

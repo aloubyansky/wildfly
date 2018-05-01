@@ -24,7 +24,7 @@
             </feature>
        </include>
     </feature-group>
-    <feature-group name="audit"/>
+    <feature-group name="management-audit"/>
     <feature-group name="interfaces"/>
     <feature-group name="management-interfaces"/>
     <feature-group name="access-control"/>

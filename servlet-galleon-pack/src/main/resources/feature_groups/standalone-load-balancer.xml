@@ -5,7 +5,7 @@
         <param name="socket-binding-group" value="standard-sockets"/>
         <param name="default-interface" value="public" />
         <param name="port-offset" value="${jboss.socket.binding.port-offset:0}"/>
-        <feature-group name="default-sockets"/>
+        <feature-group name="management-sockets"/>
         <feature-group name="load-balancer-sockets"/>
     </feature>
 
@@ -24,7 +24,7 @@
             </feature>
        </include>
     </feature-group>
-    <feature-group name="audit"/>
+    <feature-group name="management-audit"/>
 
     <feature-group name="interfaces"/>
     <feature spec="interface">
