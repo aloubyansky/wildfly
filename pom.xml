@@ -160,7 +160,6 @@
         <version.checkstyle>8.5</version.checkstyle>
         <version.help.plugin>2.2</version.help.plugin>
         <version.jacoco.plugin>0.7.9</version.jacoco.plugin>
-        <version.org.jboss.galleon>1.0.0.Alpha8</version.org.jboss.galleon>
         <version.org.wildfly.galleon-plugins>1.0.0.Alpha15</version.org.wildfly.galleon-plugins>
 
         <!-- TODO This is an unusual case where we override the version only for this client. The parent pom version is
@@ -590,11 +589,6 @@
                     <groupId>org.wildfly.build</groupId>
                     <artifactId>wildfly-server-provisioning-maven-plugin</artifactId>
                     <version>${version.org.wildfly.build-tools}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.jboss.galleon</groupId>
-                    <artifactId>galleon-maven-plugins</artifactId>
-                    <version>${version.org.jboss.galleon}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.wildfly.galleon-plugins</groupId>
