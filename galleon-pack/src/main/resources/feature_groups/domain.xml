@@ -2,7 +2,7 @@
 <feature-group-spec name="domain" xmlns="urn:jboss:galleon:feature-group:1.0">
     <feature-group name="domain-interfaces"/>
 
-    <feature spec="interface">
+    <feature spec="domain.interface">
         <param name="interface" value="private"/>
         <param name="inet-address" value="${jboss.bind.address.private:127.0.0.1}"/>
     </feature>

@@ -5,12 +5,11 @@
         <param name="inet-address" value="${jboss.bind.address.private:127.0.0.1}"/>
     </feature>
     <feature spec="socket-binding-group">
-        <param name="default-interface" value="public" />
         <param name="socket-binding-group" value="standard-sockets" />
         <feature-group name="jgroups-sockets"/>
     </feature>
     <feature-group name="standalone-full">
-        <exclude spec="subsystem.messaging-activemq.server"/>
+        <exclude spec="subsystem.messaging-activemq"/>
     </feature-group>
     <feature-group name="messaging-activemq">
         <exclude feature-id="subsystem.messaging-activemq.server.http-acceptor:server=default,subsystem=messaging-activemq,http-acceptor=http-acceptor-throughput"/>
