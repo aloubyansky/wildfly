@@ -18,14 +18,14 @@
             <param name="aliases" value="[passivating,clustered]"/>
         </feature>
         <feature spec="subsystem.ejb3.strict-max-bean-instance-pool">
-            <param name="strict-max-bean-instance-pool" value="mdb-strict-max-pool"/>
-            <param name="derive-size" value="from-cpu-count"/>
+            <param name="strict-max-bean-instance-pool" value="slsb-strict-max-pool"/>
+            <param name="derive-size" value="from-worker-pools"/>
             <param name="timeout" value="5"/>
             <param name="timeout-unit" value="MINUTES"/>
         </feature>
         <feature spec="subsystem.ejb3.strict-max-bean-instance-pool">
-            <param name="strict-max-bean-instance-pool" value="slsb-strict-max-pool"/>
-            <param name="derive-size" value="from-worker-pools"/>
+            <param name="strict-max-bean-instance-pool" value="mdb-strict-max-pool"/>
+            <param name="derive-size" value="from-cpu-count"/>
             <param name="timeout" value="5"/>
             <param name="timeout-unit" value="MINUTES"/>
         </feature>
@@ -41,14 +41,14 @@
             <param name="connector-ref" value="http-remoting-connector"/>
             <param name="thread-pool-name" value="default"/>
             <feature spec="subsystem.ejb3.service.remote.channel-creation-options">
-                <param name="channel-creation-options" value="MAX_OUTBOUND_MESSAGES"/>
-                <param name="value" value="1234"/>
-                <param name="type" value="remoting"/>
-            </feature>
-            <feature spec="subsystem.ejb3.service.remote.channel-creation-options">
                 <param name="channel-creation-options" value="READ_TIMEOUT"/>
                 <param name="value" value="${prop.remoting-connector.read.timeout:20}"/>
                 <param name="type" value="xnio"/>
+            </feature>
+            <feature spec="subsystem.ejb3.service.remote.channel-creation-options">
+                <param name="channel-creation-options" value="MAX_OUTBOUND_MESSAGES"/>
+                <param name="value" value="1234"/>
+                <param name="type" value="remoting"/>
             </feature>
         </feature>
         <feature spec="subsystem.ejb3.service.timer-service">

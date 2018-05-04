@@ -2,8 +2,8 @@
 <feature-group-spec name="webservices" xmlns="urn:jboss:galleon:feature-group:1.0">
     <feature spec="subsystem.webservices">
         <param name="wsdl-host" value="${jboss.bind.address:127.0.0.1}"/>
-        <feature spec="subsystem.webservices.client-config">
-            <param name="client-config" value="Standard-Client-Config"/>
+        <feature spec="subsystem.webservices.endpoint-config">
+            <param name="endpoint-config" value="Standard-Endpoint-Config"/>
         </feature>
         <feature spec="subsystem.webservices.endpoint-config">
             <param name="endpoint-config" value="Recording-Endpoint-Config"/>
@@ -16,8 +16,8 @@
                 </feature>
             </feature>
         </feature>
-        <feature spec="subsystem.webservices.endpoint-config">
-            <param name="endpoint-config" value="Standard-Endpoint-Config"/>
+        <feature spec="subsystem.webservices.client-config">
+            <param name="client-config" value="Standard-Client-Config"/>
         </feature>
     </feature>
 </feature-group-spec>

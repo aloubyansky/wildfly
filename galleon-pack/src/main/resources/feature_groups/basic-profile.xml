@@ -19,7 +19,7 @@
     </feature>
 
     <feature spec="subsystem.security.security-domain">
-        <param name="security-domain" value="jboss-ejb-policy"/>
+        <param name="security-domain" value="jboss-web-policy"/>
         <param name="cache-type" value="default"/>
         <feature spec="subsystem.security.security-domain.authorization.classic">
             <feature spec="subsystem.security.security-domain.authorization.classic.policy-module">
@@ -30,7 +30,7 @@
         </feature>
     </feature>
     <feature spec="subsystem.security.security-domain">
-        <param name="security-domain" value="jboss-web-policy"/>
+        <param name="security-domain" value="jboss-ejb-policy"/>
         <param name="cache-type" value="default"/>
         <feature spec="subsystem.security.security-domain.authorization.classic">
             <feature spec="subsystem.security.security-domain.authorization.classic.policy-module">

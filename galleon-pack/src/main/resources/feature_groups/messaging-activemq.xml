@@ -44,12 +44,12 @@
                 <param name="params" value="{buffer-pooling=false}"/>
             </feature>
             <feature spec="subsystem.messaging-activemq.server.jms-queue">
-                <param name="jms-queue" value="DLQ"/>
-                <param name="entries" value="[java:/jms/queue/DLQ]"/>
-            </feature>
-            <feature spec="subsystem.messaging-activemq.server.jms-queue">
                 <param name="jms-queue" value="ExpiryQueue"/>
                 <param name="entries" value="[java:/jms/queue/ExpiryQueue]"/>
+            </feature>
+            <feature spec="subsystem.messaging-activemq.server.jms-queue">
+                <param name="jms-queue" value="DLQ"/>
+                <param name="entries" value="[java:/jms/queue/DLQ]"/>
             </feature>
             <feature spec="subsystem.messaging-activemq.server.pooled-connection-factory">
                 <param name="pooled-connection-factory" value="activemq-ra"/>

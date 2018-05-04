@@ -15,15 +15,15 @@
         <feature spec="subsystem.jca.workmanager">
             <param name="workmanager" value="default" />
             <param name="name" value="default" />
-            <feature spec="subsystem.jca.workmanager.long-running-threads">
-                <param name="long-running-threads" value="default"/>
+            <feature spec="subsystem.jca.workmanager.short-running-threads">
+                <param name="short-running-threads" value="default"/>
                 <param name="max-threads" value="50"/>
                 <param name="queue-length" value="50"/>
                 <param name="core-threads" value="50"/>
                 <param name="keepalive-time" value="{time=10,unit=SECONDS}"/>
             </feature>
-            <feature spec="subsystem.jca.workmanager.short-running-threads">
-                <param name="short-running-threads" value="default"/>
+            <feature spec="subsystem.jca.workmanager.long-running-threads">
+                <param name="long-running-threads" value="default"/>
                 <param name="max-threads" value="50"/>
                 <param name="queue-length" value="50"/>
                 <param name="core-threads" value="50"/>
