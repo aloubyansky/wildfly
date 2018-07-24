@@ -366,7 +366,7 @@
         <version.xom>1.2.10</version.xom>
 
 
-	<version.org.jboss.migration>1.3.0.Alpha1</version.org.jboss.migration>
+	<version.org.jboss.migration>1.3.0-SNAPSHOT</version.org.jboss.migration>
     </properties>
 
     <dependencyManagement>

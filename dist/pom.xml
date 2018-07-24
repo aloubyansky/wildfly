@@ -96,11 +96,6 @@
                             </plugin-options>
                             <resolve-locals>
                                 <resolve-local>
-                                    <groupId>org.wildfly.core</groupId>
-                                    <artifactId>wildfly-core-galleon-pack</artifactId>
-                                    <version>${version.org.wildfly.core}</version>
-                                </resolve-local>
-                                <resolve-local>
                                     <groupId>${project.groupId}</groupId>
                                     <artifactId>wildfly-servlet-galleon-pack</artifactId>
                                     <version>${project.version}</version>
@@ -117,8 +112,8 @@
                                     dependency brought in by jboss-server-migration-eap7.2-galleon-pack and by wildfly-galleon-pack
                                 -->
                                 <feature-pack>
-				    <transitive>true</transitive>
-				    <groupId>org.wildfly.core</groupId>
+                                    <transitive>true</transitive>
+                                    <groupId>org.wildfly.core</groupId>
                                     <artifactId>wildfly-core-galleon-pack</artifactId>
                                     <version>${version.org.wildfly.core}</version>
                                 </feature-pack>
