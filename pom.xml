@@ -172,13 +172,13 @@
         <version.checkstyle>8.5</version.checkstyle>
         <version.help.plugin>2.2</version.help.plugin>
         <version.jacoco.plugin>0.7.9</version.jacoco.plugin>
-        <version.org.jboss.galleon>2.0.0.Alpha4</version.org.jboss.galleon>
+        <version.org.jboss.galleon>2.0.0.Alpha6-SNAPSHOT</version.org.jboss.galleon>
 
         <version.org.wildfly.build-tools>1.2.10.Final</version.org.wildfly.build-tools>
         <version.org.wildfly.checkstyle-config>1.0.7.Final</version.org.wildfly.checkstyle-config>
 
         <version.org.wildfly.component-matrix-plugin>1.0.2.Final</version.org.wildfly.component-matrix-plugin>
-        <version.org.wildfly.galleon-plugins>2.0.0.Alpha5</version.org.wildfly.galleon-plugins>
+        <version.org.wildfly.galleon-plugins>2.0.0.Alpha7-SNAPSHOT</version.org.wildfly.galleon-plugins>
         <version.org.wildfly.maven.plugins>1.0.1</version.org.wildfly.maven.plugins>
         <version.org.wildfly.plugin>1.2.1.Final</version.org.wildfly.plugin>
         <!-- Non-default maven plugin versions and configuration -->
@@ -351,7 +351,7 @@
         <version.org.reactivestreams>1.0.2</version.org.reactivestreams>
         <version.org.syslog4j>0.9.30</version.org.syslog4j>
         <version.org.wildfly.arquillian>2.1.1.Final</version.org.wildfly.arquillian>
-        <version.org.wildfly.core>6.0.0.Alpha5</version.org.wildfly.core>
+        <version.org.wildfly.core>6.0.0.Alpha6-SNAPSHOT</version.org.wildfly.core>
         <version.org.wildfly.extras.creaper>1.6.1</version.org.wildfly.extras.creaper>
         <version.org.wildfly.http-client>1.0.12.Final</version.org.wildfly.http-client>
         <version.org.wildfly.naming-client>1.0.9.Final</version.org.wildfly.naming-client>
