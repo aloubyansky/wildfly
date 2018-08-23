@@ -123,18 +123,6 @@
                         <configuration>
                             <output-dir>${basedir}/target/resources/features</output-dir>
                             <fork-embedded>true</fork-embedded>
-                            <external-artifacts>
-                                <external-artifact>
-                                    <artifactItem>
-                                        <groupId>org.apache.activemq</groupId>
-                                        <artifactId>artemis-native</artifactId>
-                                        <version>${version.org.apache.activemq.artemis}</version>
-                                    </artifactItem>
-                                    <includes>lib/**</includes>
-                                    <excludes>*.*</excludes>
-                                    <toLocation>system/layers/base/org/apache/activemq/artemis/journal/main</toLocation>
-                                </external-artifact>
-                            </external-artifacts>
                         </configuration>
                     </execution>
                     <execution>
