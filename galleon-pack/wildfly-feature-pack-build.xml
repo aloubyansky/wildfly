@@ -167,7 +167,7 @@
                 <extension>org.wildfly.extension.messaging-activemq</extension>
                 <extension>org.wildfly.extension.microprofile.config-smallrye</extension>
                 <extension>org.wildfly.extension.microprofile.health-smallrye</extension>
-                <extension>org.wildfly.extension.microprofile.opentracing</extension>
+                <extension>org.wildfly.extension.microprofile.opentracing-smallrye</extension>
                 <extension>org.wildfly.extension.picketlink</extension>
                 <extension>org.wildfly.extension.rts</extension>
                 <extension>org.wildfly.iiop-openjdk</extension>
@@ -197,7 +197,7 @@
                 <extension>org.wildfly.extension.messaging-activemq</extension>
                 <extension>org.wildfly.extension.microprofile.config-smallrye</extension>
                 <extension>org.wildfly.extension.microprofile.health-smallrye</extension>
-                <extension>org.wildfly.extension.microprofile.opentracing</extension>
+                <extension>org.wildfly.extension.microprofile.opentracing-smallrye</extension>
                 <extension>org.wildfly.extension.picketlink</extension>
                 <extension>org.wildfly.extension.rts</extension>
                 <extension>org.wildfly.iiop-openjdk</extension>

@@ -559,9 +559,9 @@
                         <phase>prepare-package</phase>
                         <configuration>
                             <output-dir>${basedir}/target/resources/features</output-dir>
-                            <fork-embedded>true</fork-embedded>
+                            <fork-embedded>false</fork-embedded>
                         </configuration>
-                        </execution>
+                    </execution>
                     <execution>
                         <id>feature-pack-build</id>
                         <goals>
