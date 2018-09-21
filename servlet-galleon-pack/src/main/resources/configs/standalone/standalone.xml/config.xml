@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+ <config xmlns="urn:jboss:galleon:config:1.0" name="standalone.xml" model="standalone">
+    <layers>
+        <include name="base-server"/>
+        <include name="legacy-security"/>
+        <include name="elytron-security"/> 
+        <include name="jmx"/> 
+        <include name="logging"/>
+        <include name="core-management"/>
+        <include name="discovery"/>
+        <include name="request-controller"/>
+        <include name="security-manager"/>
+        <include name="web"/>
+    </layers>
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="load-balancer">
+    <dependencies>
+        <layer name="base-server"/>
+        <layer name="legacy-security"/>
+        <layer name="io"/>
+    </dependencies>
+    <feature spec="socket-binding-group">
+        <param name="socket-binding-group" value="standard-sockets"/>
+        <feature-group name="load-balancer-sockets"/>
+    </feature>
+    <feature spec="interface">
+        <param name="interface" value="private"/>
+        <param name="inet-address" value="${jboss.bind.address.private:127.0.0.1}"/>
+    </feature>
+    <feature-group name="undertow-load-balancer"/>
+</layer-spec>

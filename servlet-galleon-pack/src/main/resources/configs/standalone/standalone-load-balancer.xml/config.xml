@@ -1,0 +1,8 @@
+<?xml version="1.0" ?> 
+<config xmlns="urn:jboss:galleon:config:1.0" name="standalone-load-balancer.xml" model="standalone">
+        <layers>
+        <include name="base-server"/>
+        <include name="logging"/>
+        <include name="load-balancer"/>
+    </layers>
+</config>

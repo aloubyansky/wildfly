@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="web">
+    <dependencies>
+        <layer name="base-server"/>
+        <layer name="legacy-security"/>
+        <layer name="elytron-security"/>
+        <layer name="io"/>
+    </dependencies>
+    <feature spec="socket-binding-group">
+        <param name="socket-binding-group" value="standard-sockets" />
+        <feature-group name="standalone-sockets"/>
+    </feature>
+    <feature-group name="deployment-scanner"/>
+    <feature spec="subsystem.naming"/>
+    <feature-group name="security"/>
+    <feature-group name="ee"/>
+    <feature-group name="undertow"/>
+</layer-spec>
