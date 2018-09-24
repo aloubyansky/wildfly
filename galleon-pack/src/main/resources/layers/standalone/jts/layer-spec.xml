@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="jts">
+    <dependencies>
+        <layer name="iiop"/>
+    </dependencies>
+    <feature-group name="transactions-all"/>
+    <feature spec="subsystem.iiop-openjdk">
+        <param name="transactions" value="full"/>
+    </feature>
+    <feature spec="subsystem.transactions">
+         <param name="jts" value="true"/>
+         <param name="node-identifier" value="${jboss.tx.node.id}"/>
+    </feature>
+</layer-spec>

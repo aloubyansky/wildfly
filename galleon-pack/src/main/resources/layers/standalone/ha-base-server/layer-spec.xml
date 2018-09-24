@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="ha-base-server">
+    <dependencies>
+        <layer name="web"/>
+    </dependencies>
+    <feature spec="interface">
+        <param name="interface" value="private"/>
+        <param name="inet-address" value="${jboss.bind.address.private:127.0.0.1}"/>
+    </feature>
+
+    <feature spec="socket-binding-group">
+        <param name="socket-binding-group" value="standard-sockets" />
+        <feature-group name="ha-sockets"/>
+    </feature>
+    
+    <feature spec="subsystem.undertow">
+        <feature spec="subsystem.undertow.server">
+            <param name="server" value="default-server"/>
+            <feature spec="subsystem.undertow.server.ajp-listener">
+                <param name="ajp-listener" value="ajp"/>
+                <param name="socket-binding" value="ajp"/>
+                <unset param="worker"/>
+                <unset param="buffer-pool"/>
+            </feature>
+        </feature>
+    </feature>
+    
+    <feature-group name="modcluster"/>
+    <feature-group name="jgroups"/>
+    <feature-group name="singleton"/>
+    <feature-group name="infinispan-dist"/>
+    
+</layer-spec>

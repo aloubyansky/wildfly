@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="jaxrs">
+    <dependencies>
+        <layer name="web"/>
+    </dependencies>
+    <feature spec="subsystem.jaxrs"/>
+    <packages>
+        <!-- https://issues.jboss.org/browse/WFLY-11076-->
+        <package name="org.jboss.resteasy.resteasy-jackson2-provider"/>
+    </packages>
+</layer-spec>

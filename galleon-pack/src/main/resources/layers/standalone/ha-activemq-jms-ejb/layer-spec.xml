@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="ha-activemq-jms-ejb">
+    <dependencies>
+        <layer name="ha-base-server"/>
+        <layer name="ha-ejb"/>
+    </dependencies>
+    <feature-group name="transactions-all"/>
+    <feature-group name="jca"/>
+    <feature-group name="messaging-activemq-ha"/>
+</layer-spec>

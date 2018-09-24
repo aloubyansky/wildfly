@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="remote-jndi">
+    <dependencies>
+        <layer name="web"/>
+        <layer name="remoting"/>
+    </dependencies>
+     <feature spec="subsystem.naming">
+        <feature spec="subsystem.naming.service.remote-naming"/>
+    </feature>
+</layer-spec>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="ha-ee-profile">
+    <dependencies>
+        <layer name="ha-base-server"/>
+        <layer name="web-profile"/>
+        <layer name="discovery"/>
+        <layer name="batch"/>
+        <layer name="cdi"/>
+        <layer name="ha-ejb"/>
+        <layer name="ejb-client"/>
+        <layer name="h2-database"/>
+        <layer name="jaxrs"/>
+        <layer name="ha-jpa"/>
+        <layer name="jsf"/>
+        <layer name="microprofile"/>
+        <layer name="picketlink"/>
+        <layer name="webservices"/>
+        <layer name="mail"/>
+        <layer name="sar"/>
+    </dependencies>
+    <!-- all the following are not attached to layers...Should they? COPIED from ee-profile-->
+   <feature spec="subsystem.ee">
+        <feature spec="subsystem.ee.context-service">
+            <param name="context-service" value="default"/>
+            <param name="use-transaction-setup-provider" value="true"/>
+        </feature>
+    </feature>
+    <feature spec="subsystem.naming">
+        <feature spec="subsystem.naming.service.remote-naming"/>
+    </feature>
+    <feature spec="subsystem.ee-security"/>
+    <feature spec="subsystem.resource-adapters"/>
+    <feature spec="subsystem.jdr"/>
+    <feature spec="subsystem.pojo"/>
+</layer-spec>

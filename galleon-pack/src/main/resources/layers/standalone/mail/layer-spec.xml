@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="mail">
+    <dependencies>
+        <layer name="web"/>
+    </dependencies>
+    <feature-group name="mail"/>
+    <feature spec="socket-binding-group">
+        <param name="socket-binding-group" value="standard-sockets" />
+        <feature-group name="mail-sockets"/>
+    </feature>
+</layer-spec>

@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="ee-full-profile">
+    <dependencies>
+        <layer name="ee-profile"/>
+        <layer name="activemq-jms-ejb"/>
+        <layer name="ejb-iiop"/>
+        <layer name="iiop"/>
+    </dependencies>
+    <feature-group name="jsr77"/>
+</layer-spec>

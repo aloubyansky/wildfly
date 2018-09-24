@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="webservices">
+    <dependencies>
+        <layer name="web"/>
+    </dependencies>
+    <feature-group name="webservices"/>
+    <packages>
+        <package name="org.jboss.ws.saaj-impl"/>
+    </packages>
+</layer-spec>

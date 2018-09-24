@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="ha-ejb">
+    <dependencies>
+        <layer name="ha-base-server"/>
+        <layer name="ejb"/>
+    </dependencies>
+    <feature spec="subsystem.ejb3">
+        <param name="default-sfsb-cache" value="distributable"/>
+    </feature>
+</layer-spec>

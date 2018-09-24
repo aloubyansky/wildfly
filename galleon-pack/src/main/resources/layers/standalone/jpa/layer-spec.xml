@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="jpa">
+    <dependencies>
+        <layer name="web"/>
+    </dependencies>
+    <feature spec="subsystem.datasources"/>
+    <feature-group name="transactions-all"/>
+    <feature-group name="jpa"/>
+   <feature-group name="infinispan-local"/>
+</layer-spec>

@@ -15,4 +15,8 @@
     <feature-group name="security"/>
     <feature-group name="ee"/>
     <feature-group name="undertow"/>
+    <packages>
+        <!-- this module is not added by feature -->
+        <package name="org.wildfly.naming"/>
+    </packages>
 </layer-spec>

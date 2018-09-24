@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="xts">
+    <dependencies>
+        <layer name="web"/>
+    </dependencies>
+    <feature spec="subsystem.xts">
+        <param name="host-feature" value="default-host"/>
+        <param name="url" value="http://${jboss.bind.address:127.0.0.1}:8080/ws-c11/ActivationService"/>
+        <param name="default-context-propagation" value="true"/>
+    </feature>
+</layer-spec>

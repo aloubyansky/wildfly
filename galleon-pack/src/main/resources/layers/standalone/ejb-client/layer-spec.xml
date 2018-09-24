@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="ejb-client">
+    <dependencies>
+        <layer name="ejb"/>
+    </dependencies>
+    <packages>
+        <package name="org.jboss.remoting3"/>
+        <package name="org.jboss.as.core-security-api"/>
+        <package name="org.jboss.as.security-api"/>
+    </packages>
+</layer-spec>

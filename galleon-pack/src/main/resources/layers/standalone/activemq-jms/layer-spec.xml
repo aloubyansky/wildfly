@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<layer-spec xmlns="urn:jboss:galleon:layer-spec:1.0" name="activemq-jms">
+    <dependencies>
+        <layer name="web"/>
+    </dependencies>
+    <feature-group name="transactions-all"/>
+    <feature-group name="jca"/>
+    <feature-group name="messaging-activemq-no-ejb"/>
+</layer-spec>
