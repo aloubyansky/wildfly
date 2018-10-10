@@ -4,6 +4,6 @@
         <layer name="web"/>
         <layer name="bean-validation"/>
     </dependencies>
-    <feature-group name="transactions-all"/>
+    <!--<feature-group name="transactions-all"/>-->
     <feature spec="subsystem.weld"/>
 </layer-spec>
